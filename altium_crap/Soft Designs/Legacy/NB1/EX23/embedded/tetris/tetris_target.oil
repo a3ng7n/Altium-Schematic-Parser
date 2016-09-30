@@ -1,0 +1,134 @@
+/*****************************************************************************
+ * FILE:	@(#)tetris_target.oil	1.7 04/10/11	
+ * DESCRIPTION:
+ *	Tetris target oil file.
+ ****************************************************************************/
+/*****************************************************************************
+ * from Dcoral we can invoke 'toc' with -D options.
+ * Here we give the default options:
+ * - DTSK51A
+ * - Wc-x12
+ * ( do -DNEXAR to include nexar drivers )
+ ****************************************************************************/ 
+#ifndef TSK51A
+#ifndef TSK52A
+#ifndef TSK52B
+#define TSK51A
+#endif
+#endif
+#endif
+
+#ifdef NONEXAR
+	#define STDIOTX
+	#define SIMINRX
+	#define TETRISIN_SIMINRX
+	#define TETRISOUT_STDIOTX
+#else
+	#define NEXAR
+	#define TETRISIN_KEYPAD
+#endif
+
+#define TETRIS
+
+OS StdOS
+{
+#ifdef TSK51A
+        CORE               = TSK51A;
+#endif
+#ifdef TSK52A
+        CORE               = TSK52A;
+#endif
+#ifdef TSK52B
+        CORE               = TSK52B;
+#endif
+        USERTOSTIMER       = TRUE { RTOSTIMERLEVEL     = 1; };
+   	  EXTDATASIZE        = 12;
+        VISRSTACK          = 100;
+        SMAINSTACK         = 30;
+};
+
+TASK init
+{
+        VSTACK     = 200;
+        SSTACK     = 80;
+};
+
+TASK stroke
+{
+        VSTACK     = 220;
+        SSTACK     = 80;
+};
+
+TASK timeslot
+{
+        VSTACK     = 200;
+        SSTACK     = 80;
+};
+
+TASK tetris
+{
+        VSTACK     = 400;
+        SSTACK     = 80;
+};
+#ifdef SERIAL
+ISR i_uart0
+{
+        CATEGORY = 2;
+        LEVEL    = 4;
+        #ifdef TSK51A
+        ENBIT    = "ES";
+        #endif
+        #ifdef TSK52A
+        ENBIT   = "EX3";
+        #endif
+};
+
+TASK tuarttx
+{
+        VSTACK     = 200;
+        SSTACK     = 60;
+};
+TASK tuartrx
+{
+        VSTACK     = 200;
+        SSTACK     = 60;
+};
+#endif
+
+#ifdef NEXAR
+TASK tkeypadrx
+{
+        VSTACK     = 200;
+        SSTACK     = 80;
+};
+
+TASK tlcdtx
+{
+        VSTACK     = 200;
+        SSTACK     = 80;
+};
+#endif
+
+#ifdef STDIOTX
+TASK tstdiotx
+{
+        VSTACK     = 200;
+        SSTACK     = 60;
+};
+#endif
+
+#ifdef SIMINRX
+TASK tsiminrx
+{
+        VSTACK     = 200;
+        SSTACK     = 60;
+};
+TASK tsiminnk
+{
+        VSTACK     = 200;
+        SSTACK     = 60;
+};
+#endif
+
+
+

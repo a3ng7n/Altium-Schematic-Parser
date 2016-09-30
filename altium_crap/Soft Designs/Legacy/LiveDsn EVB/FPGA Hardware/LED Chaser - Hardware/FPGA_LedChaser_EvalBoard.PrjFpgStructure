@@ -1,0 +1,19 @@
+Record=SheetSymbol|SourceDocument=FPGA_LedChaser_EvalBoard.SchDoc|Designator=U_DRIVERS|SchDesignator=U_DRIVERS|FileName=DRIVERS.SCHDOC
+Record=SheetSymbol|SourceDocument=FPGA_LedChaser_EvalBoard.SchDoc|Designator=U_SHIFTER|SchDesignator=U_SHIFTER|FileName=SHIFTER.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM0|SchDesignator=PWM0|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM1|SchDesignator=PWM1|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM2|SchDesignator=PWM2|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM3|SchDesignator=PWM3|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM4|SchDesignator=PWM4|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM5|SchDesignator=PWM5|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM6|SchDesignator=PWM6|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=DRIVERS.SchDoc|Designator=PWM7|SchDesignator=PWM7|FileName=PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=PWM.SchDoc|Designator=PAL1|SchDesignator=PAL1|FileName=BrightnessPalette.VHD
+Record=TopLevelDocument|FileName=FPGA_LedChaser_EvalBoard.SchDoc
+Record=NEXUS_CORE|ComponentDesignator=DIGDATA1|BaseComponentDesignator=DIGDATA1|DocumentName=FPGA_LedChaser_EvalBoard.SchDoc|LibraryReference=IOB_2X16|SubProjectPath= |NEXUS_JTAG_INDEX=0|ComponentUniqueID=EMNOODEH|Description=2 Ch x 16 Bit Digital IO|Comment=IOB_2X16|Component Kind=Standard|Core Revision=1.00.00|Footprint= |Library Name=FPGA Instruments.IntLib|Library Reference=IOB_2X16|NEXUS_CORE=Instrument|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=30/09/2003|Publisher=Altium Hobart Technology Centre|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE|ComponentDesignator=U4|BaseComponentDesignator=U4|DocumentName=FPGA_LedChaser_EvalBoard.SchDoc|LibraryReference=IOB_1X8|SubProjectPath= |NEXUS_JTAG_INDEX=1|ComponentUniqueID=DFXXOYEI|Description=1 Ch x 8 Bit Digital IO|Comment=IOB_1X8|Component Kind=Standard|Core Revision=1.00.00|Footprint= |Library Name=FPGA Instruments.IntLib|Library Reference=IOB_1X8|NEXUS_CORE=Instrument|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=30/09/2003|Publisher=Altium Hobart Technology Centre|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=DIGDATA1|DocumentName=FPGA_LedChaser_EvalBoard.SchDoc|LibraryReference=IOB_2X16|SubProjectPath= |Configuration= |Description=2 Ch x 16 Bit Digital IO|SubPartUniqueId1=EMNOODEH|SubPartDocPath1=FPGA_LedChaser_EvalBoard.SchDoc|Comment=IOB_2X16|Component Kind=Standard|Core Revision=1.00.00|Footprint= |Library Name=FPGA Instruments.IntLib|Library Reference=IOB_2X16|NEXUS_CORE=Instrument|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=30/09/2003|Publisher=Altium Hobart Technology Centre|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=U4|DocumentName=FPGA_LedChaser_EvalBoard.SchDoc|LibraryReference=IOB_1X8|SubProjectPath= |Configuration= |Description=1 Ch x 8 Bit Digital IO|SubPartUniqueId1=DFXXOYEI|SubPartDocPath1=FPGA_LedChaser_EvalBoard.SchDoc|Comment=IOB_1X8|Component Kind=Standard|Core Revision=1.00.00|Footprint= |Library Name=FPGA Instruments.IntLib|Library Reference=IOB_1X8|NEXUS_CORE=Instrument|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=30/09/2003|Publisher=Altium Hobart Technology Centre|Signal Integrity= |Simulation= 
+Record=Configuration|Name=Cyclone12_EB2|DeviceName=EP1C12F324C6
+Record=Configuration|Name=Spartan3_400_EB1|DeviceName=XC3S400-4FG456C
+Record=Configuration|Name=Spartan3_1000_EB1|DeviceName=XC3S1000-4FG456C

@@ -1,0 +1,159 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Xilinx Spartan 3 XC3S400-4PQ208C
+;   Board   : NuHorizons Spartan3 Development Board
+;   Project : Any
+;
+;   Created 13-Oct-2004
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=NuHorizons Spartan3 Development Board
+Record=Constraint | TargetKind=Part | TargetId=XC3S400-4PQ208C
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO_CLK[0..3]    | FPGA_PINNUM=P183,P184,P180,P181
+Record=Constraint | TargetKind=Port | TargetId=PLL_CLK              | FPGA_PINNUM=P80
+Record=Constraint | TargetKind=Port | TargetId=MAIN_CLK             | FPGA_PINNUM=P79
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO_CLK[0..3]    | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=PLL_CLK              | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=MAIN_CLK             | FPGA_CLOCK_PIN=TRUE
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; RS-232 Serial Connector
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LV_RTS               | FPGA_PINNUM=P90
+Record=Constraint | TargetKind=Port | TargetId=LV_TX_DATA           | FPGA_PINNUM=P85
+Record=Constraint | TargetKind=Port | TargetId=LV_RX_DATA           | FPGA_PINNUM=P87
+Record=Constraint | TargetKind=Port | TargetId=LV_CTS               | FPGA_PINNUM=P86
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LEDs (Use NanoBoard LED port plugin or identify LEDs by NU Horizons board LED net names)
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LEDS[7..0]           | FPGA_PINNUM=P171,P169,P168,P167,P166,P165,P162,P161
+Record=Constraint | TargetKind=Port | TargetId=LED_[1..8]           | FPGA_PINNUM=P161,P162,P165,P166,P167,P168,P169,P171
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft-Device Chain Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=P197
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=P172
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=P200
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=P189
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; I/O Connector
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO1             | FPGA_PINNUM=P185
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO2             | FPGA_PINNUM=P187
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO3             | FPGA_PINNUM=P190
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO4             | FPGA_PINNUM=P191
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO5             | FPGA_PINNUM=P194
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO6             | FPGA_PINNUM=P196
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO7             | FPGA_PINNUM=P198
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO8             | FPGA_PINNUM=P199
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO9             | FPGA_PINNUM=P189
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO10            | FPGA_PINNUM=P197
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO11            | FPGA_PINNUM=P200
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO12            | FPGA_PINNUM=P172
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO13            | FPGA_PINNUM=P176
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO14            | FPGA_PINNUM=P178
+Record=Constraint | TargetKind=Port | TargetId=FPGA_IO15            | FPGA_PINNUM=P182
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; IS42S16400A SDRAM Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_D[0..15]       | FPGA_PINNUM=P4,P5,P7,P9,P10,P11,P12,P13,P39,P37,P36,P35,P26,P24,P22,P21
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_A[0..11]       | FPGA_PINNUM=P29,P31,P33,P34,P57,P50,P48,P46,P45,P44,P28,P27
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_BA0            | FPGA_PINNUM=P58
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_BA1            | FPGA_PINNUM=P61
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_WE             | FPGA_PINNUM=P16
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_DQM0           | FPGA_PINNUM=P15
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_DQM1           | FPGA_PINNUM=P40
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_CAS            | FPGA_PINNUM=P18
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_RAS            | FPGA_PINNUM=P19
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_CS             | FPGA_PINNUM=P20
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_CKE            | FPGA_PINNUM=P43
+Record=Constraint | TargetKind=Port | TargetId=SDRAM_CLK            | FPGA_PINNUM=P42
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; M29W320DB FLASH ROM Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=FLASH_D[0..7]        | FPGA_PINNUM=P96,P97,P100,P101,P102,P106,P107,P108
+Record=Constraint | TargetKind=Port | TargetId=FLASH_A[0..20]       | FPGA_PINNUM=P93,P113,P111,P114,P115,P116,P117,P119,P131,P132,P133,P135,P137,P138,P139,P140,P109,P120,P122,P130,P128
+Record=Constraint | TargetKind=Port | TargetId=FLASH_OE             | FPGA_PINNUM=P95
+Record=Constraint | TargetKind=Port | TargetId=FLASH_RP             | FPGA_PINNUM=P125
+Record=Constraint | TargetKind=Port | TargetId=FLASH_WE             | FPGA_PINNUM=P126
+Record=Constraint | TargetKind=Port | TargetId=FLASH_WP             | FPGA_PINNUM=P124
+Record=Constraint | TargetKind=Port | TargetId=FLASH_CE             | FPGA_PINNUM=P94
+Record=Constraint | TargetKind=Port | TargetId=FLASH_BYTE_SEL       | FPGA_PINNUM=P175
+Record=Constraint | TargetKind=Port | TargetId=FLASH_READY          | FPGA_PINNUM=P123
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; 4-Line by 20 Character LCD Interface - Compatible with NanoBoard LCD Port Plugin
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LCD_DB[7..0]         | FPGA_PINNUM=P143,P144,P146,P147,P148,P149,P150,P152
+Record=Constraint | TargetKind=Port | TargetId=LCD_LIGHT            | FPGA_PINNUM=P141
+Record=Constraint | TargetKind=Port | TargetId=LCD_RS               | FPGA_PINNUM=P156
+Record=Constraint | TargetKind=Port | TargetId=LCD_RW               | FPGA_PINNUM=P155
+Record=Constraint | TargetKind=Port | TargetId=LCD_E                | FPGA_PINNUM=P154
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; PS/2 - Compatible with NanoBoard PS2A Port Plugin
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PS2_CLK              | FPGA_PINNUM=P78
+Record=Constraint | TargetKind=Port | TargetId=PS2_DATA             | FPGA_PINNUM=P81
+Record=Constraint | TargetKind=Port | TargetId=PS2A_CLK             | FPGA_PINNUM=P78
+Record=Constraint | TargetKind=Port | TargetId=PS2A_DATA            | FPGA_PINNUM=P81
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Push Buttons
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PB_SW1               | FPGA_PINNUM=P77
+Record=Constraint | TargetKind=Port | TargetId=PB_SW2               | FPGA_PINNUM=P76
+Record=Constraint | TargetKind=Port | TargetId=PB_SW3               | FPGA_PINNUM=P74
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LTC1654 SPI D to A Converter
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=SPI_DAC_MISO         | FPGA_PINNUM=P62
+Record=Constraint | TargetKind=Port | TargetId=SPI_DAC_MOSI         | FPGA_PINNUM=P64
+Record=Constraint | TargetKind=Port | TargetId=SPI_DAC_CLK          | FPGA_PINNUM=P65
+Record=Constraint | TargetKind=Port | TargetId=DAC_LD               | FPGA_PINNUM=P63
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LTC1865 SPI A to D Converter
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=SPI_ADC_MISO         | FPGA_PINNUM=P68
+Record=Constraint | TargetKind=Port | TargetId=SPI_ADC_MOSI         | FPGA_PINNUM=P71
+Record=Constraint | TargetKind=Port | TargetId=SPI_ADC_CLK          | FPGA_PINNUM=P67
+Record=Constraint | TargetKind=Port | TargetId=ADC_CONV_ST          | FPGA_PINNUM=P72
+;-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

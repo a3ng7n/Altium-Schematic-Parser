@@ -1,0 +1,14 @@
+Record=TopLevelDocument|FileName=Logic_Analyzer.SchDoc
+Record=NEXUS_CORE|ComponentDesignator=U2|BaseComponentDesignator=U2|DocumentName=Logic_Analyzer.SchDoc|LibraryReference=LAX|NexusDeviceId=LAX|SubProjectPath= |NEXUS_JTAG_INDEX=0|ComponentUniqueID=ALVAGSTS|Description=Configurable Logic Analyzer|ChildModel1=LAX_CFG16|Comment=LAX|Component Kind=Standard|ComponentLink1Description=Core &Resource Usage|ComponentLink1URL=CR0134 FPGA Instrument Resource Usage.pdf#page=10|ConfigurationParameters={}Version[1.0]{}CaptureWidth[16]{}MemorySize[2K]{}ExtAddrWidth[10]{}Set0[Signal Set 0]{}Set0_Signal0[InputSignal(15..0)]{}Style_Set0_Signal0[Default]{}|ConfiguratorName=LogicAnalyser|Core Revision=1.00.00|Footprint= |HelpURL=CR0158 LAX Configurable Logic Analyzer.pdf|LastRevisionNo=1.00.00|Library Name=FPGA Instruments.IntLib|Library Reference=LAX|NEXUS_CORE=Instrument|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=12-Oct-2005|Publisher=Altium Limited|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=U2|DocumentName=Logic_Analyzer.SchDoc|LibraryReference=LAX|SubProjectPath= |Configuration= |Description=Configurable Logic Analyzer|SubPartUniqueId1=ALVAGSTS|SubPartDocPath1=Logic_Analyzer.SchDoc|ChildModel1=LAX_CFG16|Comment=LAX|Component Kind=Standard|ComponentLink1Description=Core &Resource Usage|ComponentLink1URL=CR0134 FPGA Instrument Resource Usage.pdf#page=10|ConfigurationParameters={}Version[1.0]{}CaptureWidth[16]{}MemorySize[2K]{}ExtAddrWidth[10]{}Set0[Signal Set 0]{}Set0_Signal0[InputSignal(15..0)]{}Style_Set0_Signal0[Default]{}|ConfiguratorName=LogicAnalyser|Core Revision=1.00.00|Footprint= |HelpURL=CR0158 LAX Configurable Logic Analyzer.pdf|LastRevisionNo=1.00.00|Library Name=FPGA Instruments.IntLib|Library Reference=LAX|NEXUS_CORE=Instrument|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=12-Oct-2005|Publisher=Altium Limited|Signal Integrity= |Simulation= 
+Record=Configuration|Name=Cyclone-12_NB1|DeviceName=EP1C12Q240C6
+Record=Configuration|Name=NB2DSK01_08_DB30_06|DeviceName=XC3S1500-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB31_06|DeviceName=EP2C35F672C8
+Record=Configuration|Name=NB2DSK01_08_DB32_07|DeviceName=LFECP33E-3FN672C
+Record=Configuration|Name=NB2DSK01_08_DB36_01|DeviceName=XC4VLX25-10FF668C
+Record=Configuration|Name=NB2DSK01_08_DB40_02|DeviceName=EP3C40F780C8N
+Record=Configuration|Name=NB2DSK01_08_DB41_02|DeviceName=XC3S1400AN-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB42_02|DeviceName=XC3SD1800A-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB43_02|DeviceName=LFE2-35E-5F672C
+Record=Configuration|Name=NB2DSK01_08_DB46_02|DeviceName=XC4VSX35-10FF668C
+Record=Configuration|Name=Spartan3-1000_NB1|DeviceName=XC3S1000-4FG456C

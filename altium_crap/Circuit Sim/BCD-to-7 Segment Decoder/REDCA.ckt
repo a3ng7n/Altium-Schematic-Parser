@@ -1,0 +1,18 @@
+*RED common-anode 7-seg display
+*Connections: 
+*             a b c d e f g 
+*             | | | | | | | period 
+*             | | | | | | | | common-anode
+*             | | | | | | | | |
+.SUBCKT REDCA 1 2 3 4 5 6 7 8 9
+Da 9 1 LED1
+Db 9 2 LED1
+Dc 9 3 LED1
+Dd 9 4 LED1
+De 9 5 LED1
+Df 9 6 LED1
+Dg 9 7 LED1
+Dp 9 8 LED1
+.MODEL LED1 D (IS=93.2P RS=42M N=3.73 BV=4 IBV=10U
++ CJO=2.97P VJ=.75 M=.333 TT=4.32U)
+.ENDS REDCA

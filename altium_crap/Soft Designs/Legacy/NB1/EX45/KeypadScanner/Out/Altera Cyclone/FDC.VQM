@@ -1,0 +1,46 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:42:59 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\fdc.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module FDC (
+  D,
+  C,
+  CLR,
+  Q
+);
+input D ;
+input C ;
+input CLR ;
+output Q ;
+wire D ;
+wire C ;
+wire CLR ;
+wire Q ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:35
+  cyclone_lcell Q_0 (
+	.regout(Q),
+	.clk(C),
+	.datad(D),
+	.aclr(CLR)
+);
+defparam Q_0.operation_mode="normal";
+defparam Q_0.output_mode="reg_only";
+defparam Q_0.lut_mask="ff00";
+defparam Q_0.synch_mode="off";
+defparam Q_0.sum_lutc_input="datac";
+endmodule /* FDC */
+

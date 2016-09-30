@@ -1,0 +1,5 @@
+*PSpice voltage-controlled switch
+.MODEL VSWITCHMOD VSWITCH(RON=0.0001 ROFF=100MEG VOFF=0.25 VON=0.75)
+
+*Spice 3f5 voltage controlled switch
+.MODEL VSWMOD SW(RON=0.0001 ROFF=100MEG VT=0.5 VH=0.01)

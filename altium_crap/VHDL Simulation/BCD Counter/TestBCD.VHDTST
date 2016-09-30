@@ -1,0 +1,78 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_textio.all;
+use std.textio.all;
+
+entity TestBCD is
+end TestBCD;
+
+architecture Stimulus of TestBCD is
+    file RESULTS: text open WRITE_MODE is "results.txt";
+
+    procedure WRITE_RESULTS(UPPER: std_logic_vector(3 downto 0);
+                            LOWER: std_logic_vector(3 downto 0);
+                            URCO : std_logic;
+                            PARITY : std_logic) is
+       variable s : line;
+    begin
+       write(s, now, right, 15, ns);
+       write(s, UPPER, right, 5);
+       write(s, LOWER, right, 5);
+       write(s, URCO, right, 2);
+       write(s, PARITY, right, 2);
+       writeline(results, s);
+    end procedure;
+
+    component BCD8
+       port (
+          CLEAR: in std_logic;
+          CLOCK: in std_logic;
+          ENABLE: in std_logic;
+          URCO: out std_logic;
+          PARITY : out STD_LOGIC;
+          UPPER: out std_logic_vector(3 downto 0);
+          LOWER: out std_logic_vector(3 downto 0)
+       );
+    end component;
+
+    signal CLEAR: std_logic;
+    signal CLOCK: std_logic;
+    signal ENABLE:std_logic;
+    signal URCO:  std_logic;
+    signal PARITY:  std_logic;
+    signal UPPER: std_logic_vector(3 downto 0);
+    signal LOWER: std_logic_vector(3 downto 0);
+
+begin
+
+
+    DUT:BCD8 port map (
+       CLEAR => CLEAR,
+       CLOCK => CLOCK,
+       ENABLE => ENABLE,
+       URCO => URCO,
+       PARITY => PARITY,
+       UPPER => UPPER,
+       LOWER => LOWER
+    );
+
+    STIMULUS0:process
+    begin
+        ENABLE <= '1';
+        CLEAR  <= '1';
+        wait for 1 ns;
+        CLEAR <= '0';
+        wait;
+    end process;
+
+    CLK0:process
+    begin
+       CLOCK <= '1';
+       wait for 10 ns;
+       CLOCK <= '0';
+       wait for 10 ns;
+    end process;
+
+    WRITE_RESULTS(UPPER, LOWER, URCO, PARITY);
+
+end architecture;

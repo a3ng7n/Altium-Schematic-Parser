@@ -1,0 +1,5 @@
+
+*LS Quad 2-in OR - type:digital pkg:DIP14 [DVCC=14;DGND=7;](A:1,2,3)(B:4,5,6)(C:9,10,8)(D:12,13,11)
+.MODEL 74LS32 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls32 {mntymx})
+
+* Origin: 2inor.mod

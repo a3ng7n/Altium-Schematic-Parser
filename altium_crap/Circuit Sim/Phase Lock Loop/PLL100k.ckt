@@ -1,0 +1,72 @@
+* 100kHz Phase-Lock_Loop
+* Internal nodes start at 50.
+* Internal nodes for a/d and d/a are the node number + 100.
+*
+* PLL Subcircuit VCO Parameters
+*   Fc = Center frequency
+*   Fr = Frequency range (center +/- Fr)
+*   Rs = Dem and Vout series resistance
+*
+*SPICE code of PLL macromodel
+*Connections:
+*               Signal In
+*               |  Compare In
+*               |  |  VCO Out
+*               |  |  |  VSS
+*               |  |  |  |  Demodulated Out
+*               |  |  |  |  |  VCO In
+*               |  |  |  |  |  |  Phase Compare
+*               |  |  |  |  |  |  |  VDD
+*               |  |  |  |  |  |  |  |
+.SUBCKT PLL100k 14  3  4  8 10  9  2 16  PARAMS: Fc=100k Fr=50k Rs=100
+
+*Pin order in SimCode:
+*INPUTS VCC, GND, SigIn, CompIn;
+*OUTPUTS PhCompI;
+
+*ADC and DAC node bridges
+A1 [102][2] dac_mod
+A2 [16 8 14 3][116 108 114 103] adc_mod
+.model dac_mod xdac
+.model adc_mod xadc
+
+*Self biasing input amplifier consists of two equal resistors (one from SigIn to VDD,
+*The other from SigIn to ground) and a SimCode buffer with vil at 49.05% and voh at 50.05%.
+RIN1 14 16 1.5E6
+RIN2 14 8 1.5E6
+
+AU4A [116 108 114][154] Apllinbuf
+.MODEL Apllinbuf xsimcode(file="{MODEL_PATH}pllinbuf.scb" func=pllinbuf)
+
+AU1 [116 108 154 103][102] Apllpc1
+.MODEL Apllpc1 xsimcode(file="{MODEL_PATH}pllpc1.scb" func=pllpc1)
+
+* Scale VCOin to be between 0 and 1 for the XSPICE VCO model.
+* 1E+15 added to denominator to avoid divide by zero.
+BNLVs2 53 8 V=( V(9,8)/(V(16,8)+1E-15) )
+* Resistor to aid convergance.
+RCONV1 53 8 100E6
+
+AV1 %vd(53,8) 52 ASQRVCO
+*SQRVCO Voltage controlled square wave oscillator - alias:ASQRVCO
+.MODEL ASQRVCO square(cntl_array=[0 1]
++ freq_array=[{(Fc - Fr)} {(Fc + Fr)}] out_low=0
++ out_high=1 duty_cycle=0.5 rise_time=1E-9 fall_time=1E-9)
+BNLVs4 56 8 V=(V(52) * V(16,8)) + V(8)
+
+* Series resistor at NLVs output so that there is not infinite drive.
+RS1 56 4 {Rs}
+
+* Resistor to aid convergance.
+RCONV2 4 8 100E6
+
+* Demod is isolated from VCOin by a source follower. In this implementation
+* a NLVs is used instead of a source follower.
+BNLVs5 55 8 V=V(9)
+
+* Series resistor at NLVs output so that there is not infinite drive.
+RS2 55 10 {Rs}
+
+* Resistor to aid convergance.
+RCONV3 10 8 100E6
+.ENDS PLL100k

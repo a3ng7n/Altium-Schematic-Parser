@@ -1,0 +1,50 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:11:23 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\and4s.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module AND4S (
+  I0,
+  I1,
+  I2,
+  I3,
+  O
+);
+input I0 ;
+input I1 ;
+input I2 ;
+input I3 ;
+output O ;
+wire I0 ;
+wire I1 ;
+wire I2 ;
+wire I3 ;
+wire O ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:34
+  cyclone_lcell O_0 (
+	.combout(O),
+	.dataa(I1),
+	.datab(I2),
+	.datac(I3),
+	.datad(I0)
+);
+defparam O_0.operation_mode="normal";
+defparam O_0.output_mode="comb_only";
+defparam O_0.lut_mask="8000";
+defparam O_0.synch_mode="off";
+defparam O_0.sum_lutc_input="datac";
+endmodule /* AND4S */
+

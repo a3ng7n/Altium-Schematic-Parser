@@ -1,0 +1,204 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Xilinx Spartan IIe XC2S200E-6PQ208C
+;   Board   : Digilant DIGILAB IIE
+;   Project : FPGA_Digilant_Spartan2E_D2E.PrjFpg
+;
+;   Created 12-Oct-2004
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=DIGILAB-IIE
+Record=Constraint | TargetKind=Part | TargetId=XC2S200E-6PQ208C
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=B12                  | FPGA_PINNUM=P182
+Record=Constraint | TargetKind=Port | TargetId=B11                  | FPGA_PINNUM=P185
+Record=Constraint | TargetKind=Port | TargetId=CLK1                 | FPGA_PINNUM=P80
+Record=Constraint | TargetKind=Port | TargetId=BTN1                 | FPGA_PINNUM=P77
+Record=Constraint | TargetKind=Port | TargetId=B12                  | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=B11                  | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK1                 | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=BTN1                 | FPGA_CLOCK_PIN=TRUE
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; RS-232 Serial Connector
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=RS232_CTS_OUT        | FPGA_PINNUM=P199
+Record=Constraint | TargetKind=Port | TargetId=RS232_RTS_IN         | FPGA_PINNUM=P198
+Record=Constraint | TargetKind=Port | TargetId=RS232_RX_DATA        | FPGA_PINNUM=P202
+Record=Constraint | TargetKind=Port | TargetId=RS232_TX_DATA        | FPGA_PINNUM=P201
+Record=Constraint | TargetKind=Port | TargetId=RS232_DSR_OUT        | FPGA_PINNUM=P200
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LEDs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LED1                 | FPGA_PINNUM=P69
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft-Device Chain Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=P68
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=P63
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=P61
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=P59
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Digilab IIE 40-Pin Headers 'A' and 'E'
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=A4                   | FPGA_PINNUM=P68
+Record=Constraint | TargetKind=Port | TargetId=A5                   | FPGA_PINNUM=P64
+Record=Constraint | TargetKind=Port | TargetId=A6                   | FPGA_PINNUM=P63
+Record=Constraint | TargetKind=Port | TargetId=A7                   | FPGA_PINNUM=P62
+Record=Constraint | TargetKind=Port | TargetId=A8                   | FPGA_PINNUM=P61
+Record=Constraint | TargetKind=Port | TargetId=A9                   | FPGA_PINNUM=P60
+Record=Constraint | TargetKind=Port | TargetId=A10                  | FPGA_PINNUM=P59
+Record=Constraint | TargetKind=Port | TargetId=A11                  | FPGA_PINNUM=P58
+Record=Constraint | TargetKind=Port | TargetId=A12                  | FPGA_PINNUM=P57
+Record=Constraint | TargetKind=Port | TargetId=A13                  | FPGA_PINNUM=P56
+Record=Constraint | TargetKind=Port | TargetId=A14                  | FPGA_PINNUM=P55
+Record=Constraint | TargetKind=Port | TargetId=A15                  | FPGA_PINNUM=P49
+Record=Constraint | TargetKind=Port | TargetId=A16                  | FPGA_PINNUM=P48
+Record=Constraint | TargetKind=Port | TargetId=A17                  | FPGA_PINNUM=P47
+Record=Constraint | TargetKind=Port | TargetId=A18                  | FPGA_PINNUM=P46
+Record=Constraint | TargetKind=Port | TargetId=A19                  | FPGA_PINNUM=P45
+Record=Constraint | TargetKind=Port | TargetId=A20                  | FPGA_PINNUM=P44
+Record=Constraint | TargetKind=Port | TargetId=A21                  | FPGA_PINNUM=P43
+Record=Constraint | TargetKind=Port | TargetId=A22                  | FPGA_PINNUM=P42
+Record=Constraint | TargetKind=Port | TargetId=A23                  | FPGA_PINNUM=P41
+Record=Constraint | TargetKind=Port | TargetId=A24                  | FPGA_PINNUM=P40
+Record=Constraint | TargetKind=Port | TargetId=A25                  | FPGA_PINNUM=P36
+Record=Constraint | TargetKind=Port | TargetId=A26                  | FPGA_PINNUM=P35
+Record=Constraint | TargetKind=Port | TargetId=A27                  | FPGA_PINNUM=P34
+Record=Constraint | TargetKind=Port | TargetId=A28                  | FPGA_PINNUM=P33
+Record=Constraint | TargetKind=Port | TargetId=A29                  | FPGA_PINNUM=P31
+Record=Constraint | TargetKind=Port | TargetId=A30                  | FPGA_PINNUM=P30
+Record=Constraint | TargetKind=Port | TargetId=A31                  | FPGA_PINNUM=P29
+Record=Constraint | TargetKind=Port | TargetId=A32                  | FPGA_PINNUM=P27
+Record=Constraint | TargetKind=Port | TargetId=A33                  | FPGA_PINNUM=P24
+Record=Constraint | TargetKind=Port | TargetId=A34                  | FPGA_PINNUM=P23
+Record=Constraint | TargetKind=Port | TargetId=A35                  | FPGA_PINNUM=P22
+Record=Constraint | TargetKind=Port | TargetId=A36                  | FPGA_PINNUM=P21
+Record=Constraint | TargetKind=Port | TargetId=A37                  | FPGA_PINNUM=P20
+Record=Constraint | TargetKind=Port | TargetId=A38                  | FPGA_PINNUM=P18
+Record=Constraint | TargetKind=Port | TargetId=A39                  | FPGA_PINNUM=P17
+Record=Constraint | TargetKind=Port | TargetId=A40                  | FPGA_PINNUM=P16
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Digilab IIE 40-Pin Headers 'B' and 'F'
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=B4                   | FPGA_PINNUM=P194
+Record=Constraint | TargetKind=Port | TargetId=B5                   | FPGA_PINNUM=P193
+Record=Constraint | TargetKind=Port | TargetId=B6                   | FPGA_PINNUM=P192
+Record=Constraint | TargetKind=Port | TargetId=B7                   | FPGA_PINNUM=P191
+Record=Constraint | TargetKind=Port | TargetId=B8                   | FPGA_PINNUM=P189
+Record=Constraint | TargetKind=Port | TargetId=B9                   | FPGA_PINNUM=P188
+Record=Constraint | TargetKind=Port | TargetId=B10                  | FPGA_PINNUM=P187
+Record=Constraint | TargetKind=Port | TargetId=B13                  | FPGA_PINNUM=P181
+Record=Constraint | TargetKind=Port | TargetId=B14                  | FPGA_PINNUM=P180
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Digilab IIE 40-Pin Header 'C'
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=C4                   | FPGA_PINNUM=P179
+Record=Constraint | TargetKind=Port | TargetId=C5                   | FPGA_PINNUM=P178
+Record=Constraint | TargetKind=Port | TargetId=C6                   | FPGA_PINNUM=P176
+Record=Constraint | TargetKind=Port | TargetId=C7                   | FPGA_PINNUM=P175
+Record=Constraint | TargetKind=Port | TargetId=C8                   | FPGA_PINNUM=P174
+Record=Constraint | TargetKind=Port | TargetId=C9                   | FPGA_PINNUM=P173
+Record=Constraint | TargetKind=Port | TargetId=C10                  | FPGA_PINNUM=P169
+Record=Constraint | TargetKind=Port | TargetId=C11                  | FPGA_PINNUM=P168
+Record=Constraint | TargetKind=Port | TargetId=C12                  | FPGA_PINNUM=P167
+Record=Constraint | TargetKind=Port | TargetId=C13                  | FPGA_PINNUM=P166
+Record=Constraint | TargetKind=Port | TargetId=C14                  | FPGA_PINNUM=P165
+Record=Constraint | TargetKind=Port | TargetId=C15                  | FPGA_PINNUM=P164
+Record=Constraint | TargetKind=Port | TargetId=C16                  | FPGA_PINNUM=P163
+Record=Constraint | TargetKind=Port | TargetId=C17                  | FPGA_PINNUM=P162
+Record=Constraint | TargetKind=Port | TargetId=C18                  | FPGA_PINNUM=P161
+Record=Constraint | TargetKind=Port | TargetId=C19                  | FPGA_PINNUM=P160
+Record=Constraint | TargetKind=Port | TargetId=C20                  | FPGA_PINNUM=P154
+Record=Constraint | TargetKind=Port | TargetId=C21                  | FPGA_PINNUM=P152
+Record=Constraint | TargetKind=Port | TargetId=C22                  | FPGA_PINNUM=P151
+Record=Constraint | TargetKind=Port | TargetId=C23                  | FPGA_PINNUM=P150
+Record=Constraint | TargetKind=Port | TargetId=C24                  | FPGA_PINNUM=P149
+Record=Constraint | TargetKind=Port | TargetId=C25                  | FPGA_PINNUM=P148
+Record=Constraint | TargetKind=Port | TargetId=C26                  | FPGA_PINNUM=P147
+Record=Constraint | TargetKind=Port | TargetId=C27                  | FPGA_PINNUM=P146
+Record=Constraint | TargetKind=Port | TargetId=C28                  | FPGA_PINNUM=P145
+Record=Constraint | TargetKind=Port | TargetId=C29                  | FPGA_PINNUM=P141
+Record=Constraint | TargetKind=Port | TargetId=C30                  | FPGA_PINNUM=P140
+Record=Constraint | TargetKind=Port | TargetId=C31                  | FPGA_PINNUM=P139
+Record=Constraint | TargetKind=Port | TargetId=C32                  | FPGA_PINNUM=P138
+Record=Constraint | TargetKind=Port | TargetId=C33                  | FPGA_PINNUM=P136
+Record=Constraint | TargetKind=Port | TargetId=C34                  | FPGA_PINNUM=P135
+Record=Constraint | TargetKind=Port | TargetId=C35                  | FPGA_PINNUM=P134
+Record=Constraint | TargetKind=Port | TargetId=C36                  | FPGA_PINNUM=P133
+Record=Constraint | TargetKind=Port | TargetId=C37                  | FPGA_PINNUM=P132
+Record=Constraint | TargetKind=Port | TargetId=C38                  | FPGA_PINNUM=P129
+Record=Constraint | TargetKind=Port | TargetId=C39                  | FPGA_PINNUM=P127
+Record=Constraint | TargetKind=Port | TargetId=C40                  | FPGA_PINNUM=P126
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Digilab IIE 40-Pin Header 'D'
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=D4                   | FPGA_PINNUM=P125
+Record=Constraint | TargetKind=Port | TargetId=D5                   | FPGA_PINNUM=P122
+Record=Constraint | TargetKind=Port | TargetId=D6                   | FPGA_PINNUM=P123
+Record=Constraint | TargetKind=Port | TargetId=D7                   | FPGA_PINNUM=P120
+Record=Constraint | TargetKind=Port | TargetId=D8                   | FPGA_PINNUM=P121
+Record=Constraint | TargetKind=Port | TargetId=D9                   | FPGA_PINNUM=P115
+Record=Constraint | TargetKind=Port | TargetId=D10                  | FPGA_PINNUM=P116
+Record=Constraint | TargetKind=Port | TargetId=D11                  | FPGA_PINNUM=P113
+Record=Constraint | TargetKind=Port | TargetId=D12                  | FPGA_PINNUM=P114
+Record=Constraint | TargetKind=Port | TargetId=D13                  | FPGA_PINNUM=P111
+Record=Constraint | TargetKind=Port | TargetId=D14                  | FPGA_PINNUM=P112
+Record=Constraint | TargetKind=Port | TargetId=D15                  | FPGA_PINNUM=P109
+Record=Constraint | TargetKind=Port | TargetId=D16                  | FPGA_PINNUM=P110
+Record=Constraint | TargetKind=Port | TargetId=D17                  | FPGA_PINNUM=P102
+Record=Constraint | TargetKind=Port | TargetId=D18                  | FPGA_PINNUM=P108
+Record=Constraint | TargetKind=Port | TargetId=D19                  | FPGA_PINNUM=P100
+Record=Constraint | TargetKind=Port | TargetId=D20                  | FPGA_PINNUM=P101
+Record=Constraint | TargetKind=Port | TargetId=D21                  | FPGA_PINNUM=P98
+Record=Constraint | TargetKind=Port | TargetId=D22                  | FPGA_PINNUM=P99
+Record=Constraint | TargetKind=Port | TargetId=D23                  | FPGA_PINNUM=P96
+Record=Constraint | TargetKind=Port | TargetId=D24                  | FPGA_PINNUM=P97
+Record=Constraint | TargetKind=Port | TargetId=D25                  | FPGA_PINNUM=P94
+Record=Constraint | TargetKind=Port | TargetId=D26                  | FPGA_PINNUM=P95
+Record=Constraint | TargetKind=Port | TargetId=D27                  | FPGA_PINNUM=P89
+Record=Constraint | TargetKind=Port | TargetId=D28                  | FPGA_PINNUM=P93
+Record=Constraint | TargetKind=Port | TargetId=D29                  | FPGA_PINNUM=P87
+Record=Constraint | TargetKind=Port | TargetId=D30                  | FPGA_PINNUM=P88
+Record=Constraint | TargetKind=Port | TargetId=D31                  | FPGA_PINNUM=P84
+Record=Constraint | TargetKind=Port | TargetId=D32                  | FPGA_PINNUM=P86
+Record=Constraint | TargetKind=Port | TargetId=D33                  | FPGA_PINNUM=P82
+Record=Constraint | TargetKind=Port | TargetId=D34                  | FPGA_PINNUM=P83
+Record=Constraint | TargetKind=Port | TargetId=D35                  | FPGA_PINNUM=P75
+Record=Constraint | TargetKind=Port | TargetId=D36                  | FPGA_PINNUM=P81
+Record=Constraint | TargetKind=Port | TargetId=D37                  | FPGA_PINNUM=P73
+Record=Constraint | TargetKind=Port | TargetId=D38                  | FPGA_PINNUM=P74
+Record=Constraint | TargetKind=Port | TargetId=D39                  | FPGA_PINNUM=P70
+Record=Constraint | TargetKind=Port | TargetId=D40                  | FPGA_PINNUM=P71
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Digilab IIE Parallel Port Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PD[7..0]             | FPGA_PINNUM=P5,P6,P7,P8,P9,P10,P11,P15
+Record=Constraint | TargetKind=Port | TargetId=PINT                 | FPGA_PINNUM=P4
+Record=Constraint | TargetKind=Port | TargetId=PWT                  | FPGA_PINNUM=P3
+;-------------------------------------------------------------------------------

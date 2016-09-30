@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=Logic Zoom SDK - Simple UART - LH79524\Simple_UART_LH79524.PrjEmb
+[Project2]
+ProjectPath=Logic Zoom SDK - Simple UART - LH79520\Simple_UART_LH79520.PrjEmb
+[Project3]
+ProjectPath=Logic Zoom SDK - Hello Led - LH75401\Hello_Led_LH75401.PrjEmb

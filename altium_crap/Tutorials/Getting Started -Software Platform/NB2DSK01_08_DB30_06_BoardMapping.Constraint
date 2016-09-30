@@ -1,0 +1,12 @@
+Record=FileHeader | Id=DXP Constraints v1.0
+Record=Constraint | TargetKind=PCBInstance | TargetId=NB2DSK01_08 | PCB=NB2DSK01.08
+Record=Constraint | TargetKind=PCBInstance | TargetId=DB30_06 | PCB=DB30.06
+Record=Constraint | TargetKind=ConnectorMap | TargetId=DB30_06.HDR_B | ConnectTo=NB2DSK01_08.HDR_B
+Record=Constraint | TargetKind=ConnectorMap | TargetId=DB30_06.HDR_L | ConnectTo=NB2DSK01_08.HDR_L
+Record=Constraint | TargetKind=ConnectorMap | TargetId=DB30_06.HDR_T | ConnectTo=NB2DSK01_08.HDR_T
+Record=Constraint | TargetKind=PCBInstance | TargetId=PB02_06 | PCB=PB02.06
+Record=Constraint | TargetKind=ConnectorMap | TargetId=PB02_06.HDR1 | ConnectTo=NB2DSK01_08.EXT_A
+Record=Constraint | TargetKind=PCBInstance | TargetId=PB03_05 | PCB=PB03.05
+Record=Constraint | TargetKind=ConnectorMap | TargetId=PB03_05.HDR1 | ConnectTo=NB2DSK01_08.EXT_B
+Record=Constraint | TargetKind=PCBInstance | TargetId=PB01_07 | PCB=PB01.07
+Record=Constraint | TargetKind=ConnectorMap | TargetId=PB01_07.HDR1 | ConnectTo=NB2DSK01_08.EXT_C

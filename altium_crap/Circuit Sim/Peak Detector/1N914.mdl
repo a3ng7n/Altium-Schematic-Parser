@@ -1,0 +1,7 @@
+
+*1N914 MCE
+*100V 80mA Si Switching Diode pkg:DIODE0.4 1,2
+.MODEL 1N914 D(IS=7.075E-9 RS=0.78 N=1.95 TT=7.2E-9 CJO=4E-12 VJ=0.657 
++ M=0.4 BV=100 IBV=0.0001 )
+
+* Origin: Mcediode.lib

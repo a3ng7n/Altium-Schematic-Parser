@@ -1,0 +1,11 @@
+*==============================================
+*N-EMOS 3T, P-EMOS 3T pinout: D,G,S
+*Copyright (c) 1997 MicroCode Engineering, Inc.
+*All Rights Reserved
+*==============================================
+
+*NMOS
+*Default N-Channel MOSFET
+.MODEL NMOS NMOS()
+
+* Origin: Mcemos.lib

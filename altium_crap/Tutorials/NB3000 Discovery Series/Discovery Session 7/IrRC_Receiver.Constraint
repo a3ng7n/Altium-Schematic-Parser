@@ -1,0 +1,22 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Any
+;   Board   : Nanoboard 2
+;   Project : IrRC_Transceiver.PrjFpg
+;
+;   Created 13-Nov-2008
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK_FREQUENCY=20 Mhz
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=50 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;-------------------------------------------------------------------------------

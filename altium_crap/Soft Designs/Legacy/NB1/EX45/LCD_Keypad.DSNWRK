@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=KeypadScanner\KeyPadScanner.PRJCOR
+[Project2]
+ProjectPath=LCD_Keypad.PRJFPG
+[Project3]
+ProjectPath=LCD\LCD.PrjEmb

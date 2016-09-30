@@ -1,0 +1,37 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:54:31 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\inv.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module INV (
+  I,
+  O
+);
+input I ;
+output O ;
+wire I ;
+wire O ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+  cyclone_lcell I_i (
+	.combout(O),
+	.dataa(I)
+);
+defparam I_i.operation_mode="normal";
+defparam I_i.output_mode="comb_only";
+defparam I_i.lut_mask="5555";
+defparam I_i.synch_mode="off";
+defparam I_i.sum_lutc_input="datac";
+endmodule /* INV */
+

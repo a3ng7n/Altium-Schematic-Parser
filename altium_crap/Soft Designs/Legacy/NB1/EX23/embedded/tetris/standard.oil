@@ -1,0 +1,44 @@
+/*****************************************************************************
+ * VERSION:      @(#)standard.oil	1.2 04/08/16
+ * DESCRIPTION:  
+ *	OIL part of stdio integration component
+ ****************************************************************************/
+
+#usedef STDIOOUT_TASK	MESSAGE    = msstdiotx;EVENT      = estdiotx;
+    
+    EVENT estdiotx;
+  
+    TASK tstdiotx
+    {
+        PRIORITY   = 1;
+        SCHEDULE   = FULL;
+        ACTIVATION = 5;
+        AUTOSTART  = FALSE;
+        MESSAGE    = mrstdiotx;
+	EVENT      = estdiotx;
+
+    };
+
+    MESSAGE msstdiotx
+    {
+        MESSAGEPROPERTY = SEND_STATIC_INTERNAL
+        {
+             CDATATYPE="pvoid";
+        };
+    };
+
+    MESSAGE mrstdiotx
+    {
+        MESSAGEPROPERTY = RECEIVE_QUEUED_INTERNAL
+        {
+             SENDINGMESSAGE 	= msstdiotx;
+             QUEUESIZE          = 5;
+        };
+        NOTIFICATION       = ACTIVATETASK
+        {
+             TASK = tstdiotx;
+        };
+    };
+
+
+

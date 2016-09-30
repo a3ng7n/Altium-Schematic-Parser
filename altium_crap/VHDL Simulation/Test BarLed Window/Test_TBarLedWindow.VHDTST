@@ -1,0 +1,147 @@
+------------------------------------------------------------
+-- VHDL Testbench for TBarLedWindow
+-- 2004 1 30 12 16 46
+-- Created by "EditVHDL"
+-- "Copyright (c) 2002 Altium Limited"
+------------------------------------------------------------
+
+Library IEEE;
+Use     IEEE.std_logic_1164.all;
+Use     IEEE.std_logic_textio.all;
+Use     STD.textio.all;
+use     ieee.std_logic_unsigned.all;
+------------------------------------------------------------
+
+------------------------------------------------------------
+entity TestTBarLedWindow is
+end TestTBarLedWindow;
+------------------------------------------------------------
+
+------------------------------------------------------------
+architecture stimulus of TestTBarLedWindow is
+    file RESULTS: TEXT open WRITE_MODE is "results.txt";
+    procedure WRITE_RESULTS(
+        BACKCOLOUR: std_logic_vector(7 downto 0);
+        CLK: std_logic;
+        HASFOCUS: std_logic;
+        HEIGHT: std_logic_vector(15 downto 0);
+        ISDISPLAYED: std_logic;
+        LEDS: std_logic_vector(15 downto 0);
+        LEFT: std_logic_vector(15 downto 0);
+        MOUSEEVENT: std_logic_vector(7 downto 0);
+        SETFOCUS: std_logic;
+        TOP: std_logic_vector(15 downto 0);
+        VIDEOOUT: std_logic_vector(7 downto 0);
+        WIDTH: std_logic_vector(15 downto 0);
+        XIN: std_logic_vector(15 downto 0);
+        YIN: std_logic_vector(15 downto 0)
+    ) is
+        variable l_out : line;
+    begin
+        write(l_out, now, right, 15);
+        write(l_out, BACKCOLOUR, right, 9);
+        write(l_out, CLK, right, 2);
+        write(l_out, HASFOCUS, right, 2);
+        write(l_out, HEIGHT, right, 17);
+        write(l_out, ISDISPLAYED, right, 2);
+        write(l_out, LEDS, right, 17);
+        write(l_out, LEFT, right, 17);
+        write(l_out, MOUSEEVENT, right, 9);
+        write(l_out, SETFOCUS, right, 2);
+        write(l_out, TOP, right, 17);
+        write(l_out, VIDEOOUT, right, 9);
+        write(l_out, WIDTH, right, 17);
+        write(l_out, XIN, right, 17);
+        write(l_out, YIN, right, 17);
+        writeline(RESULTS, l_out);
+    end procedure;
+
+    component TBarLedWindow
+        port (
+            BACKCOLOUR: in std_logic_vector(7 downto 0);
+            CLK: in std_logic;
+            HASFOCUS: in std_logic;
+            HEIGHT: in std_logic_vector(15 downto 0);
+            ISDISPLAYED: out std_logic;
+            LEDS: in std_logic_vector(15 downto 0);
+            LEFT: in std_logic_vector(15 downto 0);
+            MOUSEEVENT: in std_logic_vector(7 downto 0);
+            SETFOCUS: out std_logic;
+            TOP: in std_logic_vector(15 downto 0);
+            VIDEOOUT: out std_logic_vector(7 downto 0);
+            WIDTH: in std_logic_vector(15 downto 0);
+            XIN: in std_logic_vector(15 downto 0);
+            YIN: in std_logic_vector(15 downto 0)
+        );
+    end component;
+
+    signal BACKCOLOUR: std_logic_vector(7 downto 0):= (others =>'0');
+    signal CLK: std_logic :='0';
+    signal HASFOCUS: std_logic:='0';
+    signal HEIGHT: std_logic_vector(15 downto 0):= (others =>'0');
+    signal ISDISPLAYED: std_logic:='0';
+    signal LEDS: std_logic_vector(15 downto 0):= (others =>'0');
+    signal LEFT: std_logic_vector(15 downto 0):= (others =>'0');
+    signal MOUSEEVENT: std_logic_vector(7 downto 0):= (others =>'0');
+    signal SETFOCUS: std_logic:='0';
+    signal TOP: std_logic_vector(15 downto 0):= (others =>'0');
+    signal VIDEOOUT: std_logic_vector(7 downto 0):= (others =>'0');
+    signal WIDTH: std_logic_vector(15 downto 0):= (others =>'0');
+    signal XIN: std_logic_vector(15 downto 0):= (others =>'0');
+    signal YIN: std_logic_vector(15 downto 0):= (others =>'0');
+
+    constant PERIOD: time := 10 ns;
+begin
+    DUT:TBarLedWindow port map (
+        BACKCOLOUR => BACKCOLOUR,
+        CLK => CLK,
+        HASFOCUS => HASFOCUS,
+        HEIGHT => HEIGHT,
+        ISDISPLAYED => ISDISPLAYED,
+        LEDS => LEDS,
+        LEFT => LEFT,
+        MOUSEEVENT => MOUSEEVENT,
+        SETFOCUS => SETFOCUS,
+        TOP => TOP,
+        VIDEOOUT => VIDEOOUT,
+        WIDTH => WIDTH,
+        XIN => XIN,
+        YIN => YIN
+    );
+
+    CLK <= not CLK after period;
+    
+    Xin <= Xin + 42 after period *4;
+    Yin <= Yin + 51 after period *4;
+    left <= left + 23 after period * 4;
+    top <= top + 98 after period *4;
+    width <= width + 17 after period *4;
+    height <= height + 56 after period *4;
+    backColour <= backColour + 8 after period *4;
+    mouseEvent <= mouseEvent +13 after period *4;
+    LEDS <= LEDS + 31 after period *4;
+
+
+
+
+    WRITE_RESULTS(
+        BACKCOLOUR,
+        CLK,
+        HASFOCUS,
+        HEIGHT,
+        ISDISPLAYED,
+        LEDS,
+        LEFT,
+        MOUSEEVENT,
+        SETFOCUS,
+        TOP,
+        VIDEOOUT,
+        WIDTH,
+        XIN,
+        YIN
+    );
+
+end architecture;
+------------------------------------------------------------
+
+------------------------------------------------------------

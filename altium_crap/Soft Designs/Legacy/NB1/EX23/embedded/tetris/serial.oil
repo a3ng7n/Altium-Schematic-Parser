@@ -1,0 +1,73 @@
+/*****************************************************************************
+ * VERSION:      @(#)serial.oil	1.2 04/09/16
+ * DESCRIPTION:  
+ *	OIL part of uart component
+ ****************************************************************************/
+#usedef SERIALOUT_TASK	MESSAGE    = msuarttx;EVENT      = euarttx;
+#usedef SERIALIN_TASK	MESSAGE    = msuartrx;EVENT      = euartrx;
+
+    EVENT euarttx;
+    EVENT euartrx;
+  
+    TASK tuarttx
+    {
+        PRIORITY   = 1;
+        SCHEDULE   = FULL;
+        ACTIVATION = 6;
+        AUTOSTART  = FALSE;
+        MESSAGE    = mruarttx;
+	EVENT      = euarttx;
+    };
+
+    TASK tuartrx
+    {
+        PRIORITY   = 1;
+        SCHEDULE   = FULL;
+        ACTIVATION = 3;
+        AUTOSTART  = FALSE;
+        MESSAGE    = mruartrx;
+	EVENT      = euartrx;
+    };
+
+    MESSAGE msuarttx
+    {
+        MESSAGEPROPERTY = SEND_STATIC_INTERNAL
+        {
+             CDATATYPE="pvoid";
+        };
+    };
+
+    MESSAGE mruarttx
+    {
+        MESSAGEPROPERTY = RECEIVE_QUEUED_INTERNAL
+        {
+             SENDINGMESSAGE 	= msuarttx;
+             QUEUESIZE          = 6;
+        };
+        NOTIFICATION       = ACTIVATETASK
+        {
+             TASK = tuarttx;
+        };
+    };
+
+    MESSAGE msuartrx
+    {
+        MESSAGEPROPERTY = SEND_STATIC_INTERNAL
+        {
+             CDATATYPE="pvoid";
+        };
+    };
+
+    MESSAGE mruartrx
+    {
+        MESSAGEPROPERTY = RECEIVE_QUEUED_INTERNAL
+        {
+             SENDINGMESSAGE 	= msuartrx;
+             QUEUESIZE          = 3;
+        };
+        NOTIFICATION       = ACTIVATETASK
+        {
+             TASK = tuartrx;
+        };
+    };
+

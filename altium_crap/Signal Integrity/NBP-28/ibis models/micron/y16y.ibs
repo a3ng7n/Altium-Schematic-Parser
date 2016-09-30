@@ -1,0 +1,2106 @@
+|***************************************************************************
+| y16y.ibs * IBIS 3.2 Model
+| 256Mb SDRAM - Die Revision "D"
+|
+|  Part Number        VDD/VDDQ          Architecture        Package
+| MT48LC64M4A2TG     3.3V/3.3V          64 Meg x 4          54-pin TSOP
+| MT48LC32M8A2TG     3.3V/3.3V          32 Meg x 8          54-pin TSOP
+| MT48LC16M16A2TG    3.3V/3.3V          16 Meg x 16         54-pin TSOP
+| MT48LC64M4A2FB     3.3V/3.3V          64 Meg x 4          60-ball FGBA
+| MT48LC32M8A2FB     3.3V/3.3V          32 Meg x 8          60-ball FGBA
+| MT48LC16M16A2FG    3.3V/3.3V          16 Meg x 16         54-ball VFBGA
+|***************************************************************************
+|
+[IBIS Ver]    3.2
+[File name]   y16y.ibs
+[File rev]    2.3
+[Date]        06/07/2006
+[Source]      From silicon level SPICE model at Micron Technology, Inc.
+                  Micron Technology, Inc.
+                  8000 S. Federal Way
+                  P.O. Box 6, M/S: 01-711
+                  Boise, ID 83707-0006
+|
+[Notes]       Revision History:
+              Rev 2.0: 03/03/2003          
+                  - initial file creation
+                  - I-V curves matched to silicon measurements
+              Rev 2.1: 07/31/2003
+                  - all models updated to match latest process changes
+              Rev 2.2: 04/11/2005
+                  - package parasitics updated for all packages
+                  - C_comp values updated for all models
+                  - added clkbuff model for the CLK signal
+              Rev 2.3: 06/07/2006
+                  - updated all models to better match I-V curve measurements
+                  - typical die temp changed to 40C
+|              
+[Disclaimer]  This software code and all associated documentation, comments
+              or other information (collectively "Software") is provided
+              "AS IS" without warranty of any kind. MICRON TECHNOLOGY, INC.
+              ("MTI") EXPRESSLY DISCLAIMS ALL WARRANTIES EXPRESS OR IMPLIED,
+              INCLUDING BUT NOT LIMITED TO, NONINFRINGEMENT OF THIRD PARTY
+              RIGHTS, AND ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR
+              FITNESS FOR ANY PARTICULAR PURPOSE. MTI DOES NOT WARRANT THAT 
+              THE SOFTWARE WILL MEET YOUR REQUIREMENTS, OR THAT THE 
+              OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE. 
+              FURTHERMORE, MTI DOES NOT MAKE ANY REPRESENTATIONS REGARDING
+              THE USE OR THE RESULTS OF THE USE OF THE SOFTWARE IN TERMS OF
+              ITS CORRECTNESS, ACCURACY, RELIABILITY, OR OTHERWISE. THE
+              ENTIRE RISK ARISING OUT OF USE OR PERFORMANCE OF THE SOFTWARE
+              REMAINS WITH YOU. IN NO EVENT SHALL MTI, ITS AFFILIATED
+              COMPANIES OR THEIR SUPPLIERS BE LIABLE FOR ANY DIRECT,
+              INDIRECT, CONSEQUENTIAL, INCIDENTAL, OR SPECIAL DAMAGES
+              (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS,
+              BUSINESS INTERRUPTION, OR LOSS OF INFORMATION) ARISING OUT OF
+              YOUR USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF MTI HAS
+              BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. Because some
+              jurisdictions prohibit the exclusion or limitation of 
+              liability for consequential or incidental damages, the above
+              limitation may not apply to you.
+| 
+[Copyright]   Copyright 2003 Micron Technology, Inc. All rights reserved.
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC64M4A2TG SDRAM
+|***************************************************************************
+|
+[Component]      MT48LC64M4A2TG
+[Manufacturer]   Micron Technology Inc.
+[Package]        | TSOP Package
+|variable              typ          min         max
+R_pkg                  89.3m        82.2m       94.9m
+L_pkg                  5.17nH       4.08nH      6.72nH
+C_pkg                  1.22pF       0.94pF      1.49pF   
+|
+|***************************************************************************
+|
+[Pin] signal_name   model_name   R_pin    L_pin     C_pin 
+|     
+1     VDD           POWER        88.1m    7.42nH    1.22pF
+2     NC            NC                                  
+3     VDDQ          POWER        90.2m    6.42nH    1.48pF
+4     NC            NC                                  
+5     DQ0           dqbuff       94.5m    5.67nH    1.40pF
+6     VSSQ          GND          95.9m    5.48nH    1.31pF
+7     NC            NC                                  
+8     NC            NC                                  
+9     VDDQ          POWER        90.0m    4.77nH    1.16pF
+10    NC            NC                                  
+11    DQ1           dqbuff       85.2m    4.36nH    1.05pF
+12    VSSQ          GND          82.8m    4.17nH    0.98pF
+13    NC            NC                                  
+14    VDD           POWER        80.5m    4.01nH    0.89pF
+15    NC            NC                                  
+16    WE            inbuff3      82.2m    4.08nH    0.94pF
+17    CAS           inbuff1      84.3m    4.25nH    1.00pF
+18    RAS           inbuff1      86.6m    4.45nH    1.08pF
+19    CS            inbuff2      88.7m    4.65nH    1.12pF
+20    BA0           inbuff1      90.2m    4.86nH    1.18pF
+21    BA1           inbuff1      92.8m    5.10nH    1.22pF
+22    A10           inbuff1      94.8m    5.35nH    1.27pF
+23    A0            inbuff1      93.3m    5.57nH    1.35pF
+24    A1            inbuff1      89.8m    5.78nH    1.33pF
+25    A2            inbuff1      88.1m    6.26nH    1.42pF
+26    A3            inbuff1      90.0m    6.72nH    1.48pF
+27    VDD           POWER        81.4m    6.52nH    0.96pF
+28    VSS           GND          81.8m    6.56nH    0.96pF
+29    A4            inbuff1      90.0m    6.70nH    1.49pF
+30    A5            inbuff1      88.3m    6.27nH    1.43pF
+31    A6            inbuff1      90.0m    5.80nH    1.35pF
+32    A7            inbuff1      93.2m    5.56nH    1.36pF
+33    A8            inbuff1      94.9m    5.35nH    1.29pF
+34    A9            inbuff1      92.7m    5.11nH    1.23pF
+35    A11           inbuff1      90.3m    4.88nH    1.18pF
+36    A12           inbuff3      88.8m    4.67nH    1.12pF
+37    CKE           inbuff2      86.8m    4.47nH    1.08pF
+38    CLK           clkbuff      84.4m    4.27nH    1.01pF
+39    DQM           inbuff2      82.4m    4.12nH    0.95pF
+40    NC            NC                                  
+41    VSS           GND          80.8m    4.02nH    0.90pF
+42    NC            NC                                  
+43    VDDQ          POWER        82.9m    4.19nH    0.97pF
+44    DQ2           dqbuff       85.3m    4.35nH    1.04pF
+45    NC            NC                                  
+46    VSSQ          GND          90.1m    4.78nH    1.16pF
+47    NC            NC                                  
+48    NC            NC                                  
+49    VDDQ          POWER        96.1m    5.48nH    1.31pF
+50    DQ3           dqbuff       94.7m    5.70nH    1.40pF
+51    NC            NC                                  
+52    VSSQ          GND          90.5m    6.44nH    1.49pF
+53    NC            NC                                  
+54    VSS           GND          88.3m    7.46nH    1.23pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC32M8A2TG SDRAM
+|***************************************************************************
+|
+[Component]      MT48LC32M8A2TG
+[Manufacturer]   Micron Technology Inc.
+[Package]        | TSOP Package
+|variable              typ          min         max
+R_pkg                  89.8m        82.2m       94.9m
+L_pkg                  5.27nH       4.08nH      6.92nH
+C_pkg                  1.24pF       0.94pF      1.57pF   
+|
+|***************************************************************************
+|
+[Pin] signal_name   model_name   R_pin    L_pin     C_pin 
+|                   
+1     VDD           POWER        88.1m    7.42nH    1.22pF
+2     DQ0           dqbuff       93.9m    6.92nH    1.57pF
+3     VDDQ          POWER        90.2m    6.42nH    1.48pF
+4     NC            NC                                  
+5     DQ1           dqbuff       94.5m    5.67nH    1.40pF
+6     VSSQ          GND          95.9m    5.48nH    1.31pF
+7     NC            NC                                  
+8     DQ2           dqbuff       91.7m    4.99nH    1.21pF
+9     VDDQ          POWER        90.0m    4.77nH    1.16pF
+10    NC            NC                                  
+11    DQ3           dqbuff       85.2m    4.36nH    1.05pF
+12    VSSQ          GND          82.8m    4.17nH    0.98pF
+13    NC            NC                                  
+14    VDD           POWER        80.5m    4.01nH    0.89pF
+15    NC            NC                                  
+16    WE            inbuff3      82.2m    4.08nH    0.94pF
+17    CAS           inbuff1      84.3m    4.25nH    1.00pF
+18    RAS           inbuff1      86.6m    4.45nH    1.08pF
+19    CS            inbuff2      88.7m    4.65nH    1.12pF
+20    BA0           inbuff1      90.2m    4.86nH    1.18pF
+21    BA1           inbuff1      92.8m    5.10nH    1.22pF
+22    A10           inbuff1      94.8m    5.35nH    1.27pF
+23    A0            inbuff1      93.3m    5.57nH    1.35pF
+24    A1            inbuff1      89.8m    5.78nH    1.33pF
+25    A2            inbuff1      88.1m    6.26nH    1.42pF
+26    A3            inbuff1      90.0m    6.72nH    1.48pF
+27    VDD           POWER        81.4m    6.52nH    0.96pF
+28    VSS           GND          81.8m    6.56nH    0.96pF
+29    A4            inbuff1      90.0m    6.70nH    1.49pF
+30    A5            inbuff1      88.3m    6.27nH    1.43pF
+31    A6            inbuff1      90.0m    5.80nH    1.35pF
+32    A7            inbuff1      93.2m    5.56nH    1.36pF
+33    A8            inbuff1      94.9m    5.35nH    1.29pF
+34    A9            inbuff1      92.7m    5.11nH    1.23pF
+35    A11           inbuff1      90.3m    4.88nH    1.18pF
+36    A12           inbuff3      88.8m    4.67nH    1.12pF
+37    CKE           inbuff2      86.8m    4.47nH    1.08pF
+38    CLK           clkbuff      84.4m    4.27nH    1.01pF
+39    DQM           inbuff2      82.4m    4.12nH    0.95pF
+40    NC            NC                                  
+41    VSS           GND          80.8m    4.02nH    0.90pF
+42    NC            NC                                  
+43    VDDQ          POWER        82.9m    4.19nH    0.97pF
+44    DQ4           dqbuff       85.3m    4.35nH    1.04pF
+45    NC            NC                                  
+46    VSSQ          GND          90.1m    4.78nH    1.16pF
+47    DQ5           dqbuff       91.7m    5.00nH    1.21pF
+48    NC            NC                                  
+49    VDDQ          POWER        96.1m    5.48nH    1.31pF
+50    DQ6           dqbuff       94.7m    5.70nH    1.40pF
+51    NC            NC                                  
+52    VSSQ          GND          90.5m    6.44nH    1.49pF
+53    DQ7           dqbuff       94.0m    6.92nH    1.57pF
+54    VSS           GND          88.3m    7.46nH    1.23pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC16M16A2TG SDRAM
+|***************************************************************************
+|
+[Component]      MT48LC16M16A2TG
+[Manufacturer]   Micron Technology Inc.
+[Package]        | TSOP Package
+|variable              typ          min         max
+R_pkg                  89.3m        81.2m       94.9m
+L_pkg                  5.17nH       4.01nH      6.92nH
+C_pkg                  1.22pF       0.90pF      1.57pF   
+|
+|***************************************************************************
+|
+[Pin] signal_name   model_name   R_pin    L_pin     C_pin 
+|                       
+1     VDD           POWER        88.1m    7.42nH    1.22pF
+2     DQ0           dqbuff       93.9m    6.92nH    1.57pF
+3     VDDQ          POWER        90.2m    6.42nH    1.48pF
+4     DQ1           dqbuff       91.1m    5.91nH    1.38pF
+5     DQ2           dqbuff       94.5m    5.67nH    1.40pF
+6     VSSQ          GND          95.9m    5.48nH    1.31pF
+7     DQ3           dqbuff       93.4m    5.23nH    1.28pF
+8     DQ4           dqbuff       91.7m    4.99nH    1.21pF
+9     VDDQ          POWER        90.0m    4.77nH    1.16pF
+10    DQ5           dqbuff       87.8m    4.54nH    1.10pF
+11    DQ6           dqbuff       85.2m    4.36nH    1.05pF
+12    VSSQ          GND          82.8m    4.17nH    0.98pF
+13    DQ7           dqbuff       81.5m    4.09nH    0.91pF
+14    VDD           POWER        80.5m    4.01nH    0.89pF
+15    DQML          inbuff2      81.2m    4.01nH    0.90pF
+16    WE            inbuff3      82.2m    4.08nH    0.94pF
+17    CAS           inbuff1      84.3m    4.25nH    1.00pF
+18    RAS           inbuff1      86.6m    4.45nH    1.08pF
+19    CS            inbuff2      88.7m    4.65nH    1.12pF
+20    BA0           inbuff1      90.2m    4.86nH    1.18pF
+21    BA1           inbuff1      92.8m    5.10nH    1.22pF
+22    A10           inbuff1      94.8m    5.35nH    1.27pF
+23    A0            inbuff1      93.3m    5.57nH    1.35pF
+24    A1            inbuff1      89.8m    5.78nH    1.33pF
+25    A2            inbuff1      88.1m    6.26nH    1.42pF
+26    A3            inbuff1      90.0m    6.72nH    1.48pF
+27    VDD           POWER        81.4m    6.52nH    0.96pF
+28    VSS           GND          81.8m    6.56nH    0.96pF
+29    A4            inbuff1      90.0m    6.70nH    1.49pF
+30    A5            inbuff1      88.3m    6.27nH    1.43pF
+31    A6            inbuff1      90.0m    5.80nH    1.35pF
+32    A7            inbuff1      93.2m    5.56nH    1.36pF
+33    A8            inbuff1      94.9m    5.35nH    1.29pF
+34    A9            inbuff1      92.7m    5.11nH    1.23pF
+35    A11           inbuff1      90.3m    4.88nH    1.18pF
+36    A12           inbuff3      88.8m    4.67nH    1.12pF
+37    CKE           inbuff2      86.8m    4.47nH    1.08pF
+38    CLK           clkbuff      84.4m    4.27nH    1.01pF
+39    DQMH          inbuff2      82.4m    4.12nH    0.95pF
+40    NC            NC                                  
+41    VSS           GND          80.8m    4.02nH    0.90pF
+42    DQ8           dqbuff       81.5m    4.08nH    0.91pF
+43    VDDQ          POWER        82.9m    4.19nH    0.97pF
+44    DQ9           dqbuff       85.3m    4.35nH    1.04pF
+45    DQ10          dqbuff       87.9m    4.56nH    1.10pF
+46    VSSQ          GND          90.1m    4.78nH    1.16pF
+47    DQ11          dqbuff       91.7m    5.00nH    1.21pF
+48    DQ12          dqbuff       93.6m    5.23nH    1.28pF
+49    VDDQ          POWER        96.1m    5.48nH    1.31pF
+50    DQ13          dqbuff       94.7m    5.70nH    1.40pF
+51    DQ14          dqbuff       91.3m    5.94nH    1.39pF
+52    VSSQ          GND          90.5m    6.44nH    1.49pF
+53    DQ15          dqbuff       94.0m    6.92nH    1.57pF
+54    VSS           GND          88.3m    7.46nH    1.23pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC64M4A2FB SDRAM
+|***************************************************************************
+|
+[Component]      MT48LC64M4A2FB
+[Manufacturer]   Micron Technology Inc.
+[Package]        | 8mm x 16mm FBGA
+|variable              typ          min         max
+R_pkg                  62m          34m         81m
+L_pkg                  2.24nH       1.45nH      3.25nH
+C_pkg                  0.46pF       0.37pF      0.54pF   
+|
+|***************************************************************************
+|
+[Pin]  signal_name   model_name   R_pin   L_pin     C_pin
+|
+A1     NC            NC
+A2     VSS           GND          265m    2.48nH    2.85pF
+A7     VDD           POWER        284m    3.08nH    0.42pF
+A8     NC            NC                                 
+B1     NC            NC                                 
+B2     VSSQ          GND          273m    1.65nH    0.46pF
+B7     VDDQ          POWER        277m    1.87nH    0.49pF
+B8     NC            NC                                 
+C1     VDDQ          POWER        281m    3.15nH    0.49pF
+C2     DQ3           dqbuff       300m    3.62nH    0.47pF
+C7     DQ0           dqbuff       278m    3.87nH    0.51pF
+C8     VSSQ          GND          278m    1.98nH    0.46pF
+D1     NC            NC                                 
+D2     NC            NC                                 
+D7     NC            NC                                 
+D8     NC            NC                                 
+E1     NC            NC                                 
+E2     VSSQ          GND          293m    3.63nH    0.46pF
+E7     VDDQ          POWER        282m    1.98nH    0.49pF
+E8     NC            NC                                 
+F1     VDDQ          POWER        247m    2.11nH    0.49pF
+F2     DQ2           dqbuff       290m    3.43nH    0.40pF
+F7     DQ1           dqbuff       288m    3.22nH    0.38pF
+F8     VSSQ          GND          277m    2.25nH    0.46pF
+G1     NC            NC                                 
+G2     NC            NC                                 
+G7     NC            NC                                 
+G8     NC            NC                                 
+H1     NC            NC                                 
+H2     VSS           GND          235m    2.78nH    2.85pF
+H7     VDD           POWER        239m    1.59nH    0.42pF
+H8     NC            NC                                 
+J1     NC            NC                                 
+J2     DQM           inbuff2      290m    3.19nH    0.40pF
+J7     WE#           inbuff3      293m    3.23nH    0.39pF
+J8     CAS#          inbuff1      298m    3.47nH    0.40pF
+K1     NC            NC                                 
+K2     CLK           clkbuff      286m    3.00nH    0.37pF
+K7     RAS#          inbuff1      294m    3.37nH    0.39pF
+K8     NC            NC                                 
+L1     A12           inbuff3      311m    4.39nH    0.51pF
+L2     CKE           inbuff2      287m    3.20nH    0.39pF
+L7     NC            NC                                 
+L8     CS#           inbuff2      294m    3.61nH    0.38pF
+M1     A11           inbuff1      292m    3.60nH    0.44pF
+M2     A9            inbuff1      297m    3.69nH    0.45pF
+M7     BA1           inbuff1      300m    3.65nH    0.40pF
+M8     BA0           inbuff1      300m    3.68nH    0.41pF
+N1     A8            inbuff1      302m    4.01nH    0.48pF
+N2     A7            inbuff1      287m    3.39nH    0.40pF
+N7     A0            inbuff1      271m    3.69nH    0.44pF
+N8     A10           inbuff1      301m    3.65nH    0.43pF
+P1     A6            inbuff1      316m    4.37nH    0.52pF
+P2     A5            inbuff1      260m    3.44nH    0.42pF
+P7     A2            inbuff1      282m    4.41nH    0.52pF
+P8     A1            inbuff1      291m    4.51nH    0.52pF
+R1     A4            inbuff1      272m    4.42nH    0.54pF
+R2     VSS           GND          238m    3.08nH    2.85pF
+R7     VDD           POWER        256m    2.00nH    0.42pF
+R8     A3            inbuff1      257m    3.58nH    0.41pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC32M8A2FB SDRAM
+|***************************************************************************
+|
+[Component]      MT48LC32M8A2FB
+[Manufacturer]   Micron Technology Inc.
+[Package]        | 8mm x 16mm FBGA
+|variable              typ          min         max
+R_pkg                  63m          34m         81m
+L_pkg                  2.28nH       1.45nH      3.25nH
+C_pkg                  0.46pF       0.37pF      0.54pF   
+|
+|***************************************************************************
+|
+[Pin]  signal_name   model_name   R_pin   L_pin     C_pin
+|
+A1     DQ7           dqbuff       296m    4.58nH    0.62pF
+A2     VSS           GND          265m    2.48nH    2.85pF
+A7     VDD           POWER        284m    3.08nH    0.42pF
+A8     DQ0           dqbuff       287m    4.87nH    0.56pF
+B1     NC            NC                                 
+B2     VSSQ          GND          273m    1.65nH    0.46pF
+B7     VDDQ          POWER        277m    1.87nH    0.49pF
+B8     NC            NC                                 
+C1     VDDQ          POWER        281m    3.15nH    0.49pF
+C2     DQ6           dqbuff       300m    3.62nH    0.47pF
+C7     DQ1           dqbuff       278m    3.87nH    0.51pF
+C8     VSSQ          GND          278m    1.98nH    0.46pF
+D1     DQ5           dqbuff       306m    4.05nH    0.50pF
+D2     NC            NC                                 
+D7     NC            NC                                 
+D8     DQ2           dqbuff       293m    3.58nH    0.44pF
+E1     NC            NC                                 
+E2     VSSQ          GND          293m    3.63nH    0.46pF
+E7     VDDQ          POWER        282m    1.98nH    0.49pF
+E8     NC            NC                                 
+F1     VDDQ          POWER        247m    2.11nH    0.49pF
+F2     DQ4           dqbuff       290m    3.43nH    0.40pF
+F7     DQ3           dqbuff       288m    3.22nH    0.38pF
+F8     VSSQ          GND          277m    2.25nH    0.46pF
+G1     NC            NC                                 
+G2     NC            NC                                 
+G7     NC            NC                                 
+G8     NC            NC                                 
+H1     NC            NC                                 
+H2     VSS           GND          235m    2.78nH    2.85pF
+H7     VDD           POWER        239m    1.59nH    0.42pF
+H8     NC            NC                                 
+J1     NC            NC                                 
+J2     DQM           inbuff2      290m    3.19nH    0.40pF
+J7     WE#           inbuff3      293m    3.23nH    0.39pF
+J8     CAS#          inbuff1      298m    3.47nH    0.40pF
+K1     NC            NC                                 
+K2     CLK           clkbuff      286m    3.00nH    0.37pF
+K7     RAS#          inbuff1      294m    3.37nH    0.39pF
+K8     NC            NC                                 
+L1     A12           inbuff3      311m    4.39nH    0.51pF
+L2     CKE           inbuff2      287m    3.20nH    0.39pF
+L7     NC            NC                                 
+L8     CS#           inbuff2      294m    3.61nH    0.38pF
+M1     A11           inbuff1      292m    3.60nH    0.44pF
+M2     A9            inbuff1      297m    3.69nH    0.45pF
+M7     BA1           inbuff1      300m    3.65nH    0.40pF
+M8     BA0           inbuff1      300m    3.68nH    0.41pF
+N1     A8            inbuff1      302m    4.01nH    0.48pF
+N2     A7            inbuff1      287m    3.39nH    0.40pF
+N7     A0            inbuff1      271m    3.69nH    0.44pF
+N8     A10           inbuff1      301m    3.65nH    0.43pF
+P1     A6            inbuff1      316m    4.37nH    0.52pF
+P2     A5            inbuff1      260m    3.44nH    0.42pF
+P7     A2            inbuff1      282m    4.41nH    0.52pF
+P8     A1            inbuff1      291m    4.51nH    0.52pF
+R1     A4            inbuff1      272m    4.42nH    0.54pF
+R2     VSS           GND          238m    3.08nH    2.85pF
+R7     VDD           POWER        256m    2.00nH    0.42pF
+R8     A3            inbuff1      257m    3.58nH    0.41pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC16M16A2FG SDRAM
+|***************************************************************************
+|
+[Component]      MT48LC16M16A2FG
+[Manufacturer]   Micron Technology Inc.
+[Package]        | 8mm x 14mm VFBGA
+|variable              typ          min         max
+R_pkg                  61m          44m         83m
+L_pkg                  2.11nH       1.22nH      3.25nH
+C_pkg                  0.24pf       0.16pf      0.33pf
+|
+|***************************************************************************
+|
+[Pin]  signal_name   model_name   R_pin   L_pin     C_pin
+|
+A1     VSS           GND          244m    2.27nH    0.93pF
+A2     DQ15          dqbuff       259m    2.73nH    0.21pF
+A3     VSSQ          GND          268m    2.72nH    0.21pF
+A7     VDDQ          POWER        268m    2.85nH    0.23pF
+A8     DQ0           dqbuff       258m    2.54nH    0.20pF
+A9     VDD           POWER        272m    3.19nH    0.28pF
+B1     DQ14          dqbuff       265m    2.81nH    0.21pF
+B2     DQ13          dqbuff       277m    2.99nH    0.22pF
+B3     VDDQ          POWER        270m    2.76nH    0.22pF
+B7     VSSQ          GND          270m    2.84nH    0.22pF
+B8     DQ2           dqbuff       276m    2.99nH    0.21pF
+B9     DQ1           dqbuff       266m    2.95nH    0.21pF
+C1     DQ12          dqbuff       266m    2.93nH    0.20pF
+C2     DQ11          dqbuff       278m    3.02nH    0.22pF
+C3     VSSQ          GND          270m    2.77nH    0.23pF
+C7     VDDQ          POWER        271m    2.84nH    0.23pF
+C8     DQ4           dqbuff       280m    3.16nH    0.22pF
+C9     DQ3           dqbuff       265m    2.98nH    0.21pF
+D1     DQ10          dqbuff       265m    2.88nH    0.21pF
+D2     DQ9           dqbuff       278m    3.01nH    0.22pF
+D3     VDDQ          POWER        267m    2.70nH    0.22pF
+D7     VSSQ          GND          268m    2.77nH    0.22pF
+D8     DQ6           dqbuff       276m    2.97nH    0.22pF
+D9     DQ5           dqbuff       266m    2.96nH    0.21pF
+E1     DQ8           dqbuff       263m    2.75nH    0.21pF
+E2     NC            NC                                 
+E3     VSS           GND          247m    2.75nH    0.93pF
+E7     VDD           POWER        275m    3.16nH    0.28pF
+E8     LDQM          inbuff2      283m    3.42nH    0.23pF
+E9     DQ7           dqbuff       266m    2.98nH    0.21pF
+F1     UDQM          inbuff2      266m    2.95nH    0.21pF
+F2     CLK           clkbuff      255m    2.47nH    0.20pF
+F3     CKE           inbuff2      273m    3.04nH    0.23pF
+F7     CAS           inbuff1      277m    3.36nH    0.24pF
+F8     RAS           inbuff1      280m    3.34nH    0.23pF
+F9     WE            inbuff3      266m    2.99nH    0.21pF
+G1     A12           inbuff3      266m    2.85nH    0.20pF
+G2     A11           inbuff1      289m    3.69nH    0.25pF
+G3     A9            inbuff1      268m    2.86nH    0.23pF
+G7     BA0           inbuff1      271m    3.16nH    0.23pF
+G8     BA1           inbuff1      279m    3.37nH    0.22pF
+G9     CS            inbuff2      268m    3.03nH    0.21pF
+H1     A8            inbuff1      266m    2.97nH    0.21pF
+H2     A7            inbuff1      280m    3.67nH    0.24pF
+H3     A6            inbuff1      282m    3.67nH    0.25pF
+H7     A0            inbuff1      267m    2.77nH    0.22pF
+H8     A1            inbuff1      257m    2.56nH    0.21pF
+H9     A10           inbuff1      266m    2.98nH    0.21pF
+J1     VSS           GND          255m    2.65nH    0.93pF
+J2     A5            inbuff1      257m    2.69nH    0.21pF
+J3     A4            inbuff1      277m    3.34nH    0.24pF
+J7     A3            inbuff1      260m    2.68nH    0.22pF
+J8     A2            inbuff1      255m    2.49nH    0.20pF
+J9     VDD           POWER        279m    3.23nH    0.28pF
+|
+|***************************************************************************
+|                                   MODEL DQBUFF
+|***************************************************************************
+|
+[Model]        dqbuff
+Model_type     I/O
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+Vmeas = 1.500V
+Cref = 50.000pF
+|
+|                            typ                 min                 max
+|
+C_comp                      3.690pF             3.090pF             4.380pF
+[Voltage Range]             3.300V              3.000V              3.600V
+| Junction Temperature (Ambient temp is 25C typ, 70C min, 0C max)
+[Temperature Range]        40.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[Pulldown]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0   -150.88579000E-3   -145.26448000E-3   -156.26289000E-3
+     -2.94000000E+0   -145.94226000E-3   -140.03751000E-3   -151.25779000E-3
+     -2.92500000E+0   -145.72136000E-3   -139.80370000E-3   -151.03673000E-3
+     -2.90000000E+0   -145.35014000E-3   -139.41080000E-3   -150.66592000E-3
+     -2.60500000E+0   -140.67395000E-3   -134.46243000E-3   -146.01103000E-3
+     -2.57500000E+0   -140.16507000E-3   -133.92383000E-3   -145.50657000E-3
+     -2.56000000E+0   -139.90803000E-3   -133.65180000E-3   -145.25212000E-3
+     -2.29500000E+0   -135.06304000E-3   -128.53100000E-3   -140.47675000E-3
+     -2.25500000E+0   -134.27697000E-3   -127.70129000E-3   -139.70571000E-3
+     -2.24000000E+0   -133.97804000E-3   -127.38584000E-3   -139.41295000E-3
+     -2.01500000E+0   -129.20765000E-3   -122.35693000E-3   -134.75299000E-3
+     -1.96500000E+0   -128.06709000E-3   -121.15593000E-3   -133.64344000E-3
+     -1.94000000E+0   -127.48453000E-3   -120.54269000E-3   -133.07775000E-3
+     -1.75500000E+0   -122.89955000E-3   -115.72134000E-3   -128.64003000E-3
+     -1.70500000E+0   -121.56857000E-3   -114.32343000E-3   -127.35829000E-3
+     -1.65000000E+0   -120.05383000E-3   -112.73346000E-3   -125.90476000E-3
+     -1.52500000E+0   -116.39734000E-3   -108.89783000E-3   -122.43745000E-3
+     -1.46500000E+0   -114.52839000E-3   -106.93441000E-3   -120.70274000E-3
+     -1.35000000E+0   -110.73721700E-3   -102.91651700E-3   -117.24990000E-3
+     -1.31500000E+0   -109.53044300E-3   -101.62260200E-3   -116.15642000E-3
+     -1.22500000E+0   -106.28932600E-3    -98.13993400E-3   -113.22418400E-3
+     -1.13000000E+0   -102.59155400E-3    -94.18491100E-3   -109.88047800E-3
+     -1.12500000E+0   -102.38770400E-3    -93.96756800E-3   -109.69499400E-3
+     -1.11500000E+0   -101.97558900E-3    -93.52840300E-3   -109.32191600E-3
+     -1.03500000E+0    -98.49467700E-3    -89.83148800E-3   -106.16592000E-3
+     -1.00500000E+0    -97.08879900E-3    -88.34472700E-3   -104.88819900E-3
+   -960.00000000E-3    -94.84775100E-3    -85.98259200E-3   -102.84902600E-3
+   -935.00000000E-3    -93.52357100E-3    -84.59188100E-3   -101.63763300E-3
+   -915.00000000E-3    -92.41427400E-3    -83.43020800E-3   -100.62249400E-3
+   -880.00000000E-3    -90.34855800E-3    -81.27723500E-3    -98.72921100E-3
+   -855.00000000E-3    -88.76406300E-3    -79.63735800E-3    -97.26336700E-3
+   -835.00000000E-3    -87.41654100E-3    -78.25320710E-3    -96.01191300E-3
+   -810.00000000E-3    -85.61790600E-3    -76.42478630E-3    -94.32801000E-3
+   -785.00000000E-3    -83.68329500E-3    -74.48878620E-3    -92.48013400E-3
+   -765.00000000E-3    -82.02309060E-3    -72.85576780E-3    -90.87603800E-3
+   -750.00000000E-3    -80.70961410E-3    -71.58238590E-3    -89.59571900E-3
+   -725.00000000E-3    -78.40755910E-3    -69.38575690E-3    -87.28918100E-3
+   -690.00000000E-3    -74.95553210E-3    -66.17118780E-3    -83.73583520E-3
+   -665.00000000E-3    -72.37054930E-3    -63.80889200E-3    -80.98649630E-3
+   -625.00000000E-3    -68.10099470E-3    -59.96025039E-3    -76.34855340E-3
+   -580.00000000E-3    -63.20282232E-3    -55.58530730E-3    -70.94113760E-3
+   -295.00000000E-3    -31.99337661E-3    -27.96466374E-3    -36.07921242E-3
+      0.00000000E+0     -2.00296200E-6     -1.82086500E-6     -2.19671500E-6
+    115.00000000E-3     12.21016033E-3     10.56194220E-3     13.88326071E-3
+    130.00000000E-3     13.77533055E-3     11.91101008E-3     15.66980907E-3
+    225.00000000E-3     23.53709135E-3     20.29885804E-3     26.83850249E-3
+    235.00000000E-3     24.54878984E-3     21.16537907E-3     27.99959492E-3
+    260.00000000E-3     27.06407449E-3     23.31727172E-3     30.88993466E-3
+    335.00000000E-3     34.49227071E-3     29.65171598E-3     39.45002467E-3
+    355.00000000E-3     36.44201976E-3     31.30887722E-3     41.70403689E-3
+    390.00000000E-3     39.82132738E-3     34.17522730E-3     45.61911345E-3
+    435.00000000E-3     44.10518012E-3     37.79801188E-3     50.59408403E-3
+    465.00000000E-3     46.92112361E-3     40.17224498E-3     53.87423998E-3
+    510.00000000E-3     51.08336408E-3     43.67046096E-3     58.73811517E-3
+    535.00000000E-3     53.36388500E-3     45.58143257E-3     61.40913226E-3
+    575.00000000E-3     56.96239351E-3     48.58761676E-3     65.63746853E-3
+    630.00000000E-3     61.80714165E-3     52.61601926E-3     71.35630270E-3
+    635.00000000E-3     62.24205109E-3     52.97665351E-3     71.86990347E-3
+    675.00000000E-3     65.68026807E-3     55.81981571E-3     75.94877039E-3
+    735.00000000E-3     70.71011078E-3     59.95534717E-3     81.94798205E-3
+    740.00000000E-3     71.12164082E-3     60.29223234E-3     82.44167121E-3
+    775.00000000E-3     73.97514085E-3     62.62317265E-3     85.86497885E-3
+    825.00000000E-3     77.95307819E-3     65.85368412E-3     90.66447334E-3
+    850.00000000E-3     79.89700396E-3     67.42354290E-3     93.02324358E-3
+    875.00000000E-3     81.81157535E-3     68.96396142E-3     95.35204322E-3
+    925.00000000E-3     85.54532380E-3     71.94899208E-3     99.92260204E-3
+    960.00000000E-3     88.08101141E-3     73.96040827E-3    103.04993464E-3
+    975.00000000E-3     89.14854100E-3     74.80330799E-3    104.37060969E-3
+      1.01500000E+0     91.93289634E-3     76.98866614E-3    107.83675012E-3
+      1.06000000E+0     94.95547579E-3     79.33774638E-3    111.63415804E-3
+      1.06500000E+0     95.28474376E-3     79.59226483E-3    112.04854774E-3
+      1.10500000E+0     97.85854860E-3     81.56813209E-3    115.31675975E-3
+      1.15500000E+0    100.93398125E-3     83.89734091E-3    119.26874106E-3
+      1.16000000E+0    101.23174229E-3     84.12052555E-3    119.65615166E-3
+      1.18500000E+0    102.69988382E-3     85.21632670E-3    121.56541187E-3
+      1.24500000E+0    106.04185712E-3     87.66682009E-3    125.98076549E-3
+      1.26000000E+0    106.83486768E-3     88.23753860E-3    127.04647682E-3
+      1.26500000E+0    107.09656930E-3     88.42526659E-3    127.39709673E-3
+      1.33500000E+0    110.53547413E-3     90.83271808E-3    132.11878289E-3
+      1.34500000E+0    110.99277153E-3     91.14371875E-3    132.76170989E-3
+      1.35000000E+0    111.21701405E-3     91.29492923E-3    133.08122326E-3
+      1.41500000E+0    113.93348431E-3     93.07549355E-3    137.01962596E-3
+      1.44000000E+0    114.86480086E-3     93.65773334E-3    138.43093877E-3
+      1.49500000E+0    116.68244264E-3     94.74797205E-3    141.30400755E-3
+      1.52000000E+0    117.39679228E-3     95.15950521E-3    142.49963566E-3
+      1.56500000E+0    118.51521028E-3     95.79065018E-3    144.45547159E-3
+      1.59000000E+0    119.04500791E-3     96.08720340E-3    145.43211894E-3
+      1.59500000E+0    119.14513689E-3     96.14336944E-3    145.61541802E-3
+      1.66500000E+0    120.31611010E-3     96.81256162E-3    147.86208823E-3
+      1.67000000E+0    120.38575926E-3     96.85365360E-3    148.00037778E-3
+      1.71500000E+0    120.95812265E-3     97.19892363E-3    149.10015983E-3
+      1.77000000E+0    121.53868441E-3     97.56753234E-3    150.17810013E-3
+      1.78500000E+0    121.68061190E-3     97.66074561E-3    150.42929669E-3
+      1.90000000E+0    122.61111952E-3     98.30382441E-3    151.96791112E-3
+      1.96500000E+0    123.05910603E-3     98.63097299E-3    152.63948758E-3
+      2.08000000E+0    123.77742197E-3     99.17346014E-3    153.65063006E-3
+      2.14500000E+0    124.15692518E-3     99.46668999E-3    154.16184205E-3
+      2.23500000E+0    124.66214894E-3     99.86212813E-3    154.82629284E-3
+      2.35000000E+0    125.28450987E-3    100.35502094E-3    155.62787325E-3
+      6.60000000E+0    146.24907700E-3    117.48863700E-3    181.55260000E-3
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0   -700.17122000E-3   -647.00909000E-3   -759.41006000E-3
+     -2.93500000E+0   -579.02021000E-3   -532.18236000E-3   -631.91717000E-3
+     -2.88000000E+0   -560.84920000E-3   -515.00430000E-3   -612.75523000E-3
+     -2.77500000E+0   -526.24470000E-3   -482.32743000E-3   -576.23108000E-3
+     -2.62500000E+0   -477.02488000E-3   -435.93694000E-3   -524.20121000E-3
+     -2.59500000E+0   -467.21423000E-3   -426.70318000E-3   -513.81858000E-3
+     -2.55000000E+0   -452.52082000E-3   -412.88214000E-3   -498.26052000E-3
+     -2.47500000E+0   -428.09468000E-3   -389.92884000E-3   -472.37664000E-3
+     -2.44500000E+0   -418.34770000E-3   -380.77774000E-3   -462.04028000E-3
+     -2.33500000E+0   -382.73402000E-3   -347.38249000E-3   -424.23474000E-3
+     -2.30500000E+0   -373.05787000E-3   -338.32055000E-3   -413.95248000E-3
+     -2.26000000E+0   -358.57602000E-3   -324.76753000E-3   -398.55436000E-3
+     -2.19500000E+0   -337.73007000E-3   -305.27870000E-3   -376.37223000E-3
+     -2.17000000E+0   -329.73735000E-3   -297.81289000E-3   -367.86076000E-3
+     -2.13000000E+0   -316.97916000E-3   -285.90316000E-3   -354.26886000E-3
+     -2.06500000E+0   -296.33358000E-3   -266.65012000E-3   -332.25843000E-3
+     -2.04500000E+0   -290.00463000E-3   -260.75292000E-3   -325.50705000E-3
+     -2.01000000E+0   -278.95820000E-3   -250.46549000E-3   -313.71855000E-3
+     -1.94500000E+0   -258.54922000E-3   -231.47568000E-3   -291.92960000E-3
+     -1.93500000E+0   -255.42297000E-3   -228.56868000E-3   -288.59085000E-3
+     -1.91000000E+0   -247.62502000E-3   -221.31958000E-3   -280.26117000E-3
+     -1.83500000E+0   -224.39496000E-3   -199.73720000E-3   -255.45331000E-3
+     -1.83000000E+0   -222.85689000E-3   -198.30872000E-3   -253.80987000E-3
+     -1.82500000E+0   -221.31890000E-3   -196.88024000E-3   -252.16968000E-3
+     -1.75000000E+0   -198.44602000E-3   -175.63288000E-3   -227.78767000E-3
+     -1.74500000E+0   -196.93430000E-3   -174.22779000E-3   -226.18268000E-3
+     -1.72500000E+0   -190.91198000E-3   -168.62792000E-3   -219.78768000E-3
+     -1.69000000E+0   -180.46456000E-3   -158.90040000E-3   -208.73564000E-3
+     -1.66500000E+0   -173.08332000E-3   -152.01219000E-3   -200.99065000E-3
+     -1.64000000E+0   -165.79066000E-3   -145.18484000E-3   -193.40595000E-3
+     -1.63500000E+0   -164.34160000E-3   -143.82547000E-3   -191.91953000E-3
+     -1.60000000E+0   -154.34858000E-3   -134.40124000E-3   -181.78860000E-3
+     -1.59500000E+0   -152.93982000E-3   -133.06559000E-3   -180.40398000E-3
+     -1.57000000E+0   -146.01732000E-3   -126.45153000E-3   -173.68899000E-3
+     -1.55500000E+0   -141.95490000E-3   -122.52767000E-3   -169.89760000E-3
+     -1.55000000E+0   -140.62622000E-3   -121.23162000E-3   -168.65923000E-3
+     -1.54500000E+0   -139.29818000E-3   -119.93557000E-3   -167.45652000E-3
+     -1.53000000E+0   -135.40430000E-3   -116.08762000E-3   -163.91259000E-3
+     -1.50500000E+0   -129.16991000E-3   -109.78160000E-3   -158.27352000E-3
+     -1.49500000E+0   -126.78936000E-3   -107.30676000E-3   -156.07318000E-3
+     -1.49000000E+0   -125.63341000E-3   -106.08455000E-3   -154.97907000E-3
+     -1.48500000E+0   -124.47848000E-3   -104.86234000E-3   -153.89373000E-3
+     -1.46500000E+0   -120.07112000E-3   -100.07714000E-3   -149.57642000E-3
+     -1.44500000E+0   -115.93162000E-3    -95.45442600E-3   -145.29313000E-3
+     -1.43500000E+0   -113.94621000E-3    -93.21426000E-3   -143.15971000E-3
+     -1.43000000E+0   -112.97562000E-3    -92.12079200E-3   -142.09414000E-3
+     -1.41500000E+0   -110.10107000E-3    -88.89793400E-3   -138.90496000E-3
+     -1.39500000E+0   -106.37131000E-3    -84.82589000E-3   -134.66375000E-3
+     -1.37500000E+0   -102.71137000E-3    -81.01501800E-3   -130.43481000E-3
+     -1.34500000E+0    -97.29784000E-3    -75.75936100E-3   -124.11415000E-3
+     -1.31500000E+0    -91.94308700E-3    -70.92580800E-3   -117.82199000E-3
+     -1.27500000E+0    -84.87485100E-3    -64.85630700E-3   -109.48073000E-3
+     -1.25000000E+0    -80.49811800E-3    -61.18364200E-3   -104.29769000E-3
+     -1.21500000E+0    -74.42461400E-3    -56.13664900E-3    -97.08677000E-3
+     -1.15500000E+0    -64.18282300E-3    -47.70677600E-3    -84.86138500E-3
+     -1.14500000E+0    -62.49904100E-3    -46.32889400E-3    -82.84283400E-3
+     -1.12000000E+0    -58.32279600E-3    -42.92175400E-3    -77.82231800E-3
+     -1.04500000E+0    -46.10827200E-3    -33.04982600E-3    -63.02924200E-3
+     -1.03500000E+0    -44.52143300E-3    -31.77975200E-3    -61.09174000E-3
+     -1.01000000E+0    -40.60579200E-3    -28.66126200E-3    -56.28902300E-3
+   -965.00000000E-3    -33.75769700E-3    -23.26708600E-3    -47.82178200E-3
+   -945.00000000E-3    -30.81252200E-3    -20.97708800E-3    -44.14182500E-3
+   -920.00000000E-3    -27.23249300E-3    -18.22447200E-3    -39.62664800E-3
+   -895.00000000E-3    -23.77335500E-3    -15.60097300E-3    -35.23298800E-3
+   -880.00000000E-3    -21.77068200E-3    -14.10406700E-3    -32.65664900E-3
+   -875.00000000E-3    -21.11159800E-3    -13.61370900E-3    -31.81352300E-3
+   -850.00000000E-3    -17.93762700E-3    -11.28768600E-3    -27.67628800E-3
+   -845.00000000E-3    -17.32089500E-3    -10.84019800E-3    -26.87410900E-3
+   -835.00000000E-3    -16.11972900E-3     -9.97670690E-3    -25.28595700E-3
+   -820.00000000E-3    -14.38801000E-3     -8.74799380E-3    -22.96236900E-3
+   -815.00000000E-3    -13.82334900E-3     -8.34987560E-3    -22.21182400E-3
+   -805.00000000E-3    -12.73233200E-3     -7.58932990E-3    -20.73029700E-3
+   -790.00000000E-3    -11.17941200E-3     -6.52463200E-3    -18.57860200E-3
+   -785.00000000E-3    -10.67664700E-3     -6.18279780E-3    -17.89007600E-3
+   -775.00000000E-3     -9.71555920E-3     -5.53955010E-3    -16.53632200E-3
+   -760.00000000E-3     -8.36759220E-3     -4.65726180E-3    -14.58933000E-3
+   -755.00000000E-3     -7.93476140E-3     -4.37700530E-3    -13.97398400E-3
+   -735.00000000E-3     -6.35058000E-3     -3.38028170E-3    -11.62083300E-3
+   -730.00000000E-3     -5.99203410E-3     -3.16176140E-3    -11.06011300E-3
+   -715.00000000E-3     -4.96875050E-3     -2.54605360E-3     -9.49255010E-3
+   -695.00000000E-3     -3.78973260E-3     -1.86629510E-3     -7.59931190E-3
+   -690.00000000E-3     -3.53199690E-3     -1.72344120E-3     -7.15590180E-3
+   -675.00000000E-3     -2.80865260E-3     -1.32850430E-3     -5.94471270E-3
+   -670.00000000E-3     -2.59871990E-3     -1.21818220E-3     -5.56091840E-3
+   -655.00000000E-3     -2.01561860E-3   -916.34943000E-6     -4.52663430E-3
+   -640.00000000E-3     -1.54027070E-3   -681.10902000E-6     -3.60794070E-3
+   -635.00000000E-3     -1.39588890E-3   -610.73827000E-6     -3.33926680E-3
+   -605.00000000E-3   -747.10370000E-6   -307.84571000E-6     -1.97127040E-3
+   -600.00000000E-3   -670.15139000E-6   -273.25458000E-6     -1.78279840E-3
+   -585.00000000E-3   -465.89546000E-6   -181.72461000E-6     -1.31408740E-3
+   -550.00000000E-3   -177.99059000E-6    -54.36960000E-6   -569.93611000E-6
+   -535.00000000E-3   -106.23724000E-6    -22.33186500E-6   -381.23582000E-6
+   -520.00000000E-3                 NA      0.00000000E+0                 NA
+   -510.00000000E-3    -33.67728700E-6      0.00000000E+0   -173.17604000E-6
+   -490.00000000E-3      0.00000000E+0      0.00000000E+0                 NA
+   -485.00000000E-3      0.00000000E+0      0.00000000E+0    -64.60527100E-6
+   -475.00000000E-3      0.00000000E+0      0.00000000E+0    -37.63686500E-6
+   -450.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[Pullup]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0     16.75240800E-3     41.83652900E-3      1.19639000E-3
+     -2.80000000E+0     14.02299600E-3     38.74347900E-3    582.54100000E-6
+     -2.60500000E+0     13.04472700E-3     37.60211600E-3    432.86300000E-6
+     -2.38500000E+0     11.97757800E-3     36.33059900E-3    305.21500000E-6
+     -2.17000000E+0     10.97289700E-3     35.10405400E-3    213.84700000E-6
+     -1.78500000E+0      9.27131600E-3     32.94549800E-3    109.13600000E-6
+     -1.07500000E+0      6.48180230E-3     29.05103548E-3     27.54720000E-6
+   -915.00000000E-3      5.91914732E-3     28.14077956E-3     19.65158000E-6
+   -665.00000000E-3      5.09008810E-3     26.13459528E-3     11.34868000E-6
+   -585.00000000E-3      4.83737775E-3     24.84632191E-3      9.46868400E-6
+   -515.00000000E-3      4.62076703E-3     23.25892576E-3      8.06400200E-6
+   -435.00000000E-3      4.37716269E-3     20.91724384E-3      6.69599900E-6
+   -355.00000000E-3      4.13377128E-3     18.04690595E-3      5.54591900E-6
+   -275.00000000E-3      3.87246005E-3     14.69092830E-3      4.58084000E-6
+   -225.00000000E-3      3.66223724E-3     12.36634552E-3      4.05781900E-6
+   -185.00000000E-3      3.40970464E-3     10.38885721E-3      3.67694600E-6
+   -115.00000000E-3      2.59821976E-3      6.69002827E-3      3.06245700E-6
+    -95.00000000E-3      2.25931146E-3      5.57985924E-3      2.88055000E-6
+      0.00000000E+0     -2.56543100E-6   -206.52000000E-9     26.62600000E-9
+     45.00000000E-3     -1.52140761E-3     -2.81718394E-3     -9.35447300E-6
+     95.00000000E-3     -3.64777613E-3     -6.07582736E-3    -51.99399900E-6
+    115.00000000E-3     -4.60707824E-3     -7.41354056E-3    -91.59763400E-6
+    140.00000000E-3     -5.88381696E-3     -9.11181070E-3   -175.54588300E-6
+    195.00000000E-3     -8.94824685E-3    -12.93940014E-3   -637.84877900E-6
+    220.00000000E-3    -10.44634108E-3    -14.71930600E-3     -1.05005153E-3
+    245.00000000E-3    -11.99920742E-3    -16.52125277E-3     -1.64189922E-3
+    290.00000000E-3    -14.92629660E-3    -19.82049940E-3     -3.16200829E-3
+    315.00000000E-3    -16.61612218E-3    -21.68138279E-3     -4.25535738E-3
+    330.00000000E-3    -17.65180134E-3    -22.80786244E-3     -4.98089037E-3
+    370.00000000E-3    -20.48116176E-3    -25.84345697E-3     -7.16046337E-3
+    385.00000000E-3    -21.56608158E-3    -26.99325552E-3     -8.05771772E-3
+    420.00000000E-3    -24.14791716E-3    -29.70108421E-3    -10.28406128E-3
+    445.00000000E-3    -26.02991950E-3    -31.65433299E-3    -11.98191915E-3
+    480.00000000E-3    -28.71651283E-3    -34.41582001E-3    -14.48027161E-3
+    535.00000000E-3    -33.04605380E-3    -38.81287566E-3    -18.65719353E-3
+    550.00000000E-3    -34.24889440E-3    -40.02419062E-3    -19.84037500E-3
+    595.00000000E-3    -37.90645214E-3    -43.68571855E-3    -23.49441462E-3
+    620.00000000E-3    -39.97027001E-3    -45.73817833E-3    -25.58225178E-3
+    755.00000000E-3    -51.45077818E-3    -57.02183525E-3    -37.45221672E-3
+    780.00000000E-3    -53.63325932E-3    -59.14625292E-3    -39.74150126E-3
+    865.00000000E-3    -61.16623233E-3    -66.44163817E-3    -47.70030470E-3
+    935.00000000E-3    -67.49009567E-3    -72.52911435E-3    -54.42889918E-3
+    960.00000000E-3    -69.77276786E-3    -74.71961404E-3    -56.86504620E-3
+      1.13500000E+0    -86.05857927E-3    -90.26925931E-3    -74.33053909E-3
+      1.14000000E+0    -86.53128447E-3    -90.71888656E-3    -74.83853994E-3
+      1.24500000E+0    -96.53520833E-3   -100.21879315E-3    -85.61041688E-3
+      1.34000000E+0   -105.70872646E-3   -108.90782230E-3    -95.50069015E-3
+      1.34500000E+0   -106.19434853E-3   -109.36733369E-3    -96.02477671E-3
+      1.57000000E+0   -128.31951977E-3   -130.26724077E-3   -119.89593421E-3
+      1.58500000E+0   -129.81122273E-3   -131.67450547E-3   -121.50547261E-3
+      1.70500000E+0   -141.81093657E-3   -142.99031019E-3   -134.44821279E-3
+      1.82000000E+0   -153.40986262E-3   -153.92341608E-3   -146.95095121E-3
+      1.84500000E+0   -155.94289216E-3   -156.31078432E-3   -149.68034231E-3
+      2.13500000E+0   -185.58455819E-3   -184.25560375E-3   -181.58156829E-3
+      2.17000000E+0   -189.19039562E-3   -187.65674579E-3   -185.45707508E-3
+      2.22500000E+0   -194.86686419E-3   -193.01248329E-3   -191.55642234E-3
+      2.59000000E+0   -232.81346353E-3   -228.86735919E-3   -232.26241337E-3
+      2.77500000E+0   -252.18998393E-3   -247.21946268E-3   -253.00623611E-3
+      2.78500000E+0   -253.23952036E-3   -248.21446609E-3   -254.12906856E-3
+      3.59500000E+0   -338.71206799E-3   -329.36192387E-3   -345.35871566E-3
+      3.68500000E+0   -348.24063672E-3   -337.35056180E-3   -355.50879416E-3
+      3.72500000E+0   -352.47295162E-3   -340.32692690E-3   -360.01973752E-3
+      3.77500000E+0   -357.74829836E-3   -343.48164590E-3   -365.65810317E-3
+      3.83500000E+0   -363.98983985E-3   -346.55385200E-3   -372.42353900E-3
+      3.84500000E+0   -365.00795553E-3   -347.00608600E-3   -373.55103181E-3
+      3.88500000E+0   -368.95330239E-3   -348.67989600E-3   -378.06071717E-3
+      3.92500000E+0   -372.57548390E-3   -350.17280500E-3   -382.56977258E-3
+      3.96500000E+0   -375.72499920E-3   -351.52235900E-3   -387.07742060E-3
+      4.00000000E+0   -378.03736260E-3   -352.60705300E-3   -391.01828749E-3
+      4.01500000E+0   -378.91208270E-3   -353.04961000E-3   -392.70472054E-3
+      4.04500000E+0   -380.45635550E-3   -353.89612600E-3   -396.06796374E-3
+      4.07000000E+0   -381.56248230E-3   -354.56692700E-3   -398.85120481E-3
+      4.08500000E+0   -382.16269400E-3   -354.95680900E-3   -400.50373201E-3
+      4.12500000E+0   -383.54613800E-3   -355.95051500E-3   -404.79760041E-3
+      4.13000000E+0   -383.69834500E-3   -356.07006500E-3   -405.31924163E-3
+      4.13500000E+0   -383.85034400E-3   -356.18961400E-3   -405.83038004E-3
+      4.17000000E+0   -384.80504700E-3   -356.99951700E-3   -409.24380637E-3
+      4.19500000E+0   -385.40565700E-3   -357.55528500E-3   -411.41508210E-3
+      4.21000000E+0   -385.73662300E-3   -357.87956800E-3   -412.60113410E-3
+      4.24000000E+0   -386.34659000E-3   -358.51086600E-3   -414.66476940E-3
+      4.26500000E+0   -386.80738100E-3   -359.02033200E-3   -416.08612460E-3
+      4.30000000E+0   -387.38802300E-3   -359.71005100E-3   -417.69403790E-3
+      4.34000000E+0   -387.97631900E-3   -360.47200300E-3   -419.07270200E-3
+      4.34500000E+0   -388.04530300E-3   -360.56586100E-3   -419.21444100E-3
+      4.38000000E+0   -388.49633700E-3   -361.21614400E-3   -420.08633400E-3
+      4.47500000E+0   -389.51465400E-3   -362.95961000E-3   -421.52313200E-3
+      4.48000000E+0   -389.56083300E-3   -363.05018000E-3   -421.57238200E-3
+      4.53500000E+0   -390.03301600E-3   -364.03404000E-3   -421.96705600E-3
+      4.60000000E+0   -390.50917100E-3   -365.15818000E-3   -422.20503200E-3
+      4.82000000E+0   -391.79726000E-3   -368.62143000E-3   -422.03037000E-3
+      4.83500000E+0   -391.89908000E-3   -368.83883000E-3   -421.98279000E-3
+      5.16500000E+0   -394.16784000E-3   -373.07443000E-3   -420.46370000E-3
+      5.19500000E+0   -394.34702000E-3   -373.41364000E-3   -420.38763000E-3
+      5.22000000E+0   -394.49189000E-3   -373.69119000E-3   -420.35426000E-3
+      5.49500000E+0   -395.83459000E-3   -376.47582000E-3   -420.50400000E-3
+      5.61500000E+0   -396.29987000E-3   -377.55497000E-3   -420.58006000E-3
+      5.83500000E+0   -397.01454000E-3   -379.35299000E-3   -420.61585000E-3
+      5.99500000E+0   -397.44200000E-3   -380.53172000E-3   -420.58160000E-3
+      6.07500000E+0   -397.63095000E-3   -381.08482000E-3   -420.55241000E-3
+      6.60000000E+0   -398.54910000E-3   -384.21355000E-3   -420.22812000E-3
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0     46.78537100E-3     38.92686400E-3     54.66425200E-3
+     -3.29500000E+0     46.50892700E-3     38.64016400E-3     54.39871400E-3
+     -3.29000000E+0     46.38281300E-3     38.53154400E-3     54.25283100E-3
+     -3.28500000E+0     46.25693800E-3     38.42292300E-3     54.11782400E-3
+     -3.26500000E+0     45.78435800E-3     38.01934900E-3     53.58060500E-3
+     -3.25000000E+0     45.43543600E-3     37.72203200E-3     53.18308100E-3
+     -3.24500000E+0     45.31878600E-3     37.62255700E-3     53.05162900E-3
+     -3.20500000E+0     44.39270400E-3     36.83411500E-3     51.99920400E-3
+     -3.15000000E+0     43.12385300E-3     35.75404000E-3     50.55688000E-3
+     -3.12500000E+0     42.54832500E-3     35.26405700E-3     49.90320700E-3
+     -3.06500000E+0     41.17108400E-3     34.09146600E-3     48.33819100E-3
+     -3.03000000E+0     40.37024200E-3     33.40958200E-3     47.42795300E-3
+     -2.98500000E+0     39.34311200E-3     32.53495100E-3     46.26102000E-3
+     -2.94500000E+0     38.43281900E-3     31.75981000E-3     45.22659600E-3
+     -2.91000000E+0     37.63845900E-3     31.08340600E-3     44.32369400E-3
+     -2.86500000E+0     36.61988700E-3     30.21608600E-3     43.16626200E-3
+     -2.82500000E+0     35.71735900E-3     29.44764500E-3     42.14043200E-3
+     -2.74500000E+0     33.92047400E-3     27.91797000E-3     40.09765600E-3
+     -2.70500000E+0     33.02624400E-3     27.15689500E-3     39.08079700E-3
+     -2.69000000E+0     32.69170600E-3     26.87222100E-3     38.70019000E-3
+     -2.56500000E+0     29.91970900E-3     24.51435100E-3     35.54635900E-3
+     -2.52500000E+0     29.03908400E-3     23.76579000E-3     34.54374600E-3
+     -2.51000000E+0     28.70973400E-3     23.48591700E-3     34.16854800E-3
+     -2.38500000E+0     25.98301600E-3     21.17064400E-3     31.06105500E-3
+     -2.36500000E+0     25.54991000E-3     20.80326000E-3     30.56698900E-3
+     -2.34000000E+0     25.00986000E-3     20.34533500E-3     29.95067100E-3
+     -2.22500000E+0     22.54441000E-3     18.25744000E-3     27.13399700E-3
+     -2.20500000E+0     22.11899100E-3     17.89768300E-3     26.64732900E-3
+     -2.17000000E+0     21.37706800E-3     17.27069900E-3     25.79794200E-3
+     -2.07500000E+0     19.37997800E-3     15.58592900E-3     23.50828000E-3
+     -2.04500000E+0     18.75467700E-3     15.05941900E-3     22.79011800E-3
+     -2.01000000E+0     18.02873500E-3     14.44888000E-3     21.95530000E-3
+     -1.94500000E+0     16.69080100E-3     13.32573800E-3     20.41432000E-3
+     -1.90500000E+0     15.87461400E-3     12.64211300E-3     19.47219700E-3
+     -1.87000000E+0     15.16524200E-3     12.04901800E-3     18.65184200E-3
+     -1.82500000E+0     14.25989800E-3     11.29358700E-3     17.60310700E-3
+     -1.77500000E+0     13.26371200E-3     10.46461700E-3     16.44590700E-3
+     -1.73000000E+0     12.37648600E-3      9.72852410E-3     15.41216000E-3
+     -1.70500000E+0     11.88757700E-3      9.32384440E-3     14.84137200E-3
+     -1.65500000E+0     10.91935600E-3      8.52473580E-3     13.70741300E-3
+     -1.60000000E+0      9.87008210E-3      7.66250580E-3     12.47298900E-3
+     -1.59500000E+0      9.77551520E-3      7.58498860E-3     12.36152900E-3
+     -1.54500000E+0      8.83908500E-3      6.81961430E-3     11.25377000E-3
+     -1.49500000E+0      7.91992830E-3      6.07236460E-3     10.16018900E-3
+     -1.48000000E+0      7.64792140E-3      5.85208780E-3      9.83509940E-3
+     -1.44500000E+0      7.02010970E-3      5.34518370E-3      9.08271810E-3
+     -1.42000000E+0      6.57844120E-3      4.99005740E-3      8.55069140E-3
+     -1.40500000E+0      6.31604230E-3      4.77961740E-3      8.23396470E-3
+     -1.39500000E+0      6.14245390E-3      4.64068980E-3      8.02380580E-3
+     -1.37000000E+0      5.71301260E-3      4.29792830E-3      7.50211590E-3
+     -1.35500000E+0      5.45841160E-3      4.09532080E-3      7.19211850E-3
+     -1.34500000E+0      5.29014010E-3      3.96170480E-3      6.98659100E-3
+     -1.31500000E+0      4.79267640E-3      3.56810890E-3      6.37632180E-3
+     -1.30500000E+0      4.62935130E-3      3.43935040E-3      6.17513740E-3
+     -1.28000000E+0      4.22727140E-3      3.12351390E-3      5.67735710E-3
+     -1.27500000E+0      4.14773120E-3      3.06118090E-3      5.57892810E-3
+     -1.26500000E+0      3.99005270E-3      2.93787370E-3      5.38280830E-3
+     -1.23500000E+0      3.52660610E-3      2.57709340E-3      4.80309440E-3
+     -1.23000000E+0      3.45100820E-3      2.51852680E-3      4.70759520E-3
+     -1.22500000E+0      3.37543680E-3      2.45996020E-3      4.61295330E-3
+     -1.19000000E+0      2.86125750E-3      2.06395370E-3      3.96084170E-3
+     -1.18500000E+0      2.78948470E-3      2.00892350E-3      3.86986110E-3
+     -1.15000000E+0      2.30454390E-3      1.63986070E-3      3.24564820E-3
+     -1.13500000E+0      2.10524290E-3      1.48941550E-3      2.98732990E-3
+     -1.12000000E+0      1.91245480E-3      1.34484580E-3      2.73425330E-3
+     -1.09500000E+0      1.60468000E-3      1.11586440E-3      2.32787430E-3
+     -1.08000000E+0      1.43006000E-3    987.29633000E-6      2.09314980E-3
+     -1.05500000E+0      1.15559130E-3    787.19465000E-6      1.72160160E-3
+     -1.04000000E+0      1.00323430E-3    677.54822000E-6      1.51035470E-3
+     -1.02500000E+0    859.40940000E-6    574.87977000E-6      1.31075690E-3
+     -1.01500000E+0    769.53250000E-6    511.31936000E-6      1.18369700E-3
+     -1.01000000E+0    726.90102000E-6    481.39113000E-6      1.12148280E-3
+   -985.00000000E-3    528.97995000E-6    343.41504000E-6    836.80911000E-6
+   -980.00000000E-3    494.01518000E-6    319.36916000E-6    783.64063000E-6
+   -955.00000000E-3    335.49344000E-6    210.91574000E-6    548.35151000E-6
+   -950.00000000E-3    308.60247000E-6    192.71146000E-6    505.57210000E-6
+   -945.00000000E-3    281.78913000E-6    174.50719000E-6    466.51952000E-6
+   -930.00000000E-3    211.95015000E-6    127.39463000E-6    356.82967000E-6
+   -925.00000000E-3    190.45441000E-6    112.87604000E-6    325.28785000E-6
+   -905.00000000E-3    119.35402000E-6     64.95410700E-6    213.73442000E-6
+   -900.00000000E-3    105.02617000E-6     55.28737300E-6    189.47973000E-6
+   -885.00000000E-3     66.26146500E-6     28.96158200E-6    129.90827000E-6
+   -875.00000000E-3     45.58612400E-6     14.82303600E-6     97.28041200E-6
+   -870.00000000E-3     36.87819900E-6      8.82310130E-6     82.38587500E-6
+   -860.00000000E-3                 NA      0.00000000E+0                 NA
+   -845.00000000E-3      1.96223990E-6      0.00000000E+0     29.38556900E-6
+   -840.00000000E-3      0.00000000E+0      0.00000000E+0                 NA
+   -820.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|
+[Ramp]
+R_load = 50.00Ohm
+|                   typ                 min                 max
+|
+dV/dt_r        1.531V/416.142ps    1.418V/450.858ps    1.605V/355.858ps
+dV/dt_f        1.649V/189.406ps    1.456V/234.576ps    1.841V/149.773ps
+|
+|***************************************************************************
+|
+[Falling Waveform]
+V_fixture = 3.300V
+V_fixture_min = 3.000V
+V_fixture_max = 3.600V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0      3.30097015E+0      3.00063933E+0      3.60191684E+0
+   130.00000000E-12      3.30170020E+0      3.00067987E+0      3.60348031E+0
+   170.00000000E-12      3.30234150E+0      3.00072736E+0      3.60039007E+0
+   220.00000000E-12      3.30285974E+0      3.00095416E+0      3.59145146E+0
+   250.00000000E-12      3.30270615E+0      3.00118729E+0      3.59238837E+0
+   270.00000000E-12      3.30213540E+0      3.00135188E+0      3.59398703E+0
+   280.00000000E-12      3.30169854E+0      3.00143272E+0      3.59152621E+0
+   290.00000000E-12      3.30122216E+0      3.00150445E+0      3.58091724E+0
+   300.00000000E-12      3.30059780E+0      3.00156958E+0      3.55931350E+0
+   310.00000000E-12      3.29982400E+0      3.00162539E+0      3.52150164E+0
+   320.00000000E-12      3.29861812E+0      3.00167207E+0      3.46828741E+0
+   330.00000000E-12      3.29701037E+0      3.00170821E+0      3.40311481E+0
+   340.00000000E-12      3.29517501E+0      3.00173757E+0      3.32256586E+0
+   350.00000000E-12      3.29338829E+0      3.00175563E+0      3.23391997E+0
+   360.00000000E-12      3.29189538E+0      3.00175469E+0      3.13324990E+0
+   370.00000000E-12      3.29105868E+0      3.00173614E+0      3.02491665E+0
+   380.00000000E-12      3.29077483E+0      3.00166447E+0      2.90935756E+0
+   390.00000000E-12      3.29090974E+0      3.00157512E+0      2.78838880E+0
+   400.00000000E-12      3.29147163E+0      3.00142143E+0      2.66340750E+0
+   420.00000000E-12      3.29276024E+0      3.00098012E+0      2.40697219E+0
+   430.00000000E-12      3.29239445E+0      3.00070582E+0      2.27670535E+0
+   440.00000000E-12      3.28948852E+0      3.00041598E+0      2.14640697E+0
+   450.00000000E-12      3.28178381E+0      3.00009158E+0      2.01672438E+0
+   460.00000000E-12      3.26691225E+0      2.99969665E+0      1.88826997E+0
+   470.00000000E-12      3.24337854E+0      2.99913390E+0      1.76243137E+0
+   480.00000000E-12      3.21381301E+0      2.99839798E+0      1.63942600E+0
+   490.00000000E-12      3.17290812E+0      2.99757924E+0      1.51887641E+0
+   500.00000000E-12      3.12686229E+0      2.99678658E+0      1.40277372E+0
+   510.00000000E-12      3.07402442E+0      2.99614652E+0      1.28762814E+0
+   520.00000000E-12      3.01347645E+0      2.99561245E+0      1.17896650E+0
+   530.00000000E-12      2.94624167E+0      2.99523673E+0      1.07179365E+0
+   540.00000000E-12      2.87400849E+0      2.99495627E+0    975.76381049E-3
+   550.00000000E-12      2.79695631E+0      2.99467983E+0    892.88524422E-3
+   560.00000000E-12      2.71614548E+0      2.99436233E+0    828.37813853E-3
+   570.00000000E-12      2.63196905E+0      2.99392030E+0    778.10626992E-3
+   580.00000000E-12      2.54490282E+0      2.99337523E+0    736.76142841E-3
+   590.00000000E-12      2.45565254E+0      2.99264906E+0    705.40854223E-3
+   600.00000000E-12      2.36561020E+0      2.99154809E+0    681.47471486E-3
+   610.00000000E-12      2.27375048E+0      2.98958347E+0    662.91404019E-3
+   620.00000000E-12      2.18155772E+0      2.98615737E+0    648.34293156E-3
+   630.00000000E-12      2.08896081E+0      2.98008969E+0    636.63555817E-3
+   640.00000000E-12      1.99642047E+0      2.97041962E+0    627.05450237E-3
+   650.00000000E-12      1.90421411E+0      2.95548384E+0    619.04926486E-3
+   660.00000000E-12      1.81278097E+0      2.93700453E+0    612.21407897E-3
+   670.00000000E-12      1.72280137E+0      2.91443947E+0    606.33711395E-3
+   680.00000000E-12      1.63370290E+0      2.88688319E+0    601.17164160E-3
+   690.00000000E-12      1.54633304E+0      2.85594254E+0    596.61407239E-3
+   700.00000000E-12      1.46090790E+0      2.81968796E+0    592.50787411E-3
+   710.00000000E-12      1.37679710E+0      2.77923460E+0    588.83898153E-3
+   720.00000000E-12      1.29428825E+0      2.73523507E+0    585.49478247E-3
+   730.00000000E-12      1.21504054E+0      2.68727393E+0    582.46518166E-3
+   740.00000000E-12      1.13778070E+0      2.63661259E+0    579.66916611E-3
+   750.00000000E-12      1.06695217E+0      2.58283113E+0    577.11658048E-3
+   760.00000000E-12    997.76461189E-3      2.52693971E+0    574.74473771E-3
+   770.00000000E-12    936.22462585E-3      2.46888616E+0    572.56896621E-3
+   780.00000000E-12    884.66505685E-3      2.40875591E+0    570.53878950E-3
+   790.00000000E-12    836.92205738E-3      2.34674093E+0    568.66415251E-3
+   800.00000000E-12    801.77597294E-3      2.28335832E+0    566.90500488E-3
+   810.00000000E-12    766.67143040E-3      2.21920012E+0    565.27449957E-3
+   820.00000000E-12    742.39744960E-3      2.15419041E+0    563.73951359E-3
+   830.00000000E-12    718.15918361E-3      2.08853463E+0    562.31189662E-3
+   840.00000000E-12    701.43760497E-3      2.02252429E+0    560.96400943E-3
+   850.00000000E-12    684.74079901E-3      1.95634542E+0    559.70860395E-3
+   870.00000000E-12    661.24791030E-3      1.82423519E+0    557.41383429E-3
+   890.00000000E-12    644.07572938E-3      1.69325007E+0    555.38357738E-3
+   900.00000000E-12    637.56557566E-3      1.62847271E+0    554.45412860E-3
+   910.00000000E-12    631.06224195E-3      1.56439345E+0    553.58362752E-3
+   930.00000000E-12    620.82746851E-3      1.43818050E+0    551.98207475E-3
+   950.00000000E-12    612.53888608E-3      1.31685882E+0    550.55398661E-3
+   970.00000000E-12    605.67061146E-3      1.20081375E+0    549.27587424E-3
+   980.00000000E-12    602.76949829E-3      1.14519343E+0    548.68570554E-3
+   990.00000000E-12    599.87014027E-3      1.09236795E+0    548.12942174E-3
+      1.00000000E-9    597.38380424E-3      1.04167533E+0    547.59829097E-3
+      1.02000000E-9    592.74306622E-3    951.20586713E-3    546.61854617E-3
+      1.03000000E-9    590.58839344E-3    912.02247309E-3    546.16581182E-3
+      1.04000000E-9    588.70273006E-3    876.30671407E-3    545.73237583E-3
+      1.05000000E-9    586.81795929E-3    844.95147726E-3    545.32209786E-3
+      1.06000000E-9    585.15758701E-3    816.92393130E-3    544.92904304E-3
+      1.07000000E-9    583.49794688E-3    792.55520844E-3    544.55607856E-3
+      1.08000000E-9    582.02964823E-3    770.97868110E-3    544.19805150E-3
+      1.09000000E-9    580.56199146E-3    752.28841193E-3    543.85802956E-3
+      1.10000000E-9    579.25832592E-3    735.80077726E-3    543.53138113E-3
+      1.12000000E-9    576.79452602E-3    708.82436909E-3    542.92108200E-3
+      1.13000000E-9    575.63431143E-3    697.77845992E-3    542.63586738E-3
+      1.14000000E-9    574.59778981E-3    687.96416190E-3    542.36112901E-3
+      1.16000000E-9    572.63398713E-3    671.60942197E-3    541.84548704E-3
+      1.18000000E-9    570.87417304E-3    658.56483971E-3    541.36963477E-3
+      1.21000000E-9    568.54518875E-3    643.41787141E-3    540.72115998E-3
+      1.23000000E-9    567.19592942E-3    635.41457307E-3    540.32666155E-3
+      1.24000000E-9    566.58650108E-3    631.88339280E-3    540.13917178E-3
+      1.25000000E-9    565.97728336E-3    628.64182144E-3    539.95886000E-3
+      1.28000000E-9    564.37345701E-3    620.21586881E-3    539.45138851E-3
+      1.36000000E-9    561.02968488E-3    604.40607366E-3    538.30964782E-3
+      1.41000000E-9    559.46292730E-3    597.65089538E-3    537.71684252E-3
+      1.47000000E-9    557.96720819E-3    591.55551129E-3    537.09715988E-3
+      1.53000000E-9    556.77479912E-3    587.01842203E-3    536.55678594E-3
+      1.60000000E-9    555.66377889E-3    583.10135092E-3    536.00498337E-3
+      1.65000000E-9    555.00333084E-3    580.96112694E-3    535.65290122E-3
+      1.77000000E-9    553.74885966E-3    577.30744530E-3    534.91810014E-3
+      2.00000000E-9    552.11157512E-3    573.50405875E-3    533.81406392E-3
+|
+[Rising Waveform]
+V_fixture = 3.300V
+V_fixture_min = 3.000V
+V_fixture_max = 3.600V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0    552.11157512E-3    573.50405875E-3    533.81406392E-3
+    80.00000000E-12    552.00272263E-3    573.46356672E-3    534.06701577E-3
+   170.00000000E-12    552.16587078E-3    573.37787617E-3    537.67651603E-3
+   190.00000000E-12    552.54475500E-3    573.36175965E-3    539.84397135E-3
+   200.00000000E-12    552.79783001E-3    573.35417304E-3    543.07307829E-3
+   210.00000000E-12    553.07072470E-3    573.35163413E-3    549.16309198E-3
+   220.00000000E-12    553.35184660E-3    573.34958695E-3    557.72165853E-3
+   230.00000000E-12    553.64747414E-3    573.36667689E-3    572.33811806E-3
+   240.00000000E-12    553.94799381E-3    573.38562335E-3    594.82375707E-3
+   250.00000000E-12    554.21364572E-3    573.44328559E-3    629.62845145E-3
+   260.00000000E-12    554.39347936E-3    573.50470100E-3    686.75744324E-3
+   270.00000000E-12    554.52582816E-3    573.61825930E-3    768.21220548E-3
+   280.00000000E-12    554.90161838E-3    573.73687533E-3    887.73893576E-3
+   290.00000000E-12    555.46037642E-3    573.89697687E-3      1.03039168E+0
+   300.00000000E-12    557.00850075E-3    574.06908051E-3      1.18552608E+0
+   310.00000000E-12    559.35439449E-3    574.24930263E-3      1.34473199E+0
+   320.00000000E-12    563.72046833E-3    574.42685538E-3      1.49741023E+0
+   330.00000000E-12    570.48527498E-3    574.58501009E-3      1.64183348E+0
+   340.00000000E-12    580.60146461E-3    574.73649140E-3      1.77408393E+0
+   350.00000000E-12    595.13105219E-3    574.87770670E-3      1.89956010E+0
+   360.00000000E-12    615.34609300E-3    575.01291092E-3      2.01417867E+0
+   370.00000000E-12    646.76930399E-3    575.14255564E-3      2.12098726E+0
+   380.00000000E-12    691.93913008E-3    575.24334916E-3      2.21936436E+0
+   390.00000000E-12    749.71797434E-3    575.33582351E-3      2.31017373E+0
+   400.00000000E-12    830.22286017E-3    575.46940202E-3      2.39378676E+0
+   410.00000000E-12    928.08695590E-3    576.00770006E-3      2.47193878E+0
+   420.00000000E-12      1.03427121E+0    576.99820416E-3      2.54470486E+0
+   430.00000000E-12      1.14790991E+0    578.91014012E-3      2.61030519E+0
+   440.00000000E-12      1.26274879E+0    581.57446501E-3      2.67275073E+0
+   450.00000000E-12      1.37458366E+0    585.91126597E-3      2.72984964E+0
+   460.00000000E-12      1.48042711E+0    592.18901464E-3      2.78329074E+0
+   470.00000000E-12      1.57976594E+0    601.23071764E-3      2.83239138E+0
+   480.00000000E-12      1.67489297E+0    613.52273083E-3      2.87810641E+0
+   490.00000000E-12      1.76248248E+0    630.58195461E-3      2.92112897E+0
+   500.00000000E-12      1.84665275E+0    652.44533857E-3      2.95993409E+0
+   510.00000000E-12      1.92628686E+0    684.51676637E-3      2.99783149E+0
+   520.00000000E-12      2.00057824E+0    723.32144046E-3      3.03174020E+0
+   530.00000000E-12      2.06995183E+0    774.44398845E-3      3.06475498E+0
+   540.00000000E-12      2.13537402E+0    838.16124129E-3      3.09448498E+0
+   550.00000000E-12      2.19669455E+0    908.56923133E-3      3.12235433E+0
+   560.00000000E-12      2.25450338E+0    986.79447973E-3      3.14806754E+0
+   570.00000000E-12      2.30876518E+0      1.06916094E+0      3.17198745E+0
+   580.00000000E-12      2.35939748E+0      1.15315382E+0      3.19476379E+0
+   590.00000000E-12      2.40659450E+0      1.23735041E+0      3.21587815E+0
+   600.00000000E-12      2.45246582E+0      1.31884235E+0      3.23575846E+0
+   610.00000000E-12      2.49417593E+0      1.39650144E+0      3.25420870E+0
+   620.00000000E-12      2.53437334E+0      1.47089176E+0      3.27159710E+0
+   630.00000000E-12      2.57215148E+0      1.54155758E+0      3.28775377E+0
+   640.00000000E-12      2.60761864E+0      1.60879087E+0      3.30299588E+0
+   650.00000000E-12      2.64124225E+0      1.67200498E+0      3.31717558E+0
+   660.00000000E-12      2.67276676E+0      1.73285063E+0      3.33056644E+0
+   670.00000000E-12      2.70211230E+0      1.79096543E+0      3.34304002E+0
+   680.00000000E-12      2.73046662E+0      1.84596111E+0      3.35483253E+0
+   690.00000000E-12      2.75698190E+0      1.89884964E+0      3.36583231E+0
+   700.00000000E-12      2.78192917E+0      1.94847361E+0      3.37624350E+0
+   710.00000000E-12      2.80581673E+0      1.99549371E+0      3.38596894E+0
+   720.00000000E-12      2.82860977E+0      2.04027331E+0      3.39518520E+0
+   730.00000000E-12      2.84962892E+0      2.08245917E+0      3.40380765E+0
+   740.00000000E-12      2.86981925E+0      2.12278208E+0      3.41198920E+0
+   760.00000000E-12      2.90679409E+0      2.19730880E+0      3.42694059E+0
+   770.00000000E-12      2.92392576E+0      2.23200296E+0      3.43377842E+0
+   780.00000000E-12      2.93987270E+0      2.26487055E+0      3.44028455E+0
+   790.00000000E-12      2.95540464E+0      2.29587392E+0      3.44640248E+0
+   810.00000000E-12      2.98362579E+0      2.35355114E+0      3.45772425E+0
+   820.00000000E-12      2.99631432E+0      2.38054433E+0      3.46296559E+0
+   830.00000000E-12      3.00899816E+0      2.40611289E+0      3.46791294E+0
+   850.00000000E-12      3.03183626E+0      2.45381111E+0      3.47711491E+0
+   880.00000000E-12      3.06172560E+0      2.51740629E+0      3.48935041E+0
+   890.00000000E-12      3.07102379E+0      2.53642031E+0      3.49304879E+0
+   900.00000000E-12      3.07945617E+0      2.55485820E+0      3.49660234E+0
+   920.00000000E-12      3.09557321E+0      2.58939841E+0      3.50324137E+0
+   930.00000000E-12      3.10325827E+0      2.60532513E+0      3.50634774E+0
+   940.00000000E-12      3.11032711E+0      2.62054200E+0      3.50934289E+0
+   950.00000000E-12      3.11739392E+0      2.63510297E+0      3.51220603E+0
+   970.00000000E-12      3.13054811E+0      2.66257256E+0      3.51761929E+0
+   990.00000000E-12      3.14296763E+0      2.68783358E+0      3.52263758E+0
+      1.00000000E-9      3.14892022E+0      2.69975250E+0      3.52501712E+0
+      1.02000000E-9      3.16065562E+0      2.72229201E+0      3.52951935E+0
+      1.05000000E-9      3.17777983E+0      2.75362077E+0      3.53571158E+0
+      1.06000000E-9      3.18335445E+0      2.76358820E+0      3.53764611E+0
+      1.08000000E-9      3.19438146E+0      2.78306509E+0      3.54132161E+0
+      1.13000000E-9      3.22037488E+0      2.83073690E+0      3.54953683E+0
+      1.16000000E-9      3.23395686E+0      2.85905533E+0      3.55388542E+0
+      1.19000000E-9      3.24588494E+0      2.88603894E+0      3.55784492E+0
+      1.20000000E-9      3.24928786E+0      2.89452475E+0      3.55908969E+0
+      1.23000000E-9      3.25866300E+0      2.91755447E+0      3.56259798E+0
+      1.25000000E-9      3.26386441E+0      2.93079124E+0      3.56477045E+0
+      1.26000000E-9      3.26611634E+0      2.93677297E+0      3.56581171E+0
+      1.27000000E-9      3.26836712E+0      2.94226708E+0      3.56681930E+0
+      1.29000000E-9      3.27225025E+0      2.95205979E+0      3.56875314E+0
+      1.33000000E-9      3.27846772E+0      2.96718074E+0      3.57230746E+0
+      1.36000000E-9      3.28201186E+0      2.97531244E+0      3.57472884E+0
+      1.37000000E-9      3.28307964E+0      2.97751265E+0      3.57549182E+0
+      1.41000000E-9      3.28653434E+0      2.98440245E+0      3.57835715E+0
+      1.45000000E-9      3.28916527E+0      2.98895617E+0      3.58094751E+0
+      1.51000000E-9      3.29206844E+0      2.99311210E+0      3.58439889E+0
+      1.62000000E-9      3.29550403E+0      2.99677502E+0      3.58967258E+0
+      1.65000000E-9      3.29619440E+0      2.99735884E+0      3.59092349E+0
+      1.68000000E-9      3.29680472E+0      2.99784944E+0      3.59210972E+0
+      2.00000000E-9      3.30097015E+0      3.00063933E+0      3.60191684E+0
+|
+[Rising Waveform]
+V_fixture = 0.000V
+V_fixture_min = 0.000V
+V_fixture_max = 0.000V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0   -343.35128202E-6   -449.92953523E-6   -257.27957412E-6
+    80.00000000E-12   -485.27810101E-6   -491.40037507E-6     30.24528984E-6
+   160.00000000E-12   -443.54121818E-6   -601.29557976E-6      4.29778141E-3
+   170.00000000E-12   -323.77595788E-6   -615.20263480E-6      4.06620211E-3
+   220.00000000E-12      1.45994550E-3   -676.65824866E-6     10.41346812E-6
+   230.00000000E-12      2.03089976E-3   -667.73194724E-6      7.65304776E-3
+   240.00000000E-12      2.62648449E-3   -656.97981777E-6     22.96689145E-3
+   250.00000000E-12      3.21354708E-3   -601.62704840E-6     44.85529547E-3
+   260.00000000E-12      3.64568239E-3   -541.95236507E-6     74.36072281E-3
+   270.00000000E-12      3.81700741E-3   -410.55519753E-6    110.09144266E-3
+   280.00000000E-12      3.53256115E-3   -272.20795862E-6    156.73544910E-3
+   290.00000000E-12      3.03759287E-3    -59.49854755E-6    218.80101696E-3
+   300.00000000E-12      1.93303424E-3    189.33662874E-6    302.16775817E-3
+   310.00000000E-12    615.68082274E-6    482.96230267E-6    407.95467712E-3
+   330.00000000E-12     -2.13417320E-3      1.19272396E-3    626.46935873E-3
+   340.00000000E-12     -2.32771409E-3      1.59528825E-3    728.73062333E-3
+   350.00000000E-12     40.88709467E-6      2.03915296E-3    826.53085509E-3
+   360.00000000E-12      6.19980997E-3      2.50585303E-3    915.75574536E-3
+   370.00000000E-12     18.06503542E-3      2.99369602E-3    997.89988929E-3
+   380.00000000E-12     34.71495202E-3      3.36633007E-3      1.07199636E+0
+   390.00000000E-12     55.30881550E-3      3.69063160E-3      1.13876849E+0
+   400.00000000E-12     82.55395312E-3      3.71685481E-3      1.19873243E+0
+   410.00000000E-12    117.92004619E-3      3.35492538E-3      1.25373407E+0
+   420.00000000E-12    160.93744871E-3      2.79559444E-3      1.30399487E+0
+   430.00000000E-12    218.20140557E-3      1.87164166E-3      1.34858587E+0
+   440.00000000E-12    288.11370372E-3    860.98477761E-6      1.39095511E+0
+   450.00000000E-12    365.86090760E-3   -342.41053762E-6      1.42992658E+0
+   470.00000000E-12    527.37930019E-3     -2.07871238E-3      1.50211578E+0
+   480.00000000E-12    607.62169433E-3     -1.62563484E-3      1.53614845E+0
+   490.00000000E-12    684.75496131E-3    994.51163468E-6      1.56941760E+0
+   500.00000000E-12    759.63362231E-3      5.88976266E-3      1.60190526E+0
+   510.00000000E-12    831.36824851E-3     14.96430293E-3      1.63422471E+0
+   520.00000000E-12    898.46377846E-3     26.48287403E-3      1.66614771E+0
+   530.00000000E-12    960.70320797E-3     42.17633750E-3      1.69798367E+0
+   540.00000000E-12      1.01878524E+0     62.82096531E-3      1.72968070E+0
+   550.00000000E-12      1.07245903E+0     87.16998791E-3      1.76133865E+0
+   560.00000000E-12      1.12234493E+0    117.17554907E-3      1.79292809E+0
+   570.00000000E-12      1.16845012E+0    155.66854767E-3      1.82438831E+0
+   580.00000000E-12      1.21081051E+0    200.07711699E-3      1.85575939E+0
+   590.00000000E-12      1.24984821E+0    253.05593725E-3      1.88686882E+0
+   600.00000000E-12      1.28762756E+0    312.07545426E-3      1.91778397E+0
+   610.00000000E-12      1.32180296E+0    374.09113504E-3      1.94827468E+0
+   620.00000000E-12      1.35484252E+0    437.38568138E-3      1.97845024E+0
+   630.00000000E-12      1.38613557E+0    501.32292055E-3      2.00803518E+0
+   640.00000000E-12      1.41599930E+0    564.93444482E-3      2.03718159E+0
+   650.00000000E-12      1.44487320E+0    627.13830617E-3      2.06558807E+0
+   670.00000000E-12      1.49996525E+0    747.00866019E-3      2.12044284E+0
+   680.00000000E-12      1.52686509E+0    803.47334504E-3      2.14680248E+0
+   690.00000000E-12      1.55329594E+0    858.07244418E-3      2.17221869E+0
+   700.00000000E-12      1.57948383E+0    909.32134730E-3      2.19693443E+0
+   710.00000000E-12      1.60550750E+0    957.62933711E-3      2.22065850E+0
+   720.00000000E-12      1.63142687E+0      1.00330855E+0      2.24364630E+0
+   740.00000000E-12      1.68301532E+0      1.08618376E+0      2.28685628E+0
+   750.00000000E-12      1.70875918E+0      1.12381845E+0      2.30708721E+0
+   760.00000000E-12      1.73449355E+0      1.15951678E+0      2.32657587E+0
+   780.00000000E-12      1.78581648E+0      1.22484765E+0      2.36288752E+0
+   790.00000000E-12      1.81140525E+0      1.25454286E+0      2.37975182E+0
+   800.00000000E-12      1.83677780E+0      1.28268864E+0      2.39592508E+0
+   810.00000000E-12      1.86214962E+0      1.30987129E+0      2.41121794E+0
+   820.00000000E-12      1.88714167E+0      1.33594687E+0      2.42585707E+0
+   830.00000000E-12      1.91213246E+0      1.36096424E+0      2.43967163E+0
+   840.00000000E-12      1.93657548E+0      1.38520605E+0      2.45287396E+0
+   860.00000000E-12      1.98474229E+0      1.43184452E+0      2.47717836E+0
+   870.00000000E-12      2.00846552E+0      1.45427034E+0      2.48834023E+0
+   900.00000000E-12      2.07600997E+0      1.52008017E+0      2.51847932E+0
+   910.00000000E-12      2.09784996E+0      1.54154581E+0      2.52740077E+0
+   920.00000000E-12      2.11857532E+0      1.56295141E+0      2.53588481E+0
+   930.00000000E-12      2.13929701E+0      1.58419372E+0      2.54383493E+0
+   970.00000000E-12      2.21487532E+0      1.66874370E+0      2.57145728E+0
+      1.01000000E-9      2.28013865E+0      1.75291949E+0      2.59321789E+0
+      1.05000000E-9      2.33487797E+0      1.83621012E+0      2.61030176E+0
+      1.06000000E-9      2.34662311E+0      1.85676038E+0      2.61397432E+0
+      1.07000000E-9      2.35836404E+0      1.87709792E+0      2.61740503E+0
+      1.10000000E-9      2.38870725E+0      1.93680592E+0      2.62657130E+0
+      1.11000000E-9      2.39803981E+0      1.95606430E+0      2.62926021E+0
+      1.13000000E-9      2.41455479E+0      1.99346804E+0      2.63418993E+0
+      1.15000000E-9      2.42912692E+0      2.02895311E+0      2.63855680E+0
+      1.17000000E-9      2.44197595E+0      2.06211205E+0      2.64242687E+0
+      1.19000000E-9      2.45331459E+0      2.09262252E+0      2.64585849E+0
+      1.21000000E-9      2.46333795E+0      2.12031756E+0      2.64890324E+0
+      1.23000000E-9      2.47221895E+0      2.14520347E+0      2.65160659E+0
+      1.25000000E-9      2.48010737E+0      2.16741830E+0      2.65400868E+0
+      1.27000000E-9      2.48713152E+0      2.18717724E+0      2.65614479E+0
+      1.28000000E-9      2.49026673E+0      2.19624053E+0      2.65712625E+0
+      1.31000000E-9      2.49900804E+0      2.22032956E+0      2.65974003E+0
+      1.33000000E-9      2.50403319E+0      2.23421229E+0      2.66125072E+0
+      1.34000000E-9      2.50628928E+0      2.24059563E+0      2.66194632E+0
+      1.37000000E-9      2.51260109E+0      2.25766013E+0      2.66380498E+0
+      1.41000000E-9      2.51954804E+0      2.27649169E+0      2.66585059E+0
+      1.42000000E-9      2.52103531E+0      2.28062034E+0      2.66629737E+0
+      1.43000000E-9      2.52252206E+0      2.28452056E+0      2.66671808E+0
+      1.45000000E-9      2.52521037E+0      2.29177071E+0      2.66749765E+0
+      1.49000000E-9      2.52984708E+0      2.30428398E+0      2.66883182E+0
+      1.57000000E-9      2.53680785E+0      2.32320381E+0      2.67081356E+0
+      1.59000000E-9      2.53817277E+0      2.32695230E+0      2.67120068E+0
+      1.64000000E-9      2.54106851E+0      2.33500791E+0      2.67202786E+0
+      1.70000000E-9      2.54379345E+0      2.34265509E+0      2.67281131E+0
+      1.75000000E-9      2.54558065E+0      2.34772389E+0      2.67333516E+0
+      1.83000000E-9      2.54774568E+0      2.35399179E+0      2.67400076E+0
+      2.00000000E-9      2.55058161E+0      2.36234511E+0      2.67498276E+0
+|
+[Falling Waveform]
+V_fixture = 0.000V
+V_fixture_min = 0.000V
+V_fixture_max = 0.000V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0      2.55058161E+0      2.36234511E+0      2.67498276E+0
+    30.00000000E-12      2.55054831E+0      2.36233126E+0      2.67847364E+0
+    40.00000000E-12      2.55054310E+0      2.36232719E+0      2.68024078E+0
+    60.00000000E-12      2.55057949E+0      2.36232028E+0      2.68509158E+0
+    80.00000000E-12      2.55077454E+0      2.36231483E+0      2.69115233E+0
+    90.00000000E-12      2.55094861E+0      2.36231226E+0      2.69451264E+0
+   130.00000000E-12      2.55288032E+0      2.36229858E+0      2.70813188E+0
+   150.00000000E-12      2.55475408E+0      2.36230136E+0      2.71254969E+0
+   160.00000000E-12      2.55590435E+0      2.36231467E+0      2.71304922E+0
+   170.00000000E-12      2.55714148E+0      2.36234012E+0      2.71264183E+0
+   180.00000000E-12      2.55852132E+0      2.36238334E+0      2.70844007E+0
+   190.00000000E-12      2.55999561E+0      2.36246159E+0      2.69850111E+0
+   200.00000000E-12      2.56155259E+0      2.36255345E+0      2.67988218E+0
+   210.00000000E-12      2.56316864E+0      2.36271283E+0      2.65245815E+0
+   220.00000000E-12      2.56481630E+0      2.36287875E+0      2.61910978E+0
+   230.00000000E-12      2.56646164E+0      2.36313295E+0      2.57631431E+0
+   240.00000000E-12      2.56808704E+0      2.36339569E+0      2.52639727E+0
+   250.00000000E-12      2.56955965E+0      2.36375435E+0      2.47091788E+0
+   260.00000000E-12      2.57086251E+0      2.36412230E+0      2.40961540E+0
+   270.00000000E-12      2.57195058E+0      2.36458125E+0      2.34420625E+0
+   280.00000000E-12      2.57265931E+0      2.36504902E+0      2.27411991E+0
+   290.00000000E-12      2.57319031E+0      2.36558509E+0      2.20038834E+0
+   300.00000000E-12      2.57296237E+0      2.36615033E+0      2.12239474E+0
+   310.00000000E-12      2.57208365E+0      2.36675005E+0      2.03684775E+0
+   320.00000000E-12      2.56930882E+0      2.36737854E+0      1.94284546E+0
+   330.00000000E-12      2.56402683E+0      2.36804217E+0      1.84183264E+0
+   340.00000000E-12      2.55542155E+0      2.36871726E+0      1.73129613E+0
+   350.00000000E-12      2.54302344E+0      2.36940980E+0      1.61550995E+0
+   360.00000000E-12      2.52660117E+0      2.37009826E+0      1.49141950E+0
+   370.00000000E-12      2.50430316E+0      2.37078293E+0      1.36143199E+0
+   380.00000000E-12      2.47680113E+0      2.37141390E+0      1.22529833E+0
+   390.00000000E-12      2.44495920E+0      2.37202536E+0      1.08405630E+0
+   400.00000000E-12      2.40627504E+0      2.37254361E+0    938.66524670E-3
+   410.00000000E-12      2.36194175E+0      2.37294005E+0    791.10720573E-3
+   420.00000000E-12      2.31442780E+0      2.37326071E+0    642.28024538E-3
+   430.00000000E-12      2.26302472E+0      2.37343637E+0    504.18734008E-3
+   440.00000000E-12      2.20871246E+0      2.37352257E+0    378.80438245E-3
+   450.00000000E-12      2.15117656E+0      2.37340991E+0    280.88255649E-3
+   460.00000000E-12      2.08946942E+0      2.37300536E+0    203.15035486E-3
+   470.00000000E-12      2.02267571E+0      2.37201388E+0    147.21239165E-3
+   480.00000000E-12      1.95230054E+0      2.37022145E+0    106.46100388E-3
+   490.00000000E-12      1.87512758E+0      2.36739877E+0     77.06383428E-3
+   500.00000000E-12      1.79484183E+0      2.36372504E+0     60.51723048E-3
+   510.00000000E-12      1.71043172E+0      2.35867215E+0     46.73642202E-3
+   520.00000000E-12      1.62124056E+0      2.35283149E+0     39.73716992E-3
+   530.00000000E-12      1.52769928E+0      2.34558679E+0     34.22993154E-3
+   540.00000000E-12      1.43062977E+0      2.33649097E+0     31.39740653E-3
+   550.00000000E-12      1.32987036E+0      2.32597399E+0     29.34958878E-3
+   560.00000000E-12      1.22598847E+0      2.31331866E+0     27.90286939E-3
+   570.00000000E-12      1.11910103E+0      2.29801326E+0     26.74873185E-3
+   580.00000000E-12      1.00943689E+0      2.28076670E+0     25.76612512E-3
+   590.00000000E-12    897.67286490E-3      2.26052058E+0     24.90912247E-3
+   600.00000000E-12    785.21543355E-3      2.23656587E+0     24.14538124E-3
+   610.00000000E-12    673.21683439E-3      2.20842689E+0     23.42157175E-3
+   620.00000000E-12    564.74328202E-3      2.17631658E+0     22.72741010E-3
+   630.00000000E-12    463.82244439E-3      2.13922007E+0     22.04984956E-3
+   640.00000000E-12    375.97565949E-3      2.09717746E+0     21.38461627E-3
+   650.00000000E-12    300.42333872E-3      2.04929857E+0     20.73336934E-3
+   660.00000000E-12    238.61601792E-3      1.99812924E+0     20.09250737E-3
+   670.00000000E-12    190.08788407E-3      1.94316597E+0     19.46645231E-3
+   680.00000000E-12    147.32820825E-3      1.88424738E+0     18.85139160E-3
+   690.00000000E-12    115.17098175E-3      1.82271762E+0     18.26881664E-3
+   700.00000000E-12     90.84510559E-3      1.75748606E+0     17.71036283E-3
+   710.00000000E-12     71.81200758E-3      1.68955356E+0     17.17312022E-3
+   720.00000000E-12     57.18104214E-3      1.61941193E+0     16.65162715E-3
+   730.00000000E-12     48.14753012E-3      1.54683231E+0     16.14718949E-3
+   740.00000000E-12     40.99320126E-3      1.47255046E+0     15.65541631E-3
+   760.00000000E-12     32.16484462E-3      1.31845261E+0     14.73349120E-3
+   780.00000000E-12     27.38720581E-3      1.15810126E+0     13.87318734E-3
+   800.00000000E-12     24.51584049E-3    991.59822678E-3     13.06425286E-3
+   830.00000000E-12     21.68996151E-3    736.99846324E-3     11.93290257E-3
+   840.00000000E-12     21.00865581E-3    654.08956188E-3     11.57766979E-3
+   850.00000000E-12     20.32785478E-3    574.90320215E-3     11.23464918E-3
+   860.00000000E-12     19.71902803E-3    500.71840512E-3     10.90069664E-3
+   870.00000000E-12     19.11043900E-3    436.34537961E-3     10.57989591E-3
+   880.00000000E-12     18.56080642E-3    374.22172411E-3     10.26886071E-3
+   890.00000000E-12     18.01136725E-3    322.54372201E-3      9.96961741E-3
+   900.00000000E-12     17.49662381E-3    274.63504749E-3      9.67913096E-3
+   910.00000000E-12     16.98199419E-3    233.22293536E-3      9.40053248E-3
+   920.00000000E-12     16.48746902E-3    193.99455763E-3      9.13076290E-3
+   930.00000000E-12     15.99300933E-3    162.03670940E-3      8.87140129E-3
+   940.00000000E-12     15.52470717E-3    134.58824263E-3      8.61976786E-3
+   950.00000000E-12     15.05649063E-3    111.42650508E-3      8.37833425E-3
+   960.00000000E-12     14.61534226E-3     91.53612670E-3      8.14447471E-3
+   970.00000000E-12     14.17428254E-3     75.68970959E-3      7.91945809E-3
+   980.00000000E-12     13.76054886E-3     62.92939081E-3      7.70100787E-3
+   990.00000000E-12     13.34690584E-3     52.96307323E-3      7.49111637E-3
+      1.00000000E-9     12.95425876E-3     45.12895989E-3      7.28758013E-3
+      1.01000000E-9     12.56168219E-3     39.02293696E-3      7.09145985E-3
+      1.03000000E-9     11.81777349E-3     30.48510508E-3      6.71734043E-3
+      1.04000000E-9     11.46349589E-3     27.52565287E-3      6.53911613E-3
+      1.07000000E-9     10.43904166E-3     21.76875161E-3      6.03786011E-3
+      1.12000000E-9      8.92960779E-3     17.19630808E-3      5.29702121E-3
+      1.13000000E-9      8.64955687E-3     16.59814970E-3      5.16156334E-3
+      1.26000000E-9      5.77567019E-3     11.16590290E-3      3.68705865E-3
+      1.28000000E-9      5.42922565E-3     10.49350287E-3      3.49883326E-3
+      1.33000000E-9      4.64675788E-3      8.92217264E-3      3.06293098E-3
+      1.48000000E-9      2.86157533E-3      5.20838242E-3      1.98917013E-3
+      1.57000000E-9      2.06282344E-3      3.62590635E-3      1.47067497E-3
+      2.00000000E-9   -343.35128202E-6   -449.92953523E-6   -257.27957412E-6
+|
+|***************************************************************************
+|                                   MODEL INBUFF1
+|***************************************************************************
+|
+[Model]        inbuff1
+Model_type     Input
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      1.860pF             1.600pF             2.260pF
+[Voltage Range]             3.300V              3.000V              3.600V
+| Junction Temperature (Ambient temp is 25C typ, 70C min, 0C max)
+[Temperature Range]        40.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0   -307.43444000E-3   -315.16389000E-3   -304.82218000E-3
+     -3.29000000E+0   -305.07811000E-3   -312.66467000E-3   -302.62366000E-3
+     -3.27000000E+0   -301.54113000E-3   -309.19028000E-3   -299.04881000E-3
+     -3.25000000E+0   -298.12401000E-3   -305.83972000E-3   -295.59147000E-3
+     -3.23000000E+0   -294.61958000E-3   -302.39887000E-3   -292.04851000E-3
+     -3.19000000E+0   -287.69997000E-3   -295.60870000E-3   -285.05056000E-3
+     -3.15000000E+0   -280.78398000E-3   -288.82161000E-3   -278.05649000E-3
+     -3.11000000E+0   -273.87268000E-3   -282.03873000E-3   -271.06738000E-3
+     -3.03000000E+0   -260.06685000E-3   -268.48842000E-3   -257.10667000E-3
+     -2.95000000E+0   -246.28641000E-3   -254.96166000E-3   -243.17248000E-3
+     -2.91000000E+0   -239.40668000E-3   -248.20800000E-3   -236.21639000E-3
+     -2.79000000E+0   -218.81426000E-3   -227.99002000E-3   -215.39748000E-3
+     -2.67000000E+0   -198.30150000E-3   -207.84468000E-3   -194.66353000E-3
+     -2.59000000E+0   -184.67765000E-3   -194.46075000E-3   -180.89624000E-3
+     -2.57000000E+0   -181.27950000E-3   -191.12180000E-3   -177.46285000E-3
+     -2.51000000E+0   -171.10067000E-3   -181.11873000E-3   -167.18002000E-3
+     -2.49000000E+0   -167.71501000E-3   -177.79088000E-3   -163.76033000E-3
+     -2.47000000E+0   -164.33149000E-3   -174.46488000E-3   -160.34312000E-3
+     -2.43000000E+0   -157.57620000E-3   -167.82337000E-3   -153.52161000E-3
+     -2.41000000E+0   -154.20457000E-3   -164.50798000E-3   -150.11748000E-3
+     -2.35000000E+0   -144.11078000E-3   -154.58035000E-3   -139.92877000E-3
+     -2.33000000E+0   -140.75502000E-3   -151.27898000E-3   -136.54233000E-3
+     -2.31000000E+0   -137.40260000E-3   -147.98050000E-3   -133.15971000E-3
+     -2.27000000E+0   -130.71224000E-3   -141.39632000E-3   -126.41066000E-3
+     -2.23000000E+0   -124.04098000E-3   -134.82888000E-3   -119.68320000E-3
+     -2.21000000E+0   -120.71339000E-3   -131.55218000E-3   -116.32856000E-3
+     -2.19000000E+0   -117.39030000E-3   -128.27934000E-3   -112.97918000E-3
+     -2.15000000E+0   -110.76191000E-3   -121.74906000E-3   -106.30083000E-3
+     -2.11000000E+0   -104.15788000E-3   -115.23955000E-3    -99.65088700E-3
+     -2.09000000E+0   -100.86613000E-3   -111.99348000E-3    -96.33797300E-3
+     -2.07000000E+0    -97.58071800E-3   -108.75260000E-3    -93.03276700E-3
+     -2.05000000E+0    -94.30350100E-3   -105.51856000E-3    -89.73731100E-3
+     -2.01000000E+0    -87.77267200E-3    -99.06949000E-3    -83.17546600E-3
+     -1.99000000E+0    -84.52018800E-3    -95.85517600E-3    -79.91071700E-3
+     -1.95000000E+0    -78.04571400E-3    -89.45021600E-3    -73.41988600E-3
+     -1.91000000E+0    -71.61658100E-3    -83.07913500E-3    -66.98835700E-3
+     -1.89000000E+0    -68.42188800E-3    -79.90797600E-3    -63.79923700E-3
+     -1.87000000E+0    -65.24137000E-3    -76.74653700E-3    -60.62990000E-3
+     -1.85000000E+0    -62.07773700E-3    -73.59669600E-3    -57.48411600E-3
+     -1.83000000E+0    -58.93167400E-3    -70.45823000E-3    -54.36388300E-3
+     -1.81000000E+0    -55.80644500E-3    -67.33319400E-3    -51.27409800E-3
+     -1.79000000E+0    -52.70352900E-3    -64.22166300E-3    -48.21829300E-3
+     -1.77000000E+0    -49.62706500E-3    -61.12596000E-3    -45.20318700E-3
+     -1.75000000E+0    -46.57973900E-3    -58.04656600E-3    -42.23476800E-3
+     -1.73000000E+0    -43.56710600E-3    -54.98619900E-3    -39.32279500E-3
+     -1.71000000E+0    -40.59377600E-3    -51.94591000E-3    -36.47778800E-3
+     -1.69000000E+0    -37.66767200E-3    -48.92902100E-3    -33.71410500E-3
+     -1.67000000E+0    -34.79660900E-3    -45.93740900E-3    -31.04943000E-3
+     -1.65000000E+0    -31.99302200E-3    -42.97533000E-3    -28.50857100E-3
+     -1.63000000E+0    -29.26965800E-3    -40.04591400E-3    -26.12233000E-3
+     -1.61000000E+0    -26.64619000E-3    -37.15490100E-3    -23.93286000E-3
+     -1.59000000E+0    -24.14597900E-3    -34.30739600E-3    -21.99049200E-3
+     -1.57000000E+0    -21.80125800E-3    -31.51156600E-3    -20.34882600E-3
+     -1.55000000E+0    -19.65130800E-3    -28.77574200E-3    -19.03915700E-3
+     -1.53000000E+0    -17.74436700E-3    -26.11216300E-3    -18.04287800E-3
+     -1.51000000E+0    -16.12731900E-3    -23.53508400E-3    -17.28601800E-3
+     -1.49000000E+0    -14.82973700E-3    -21.06267900E-3    -16.67894600E-3
+     -1.47000000E+0    -13.83802600E-3    -18.71776900E-3    -16.15193700E-3
+     -1.45000000E+0    -13.09261600E-3    -16.52967800E-3    -15.66517600E-3
+     -1.43000000E+0    -12.51214300E-3    -14.53182800E-3    -15.19800000E-3
+     -1.41000000E+0    -12.02785600E-3    -12.76176900E-3    -14.74144400E-3
+     -1.39000000E+0    -11.59435000E-3    -11.25197700E-3    -14.29074500E-3
+     -1.37000000E+0    -11.18715600E-3    -10.02019500E-3    -13.84433000E-3
+     -1.35000000E+0    -10.79316800E-3     -9.05527740E-3    -13.40074300E-3
+     -1.33000000E+0    -10.40658200E-3     -8.31697920E-3    -12.95984500E-3
+     -1.31000000E+0    -10.02396900E-3     -7.74709250E-3    -12.52085700E-3
+     -1.29000000E+0     -9.64428410E-3     -7.28972420E-3    -12.08398500E-3
+     -1.25000000E+0     -8.89059420E-3     -6.55358150E-3    -11.21540100E-3
+     -1.23000000E+0     -8.51625920E-3     -6.22929530E-3    -10.78368600E-3
+     -1.13000000E+0     -6.67433280E-3     -4.74360330E-3     -8.65484270E-3
+     -1.11000000E+0     -6.31278520E-3     -4.45983200E-3     -8.23538510E-3
+     -1.05000000E+0     -5.24612190E-3     -3.63051640E-3     -6.99235640E-3
+     -1.03000000E+0     -4.89720330E-3     -3.36174220E-3     -6.58345370E-3
+     -1.01000000E+0     -4.55235700E-3     -3.09744800E-3     -6.17786610E-3
+   -970.00000000E-3     -3.87572940E-3     -2.58299260E-3     -5.37706200E-3
+   -950.00000000E-3     -3.54486200E-3     -2.33364020E-3     -4.98254060E-3
+   -930.00000000E-3     -3.21990420E-3     -2.09039060E-3     -4.59273010E-3
+   -890.00000000E-3     -2.58974960E-3     -1.62393660E-3     -3.82877820E-3
+   -850.00000000E-3     -1.99191550E-3     -1.18941040E-3     -3.09067300E-3
+   -830.00000000E-3     -1.70783160E-3   -986.39102000E-6     -2.73355470E-3
+   -790.00000000E-3     -1.17748250E-3   -615.16478000E-6     -2.05251920E-3
+   -770.00000000E-3   -936.16416000E-6   -449.95426000E-6     -1.73269080E-3
+   -730.00000000E-3   -512.29171000E-6   -169.02449000E-6     -1.14489440E-3
+   -700.00000000E-3                 NA      0.00000000E+0                 NA
+   -690.00000000E-3   -182.24175000E-6      0.00000000E+0   -645.26420000E-6
+   -660.00000000E-3      0.00000000E+0      0.00000000E+0                 NA
+   -650.00000000E-3      0.00000000E+0      0.00000000E+0   -259.61303000E-6
+   -630.00000000E-3      0.00000000E+0      0.00000000E+0   -115.80253000E-6
+   -610.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0     42.30782600E-3     34.23891600E-3     48.36652300E-3
+     -3.29000000E+0     41.41713200E-3     33.20915300E-3     47.60909400E-3
+     -3.27000000E+0     40.86809600E-3     32.73582700E-3     46.98270100E-3
+     -3.25000000E+0     40.47847500E-3     32.42738800E-3     46.51553800E-3
+     -3.23000000E+0     39.98540900E-3     32.01043600E-3     45.94818500E-3
+     -3.21000000E+0     39.57980200E-3     31.68252500E-3     45.46931400E-3
+     -3.19000000E+0     39.11696900E-3     31.29511300E-3     44.93537700E-3
+     -3.17000000E+0     38.70582200E-3     30.95969600E-3     44.45443000E-3
+     -3.15000000E+0     38.26125200E-3     30.58981600E-3     43.94166900E-3
+     -3.13000000E+0     37.84882100E-3     30.25193200E-3     43.46241500E-3
+     -3.11000000E+0     37.41604800E-3     29.89318900E-3     42.96411700E-3
+     -3.09000000E+0     37.00413600E-3     29.55504000E-3     42.48799600E-3
+     -3.07000000E+0     36.57938800E-3     29.20378200E-3     42.00016300E-3
+     -3.05000000E+0     36.16873200E-3     28.86631900E-3     41.52764500E-3
+     -3.03000000E+0     35.74970500E-3     28.52033300E-3     41.04776100E-3
+     -3.01000000E+0     35.34058000E-3     28.18395500E-3     40.57890400E-3
+     -2.99000000E+0     34.92581600E-3     27.84184600E-3     40.10532000E-3
+     -2.95000000E+0     34.10685000E-3     27.16757000E-3     39.17160900E-3
+     -2.91000000E+0     33.29218000E-3     26.49695100E-3     38.24567100E-3
+     -2.87000000E+0     32.48135500E-3     25.82958900E-3     37.32675600E-3
+     -2.83000000E+0     31.67405900E-3     25.16520500E-3     36.41426900E-3
+     -2.79000000E+0     30.87007400E-3     24.50361000E-3     35.50773000E-3
+     -2.75000000E+0     30.06925200E-3     23.84468200E-3     34.60674800E-3
+     -2.67000000E+0     28.47675700E-3     22.53458700E-3     32.82021800E-3
+     -2.59000000E+0     26.89622700E-3     21.23478200E-3     31.05268300E-3
+     -2.55000000E+0     26.11044700E-3     20.58880500E-3     30.17558100E-3
+     -2.47000000E+0     24.54799400E-3     19.30498800E-3     28.43403600E-3
+     -2.43000000E+0     23.77140700E-3     18.66729900E-3     27.56939100E-3
+     -2.37000000E+0     22.61285700E-3     17.71662000E-3     26.28026100E-3
+     -2.33000000E+0     21.84429600E-3     17.08643400E-3     25.42545000E-3
+     -2.27000000E+0     20.69745300E-3     16.14692600E-3     24.15015600E-3
+     -2.23000000E+0     19.93746100E-3     15.52501300E-3     23.30502300E-3
+     -2.19000000E+0     19.18106000E-3     14.90664000E-3     22.46374800E-3
+     -2.15000000E+0     18.42836300E-3     14.29196400E-3     21.62635100E-3
+     -2.09000000E+0     17.30679300E-3     13.37747600E-3     20.37786900E-3
+     -2.07000000E+0     16.93459900E-3     13.07439100E-3     19.96333900E-3
+     -2.03000000E+0     16.19382500E-3     12.47187500E-3     19.13784000E-3
+     -1.99000000E+0     15.45734400E-3     11.87382400E-3     18.31645000E-3
+     -1.91000000E+0     13.99805200E-3     10.69209300E-3     16.68642400E-3
+     -1.85000000E+0     12.91664500E-3      9.81963720E-3     15.47581300E-3
+     -1.83000000E+0     12.55854400E-3      9.53139580E-3     15.07434400E-3
+     -1.79000000E+0     11.84690900E-3      8.95975100E-3     14.27548900E-3
+     -1.75000000E+0     11.14113600E-3      8.39441520E-3     13.48173200E-3
+     -1.71000000E+0     10.44162200E-3      7.83582270E-3     12.69335900E-3
+     -1.67000000E+0      9.74882040E-3      7.28445830E-3     11.91070500E-3
+     -1.65000000E+0      9.40526320E-3      7.01180730E-3     11.52181700E-3
+     -1.63000000E+0      9.06325610E-3      6.74086600E-3     11.13416600E-3
+     -1.61000000E+0      8.72353420E-3      6.47232210E-3     10.74850200E-3
+     -1.59000000E+0      8.38553440E-3      6.20565730E-3     10.36421400E-3
+     -1.55000000E+0      7.71635950E-3      5.67952230E-3      9.60140980E-3
+     -1.53000000E+0      7.38538120E-3      5.42024080E-3      9.22305170E-3
+     -1.51000000E+0      7.05655350E-3      5.16324290E-3      8.84642380E-3
+     -1.49000000E+0      6.73060800E-3      4.90921310E-3      8.47226350E-3
+     -1.47000000E+0      6.40708200E-3      4.65771030E-3      8.10006250E-3
+     -1.45000000E+0      6.08671530E-3      4.40942210E-3      7.73056410E-3
+     -1.43000000E+0      5.76908450E-3      4.16393750E-3      7.36330030E-3
+     -1.41000000E+0      5.45494370E-3      3.92195340E-3      6.99902670E-3
+     -1.39000000E+0      5.14391400E-3      3.68309060E-3      6.63732130E-3
+     -1.37000000E+0      4.83677170E-3      3.44805990E-3      6.27896010E-3
+     -1.35000000E+0      4.53318880E-3      3.21651850E-3      5.92357420E-3
+     -1.33000000E+0      4.23397360E-3      2.98919770E-3      5.57197100E-3
+     -1.31000000E+0      3.93885940E-3      2.76579760E-3      5.22384490E-3
+     -1.27000000E+0      3.36330230E-3      2.33279400E-3      4.54035490E-3
+     -1.23000000E+0      2.80945260E-3      1.91975630E-3      3.87589970E-3
+     -1.21000000E+0      2.54191290E-3      1.72168810E-3      3.55202080E-3
+     -1.19000000E+0      2.28099860E-3      1.52945120E-3      3.23404940E-3
+     -1.17000000E+0      2.02784970E-3      1.34399760E-3      2.92312980E-3
+     -1.15000000E+0      1.78267430E-3      1.16535460E-3      2.61945000E-3
+     -1.13000000E+0      1.54680200E-3    994.59350000E-6      2.32435320E-3
+     -1.11000000E+0      1.32068210E-3    831.88963000E-6      2.03828850E-3
+     -1.09000000E+0      1.10590530E-3    678.45734000E-6      1.76289480E-3
+     -1.07000000E+0    903.22812000E-6    534.62567000E-6      1.49899510E-3
+     -1.05000000E+0    714.54537000E-6    401.72691000E-6      1.24865060E-3
+     -1.03000000E+0    540.90461000E-6    280.16467000E-6      1.01318010E-3
+     -1.01000000E+0    384.37771000E-6    171.23252000E-6    795.15103000E-6
+   -990.00000000E-3    245.98833000E-6     75.14942100E-6    596.35369000E-6
+   -970.00000000E-3    127.40870000E-6      0.00000000E+0    419.61989000E-6
+   -950.00000000E-3     28.76187800E-6      0.00000000E+0    266.59563000E-6
+   -940.00000000E-3      0.00000000E+0      0.00000000E+0                 NA
+   -930.00000000E-3      0.00000000E+0      0.00000000E+0    139.24445000E-6
+   -910.00000000E-3      0.00000000E+0      0.00000000E+0     37.40096000E-6
+   -900.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|                                   MODEL INBUFF2
+|***************************************************************************
+|
+[Model]        inbuff2
+Model_type     Input
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      1.860pF             1.600pF             2.260pF
+[Voltage Range]             3.300V              3.000V              3.600V
+| Junction Temperature (Ambient temp is 25C typ, 70C min, 0C max)
+[Temperature Range]        40.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0   -389.44682000E-3   -388.65552000E-3   -392.96572000E-3
+     -3.29000000E+0   -386.65435000E-3   -385.75533000E-3   -390.31353000E-3
+     -3.27000000E+0   -382.38054000E-3   -381.61794000E-3   -385.96189000E-3
+     -3.25000000E+0   -378.24258000E-3   -377.62118000E-3   -381.74304000E-3
+     -3.23000000E+0   -374.00461000E-3   -373.52062000E-3   -377.42657000E-3
+     -3.15000000E+0   -357.26323000E-3   -357.33267000E-3   -360.36853000E-3
+     -3.11000000E+0   -348.90085000E-3   -349.24531000E-3   -351.84877000E-3
+     -3.07000000E+0   -340.54524000E-3   -341.16366000E-3   -343.33638000E-3
+     -3.03000000E+0   -332.19700000E-3   -333.08833000E-3   -334.83196000E-3
+     -2.95000000E+0   -315.52431000E-3   -316.95832000E-3   -317.84874000E-3
+     -2.91000000E+0   -307.20057000E-3   -308.90436000E-3   -309.37070000E-3
+     -2.79000000E+0   -282.28385000E-3   -284.79055000E-3   -283.99521000E-3
+     -2.75000000E+0   -273.99762000E-3   -276.76977000E-3   -275.55752000E-3
+     -2.67000000E+0   -257.45645000E-3   -260.75616000E-3   -258.71583000E-3
+     -2.63000000E+0   -249.20238000E-3   -252.76415000E-3   -250.31277000E-3
+     -2.59000000E+0   -240.95996000E-3   -244.78260000E-3   -241.92226000E-3
+     -2.53000000E+0   -228.62033000E-3   -232.83198000E-3   -229.36230000E-3
+     -2.51000000E+0   -224.51221000E-3   -228.85294000E-3   -225.18126000E-3
+     -2.49000000E+0   -220.40940000E-3   -224.87882000E-3   -221.00579000E-3
+     -2.43000000E+0   -208.11813000E-3   -212.97170000E-3   -208.49830000E-3
+     -2.41000000E+0   -204.02956000E-3   -209.01042000E-3   -204.33828000E-3
+     -2.35000000E+0   -191.78387000E-3   -197.14435000E-3   -191.88039000E-3
+     -2.33000000E+0   -187.71132000E-3   -193.19745000E-3   -187.73790000E-3
+     -2.27000000E+0   -175.51719000E-3   -181.37750000E-3   -175.33682000E-3
+     -2.21000000E+0   -163.36846000E-3   -169.59783000E-3   -162.98609000E-3
+     -2.19000000E+0   -159.32865000E-3   -165.67972000E-3   -158.88028000E-3
+     -2.15000000E+0   -151.26806000E-3   -157.86009000E-3   -150.69011000E-3
+     -2.11000000E+0   -143.23295000E-3   -150.06218000E-3   -142.52926000E-3
+     -2.09000000E+0   -139.22647000E-3   -146.17262000E-3   -138.46162000E-3
+     -2.05000000E+0   -131.23510000E-3   -138.41112000E-3   -130.35217000E-3
+     -2.03000000E+0   -127.25123000E-3   -134.53986000E-3   -126.31175000E-3
+     -1.99000000E+0   -119.31242000E-3   -126.82059000E-3   -118.26600000E-3
+     -1.97000000E+0   -115.35880000E-3   -122.97336000E-3   -114.26259000E-3
+     -1.95000000E+0   -111.41520000E-3   -119.13351000E-3   -110.27221000E-3
+     -1.91000000E+0   -103.56649000E-3   -111.48266000E-3   -102.34085000E-3
+     -1.89000000E+0    -99.66358100E-3   -107.67287000E-3    -98.40335200E-3
+     -1.87000000E+0    -95.77530900E-3   -103.87301000E-3    -94.48608200E-3
+     -1.85000000E+0    -91.90541100E-3   -100.08603000E-3    -90.59377300E-3
+     -1.83000000E+0    -88.05364500E-3    -96.31073300E-3    -86.72750700E-3
+     -1.81000000E+0    -84.22425900E-3    -92.55022400E-3    -82.89307500E-3
+     -1.79000000E+0    -80.41781300E-3    -88.80363100E-3    -79.09308000E-3
+     -1.77000000E+0    -76.63937200E-3    -85.07429000E-3    -75.33505300E-3
+     -1.73000000E+0    -69.17817200E-3    -77.66971600E-3    -67.97050600E-3
+     -1.71000000E+0    -65.50545300E-3    -73.99830900E-3    -64.38364100E-3
+     -1.69000000E+0    -61.88118000E-3    -70.35178100E-3    -60.87982000E-3
+     -1.67000000E+0    -58.31212700E-3    -66.73108500E-3    -57.47474000E-3
+     -1.65000000E+0    -54.81087700E-3    -63.14132900E-3    -54.19462300E-3
+     -1.63000000E+0    -51.39023300E-3    -59.58469300E-3    -51.07010400E-3
+     -1.61000000E+0    -48.06908400E-3    -56.06765400E-3    -48.14519000E-3
+     -1.59000000E+0    -44.87003400E-3    -52.59428800E-3    -45.47210500E-3
+     -1.57000000E+0    -41.82580900E-3    -49.17332000E-3    -43.11107200E-3
+     -1.55000000E+0    -38.97535000E-3    -45.81188700E-3    -41.10462200E-3
+     -1.53000000E+0    -36.36961900E-3    -42.52249100E-3    -39.44969100E-3
+     -1.51000000E+0    -34.06089500E-3    -39.31736200E-3    -38.07890200E-3
+     -1.49000000E+0    -32.09185500E-3    -36.21608800E-3    -36.89615800E-3
+     -1.47000000E+0    -30.46534600E-3    -33.23820800E-3    -35.81772500E-3
+     -1.45000000E+0    -29.13372100E-3    -30.41329400E-3    -34.79326200E-3
+     -1.43000000E+0    -28.01245000E-3    -27.77388800E-3    -33.79518800E-3
+     -1.41000000E+0    -27.02069300E-3    -25.36011300E-3    -32.81181200E-3
+     -1.39000000E+0    -26.09963800E-3    -23.21014200E-3    -31.83639300E-3
+     -1.37000000E+0    -25.21646400E-3    -21.35485300E-3    -30.86718800E-3
+     -1.35000000E+0    -24.35264800E-3    -19.79959500E-3    -29.90197100E-3
+     -1.33000000E+0    -23.50034900E-3    -18.51885900E-3    -28.94097800E-3
+     -1.31000000E+0    -22.65448200E-3    -17.45764000E-3    -27.98291200E-3
+     -1.29000000E+0    -21.81394100E-3    -16.55336700E-3    -27.02846900E-3
+     -1.27000000E+0    -20.97698100E-3    -15.75006300E-3    -26.07666900E-3
+     -1.23000000E+0    -19.31456700E-3    -14.30519000E-3    -24.18289600E-3
+     -1.17000000E+0    -16.85057300E-3    -12.30316800E-3    -21.36758800E-3
+     -1.15000000E+0    -16.03787700E-3    -11.65632200E-3    -20.43621500E-3
+     -1.07000000E+0    -12.84262000E-3     -9.14534230E-3    -16.75442500E-3
+     -1.05000000E+0    -12.06009000E-3     -8.53735170E-3    -15.84646300E-3
+   -990.00000000E-3     -9.76027820E-3     -6.76749470E-3    -13.15825600E-3
+   -950.00000000E-3     -8.27617460E-3     -5.64107690E-3    -11.40306200E-3
+   -930.00000000E-3     -7.55223110E-3     -5.09695940E-3    -10.53921900E-3
+   -910.00000000E-3     -6.84167450E-3     -4.56669250E-3     -9.68549500E-3
+   -870.00000000E-3     -5.46925950E-3     -3.55539280E-3     -8.01569770E-3
+   -850.00000000E-3     -4.81170360E-3     -3.07808480E-3     -7.20317120E-3
+   -810.00000000E-3     -3.56722320E-3     -2.19111280E-3     -5.63501840E-3
+   -790.00000000E-3     -2.98820530E-3     -1.78720730E-3     -4.88898230E-3
+   -770.00000000E-3     -2.44648360E-3     -1.41486250E-3     -4.17437580E-3
+   -750.00000000E-3     -1.94602860E-3     -1.07801430E-3     -3.49536490E-3
+   -730.00000000E-3     -1.49306790E-3   -780.09953000E-6     -2.85822350E-3
+   -710.00000000E-3     -1.09194600E-3   -522.77833000E-6     -2.26901740E-3
+   -690.00000000E-3   -748.13325000E-6   -307.66125000E-6     -1.73578260E-3
+   -670.00000000E-3   -463.51281000E-6   -133.62804000E-6     -1.26560370E-3
+   -650.00000000E-3   -238.91102000E-6      0.00000000E+0   -865.86029000E-6
+   -630.00000000E-3    -69.70202000E-6      0.00000000E+0   -540.19321000E-6
+   -620.00000000E-3      0.00000000E+0      0.00000000E+0                 NA
+   -610.00000000E-3      0.00000000E+0      0.00000000E+0   -288.99553000E-6
+   -590.00000000E-3      0.00000000E+0      0.00000000E+0   -105.94033000E-6
+   -570.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0     51.10910500E-3     41.29280000E-3     59.21284600E-3
+     -3.29000000E+0     50.17941400E-3     40.23390600E-3     58.38302000E-3
+     -3.27000000E+0     49.53665000E-3     39.68625300E-3     57.60619900E-3
+     -3.25000000E+0     49.05649900E-3     39.30614300E-3     56.99714000E-3
+     -3.23000000E+0     48.47196400E-3     38.81652100E-3     56.28693200E-3
+     -3.21000000E+0     47.97586800E-3     38.41652800E-3     55.66935400E-3
+     -3.19000000E+0     47.42269000E-3     37.95703800E-3     54.99792700E-3
+     -3.17000000E+0     46.92161000E-3     37.54966800E-3     54.38218800E-3
+     -3.15000000E+0     46.38746400E-3     37.10801500E-3     53.73640200E-3
+     -3.13000000E+0     45.88576100E-3     36.69843700E-3     53.12629500E-3
+     -3.11000000E+0     45.36405900E-3     36.26816000E-3     52.49895600E-3
+     -3.09000000E+0     44.86352400E-3     35.85859500E-3     51.89573100E-3
+     -3.07000000E+0     44.35043800E-3     35.43603000E-3     51.28250300E-3
+     -3.03000000E+0     43.34496400E-3     34.61036000E-3     50.08446400E-3
+     -2.99000000E+0     42.34638400E-3     33.79015000E-3     48.90273400E-3
+     -2.95000000E+0     41.35376400E-3     32.97464200E-3     47.73559200E-3
+     -2.87000000E+0     39.38385600E-3     31.35566700E-3     45.43964900E-3
+     -2.83000000E+0     38.40571300E-3     30.55152200E-3     44.30867300E-3
+     -2.79000000E+0     37.43173400E-3     29.75066000E-3     43.18784400E-3
+     -2.75000000E+0     36.46174100E-3     28.95296400E-3     42.07642800E-3
+     -2.71000000E+0     35.49561200E-3     28.15836900E-3     40.97378600E-3
+     -2.63000000E+0     33.57466600E-3     26.57842700E-3     38.79265500E-3
+     -2.59000000E+0     32.61978600E-3     25.79312200E-3     37.71324300E-3
+     -2.55000000E+0     31.66863000E-3     25.01099300E-3     36.64074400E-3
+     -2.51000000E+0     30.72121700E-3     24.23210900E-3     35.57482400E-3
+     -2.47000000E+0     29.77758100E-3     23.45655600E-3     34.51519300E-3
+     -2.43000000E+0     28.83776900E-3     22.68443200E-3     33.46159900E-3
+     -2.37000000E+0     27.43578000E-3     21.53330500E-3     31.89250800E-3
+     -2.31000000E+0     26.04192300E-3     20.38979100E-3     30.33502900E-3
+     -2.27000000E+0     25.11810900E-3     19.63259800E-3     29.30373100E-3
+     -2.21000000E+0     23.74070700E-3     18.50485800E-3     27.76699100E-3
+     -2.19000000E+0     23.28329400E-3     18.13067300E-3     27.25684800E-3
+     -2.13000000E+0     21.91920800E-3     17.01613200E-3     25.73555100E-3
+     -2.11000000E+0     21.46641300E-3     16.64657700E-3     25.23056900E-3
+     -2.09000000E+0     21.01544000E-3     16.27880900E-3     24.72752300E-3
+     -2.05000000E+0     20.11654800E-3     15.54647900E-3     23.72463700E-3
+     -2.03000000E+0     19.66870200E-3     15.18200000E-3     23.22483200E-3
+     -1.99000000E+0     18.77750200E-3     14.45764400E-3     22.22975900E-3
+     -1.97000000E+0     18.33418300E-3     14.09782100E-3     21.73448900E-3
+     -1.95000000E+0     17.89169800E-3     13.73895000E-3     21.23998600E-3
+     -1.91000000E+0     17.01154500E-3     13.02623200E-3     20.25562400E-3
+     -1.89000000E+0     16.57393100E-3     12.67245700E-3     19.76578400E-3
+     -1.87000000E+0     16.13732900E-3     12.31983600E-3     19.27682100E-3
+     -1.83000000E+0     15.26937100E-3     11.62014500E-3     18.30375800E-3
+     -1.81000000E+0     14.83809200E-3     11.27316800E-3     17.81969700E-3
+     -1.75000000E+0     13.55374700E-3     10.24261500E-3     16.37578700E-3
+     -1.73000000E+0     13.12961600E-3      9.90335760E-3     15.89802400E-3
+     -1.69000000E+0     12.28679400E-3      9.23078570E-3     14.94712000E-3
+     -1.67000000E+0     11.86826200E-3      8.89763550E-3     14.47409700E-3
+     -1.65000000E+0     11.45234000E-3      8.56724070E-3     14.00337900E-3
+     -1.63000000E+0     11.03824400E-3      8.23886410E-3     13.53412700E-3
+     -1.61000000E+0     10.62693000E-3      7.91341930E-3     13.06730700E-3
+     -1.59000000E+0     10.21764800E-3      7.59019670E-3     12.60211500E-3
+     -1.57000000E+0      9.81135030E-3      7.27010660E-3     12.13950900E-3
+     -1.55000000E+0      9.40732190E-3      6.95246800E-3     11.67872400E-3
+     -1.51000000E+0      8.60825660E-3      6.32662380E-3     10.76475200E-3
+     -1.49000000E+0      8.21350190E-3      6.01868110E-3     10.31179600E-3
+     -1.45000000E+0      7.43357190E-3      5.41272770E-3      9.41381500E-3
+     -1.43000000E+0      7.04877780E-3      5.11505140E-3      8.96911820E-3
+     -1.39000000E+0      6.29137440E-3      4.53196330E-3      8.09004300E-3
+     -1.37000000E+0      5.91924590E-3      4.24695390E-3      7.65609120E-3
+     -1.35000000E+0      5.55136230E-3      3.96611350E-3      7.22567740E-3
+     -1.31000000E+0      4.83110110E-3      3.41941390E-3      6.37817150E-3
+     -1.29000000E+0      4.47943430E-3      3.15411410E-3      5.96173990E-3
+     -1.27000000E+0      4.13346780E-3      2.89412920E-3      5.55020430E-3
+     -1.25000000E+0      3.79439510E-3      2.64052370E-3      5.14475280E-3
+     -1.23000000E+0      3.46201800E-3      2.39298970E-3      4.74515100E-3
+     -1.19000000E+0      2.82122420E-3      1.91935660E-3      3.96732750E-3
+     -1.17000000E+0      2.51423050E-3      1.69430470E-3      3.59049760E-3
+     -1.15000000E+0      2.21683090E-3      1.47745510E-3      3.22235740E-3
+     -1.13000000E+0      1.93072360E-3      1.27020090E-3      2.86461660E-3
+     -1.11000000E+0      1.65637130E-3      1.07266510E-3      2.51773830E-3
+     -1.09000000E+0      1.39579150E-3    886.41599000E-6      2.18379290E-3
+     -1.07000000E+0      1.14982060E-3    711.76368000E-6      1.86369810E-3
+     -1.05000000E+0    920.84799000E-6    550.42084000E-6      1.56003990E-3
+     -1.03000000E+0    710.06495000E-6    402.78860000E-6      1.27433930E-3
+     -1.01000000E+0    520.07861000E-6    270.53353000E-6      1.00980100E-3
+   -990.00000000E-3    352.05250000E-6    153.83243000E-6    768.52167000E-6
+   -970.00000000E-3    208.11016000E-6     53.85569100E-6    554.03148000E-6
+   -960.00000000E-3                 NA      0.00000000E+0                 NA
+   -950.00000000E-3     88.32078300E-6      0.00000000E+0    368.25480000E-6
+   -930.00000000E-3      0.00000000E+0      0.00000000E+0    213.67043000E-6
+   -910.00000000E-3      0.00000000E+0      0.00000000E+0     90.00233000E-6
+   -890.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|                                   MODEL INBUFF3
+|***************************************************************************
+|
+[Model]        inbuff3
+Model_type     Input
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      1.860pF             1.600pF             2.260pF
+[Voltage Range]             3.300V              3.000V              3.600V
+| Junction Temperature (Ambient temp is 25C typ, 70C min, 0C max)
+[Temperature Range]        40.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0   -235.95287000E-3   -244.22900000E-3   -232.36277000E-3
+     -3.29000000E+0   -234.08619000E-3   -242.20782000E-3   -230.65721000E-3
+     -3.28000000E+0   -232.72686000E-3   -240.86612000E-3   -229.28617000E-3
+     -3.21000000E+0   -223.30658000E-3   -231.57257000E-3   -219.78220000E-3
+     -3.13000000E+0   -212.56077000E-3   -220.97127000E-3   -208.94122000E-3
+     -3.05000000E+0   -201.82809000E-3   -210.38347000E-3   -198.11349000E-3
+     -2.97000000E+0   -191.10787000E-3   -199.80836000E-3   -187.29827000E-3
+     -2.89000000E+0   -180.40033000E-3   -189.24603000E-3   -176.49586000E-3
+     -2.81000000E+0   -169.70641000E-3   -178.69741000E-3   -165.70732000E-3
+     -2.75000000E+0   -161.69601000E-3   -170.79596000E-3   -157.62615000E-3
+     -2.67000000E+0   -151.02987000E-3   -160.27489000E-3   -146.86596000E-3
+     -2.65000000E+0   -148.36605000E-3   -157.64728000E-3   -144.17870000E-3
+     -2.61000000E+0   -143.04245000E-3   -152.39602000E-3   -138.80834000E-3
+     -2.55000000E+0   -135.06722000E-3   -144.52896000E-3   -130.76330000E-3
+     -2.51000000E+0   -129.75764000E-3   -139.29120000E-3   -125.40749000E-3
+     -2.45000000E+0   -121.80542000E-3   -131.44610000E-3   -117.38651000E-3
+     -2.43000000E+0   -119.15837000E-3   -128.83454000E-3   -114.71674000E-3
+     -2.37000000E+0   -111.22868000E-3   -121.01051000E-3   -106.71962000E-3
+     -2.35000000E+0   -108.58983000E-3   -118.40654000E-3   -104.05860000E-3
+     -2.29000000E+0   -100.68731000E-3   -110.60738000E-3    -96.09070200E-3
+     -2.27000000E+0    -98.05844200E-3   -108.01244000E-3    -93.44051100E-3
+     -2.21000000E+0    -90.18931300E-3   -100.24305000E-3    -85.50919900E-3
+     -2.19000000E+0    -87.57286300E-3    -97.65901200E-3    -82.87275400E-3
+     -2.15000000E+0    -82.35083500E-3    -92.50024100E-3    -77.61212800E-3
+     -2.13000000E+0    -79.74575000E-3    -89.92586500E-3    -74.98856600E-3
+     -2.11000000E+0    -77.14513200E-3    -87.35522700E-3    -72.37012200E-3
+     -2.09000000E+0    -74.54906900E-3    -84.78833100E-3    -69.75697100E-3
+     -2.07000000E+0    -71.95811700E-3    -82.22561000E-3    -67.14978200E-3
+     -2.03000000E+0    -66.79269600E-3    -77.11334000E-3    -61.95495600E-3
+     -2.01000000E+0    -64.21913700E-3    -74.56437800E-3    -59.36855600E-3
+     -1.99000000E+0    -61.65249900E-3    -72.02075100E-3    -56.79059500E-3
+     -1.97000000E+0    -59.09321000E-3    -69.48265800E-3    -54.22175100E-3
+     -1.95000000E+0    -56.54213700E-3    -66.95067500E-3    -51.66320900E-3
+     -1.91000000E+0    -51.46757700E-3    -61.90658400E-3    -46.58157700E-3
+     -1.87000000E+0    -46.43671900E-3    -56.89280500E-3    -41.55793500E-3
+     -1.83000000E+0    -41.46029800E-3    -51.91480200E-3    -36.60979600E-3
+     -1.81000000E+0    -38.99698100E-3    -49.44132100E-3    -34.17177700E-3
+     -1.79000000E+0    -36.55340500E-3    -46.97961600E-3    -31.76360300E-3
+     -1.77000000E+0    -34.13243100E-3    -44.53083000E-3    -29.39088400E-3
+     -1.75000000E+0    -31.73783100E-3    -42.09649800E-3    -27.06118700E-3
+     -1.73000000E+0    -29.37400700E-3    -39.67816400E-3    -24.78414200E-3
+     -1.71000000E+0    -27.04678700E-3    -37.27789800E-3    -22.57290500E-3
+     -1.69000000E+0    -24.76333900E-3    -34.89790000E-3    -20.44499500E-3
+     -1.67000000E+0    -22.53321000E-3    -32.54104100E-3    -18.42461800E-3
+     -1.65000000E+0    -20.36866100E-3    -30.21053200E-3    -16.54438100E-3
+     -1.63000000E+0    -18.28620500E-3    -27.91051300E-3    -14.84723800E-3
+     -1.61000000E+0    -16.30760600E-3    -25.64595600E-3    -13.38356000E-3
+     -1.59000000E+0    -14.46186500E-3    -23.42285900E-3    -12.19845600E-3
+     -1.57000000E+0    -12.78578100E-3    -21.24887700E-3    -11.30500100E-3
+     -1.55000000E+0    -11.32235100E-3    -19.13374800E-3    -10.66414300E-3
+     -1.53000000E+0    -10.11134500E-3    -17.08962400E-3    -10.20019000E-3
+     -1.51000000E+0     -9.17099730E-3    -15.13216500E-3     -9.84000560E-3
+     -1.49000000E+0     -8.47953560E-3    -13.28100800E-3     -9.53424940E-3
+     -1.47000000E+0     -7.97921640E-3    -11.56069000E-3     -9.25599540E-3
+     -1.45000000E+0     -7.60299720E-3    -10.00007200E-3     -8.99183440E-3
+     -1.43000000E+0     -7.29833080E-3     -8.63015300E-3     -8.73545900E-3
+     -1.41000000E+0     -7.03239730E-3     -7.47739990E-3     -8.48372040E-3
+     -1.39000000E+0     -6.78733430E-3     -6.55359890E-3     -8.23508590E-3
+     -1.37000000E+0     -6.55386570E-3     -5.84616190E-3     -7.98856880E-3
+     -1.35000000E+0     -6.32735480E-3     -5.31862850E-3     -7.74361870E-3
+     -1.33000000E+0     -6.10528730E-3     -4.92280440E-3     -7.49974020E-3
+     -1.31000000E+0     -5.88633960E-3     -4.61391810E-3     -7.25667750E-3
+     -1.27000000E+0     -5.45470570E-3     -4.13470310E-3     -6.77219400E-3
+     -1.21000000E+0     -4.81779730E-3     -3.55026230E-3     -6.04922090E-3
+     -1.19000000E+0     -4.60779790E-3     -3.36965530E-3     -5.80945110E-3
+     -1.15000000E+0     -4.19114310E-3     -3.02052230E-3     -5.33215000E-3
+     -1.09000000E+0     -3.57533370E-3     -2.52128840E-3     -4.62306890E-3
+     -1.07000000E+0     -3.37284930E-3     -2.36072470E-3     -4.38891260E-3
+     -1.01000000E+0     -2.77526990E-3     -1.89516250E-3     -3.69444210E-3
+   -990.00000000E-3     -2.57989300E-3     -1.74521980E-3     -3.46607990E-3
+   -930.00000000E-3     -2.00786900E-3     -1.31158070E-3     -2.79261870E-3
+   -910.00000000E-3     -1.82279060E-3     -1.17293410E-3     -2.57295750E-3
+   -850.00000000E-3     -1.28941890E-3   -778.40093000E-6     -1.93412650E-3
+   -790.00000000E-3   -802.52003000E-6   -425.94572000E-6     -1.33529860E-3
+   -770.00000000E-3   -654.40219000E-6   -321.09540000E-6     -1.14754500E-3
+   -730.00000000E-3   -385.63221000E-6   -135.34718000E-6   -795.75204000E-6
+   -690.00000000E-3   -162.60437000E-6      0.00000000E+0   -484.63248000E-6
+   -670.00000000E-3    -71.68264500E-6      0.00000000E+0   -348.64719000E-6
+   -650.00000000E-3      0.00000000E+0      0.00000000E+0   -228.18985000E-6
+   -630.00000000E-3      0.00000000E+0      0.00000000E+0   -125.20287000E-6
+   -600.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[POWER Clamp]
+|  There are no power clamp diodes on this input
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      0.00000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|                                   MODEL CLKBUFF
+|***************************************************************************
+|
+[Model]        clkbuff
+Model_type     Input
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      1.710pF             1.600pF             1.960pF
+[Voltage Range]             3.300V              3.000V              3.600V
+| Junction Temperature (Ambient temp is 25C typ, 70C min, 0C max)
+[Temperature Range]        40.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0   -389.44682000E-3   -388.65552000E-3   -392.96572000E-3
+     -3.29000000E+0   -386.65435000E-3   -385.75533000E-3   -390.31353000E-3
+     -3.27000000E+0   -382.38054000E-3   -381.61794000E-3   -385.96189000E-3
+     -3.25000000E+0   -378.24258000E-3   -377.62118000E-3   -381.74304000E-3
+     -3.23000000E+0   -374.00461000E-3   -373.52062000E-3   -377.42657000E-3
+     -3.15000000E+0   -357.26323000E-3   -357.33267000E-3   -360.36853000E-3
+     -3.11000000E+0   -348.90085000E-3   -349.24531000E-3   -351.84877000E-3
+     -3.07000000E+0   -340.54524000E-3   -341.16366000E-3   -343.33638000E-3
+     -3.03000000E+0   -332.19700000E-3   -333.08833000E-3   -334.83196000E-3
+     -2.95000000E+0   -315.52431000E-3   -316.95832000E-3   -317.84874000E-3
+     -2.91000000E+0   -307.20057000E-3   -308.90436000E-3   -309.37070000E-3
+     -2.79000000E+0   -282.28385000E-3   -284.79055000E-3   -283.99521000E-3
+     -2.75000000E+0   -273.99762000E-3   -276.76977000E-3   -275.55752000E-3
+     -2.67000000E+0   -257.45645000E-3   -260.75616000E-3   -258.71583000E-3
+     -2.63000000E+0   -249.20238000E-3   -252.76415000E-3   -250.31277000E-3
+     -2.59000000E+0   -240.95996000E-3   -244.78260000E-3   -241.92226000E-3
+     -2.53000000E+0   -228.62033000E-3   -232.83198000E-3   -229.36230000E-3
+     -2.51000000E+0   -224.51221000E-3   -228.85294000E-3   -225.18126000E-3
+     -2.49000000E+0   -220.40940000E-3   -224.87882000E-3   -221.00579000E-3
+     -2.43000000E+0   -208.11813000E-3   -212.97170000E-3   -208.49830000E-3
+     -2.41000000E+0   -204.02956000E-3   -209.01042000E-3   -204.33828000E-3
+     -2.35000000E+0   -191.78387000E-3   -197.14435000E-3   -191.88039000E-3
+     -2.33000000E+0   -187.71132000E-3   -193.19745000E-3   -187.73790000E-3
+     -2.27000000E+0   -175.51719000E-3   -181.37750000E-3   -175.33682000E-3
+     -2.21000000E+0   -163.36846000E-3   -169.59783000E-3   -162.98609000E-3
+     -2.19000000E+0   -159.32865000E-3   -165.67972000E-3   -158.88028000E-3
+     -2.15000000E+0   -151.26806000E-3   -157.86009000E-3   -150.69011000E-3
+     -2.11000000E+0   -143.23295000E-3   -150.06218000E-3   -142.52926000E-3
+     -2.09000000E+0   -139.22647000E-3   -146.17262000E-3   -138.46162000E-3
+     -2.05000000E+0   -131.23510000E-3   -138.41112000E-3   -130.35217000E-3
+     -2.03000000E+0   -127.25123000E-3   -134.53986000E-3   -126.31175000E-3
+     -1.99000000E+0   -119.31242000E-3   -126.82059000E-3   -118.26600000E-3
+     -1.97000000E+0   -115.35880000E-3   -122.97336000E-3   -114.26259000E-3
+     -1.95000000E+0   -111.41520000E-3   -119.13351000E-3   -110.27221000E-3
+     -1.91000000E+0   -103.56649000E-3   -111.48266000E-3   -102.34085000E-3
+     -1.89000000E+0    -99.66358100E-3   -107.67287000E-3    -98.40335200E-3
+     -1.87000000E+0    -95.77530900E-3   -103.87301000E-3    -94.48608200E-3
+     -1.85000000E+0    -91.90541100E-3   -100.08603000E-3    -90.59377300E-3
+     -1.83000000E+0    -88.05364500E-3    -96.31073300E-3    -86.72750700E-3
+     -1.81000000E+0    -84.22425900E-3    -92.55022400E-3    -82.89307500E-3
+     -1.79000000E+0    -80.41781300E-3    -88.80363100E-3    -79.09308000E-3
+     -1.77000000E+0    -76.63937200E-3    -85.07429000E-3    -75.33505300E-3
+     -1.73000000E+0    -69.17817200E-3    -77.66971600E-3    -67.97050600E-3
+     -1.71000000E+0    -65.50545300E-3    -73.99830900E-3    -64.38364100E-3
+     -1.69000000E+0    -61.88118000E-3    -70.35178100E-3    -60.87982000E-3
+     -1.67000000E+0    -58.31212700E-3    -66.73108500E-3    -57.47474000E-3
+     -1.65000000E+0    -54.81087700E-3    -63.14132900E-3    -54.19462300E-3
+     -1.63000000E+0    -51.39023300E-3    -59.58469300E-3    -51.07010400E-3
+     -1.61000000E+0    -48.06908400E-3    -56.06765400E-3    -48.14519000E-3
+     -1.59000000E+0    -44.87003400E-3    -52.59428800E-3    -45.47210500E-3
+     -1.57000000E+0    -41.82580900E-3    -49.17332000E-3    -43.11107200E-3
+     -1.55000000E+0    -38.97535000E-3    -45.81188700E-3    -41.10462200E-3
+     -1.53000000E+0    -36.36961900E-3    -42.52249100E-3    -39.44969100E-3
+     -1.51000000E+0    -34.06089500E-3    -39.31736200E-3    -38.07890200E-3
+     -1.49000000E+0    -32.09185500E-3    -36.21608800E-3    -36.89615800E-3
+     -1.47000000E+0    -30.46534600E-3    -33.23820800E-3    -35.81772500E-3
+     -1.45000000E+0    -29.13372100E-3    -30.41329400E-3    -34.79326200E-3
+     -1.43000000E+0    -28.01245000E-3    -27.77388800E-3    -33.79518800E-3
+     -1.41000000E+0    -27.02069300E-3    -25.36011300E-3    -32.81181200E-3
+     -1.39000000E+0    -26.09963800E-3    -23.21014200E-3    -31.83639300E-3
+     -1.37000000E+0    -25.21646400E-3    -21.35485300E-3    -30.86718800E-3
+     -1.35000000E+0    -24.35264800E-3    -19.79959500E-3    -29.90197100E-3
+     -1.33000000E+0    -23.50034900E-3    -18.51885900E-3    -28.94097800E-3
+     -1.31000000E+0    -22.65448200E-3    -17.45764000E-3    -27.98291200E-3
+     -1.29000000E+0    -21.81394100E-3    -16.55336700E-3    -27.02846900E-3
+     -1.27000000E+0    -20.97698100E-3    -15.75006300E-3    -26.07666900E-3
+     -1.23000000E+0    -19.31456700E-3    -14.30519000E-3    -24.18289600E-3
+     -1.17000000E+0    -16.85057300E-3    -12.30316800E-3    -21.36758800E-3
+     -1.15000000E+0    -16.03787700E-3    -11.65632200E-3    -20.43621500E-3
+     -1.07000000E+0    -12.84262000E-3     -9.14534230E-3    -16.75442500E-3
+     -1.05000000E+0    -12.06009000E-3     -8.53735170E-3    -15.84646300E-3
+   -990.00000000E-3     -9.76027820E-3     -6.76749470E-3    -13.15825600E-3
+   -950.00000000E-3     -8.27617460E-3     -5.64107690E-3    -11.40306200E-3
+   -930.00000000E-3     -7.55223110E-3     -5.09695940E-3    -10.53921900E-3
+   -910.00000000E-3     -6.84167450E-3     -4.56669250E-3     -9.68549500E-3
+   -870.00000000E-3     -5.46925950E-3     -3.55539280E-3     -8.01569770E-3
+   -850.00000000E-3     -4.81170360E-3     -3.07808480E-3     -7.20317120E-3
+   -810.00000000E-3     -3.56722320E-3     -2.19111280E-3     -5.63501840E-3
+   -790.00000000E-3     -2.98820530E-3     -1.78720730E-3     -4.88898230E-3
+   -770.00000000E-3     -2.44648360E-3     -1.41486250E-3     -4.17437580E-3
+   -750.00000000E-3     -1.94602860E-3     -1.07801430E-3     -3.49536490E-3
+   -730.00000000E-3     -1.49306790E-3   -780.09953000E-6     -2.85822350E-3
+   -710.00000000E-3     -1.09194600E-3   -522.77833000E-6     -2.26901740E-3
+   -690.00000000E-3   -748.13325000E-6   -307.66125000E-6     -1.73578260E-3
+   -670.00000000E-3   -463.51281000E-6   -133.62804000E-6     -1.26560370E-3
+   -650.00000000E-3   -238.91102000E-6      0.00000000E+0   -865.86029000E-6
+   -630.00000000E-3    -69.70202000E-6      0.00000000E+0   -540.19321000E-6
+   -620.00000000E-3      0.00000000E+0      0.00000000E+0                 NA
+   -610.00000000E-3      0.00000000E+0      0.00000000E+0   -288.99553000E-6
+   -590.00000000E-3      0.00000000E+0      0.00000000E+0   -105.94033000E-6
+   -570.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.30000000E+0     51.10910500E-3     41.29280000E-3     59.21284600E-3
+     -3.29000000E+0     50.17941400E-3     40.23390600E-3     58.38302000E-3
+     -3.27000000E+0     49.53665000E-3     39.68625300E-3     57.60619900E-3
+     -3.25000000E+0     49.05649900E-3     39.30614300E-3     56.99714000E-3
+     -3.23000000E+0     48.47196400E-3     38.81652100E-3     56.28693200E-3
+     -3.21000000E+0     47.97586800E-3     38.41652800E-3     55.66935400E-3
+     -3.19000000E+0     47.42269000E-3     37.95703800E-3     54.99792700E-3
+     -3.17000000E+0     46.92161000E-3     37.54966800E-3     54.38218800E-3
+     -3.15000000E+0     46.38746400E-3     37.10801500E-3     53.73640200E-3
+     -3.13000000E+0     45.88576100E-3     36.69843700E-3     53.12629500E-3
+     -3.11000000E+0     45.36405900E-3     36.26816000E-3     52.49895600E-3
+     -3.09000000E+0     44.86352400E-3     35.85859500E-3     51.89573100E-3
+     -3.07000000E+0     44.35043800E-3     35.43603000E-3     51.28250300E-3
+     -3.03000000E+0     43.34496400E-3     34.61036000E-3     50.08446400E-3
+     -2.99000000E+0     42.34638400E-3     33.79015000E-3     48.90273400E-3
+     -2.95000000E+0     41.35376400E-3     32.97464200E-3     47.73559200E-3
+     -2.87000000E+0     39.38385600E-3     31.35566700E-3     45.43964900E-3
+     -2.83000000E+0     38.40571300E-3     30.55152200E-3     44.30867300E-3
+     -2.79000000E+0     37.43173400E-3     29.75066000E-3     43.18784400E-3
+     -2.75000000E+0     36.46174100E-3     28.95296400E-3     42.07642800E-3
+     -2.71000000E+0     35.49561200E-3     28.15836900E-3     40.97378600E-3
+     -2.63000000E+0     33.57466600E-3     26.57842700E-3     38.79265500E-3
+     -2.59000000E+0     32.61978600E-3     25.79312200E-3     37.71324300E-3
+     -2.55000000E+0     31.66863000E-3     25.01099300E-3     36.64074400E-3
+     -2.51000000E+0     30.72121700E-3     24.23210900E-3     35.57482400E-3
+     -2.47000000E+0     29.77758100E-3     23.45655600E-3     34.51519300E-3
+     -2.43000000E+0     28.83776900E-3     22.68443200E-3     33.46159900E-3
+     -2.37000000E+0     27.43578000E-3     21.53330500E-3     31.89250800E-3
+     -2.31000000E+0     26.04192300E-3     20.38979100E-3     30.33502900E-3
+     -2.27000000E+0     25.11810900E-3     19.63259800E-3     29.30373100E-3
+     -2.21000000E+0     23.74070700E-3     18.50485800E-3     27.76699100E-3
+     -2.19000000E+0     23.28329400E-3     18.13067300E-3     27.25684800E-3
+     -2.13000000E+0     21.91920800E-3     17.01613200E-3     25.73555100E-3
+     -2.11000000E+0     21.46641300E-3     16.64657700E-3     25.23056900E-3
+     -2.09000000E+0     21.01544000E-3     16.27880900E-3     24.72752300E-3
+     -2.05000000E+0     20.11654800E-3     15.54647900E-3     23.72463700E-3
+     -2.03000000E+0     19.66870200E-3     15.18200000E-3     23.22483200E-3
+     -1.99000000E+0     18.77750200E-3     14.45764400E-3     22.22975900E-3
+     -1.97000000E+0     18.33418300E-3     14.09782100E-3     21.73448900E-3
+     -1.95000000E+0     17.89169800E-3     13.73895000E-3     21.23998600E-3
+     -1.91000000E+0     17.01154500E-3     13.02623200E-3     20.25562400E-3
+     -1.89000000E+0     16.57393100E-3     12.67245700E-3     19.76578400E-3
+     -1.87000000E+0     16.13732900E-3     12.31983600E-3     19.27682100E-3
+     -1.83000000E+0     15.26937100E-3     11.62014500E-3     18.30375800E-3
+     -1.81000000E+0     14.83809200E-3     11.27316800E-3     17.81969700E-3
+     -1.75000000E+0     13.55374700E-3     10.24261500E-3     16.37578700E-3
+     -1.73000000E+0     13.12961600E-3      9.90335760E-3     15.89802400E-3
+     -1.69000000E+0     12.28679400E-3      9.23078570E-3     14.94712000E-3
+     -1.67000000E+0     11.86826200E-3      8.89763550E-3     14.47409700E-3
+     -1.65000000E+0     11.45234000E-3      8.56724070E-3     14.00337900E-3
+     -1.63000000E+0     11.03824400E-3      8.23886410E-3     13.53412700E-3
+     -1.61000000E+0     10.62693000E-3      7.91341930E-3     13.06730700E-3
+     -1.59000000E+0     10.21764800E-3      7.59019670E-3     12.60211500E-3
+     -1.57000000E+0      9.81135030E-3      7.27010660E-3     12.13950900E-3
+     -1.55000000E+0      9.40732190E-3      6.95246800E-3     11.67872400E-3
+     -1.51000000E+0      8.60825660E-3      6.32662380E-3     10.76475200E-3
+     -1.49000000E+0      8.21350190E-3      6.01868110E-3     10.31179600E-3
+     -1.45000000E+0      7.43357190E-3      5.41272770E-3      9.41381500E-3
+     -1.43000000E+0      7.04877780E-3      5.11505140E-3      8.96911820E-3
+     -1.39000000E+0      6.29137440E-3      4.53196330E-3      8.09004300E-3
+     -1.37000000E+0      5.91924590E-3      4.24695390E-3      7.65609120E-3
+     -1.35000000E+0      5.55136230E-3      3.96611350E-3      7.22567740E-3
+     -1.31000000E+0      4.83110110E-3      3.41941390E-3      6.37817150E-3
+     -1.29000000E+0      4.47943430E-3      3.15411410E-3      5.96173990E-3
+     -1.27000000E+0      4.13346780E-3      2.89412920E-3      5.55020430E-3
+     -1.25000000E+0      3.79439510E-3      2.64052370E-3      5.14475280E-3
+     -1.23000000E+0      3.46201800E-3      2.39298970E-3      4.74515100E-3
+     -1.19000000E+0      2.82122420E-3      1.91935660E-3      3.96732750E-3
+     -1.17000000E+0      2.51423050E-3      1.69430470E-3      3.59049760E-3
+     -1.15000000E+0      2.21683090E-3      1.47745510E-3      3.22235740E-3
+     -1.13000000E+0      1.93072360E-3      1.27020090E-3      2.86461660E-3
+     -1.11000000E+0      1.65637130E-3      1.07266510E-3      2.51773830E-3
+     -1.09000000E+0      1.39579150E-3    886.41599000E-6      2.18379290E-3
+     -1.07000000E+0      1.14982060E-3    711.76368000E-6      1.86369810E-3
+     -1.05000000E+0    920.84799000E-6    550.42084000E-6      1.56003990E-3
+     -1.03000000E+0    710.06495000E-6    402.78860000E-6      1.27433930E-3
+     -1.01000000E+0    520.07861000E-6    270.53353000E-6      1.00980100E-3
+   -990.00000000E-3    352.05250000E-6    153.83243000E-6    768.52167000E-6
+   -970.00000000E-3    208.11016000E-6     53.85569100E-6    554.03148000E-6
+   -960.00000000E-3                 NA      0.00000000E+0                 NA
+   -950.00000000E-3     88.32078300E-6      0.00000000E+0    368.25480000E-6
+   -930.00000000E-3      0.00000000E+0      0.00000000E+0    213.67043000E-6
+   -910.00000000E-3      0.00000000E+0      0.00000000E+0     90.00233000E-6
+   -890.00000000E-3      0.00000000E+0      0.00000000E+0      0.00000000E+0
+      6.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[End]

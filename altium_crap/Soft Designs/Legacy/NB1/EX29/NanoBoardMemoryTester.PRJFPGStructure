@@ -1,0 +1,20 @@
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=jtest1|SchDesignator=jtest1|FileName=UserJtagTester.schDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_I2C_IN|SchDesignator=U_I2C_IN|FileName=NMT_I2C_INT.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_CPU51|SchDesignator=U_NBT_CPU51|FileName=NMT_CPU51.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_FREQ_CNT|SchDesignator=U_NBT_FREQ_CNT|FileName=NMT_FREQ_CNT.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_PS2_INT|SchDesignator=U_NBT_PS2_INT|FileName=NMT_PS2_INT.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_RS_232|SchDesignator=U_NBT_RS_232|FileName=NMT_RS_232.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_SPEAKER_PWM|SchDesignator=U_NBT_SPEAKER_PWM|FileName=NMT_SPEAKER_PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_SPI_MUX|SchDesignator=U_NBT_SPI_MUX|FileName=NMT_SPI_MUX.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_VGA|SchDesignator=U_NBT_VGA|FileName=NMT_VGA.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_NBT_XDATA_MUX|SchDesignator=U_NBT_XDATA_MUX|FileName=NMT_XDATA_MUX.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_SFR_PORTS|SchDesignator=U_SFR_PORTS|FileName=SFR_PORTS.SCHDOC
+Record=SheetSymbol|SourceDocument=NMT_TopLevel.SCHDOC|Designator=U_UIO_INT|SchDesignator=U_UIO_INT|FileName=NMT_UIO_INT.SCHDOC
+Record=SubProject|ProjectPath=NMT_C51_MEMTEST.PRJEMB
+Record=TopLevelDocument|FileName=NMT_TopLevel.SCHDOC
+Record=NEXUS_CORE|ComponentDesignator=U46|BaseComponentDesignator=U46|DocumentName=NMT_CPU51.SCHDOC|LibraryReference=TSK51A_D|SubProjectPath=NMT_C51_MEMTEST.PRJEMB|NEXUS_JTAG_INDEX=0|ComponentUniqueID=KNYJMKAB|Description=TSK51A OCD Microprocessor|ChildCore1= |ChildModel1=RAM256x8_TSK51D|Comment=TSK51A_D|Component Kind=Standard|Core Revision=1.00.00|Library Name=FPGA Processors.IntLib|Library Reference=TSK51A_D|NEXUS_CORE=Processor_OCDS|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|Published=10/11/2003|Publisher=Altium Hobart Technology Centre
+Record=NEXUS_CORE|ComponentDesignator=U47|BaseComponentDesignator=U47|DocumentName=NMT_CPU51.SCHDOC|LibraryReference=RAM8x4K|SubProjectPath= |NEXUS_JTAG_INDEX=0|ComponentUniqueID=VJQSKXQG|Description=Single Port Random Access Memory 4096 x 8|Comment=RAM8x4K|Component Kind=Standard|Library Name=FPGA Memories.IntLib|Library Reference=RAM8x4K|Memory_ClockEdge=Rising|Memory_Depth=4096|Memory_Type=RAM_SinglePortBlock|Memory_Width=8|Nexus_Core=Memory_Program|Published=26/09/2003|Publisher=Altium Hobart Technology Center
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=U46|DocumentName=NMT_CPU51.SCHDOC|LibraryReference=TSK51A_D|SubProjectPath=NMT_C51_MEMTEST.PRJEMB|Configuration= |Description=TSK51A OCD Microprocessor|SubPartUniqueId1=KNYJMKAB|SubPartDocPath1=NMT_CPU51.SCHDOC|ChildCore1= |ChildModel1=RAM256x8_TSK51D|Comment=TSK51A_D|Component Kind=Standard|Core Revision=1.00.00|Library Name=FPGA Processors.IntLib|Library Reference=TSK51A_D|NEXUS_CORE=Processor_OCDS|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|Published=10/11/2003|Publisher=Altium Hobart Technology Centre
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=U47|DocumentName=NMT_CPU51.SCHDOC|LibraryReference=RAM8x4K|SubProjectPath= |Configuration= |Description=Single Port Random Access Memory 4096 x 8|SubPartUniqueId1=VJQSKXQG|SubPartDocPath1=NMT_CPU51.SCHDOC|Comment=RAM8x4K|Component Kind=Standard|Library Name=FPGA Memories.IntLib|Library Reference=RAM8x4K|Memory_ClockEdge=Rising|Memory_Depth=4096|Memory_Type=RAM_SinglePortBlock|Memory_Width=8|Nexus_Core=Memory_Program|Published=26/09/2003|Publisher=Altium Hobart Technology Center
+Record=Configuration|Name=Memory Tester Cyclone|DeviceName=EP1C12Q240C6
+Record=Configuration|Name=Memory Tester Spartan|DeviceName=XC2S300E-6PQ208C

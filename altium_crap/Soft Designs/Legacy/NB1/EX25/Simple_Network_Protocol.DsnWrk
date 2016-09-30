@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=FPGA_165C_SimpleNetworkProtocol.PrjFpg
+[Project2]
+ProjectPath=Simple Network Protocol Embedded\SimpleNetworkProtocol.PrjEmb

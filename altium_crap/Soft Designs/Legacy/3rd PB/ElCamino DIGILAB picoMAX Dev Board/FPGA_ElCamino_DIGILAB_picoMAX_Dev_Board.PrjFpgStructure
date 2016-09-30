@@ -1,0 +1,12 @@
+Record=TopLevelDocument|FileName=FPGA_ElCamino_DIGILAB_picoMAX_Dev_Board.SchDoc
+Record=Configuration|Name=3032LC44|DeviceName=EPM3032ALC44-10
+Record=Configuration|Name=3064LC44|DeviceName=EPM3064ALC44-10
+Record=Configuration|Name=7032AELC44|DeviceName=EPM7032AELC44-10
+Record=Configuration|Name=7032BLC44-7|DeviceName=EPM7032BLC44-7
+Record=Configuration|Name=7032SLC44-10|DeviceName=EPM7032SLC44-10
+Record=Configuration|Name=7064AELC44-10|DeviceName=EPM7064AELC44-10
+Record=Configuration|Name=7064BLC44-7|DeviceName=EPM7064BLC44-7
+Record=Configuration|Name=7064SLC44-10|DeviceName=EPM7064SLC44-10
+Record=Configuration|Name=7128ELC84-20|DeviceName=EPM7128AELC84-20
+Record=Configuration|Name=7128SLC84-15|DeviceName=EPM7128SLC84-15
+Record=Configuration|Name=7160SLC84-10|DeviceName=EPM7160SLC84-10

@@ -1,0 +1,99 @@
+/*****************************************************************************
+ * FILE:	%W% %E%
+ * DESCRIPTION:
+ *		OIL configuration for nexar specific devices
+ ****************************************************************************/
+
+/*****************************************************************************
+ * keypad keypad keypad
+ ****************************************************************************/
+#usedef KEYPADIN_TASK	MESSAGE= mskeypadrx;EVENT= ekeypadrx;
+
+     EVENT ekeypadrx;
+
+     ALARM akeypad
+     {
+	COUNTER    = SYS_TIMER;
+        ACTION     = SETEVENT
+        {
+             TASK  = tkeypadrx;
+             EVENT = ekeypadrx;
+        };
+        AUTOSTART  = FALSE;
+     };
+    
+    TASK tkeypadrx
+    {
+        PRIORITY   = 14;
+        SCHEDULE   = FULL;
+        ACTIVATION = 3;
+        AUTOSTART  = FALSE;
+        MESSAGE    = mrkeypadrx;
+	EVENT      = ekeypadrx;
+   };
+   
+    MESSAGE mskeypadrx
+    {
+        MESSAGEPROPERTY = SEND_STATIC_INTERNAL
+        {
+             CDATATYPE="pvoid";
+        };
+    };
+
+    MESSAGE mrkeypadrx
+    {
+        MESSAGEPROPERTY = RECEIVE_QUEUED_INTERNAL
+        {
+             SENDINGMESSAGE 	= mskeypadrx;
+             QUEUESIZE          = 3;
+        };
+        NOTIFICATION       = ACTIVATETASK
+        {
+             TASK  = tkeypadrx;
+        };
+    };
+
+/*****************************************************************************
+ * lcd lcd lcd lcd lcd lcd
+ ****************************************************************************/
+#usedef LCDOUT_TASK	MESSAGE= mslcdtx;EVENT= elcdtx;
+
+    EVENT elcdtx;
+
+    TASK tlcdtx
+    {
+        PRIORITY   = 1;
+        SCHEDULE   = FULL;
+        ACTIVATION = 3;
+        AUTOSTART  = FALSE;
+        MESSAGE    = mrlcdtx;
+	EVENT      = elcdtx;
+	
+   };
+    
+    MESSAGE mslcdtx
+    {
+        MESSAGEPROPERTY = SEND_STATIC_INTERNAL
+        {
+             CDATATYPE="pvoid";
+        };
+    };
+
+    MESSAGE mrlcdtx
+    {
+        MESSAGEPROPERTY = RECEIVE_QUEUED_INTERNAL
+        {
+             SENDINGMESSAGE 	= mslcdtx;
+             QUEUESIZE          = 3;
+        };
+        NOTIFICATION       = ACTIVATETASK
+        {
+             TASK = tlcdtx;
+        };
+    };
+
+
+
+
+
+

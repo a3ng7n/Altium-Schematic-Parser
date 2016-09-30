@@ -1,0 +1,130 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Xilinx XC9572XL-10VQ64C
+;   Board   : Memec CPLD 95XL Demo Board
+;   Project : Any
+;
+;   Created 19-Oct-2004
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=Memec CPLD 95XL Demo Board
+Record=Constraint | TargetKind=Part | TargetId=XC9572XL-10VQ64C
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clock
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=GCLK1     | FPGA_PINNUM=P15
+Record=Constraint | TargetKind=Port | TargetId=GCLK2     | FPGA_PINNUM=P16
+Record=Constraint | TargetKind=Port | TargetId=GCLK3     | FPGA_PINNUM=P17
+Record=Constraint | TargetKind=Port | TargetId=GCLK1     | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=GCLK2     | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=GCLK3     | FPGA_CLOCK_PIN=TRUE
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP2 Header
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP2_1     | FPGA_PINNUM=P1
+Record=Constraint | TargetKind=Port | TargetId=JP2_2     | FPGA_PINNUM=P2
+Record=Constraint | TargetKind=Port | TargetId=JP2_3     | FPGA_PINNUM=P4
+Record=Constraint | TargetKind=Port | TargetId=JP2_4     | FPGA_PINNUM=P5
+Record=Constraint | TargetKind=Port | TargetId=JP2_5     | FPGA_PINNUM=P6
+Record=Constraint | TargetKind=Port | TargetId=JP2_6     | FPGA_PINNUM=P7
+Record=Constraint | TargetKind=Port | TargetId=JP2_7     | FPGA_PINNUM=P8
+Record=Constraint | TargetKind=Port | TargetId=JP2_8     | FPGA_PINNUM=P9
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP3 Header
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP3_1     | FPGA_PINNUM=P42
+Record=Constraint | TargetKind=Port | TargetId=JP3_2     | FPGA_PINNUM=P43
+Record=Constraint | TargetKind=Port | TargetId=JP3_4     | FPGA_PINNUM=P44
+Record=Constraint | TargetKind=Port | TargetId=JP3_5     | FPGA_PINNUM=P45
+Record=Constraint | TargetKind=Port | TargetId=JP3_6     | FPGA_PINNUM=P46
+Record=Constraint | TargetKind=Port | TargetId=JP3_7     | FPGA_PINNUM=P47
+Record=Constraint | TargetKind=Port | TargetId=JP3_8     | FPGA_PINNUM=P48
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP4 Header
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP4_1     | FPGA_PINNUM=P10
+Record=Constraint | TargetKind=Port | TargetId=JP4_2     | FPGA_PINNUM=P11
+Record=Constraint | TargetKind=Port | TargetId=JP4_3     | FPGA_PINNUM=P12
+Record=Constraint | TargetKind=Port | TargetId=JP4_4     | FPGA_PINNUM=P13
+Record=Constraint | TargetKind=Port | TargetId=JP4_5     | FPGA_PINNUM=P15
+Record=Constraint | TargetKind=Port | TargetId=JP4_6     | FPGA_PINNUM=P16
+Record=Constraint | TargetKind=Port | TargetId=JP4_7     | FPGA_PINNUM=P17
+Record=Constraint | TargetKind=Port | TargetId=JP4_8     | FPGA_PINNUM=P18
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP5 Header
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP5_1     | FPGA_PINNUM=P49
+Record=Constraint | TargetKind=Port | TargetId=JP5_2     | FPGA_PINNUM=P50
+Record=Constraint | TargetKind=Port | TargetId=JP5_3     | FPGA_PINNUM=P51
+Record=Constraint | TargetKind=Port | TargetId=JP5_5     | FPGA_PINNUM=P52
+Record=Constraint | TargetKind=Port | TargetId=JP5_6     | FPGA_PINNUM=P56
+Record=Constraint | TargetKind=Port | TargetId=JP5_7     | FPGA_PINNUM=P57
+Record=Constraint | TargetKind=Port | TargetId=JP5_8     | FPGA_PINNUM=P58
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP6 Header
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP6_1     | FPGA_PINNUM=P19
+Record=Constraint | TargetKind=Port | TargetId=JP6_2     | FPGA_PINNUM=P20
+Record=Constraint | TargetKind=Port | TargetId=JP6_3     | FPGA_PINNUM=P22
+Record=Constraint | TargetKind=Port | TargetId=JP6_4     | FPGA_PINNUM=P23
+Record=Constraint | TargetKind=Port | TargetId=JP6_5     | FPGA_PINNUM=P24
+Record=Constraint | TargetKind=Port | TargetId=JP6_6     | FPGA_PINNUM=P25
+Record=Constraint | TargetKind=Port | TargetId=JP6_7     | FPGA_PINNUM=P27
+Record=Constraint | TargetKind=Port | TargetId=JP6_8     | FPGA_PINNUM=P31
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP7 Header
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP7_1     | FPGA_PINNUM=P59
+Record=Constraint | TargetKind=Port | TargetId=JP7_2     | FPGA_PINNUM=P60
+Record=Constraint | TargetKind=Port | TargetId=JP7_3     | FPGA_PINNUM=P61
+Record=Constraint | TargetKind=Port | TargetId=JP7_4     | FPGA_PINNUM=P62
+Record=Constraint | TargetKind=Port | TargetId=JP7_7     | FPGA_PINNUM=P63
+Record=Constraint | TargetKind=Port | TargetId=JP7_8     | FPGA_PINNUM=P64
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; JP8 Header shared with LEDS
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JP8_1     | FPGA_PINNUM=P32
+Record=Constraint | TargetKind=Port | TargetId=JP8_2     | FPGA_PINNUM=P33
+Record=Constraint | TargetKind=Port | TargetId=JP8_3     | FPGA_PINNUM=P34
+Record=Constraint | TargetKind=Port | TargetId=JP8_4     | FPGA_PINNUM=P35
+Record=Constraint | TargetKind=Port | TargetId=JP8_5     | FPGA_PINNUM=P36
+Record=Constraint | TargetKind=Port | TargetId=JP8_6     | FPGA_PINNUM=P38
+Record=Constraint | TargetKind=Port | TargetId=JP8_7     | FPGA_PINNUM=P39
+Record=Constraint | TargetKind=Port | TargetId=JP8_8     | FPGA_PINNUM=P40
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; 8 - Way LEDs shared with J8
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LD_1     | FPGA_PINNUM=P32
+Record=Constraint | TargetKind=Port | TargetId=LD_2     | FPGA_PINNUM=P33
+Record=Constraint | TargetKind=Port | TargetId=LD_3     | FPGA_PINNUM=P34
+Record=Constraint | TargetKind=Port | TargetId=LD_4     | FPGA_PINNUM=P35
+Record=Constraint | TargetKind=Port | TargetId=LD_5     | FPGA_PINNUM=P36
+Record=Constraint | TargetKind=Port | TargetId=LD_6     | FPGA_PINNUM=P38
+Record=Constraint | TargetKind=Port | TargetId=LD_7     | FPGA_PINNUM=P39
+Record=Constraint | TargetKind=Port | TargetId=LD_8     | FPGA_PINNUM=P40
+;-------------------------------------------------------------------------------
+

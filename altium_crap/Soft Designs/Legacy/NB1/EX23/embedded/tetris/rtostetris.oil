@@ -1,0 +1,267 @@
+ /*****************************************************************************
+ * FILE:	@(#)tetris.oil	1.12 04/09/17    
+ * DESCRIPTION:
+ *  Application Tetris OIL file.
+ *****************************************************************************/
+#include <osek/osek.oil>
+
+CPU Sample_CPU1
+{
+    OS StdOS
+    {
+        /* All debug switches are enabled */
+        STATUS             = EXTENDED;
+        STARTUPHOOK        = TRUE;
+        ERRORHOOK          = TRUE;
+        SHUTDOWNHOOK       = TRUE;
+        PRETASKHOOK        = TRUE;
+        POSTTASKHOOK       = TRUE;
+        USEGETSERVICEID    = TRUE;
+        USEPARAMETERACCESS = TRUE;
+        USERESSCHEDULER    = TRUE;
+	
+	/* tetris does not undergo application resets */
+	MULTISTART         = FALSE;
+	/* shuts down the system in case of stack overflow */
+        STACKMONITOR       = TRUE;
+	/* let us have ORTI information */
+	ORTI		   = TRUE;
+    };
+/******************************************************************************
+ * Target dependencies.
+ * 
+ * 1. Define macro X (X=SERIAL,STDIOTX,SIMINRX,NEXAR)to add OIL objects
+ *    for the X device in the application.
+ *    (NEXAR if keypad or lcd device is used).
+ *
+ * 2. TETRISIN_X, TETRISOUT_X macros need to be defined to link device X
+ *    to the input/output of the monitor task.
+ *    X = SERIAL,SIMINRX,STDIOTX,KEYPAD,LCD
+ *****************************************************************************/ 
+    #include "tetris_target.oil"
+    
+    /* Application modes */
+    APPMODE APPMODE1 {};
+    /* dummy */
+    APPMODE APPMODE2 {};
+    
+    /* uart oil objects */
+    #ifdef SERIAL
+    #include "serial.oil"
+    #endif
+
+    /* nexar oil objects */
+    #ifdef NEXAR
+    #include "nexar.oil"
+    #endif
+
+    /* integrated stdio objects */
+    #ifdef STDIOTX
+    #include "standard.oil"
+    #endif
+
+    /* simulate input */
+    #ifdef SIMINRX
+    #include "simin.oil"
+    #endif
+
+    COM Com
+    {
+        /* All debug switches are enabled */
+        COMERRORHOOK            = TRUE;
+        COMUSEGETSERVICEID      = TRUE;
+        COMUSEPARAMETERACCESS   = TRUE;
+        COMSTARTCOMEXTENSION    = TRUE;
+        COMSTATUS               = COMEXTENDED;
+        COMAPPMODE              = "COMAPPMODE1";
+    };
+
+ /*****************************************************************************
+   Init actions init actions  init actions.
+   Autostarting task taking care of initializing process. 
+   Only when terminates are other tasks allowed to run
+   (non-preemptable)
+  ****************************************************************************/
+    TASK init
+    {
+        /* does not really matter */
+        PRIORITY   = 5;
+        SCHEDULE   = NON;
+        ACTIVATION = 1;
+        AUTOSTART  = TRUE { APPMODE = OSDEFAULTAPPMODE;};
+
+	/* output */
+	#ifdef TETRISOUT_STDIOTX
+	#use STDIOOUT_TASK
+	#endif
+	#ifdef TETRISOUT_SERIAL
+	#use SERIALOUT_TASK
+	#endif
+	#ifdef TETRISOUT_LCD
+	#use LCDOUT_TASK
+	#endif
+
+        RESOURCE   = r_score;
+    };
+
+ /****************************************************************************
+   Key stroke handler key stroke handler
+   This task is activated after user's input.
+   The input reader, an interrupt or a polling task, sends a message to
+   the stroke task (with activate as notification).
+  ***************************************************************************/
+    TASK stroke
+    {
+        /* highest priority in the system */
+        PRIORITY   = 13;
+        SCHEDULE   = FULL;
+        ACTIVATION = 1;
+        AUTOSTART  = FALSE;
+
+	/* input */
+	#ifdef TETRISIN_SIMINRX
+	#use SIMIN_TASK
+	#endif
+	#ifdef TETRISIN_SERIAL
+	#use SERIALIN_TASK
+	#endif
+	#ifdef TETRISIN_KEYPAD
+	#use KEYPADIN_TASK
+	#endif
+	
+    };
+
+    EVENT e_resume;
+    EVENT e_pause;
+
+ /****************************************************************************
+   Timeslot timeslot timeslot timeslot timeslot
+   This tasks controls "time processing". It is permanently waiting for 
+   at least one of the following events:
+   - e_kill: 	stop all alarms. 
+   - e_resume:	resume time processing.
+   - e_pause:   stop time processing
+   - e_speed:   increase 'a_gravity' frequency (+ difficulty).  
+   - e_gravity:    'a_gravity' expired (next action).
+  ***************************************************************************/
+    TASK timeslot
+    {
+        PRIORITY   = 12;
+        SCHEDULE   = FULL;
+        ACTIVATION = 1;
+        AUTOSTART  = FALSE;
+        EVENT      = e_speed;
+        EVENT      = e_kill;
+        EVENT      = e_resume;
+        EVENT      = e_pause;
+        EVENT      = e_gravity;
+        RESOURCE   = r_score;
+    };
+   
+   /* time processing */
+    ALARM a_gravity
+    {
+        COUNTER         = SYS_TIMER;
+        ACTION          = SETEVENT
+        {
+             TASK 	= timeslot;
+	     EVENT 	= e_gravity;
+        };
+        AUTOSTART       = FALSE;
+
+    };
+    EVENT e_ts;
+
+    /* count scs. */
+    ALARM a_scs
+    {
+        COUNTER         = SYS_TIMER;
+        ACTION          = ALARMCALLBACK
+        {
+             CALLBACK = "one_more_second";
+        };
+        AUTOSTART       = TRUE
+        {
+            CYCLETIME = 100;
+            ALARMTIME = 100;
+            APPMODE   = OSDEFAULTAPPMODE;
+        };
+    };
+
+    /* increased by tetris task everytime a tetris line has
+     * been comleted */
+    COUNTER c_speed
+    {
+        MAXALLOWEDVALUE = 100;
+        TICKSPERBASE    = 1;
+        MINCYCLE        = 1;
+    };
+
+    EVENT e_speed;
+    ALARM a_speed
+    {
+        COUNTER         = c_speed;
+        ACTION          = SETEVENT
+        {
+             TASK       = timeslot;
+             EVENT      = e_speed;
+        };
+        AUTOSTART       = FALSE;
+    };
+
+        EVENT e_right;
+        EVENT e_left;
+        EVENT e_down;
+        EVENT e_rotate;
+        EVENT e_gravity;
+        EVENT e_kill;
+
+ /****************************************************************************
+   Tetris Tetris Tetris Tetris Tetris Tetris Tetris Tetris
+   This task goberns the lifetime of one single tetris piece since its
+   birth at top of tetris panel. It first paints the tetris piece and
+   then waits for one of the following events:
+   (from stroke)
+   - e_kill: 		end the task.
+   - e_left: 		move tetris to left.
+   - e_right:		move tetris to right.
+   - e_down: 		move tetris all the way down.
+   - e_rotate:  	rotate tetris.
+   - e_gravity:    	gravity hit.
+  ***************************************************************************/
+    TASK tetris
+    {
+        PRIORITY   = 7;
+        SCHEDULE   = FULL;
+        ACTIVATION = 1;
+        AUTOSTART  = FALSE;
+        EVENT      = e_rotate;
+        EVENT      = e_right;
+        EVENT      = e_left;
+        EVENT      = e_down;
+        EVENT      = e_gravity;
+        EVENT      = e_kill;
+        RESOURCE   = r_score;
+	/* output */
+	#ifdef TETRISOUT_STDIOTX
+	#use STDIOOUT_TASK
+	#endif
+	#ifdef TETRISOUT_SERIAL
+	#use SERIALOUT_TASK
+	#endif
+	#ifdef TETRISOUT_LCD
+	#use LCDOUT_TASK
+	#endif
+    };
+
+ /****************************************************************************
+  integrity of score data
+  ***************************************************************************/
+     RESOURCE r_score
+     {
+             RESOURCEPROPERTY = STANDARD;
+     };
+
+}: "This CPU is intended to run the Sample application";
+
+

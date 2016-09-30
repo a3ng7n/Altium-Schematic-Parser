@@ -1,0 +1,26 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Any
+;   Board   : Any
+;   Project : PowerPC_AMCC_PPC405CR_Flash_Recorder.PrjFpg
+;
+;   Created 11-Nov-2004
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=40 Mhz
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Net  | TargetId=CLK_REF              | FPGA_CLOCK_FREQUENCY=20 MHz
+Record=Constraint | TargetKind=Port | TargetId=PER_CLK              | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Net  | TargetId=PER_CLK              | FPGA_CLOCK_FREQUENCY=50 MHz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;-------------------------------------------------------------------------------
+
+

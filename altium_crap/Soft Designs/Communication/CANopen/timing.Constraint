@@ -1,0 +1,20 @@
+;...............................................................................
+;Constraints File
+;   Device  : Any
+;   Board   : Nanoboard 2
+;   Project : DSF_JPEG.PrjFpg
+;
+;   Created 22/01/2004
+;...............................................................................
+
+;...............................................................................
+Record=FileHeader | Id=DXP Constraints v1.0
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK_FREQUENCY=24 Mhz
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=24 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;...............................................................................
+
+

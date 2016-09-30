@@ -1,0 +1,116 @@
+==============================================
+Component Name : RES
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+ Reference Pin -  Id number: 1 Name: TOP DisplayMode: Normal Removed Pin -  Id number: 1 Name: 1 DisplayMode: De-Morgan
+ Reference Pin -  Id number: 2 Name: BOT DisplayMode: Normal Removed Pin -  Id number: 2 Name: 2 DisplayMode: De-Morgan
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : TOP
+Registered Pin - Id number : 2 Reference Pin Name : BOT
+ - End Component - 
+
+==============================================
+Component Name : CAP
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+ Reference Pin -  Id number: 1 Name: 1 DisplayMode: Normal Removed Pin -  Id number: 1 Name: 1 DisplayMode: De-Morgan
+ Reference Pin -  Id number: 2 Name: 2 DisplayMode: Normal Removed Pin -  Id number: 2 Name: 2 DisplayMode: De-Morgan
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : 1
+Registered Pin - Id number : 2 Reference Pin Name : 2
+ - End Component - 
+
+==============================================
+Component Name : VSRC
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+ Reference Pin -  Id number: 1 Name: 1 DisplayMode: Normal Removed Pin -  Id number: 1 Name: 1 DisplayMode: De-Morgan
+ Reference Pin -  Id number: 2 Name: 2 DisplayMode: Normal Removed Pin -  Id number: 2 Name: 2 DisplayMode: De-Morgan
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : 1
+Registered Pin - Id number : 2 Reference Pin Name : 2
+ - End Component - 
+
+==============================================
+Component Name : VPULSE
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : 1
+Registered Pin - Id number : 2 Reference Pin Name : 2
+ - End Component - 
+
+==============================================
+Component Name : 100HF100PV
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+ Reference Pin -  Id number: 1 Name: A DisplayMode: Normal Removed Pin -  Id number: 1 Name: A DisplayMode: De-Morgan
+ Reference Pin -  Id number: 2 Name: K DisplayMode: Normal Removed Pin -  Id number: 2 Name: K DisplayMode: De-Morgan
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : A
+Registered Pin - Id number : 2 Reference Pin Name : K
+ - End Component - 
+
+==============================================
+Component Name : 2N1893
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+ Reference Pin -  Id number: 1 Name: C DisplayMode: Normal Removed Pin -  Id number: 1 Name: C DisplayMode: De-Morgan
+ Reference Pin -  Id number: 2 Name: B DisplayMode: Normal Removed Pin -  Id number: 2 Name: B DisplayMode: De-Morgan
+ Reference Pin -  Id number: 3 Name: E DisplayMode: Normal Removed Pin -  Id number: 3 Name: E DisplayMode: De-Morgan
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : C
+Registered Pin - Id number : 2 Reference Pin Name : B
+Registered Pin - Id number : 3 Reference Pin Name : E
+ - End Component - 
+
+==============================================
+Component Name : .NS
+
+Part Count : 2
+
+ Pins matching by Number across a given Display Mode are reduced to a single Normal Pin
+-------------------------------------------------------------------------------
+Pins matching by Number across parts are reduced to a single Part 0 Pin
+----------------------------------------------------------------------
+Pins registered:
+-----------------
+Registered Pin - Id number : 1 Reference Pin Name : 1
+ - End Component - 
+

@@ -1,0 +1,102 @@
+-- run to time 90 ns
+
+Library     IEEE ;
+Use         IEEE.std_logic_1164.all ;
+Use         IEEE.std_logic_textio.all ;
+
+Library work; 
+Use work.all;
+
+Library STD ;
+Use         std.textio.all ;
+
+entity main_tb is
+end ;
+
+architecture test of main_tb is
+
+--*****************************************************************
+--      Write Results into file.
+--*****************************************************************
+    file RESULTS: text open WRITE_MODE is "results.txt";
+
+    procedure WRITE_RESULTS(
+        CI : std_logic ;
+       X    : std_logic_vector ( 15 downto 0 ) ;
+       Y    : std_logic_vector ( 15 downto 0 ) ;
+       CO : std_logic ;
+       S    : std_logic_vector ( 15 downto 0 )
+    ) is
+        variable l_out : line ;
+    begin
+        write(l_out, now, right, 15, ps);
+        -- write inputs
+       write(l_out, CI, right, 2 ) ;
+       write(l_out, X, right, 17 ) ;
+       write(l_out, Y, right, 17 ) ;
+        -- write outputs
+       write(l_out, CO, right, 2 ) ;
+       write(l_out, S, right, 17 ) ;
+
+        writeline(results, l_out);
+    end ;
+
+--*****************************************************************
+--      Design Under Test component declaration.
+--*****************************************************************
+    component X_16Bit_Group_Ripple_Adder is
+        port (
+            CI  : in    std_logic ;
+            CO  : out   std_logic ;
+            S   : out   std_logic_vector( 15 downto 0 ) ;
+            X   : in    std_logic_vector( 15 downto 0 ) ;
+            Y   : in    std_logic_vector( 15 downto 0 )
+        );
+    end component ;
+
+    signal CI, CO : std_logic ;
+    signal S, X, Y : std_logic_vector( 15 downto 0 ) ;
+
+begin
+--*****************************************************************
+--      Design Under Test
+--*****************************************************************
+DUT : X_16Bit_Group_Ripple_Adder
+    port map (
+        CI  => CI,
+       X    => X,
+       Y    => Y,
+       CO   => CO,
+       S    => S
+    ) ;
+
+STIMUL : process
+    begin
+        CI <= '0' ;
+       X <= "1111111100000000" ;
+       Y <= "1010101010101010" ;
+       wait for 10 ns ;
+       X <= "0010101101001101" ;
+       wait for 10 ns ;
+       CI <= '1' ;
+       wait for 10 ns ;
+       Y <= "1100000110111111" ;
+       wait for 10 ns ;
+       X <= "0001010111100010" ;
+       wait for 10 ns ;
+       CI <= '0' ;
+       wait for 10 ns ;
+       X <= "1101101100001000" ;
+       wait for 10 ns ;
+       X <= "1110101101000000" ;
+       wait for 10 ns ;
+       CI <= '1' ;
+       wait for 10 ns ;
+       Y <= "1100010101010001" ;
+       wait for 10 ns ;
+       wait ;
+    end process ;
+
+    WRITE_RESULTS( CI, X, Y, CO, S ) ;
+
+end test ;

@@ -1,0 +1,202 @@
+-- run to time 550 ns
+
+library IEEE;
+use IEEE.std_logic_1164.all ;
+use IEEE.std_logic_textio.all ;
+
+library std ;
+use std.textio.all ;
+
+entity main_tb is
+end ;
+
+architecture test of main_tb is
+--*****************************************************************
+--        Write Results into file.
+--*****************************************************************
+    file RESULTS: text open WRITE_MODE is "results.txt";
+
+    procedure WRITE_RESULTS(
+        BC0   : std_logic;
+        BC1   : std_logic;
+        BC2   : std_logic;
+        BC3   : std_logic;
+        BC4   : std_logic;
+        BC5   : std_logic;
+        BC6   : std_logic;
+        BC7   : std_logic;
+        CLK   : std_logic;
+        PD0   : std_logic;
+        PD1   : std_logic;
+        PD2   : std_logic;
+        PD3   : std_logic;
+        PD4   : std_logic;
+        PD5   : std_logic;
+        PD6   : std_logic;
+        PD7   : std_logic;
+        SDATA : std_logic;
+        SYNC  : std_logic
+    ) is
+        variable l_out : line ;
+    begin
+        write(l_out, now, right, 15, ps);
+        -- write inputs
+        write(l_out, CLK, right, 2 ) ;
+        write(l_out, SDATA, right, 2 ) ;
+        write(l_out, SYNC, right, 2 ) ;
+
+        -- write outputs
+        write(l_out, BC0, right, 2 ) ;
+        write(l_out, BC1, right, 2 ) ;
+        write(l_out, BC2, right, 2 ) ;
+        write(l_out, BC3, right, 2 ) ;
+        write(l_out, BC4, right, 2 ) ;
+        write(l_out, BC5, right, 2 ) ;
+        write(l_out, BC6, right, 2 ) ;
+        write(l_out, BC7, right, 2 ) ;
+        write(l_out, PD0, right, 2 ) ;
+        write(l_out, PD1, right, 2 ) ;
+        write(l_out, PD2, right, 2 ) ;
+        write(l_out, PD3, right, 2 ) ;
+        write(l_out, PD4, right, 2 ) ;
+        write(l_out, PD5, right, 2 ) ;
+        write(l_out, PD6, right, 2 ) ;
+        write(l_out, PD7, right, 2 ) ;
+
+        writeline(results, l_out);
+    end ;
+
+--*****************************************************************
+--        Design Under Test component declaration.
+--*****************************************************************
+component Serial_To_Parallel_Converter is
+    port (
+        BC0   : out std_logic;
+        BC1   : out std_logic;
+        BC2   : out std_logic;
+        BC3   : out std_logic;
+        BC4   : out std_logic;
+        BC5   : out std_logic;
+        BC6   : out std_logic;
+        BC7   : out std_logic;
+        CLK   : in  std_logic;
+        PD0   : out std_logic;
+        PD1   : out std_logic;
+        PD2   : out std_logic;
+        PD3   : out std_logic;
+        PD4   : out std_logic;
+        PD5   : out std_logic;
+        PD6   : out std_logic;
+        PD7   : out std_logic;
+        SDATA : in  std_logic;
+        SYNC  : in  std_logic
+    );
+end component ;
+
+signal BC0, BC1, BC2, BC3, BC4, BC5, BC6, BC7, PD0, PD1, PD2, PD3, PD4, PD5, PD6, PD7, CLK, SDATA, SYNC : std_logic ;
+
+begin
+
+DUT : Serial_To_Parallel_Converter
+    port map (
+        BC0   => BC0,
+        BC1   => BC1,
+        BC2   => BC2,
+        BC3   => BC3,
+        BC4   => BC4,
+        BC5   => BC5,
+        BC6   => BC6,
+        BC7   => BC7,
+        CLK   => CLK,
+        PD0   => PD0,
+        PD1   => PD1,
+        PD2   => PD2,
+        PD3   => PD3,
+        PD4   => PD4,
+        PD5   => PD5,
+        PD6   => PD6,
+        PD7   => PD7,
+        SDATA => SDATA,
+        SYNC  => SYNC
+    );
+
+
+CLOCK : process
+begin
+    CLK <= '0' ;
+    wait for 10 ns ;
+    CLK <= '1' ;
+    wait for 10 ns ;
+end process ;
+
+
+SERIALDATA : process
+begin
+    SYNC <= '0' ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 10 ns ;
+
+    SYNC <= '1' ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+
+    --wait  for 20 ns ;
+    --SYNC <= '0' ;
+
+    wait  for 20 ns ;
+    SYNC <= '1' ;
+    --SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '1' ;
+    wait  for 20 ns ;
+    SYNC <= '0' ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    SDATA <= '0' ;
+    wait  for 20 ns ;
+    wait ;
+end process ;
+
+
+WRITE_RESULTS( BC0, BC1, BC2, BC3, BC4, BC5, BC6, BC7, CLK, PD0, PD1, PD2, PD3, PD4, PD5, PD6, PD7, SDATA, SYNC ) ;
+
+end test ;

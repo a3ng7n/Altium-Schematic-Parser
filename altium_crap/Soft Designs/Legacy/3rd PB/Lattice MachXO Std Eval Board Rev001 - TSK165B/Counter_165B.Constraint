@@ -1,0 +1,178 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Lattice MachXO LCMXO2280C-4FT256C-3I
+;   Board   : Lattice MachXO Standard Evaluation Board Rev 001
+;   Project : Any
+;
+;   Created 3-July-2006
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=Lattice MachXO Standard Evaluation Board Rev 001
+Record=Constraint | TargetKind=Part | TargetId=LCMXO2280C-4FT256IES
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Board LEDs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LEDS[7..0]           | FPGA_PINNUM=R14,R13,T12,T13,P12,P11,R12,R11
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Board Dip Switches
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=SW[7..0]             | FPGA_PINNUM=R6,T5,T4,P6,P5,R5,R4,T3    
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Lattice Eval Board Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_PINNUM=D7
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=33 Mhz
+
+Record=Constraint | TargetKind=Port | TargetId=CLK_OUT0             | FPGA_PINNUM=D7
+Record=Constraint | TargetKind=Port | TargetId=CLK_OUT1             | FPGA_PINNUM=A9
+Record=Constraint | TargetKind=Port | TargetId=CLK_OUT2             | FPGA_PINNUM=N9
+Record=Constraint | TargetKind=Port | TargetId=CLK_OUT3             | FPGA_PINNUM=M9
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Push Button
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PB_SW4               | FPGA_PINNUM=T11
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Push Button
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=GSRN                 | FPGA_PINNUM=L12                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=PB_SW0               | FPGA_PINNUM=C8                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=PB_SW1               | FPGA_PINNUM=C9                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=PB_SW4               | FPGA_PINNUM=L12                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft-Device Chain Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=A11                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=A12                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=A13                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=A10                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;-------------------------------------------------------------------------------
+
+
+
+;-------------------------------------------------------------------------------
+; RJ45 Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=TD_P                 | FPGA_PINNUM=C6                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=TD_N                 | FPGA_PINNUM=A6                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RD_P                 | FPGA_PINNUM=D8                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RD_N                 | FPGA_PINNUM=B7                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+
+Record=Constraint | TargetKind=Port | TargetId=RJ45_1               | FPGA_PINNUM=C6                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_2               | FPGA_PINNUM=A6                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_3               | FPGA_PINNUM=D8                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_4               | FPGA_PINNUM=E8                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_5               | FPGA_PINNUM=C7                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_6               | FPGA_PINNUM=B7                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_7               | FPGA_PINNUM=B8                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+Record=Constraint | TargetKind=Port | TargetId=RJ45_8               | FPGA_PINNUM=E9                      | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Device I/O with LVDS Transmit/Receive Pairs
+;
+;     Positive         Pin   J23    Pin   Negative          |     Positive         Pin   J24    Pin   Negative
+;                                                           |
+;     J23_HEADER_P0    1     + +    2     J23_HEADER_N0     |     J24_HEADER_P0    1     + +    2     J24_HEADER_N0
+;     J23_HEADER_P1    3     + +    4     J23_HEADER_N1     |     J24_HEADER_P1    3     + +    4     J24_HEADER_N1
+;     J23_HEADER_P2    5     + +    6     J23_HEADER_N2     |     J24_HEADER_P2    5     + +    6     J24_HEADER_N2
+;     J23_HEADER_P3    7     + +    8     J23_HEADER_N3     |     J24_HEADER_P3    7     + +    8     J24_HEADER_N3
+;     J23_HEADER_P4    9     + +    10    J23_HEADER_N4     |     J24_HEADER_P4    9     + +    10    J24_HEADER_N4
+;                      11    + +    12                      |                      11    + +    12
+;     J23_HEADER_P5    13    + +    14    J23_HEADER_N5     |     J24_HEADER_P5    13    + +    14    J24_HEADER_N5
+;     J23_HEADER_P6    15    + +    16    J23_HEADER_N6     |     J24_HEADER_P6    15    + +    16    J24_HEADER_N6
+;     J23_HEADER_P7    17    + +    18    J23_HEADER_N7     |     J24_HEADER_P7    17    + +    18    J24_HEADER_N7
+;     J23_HEADER_P8    19    + +    20    J23_HEADER_N8     |     J24_HEADER_P8    19    + +    20    J24_HEADER_N8
+;     J23_HEADER_P9    21    + +    22    J23_HEADER_N9     |     J24_HEADER_P9    21    + +    22    J24_HEADER_N9
+;
+; Note: it is not necessary to place Ports with _P and _N, the system will find and use Negative pins when only Positive pins are used on a Schematic.
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=J23_HEADER[9..0]     | FPGA_PINNUM=N14,R16,N15,N16,K13,L13,L14,K15,K16,J14 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+Record=Constraint | TargetKind=Port | TargetId=J23_HEADER_P[9..0]   | FPGA_PINNUM=N14,R16,N15,N16,K13,L13,L14,K15,K16,J14 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+Record=Constraint | TargetKind=Port | TargetId=J23_HEADER_N[9..0]   | FPGA_PINNUM=M15,P16,P15,M16,K12,M14,L15,K14,L16,J15 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+
+Record=Constraint | TargetKind=Port | TargetId=J24_HEADER[9..0]     | FPGA_PINNUM=H14,E15,F13,H12,G14,H16,F16,C16,C15,E14 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+Record=Constraint | TargetKind=Port | TargetId=J24_HEADER_P[9..0]   | FPGA_PINNUM=H14,E15,F13,H12,G14,H16,F16,C16,C15,E14 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+Record=Constraint | TargetKind=Port | TargetId=J24_HEADER_N[9..0]   | FPGA_PINNUM=H15,F15,G12,H13,G15,J16,G16,B16,D15,F14 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+
+Record=Constraint | TargetKind=Port | TargetId=J24_P25_HEADER       | FPGA_PINNUM=G13                     | FPGA_IOSTANDARD=LVCMOS33 | FPGA_SLEW=FAST
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Device I/O test pads paired with a ground pad
+;
+;        T3                     HA                            R15
+;     1  + + + + + + + + + + + + + + + + + + + + + + + + + +  26
+;   gnd  + + + + + + + + + + + + + + + + + + + + + + + + + +  gnd
+;
+;        P5                     HB                            R14
+;     1  + + + + + + + + + + + + + + + + + + + + + + + + + +  26
+;   gnd  + + + + + + + + + + + + + + + + + + + + + + + + + +  gnd
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HA[25..0]            | FPGA_PINNUM=R15,T15,T12,R12,P10,R10,N11,M11,R13,P13,T10,T11,R7,T7,T9,R8,M8,N7,M7,N6,P6,T5,R4,N5,R3,T3 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+
+Record=Constraint | TargetKind=Port | TargetId=HB[25..0]            | FPGA_PINNUM=R14,T14,P12,R11,N12,P11,M10,N10,P14,T13,M9,N9,P9,R9,P7,N8,P8,T8,R6,T6,T4,R5,T2,R2,R1,P5   | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Device I/O with LVDS Transmit/Receive Pairs routed to SMA connectors
+;
+;     Diff Signal | Positive | Negative
+;     ------------+----------+---------
+;      IO_LVDS0   |    J11   |    J13
+;      IO_LVDS1   |    J7    |    J9
+;      IO_LVDS2   |    J15   |    J17
+;      IO_LVDS3   |    J19   |    J21
+;      IO_LVDS4   |    J16   |    J18
+;      IO_LVDS5   |    J12   |    J14
+;      IO_LVDS6   |    J8    |    J10
+;      IO_LVDS7   |    J20   |    J22
+;
+; Note: it is not necessary to place Ports with _P and _N, the system will find and use Negative pins when only Positive pins are used on a Schematic.
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=IO_LVDS[7..0]        | FPGA_PINNUM=L5,K1,M1,K4,G3,E3,D2,E1 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+Record=Constraint | TargetKind=Port | TargetId=IO_LVDS_P[7..0]      | FPGA_PINNUM=L5,K1,M1,K4,G3,E3,D2,E1 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+Record=Constraint | TargetKind=Port | TargetId=IO_LVDS_N[7..0]      | FPGA_PINNUM=M6,K2,M2,K5,G2,F4,D3,F1 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33 | FPGA_SLEW=FAST,FAST,FAST,FAST,FAST,FAST,FAST,FAST
+;-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

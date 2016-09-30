@@ -1,0 +1,91 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:17:06 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\cb2ceb.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+// file 4 "\c:\eda\synplicity\synplify_733\lib\vhd\unsigned.vhd "
+// file 5 "\c:\eda\synplicity\synplify_733\lib\vhd\arith.vhd "
+
+module CB2CEB (
+  CE,
+  C,
+  CLR,
+  Q,
+  CEO,
+  TC
+);
+input CE ;
+input C ;
+input CLR ;
+output [1:0] Q ;
+output CEO ;
+output TC ;
+wire CE ;
+wire C ;
+wire CLR ;
+wire CEO ;
+wire TC ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:42
+  cyclone_lcell Q_1_ (
+	.regout(Q[1]),
+	.clk(C),
+	.dataa(CE),
+	.datab(Q[0]),
+	.datac(Q[1]),
+	.aclr(CLR)
+);
+defparam Q_1_.operation_mode="normal";
+defparam Q_1_.output_mode="reg_only";
+defparam Q_1_.lut_mask="7878";
+defparam Q_1_.synch_mode="off";
+defparam Q_1_.sum_lutc_input="datac";
+// @2:42
+  cyclone_lcell Q_0_ (
+	.regout(Q[0]),
+	.clk(C),
+	.dataa(CE),
+	.datab(Q[0]),
+	.aclr(CLR)
+);
+defparam Q_0_.operation_mode="normal";
+defparam Q_0_.output_mode="reg_only";
+defparam Q_0_.lut_mask="6666";
+defparam Q_0_.synch_mode="off";
+defparam Q_0_.sum_lutc_input="datac";
+// @2:55
+  cyclone_lcell CEO_0_and2 (
+	.combout(CEO),
+	.dataa(CE),
+	.datab(Q[0]),
+	.datac(Q[1])
+);
+defparam CEO_0_and2.operation_mode="normal";
+defparam CEO_0_and2.output_mode="comb_only";
+defparam CEO_0_and2.lut_mask="8080";
+defparam CEO_0_and2.synch_mode="off";
+defparam CEO_0_and2.sum_lutc_input="datac";
+// @2:50
+  cyclone_lcell TC_0_and2 (
+	.combout(TC),
+	.dataa(Q[1]),
+	.datab(Q[0])
+);
+defparam TC_0_and2.operation_mode="normal";
+defparam TC_0_and2.output_mode="comb_only";
+defparam TC_0_and2.lut_mask="8888";
+defparam TC_0_and2.synch_mode="off";
+defparam TC_0_and2.sum_lutc_input="datac";
+endmodule /* CB2CEB */
+

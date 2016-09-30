@@ -1,0 +1,193 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Cyclone III EP3C25F324C8
+;   Board   : Cyclone III Starter Kit
+;   Project : FPGA_Cyclone_III_Starter_Kit.PrjFpg
+;
+;   Created 3-Feb-2009
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Part | TargetId=EP3C25F324C8
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=OSC_CLK                          | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Port | TargetId=OSC_CLK                          | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=OSC_CLK                          | FPGA_CLOCK_FREQUENCY=50 MHz
+Record=Constraint | TargetKind=Port | TargetId=OSC_CLK                          | FPGA_PINNUM=V9                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=I_CLK                            | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Port | TargetId=I_CLK                            | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=I_CLK                            | FPGA_CLOCK_FREQUENCY=50 MHz
+Record=Constraint | TargetKind=Port | TargetId=I_CLK                            | FPGA_PINNUM=B9                             | FPGA_IOSTANDARD=LVCMOS25
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Altium Nexus JTAG Soft Chain
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK                   | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK                   | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK                   | FPGA_CLOCK_FREQUENCY=1 MHz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK                   | FPGA_PINNUM=L6                              | FPGA_IOSTANDARD=LVCMOS25   ; HSMC_D3, Pin6_of_J1_HSMC_DEBUG_BOARD
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI                   | FPGA_PINNUM=M5                              | FPGA_IOSTANDARD=LVCMOS25   ; HSMC_D2  Pin5_of_J1_HSMC_DEBUG_BOARD
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO                   | FPGA_PINNUM=D3                              | FPGA_IOSTANDARD=LVCMOS25   ; HSMC_D1  Pin4_of_J1_HSMC_DEBUG_BOARD
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS                   | FPGA_PINNUM=H6                              | FPGA_IOSTANDARD=LVCMOS25   ; HSMC_D0  Pin3_of_J1_HSMC_DEBUG_BOARD
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User Push Buttons and LEDs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=BUTTON[3..0]                     | FPGA_PINNUM=B10,A10,F2,F1                  | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=RESET_N                          | FPGA_PINNUM=N2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=RECONFIGURE                      | FPGA_PINNUM=H5                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=LED[3..0]                        | FPGA_PINNUM=N9,N12,P12,P13                 | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; HSMC Port A Interface Signal Names
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HSMC_SDA                         | FPGA_PINNUM=E1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_SCL                         | FPGA_PINNUM=F3                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TCK                         | FPGA_PINNUM=J1
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TMS                         | FPGA_PINNUM=J2
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TDI                         | FPGA_PINNUM=J6
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TDO                         | FPGA_PINNUM=J5
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKOUT0                     | FPGA_PINNUM=A1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKIN0                      | FPGA_PINNUM=A9                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKOUT_P1                   | FPGA_PINNUM=D14                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKIN_P1                    | FPGA_PINNUM=F17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKOUT_N1                   | FPGA_PINNUM=C14                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKIN_N1                    | FPGA_PINNUM=F18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKOUT_P2                   | FPGA_PINNUM=U18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKIN_P2                    | FPGA_PINNUM=N17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKOUT_N2                   | FPGA_PINNUM=V18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_CLKIN_N2                    | FPGA_PINNUM=N18                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_D[19..0]                    | FPGA_PINNUM=T16,P11,R16,K17,N15,N11,N16,N10,H16,J13,H15,N8,T2,N7,M3,T1,L6,M5,D3,H6  | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P4                       | FPGA_PINNUM=B2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P4                       | FPGA_PINNUM=C2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N4                       | FPGA_PINNUM=B1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N4                       | FPGA_PINNUM=C1                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P5                       | FPGA_PINNUM=G2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P5                       | FPGA_PINNUM=H2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N5                       | FPGA_PINNUM=G1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N5                       | FPGA_PINNUM=H1                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P6                       | FPGA_PINNUM=K2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P6                       | FPGA_PINNUM=K5                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N6                       | FPGA_PINNUM=K1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N6                       | FPGA_PINNUM=L5                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P7                       | FPGA_PINNUM=L2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P7                       | FPGA_PINNUM=L4                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N7                       | FPGA_PINNUM=L1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N7                       | FPGA_PINNUM=L3                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P8                       | FPGA_PINNUM=M2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P8                       | FPGA_PINNUM=P2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N8                       | FPGA_PINNUM=M1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N8                       | FPGA_PINNUM=P1                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P9                       | FPGA_PINNUM=R2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P9                       | FPGA_PINNUM=T3                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N9                       | FPGA_PINNUM=R1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N9                       | FPGA_PINNUM=R3                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P10                      | FPGA_PINNUM=E17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P10                      | FPGA_PINNUM=G17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N10                      | FPGA_PINNUM=E18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N10                      | FPGA_PINNUM=G18                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P11                      | FPGA_PINNUM=H17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P11                      | FPGA_PINNUM=K18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N11                      | FPGA_PINNUM=H18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N11                      | FPGA_PINNUM=L18                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P12                      | FPGA_PINNUM=L17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P12                      | FPGA_PINNUM=L16                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N12                      | FPGA_PINNUM=M18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N12                      | FPGA_PINNUM=M17                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P13                      | FPGA_PINNUM=L14                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P13                      | FPGA_PINNUM=L13                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N13                      | FPGA_PINNUM=L15                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N13                      | FPGA_PINNUM=M14                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P14                      | FPGA_PINNUM=P17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P14                      | FPGA_PINNUM=R17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N14                      | FPGA_PINNUM=P18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N14                      | FPGA_PINNUM=R18                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P15                      | FPGA_PINNUM=R5                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P15                      | FPGA_PINNUM=M6                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N15                      | FPGA_PINNUM=R4                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N15                      | FPGA_PINNUM=N6                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_P16                      | FPGA_PINNUM=T17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_P16                      | FPGA_PINNUM=M13                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_TX_N16                      | FPGA_PINNUM=T18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMC_RX_N16                      | FPGA_PINNUM=N13                            | FPGA_IOSTANDARD=LVCMOS25
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Shared Memory Interface Pins
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=FLASH_WR_N                       | FPGA_PINNUM=D18                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=FLASH_CS_N                       | FPGA_PINNUM=E2
+Record=Constraint | TargetKind=Port | TargetId=FLASH_OE_N                       | FPGA_PINNUM=D17                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=FLASH_RESET_N                    | FPGA_PINNUM=C3
+Record=Constraint | TargetKind=Port | TargetId=FLASH_ADV_N                      | FPGA_PINNUM=H14                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=FLASH_CLK                        | FPGA_PINNUM=H4                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=FLASH_WAIT                       | FPGA_PINNUM=H13                            | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=SRAM_OE_N                        | FPGA_PINNUM=E9                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_CE1_N                       | FPGA_PINNUM=F9                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_WE_N                        | FPGA_PINNUM=G13                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_BE_N0                       | FPGA_PINNUM=F10                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_BE_N1                       | FPGA_PINNUM=F11                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_BE_N2                       | FPGA_PINNUM=F12                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_BE_N3                       | FPGA_PINNUM=F13                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_ADSC_N                      | FPGA_PINNUM=F7                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=SRAM_CLK                         | FPGA_PINNUM=A2                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=FLASH_SRAM_A[25..1]              | FPGA_PINNUM=B17,G14,C18,C17,B18,A6,A7,D9,C9,E10,D10,C10,B11,A11,B12,A12,B13,A13,B14,A14,B15,A15,B16,A16,E12 | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=FLASH_SRAM_D[31..0]              | FPGA_PINNUM=C7,G6,E6,F6,D7,F8,A18,C12,D16,A17,E14,E13,D2,E11,D12,C16,B6,A5,B5,D5,B3,A3,E7,B4,A4,E8,C5,B7,B8,A8,D1,H3 | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,,
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; DDR SDRAM Device
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=DDR_DQS[1..0]                    | FPGA_PINNUM=T8,U3                          | FPGA_IOSTANDARD=SSTL2I,SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_DM[1..0]                     | FPGA_PINNUM=V8,V3                          | FPGA_IOSTANDARD=SSTL2I,SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_BA[1..0]                     | FPGA_PINNUM=V12,V11                        | FPGA_IOSTANDARD=SSTL2I,SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_CAS_N                        | FPGA_PINNUM=T4                             | FPGA_IOSTANDARD=SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_CKE                          | FPGA_PINNUM=R13                            | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=DDR_CS_N                         | FPGA_PINNUM=V1                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=DDR_RAS_N                        | FPGA_PINNUM=V16                            | FPGA_IOSTANDARD=SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_WE_N                         | FPGA_PINNUM=U15                            | FPGA_IOSTANDARD=SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_CLK                          | FPGA_PINNUM=U2                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=DDR_CLK_N                        | FPGA_PINNUM=V2                             | FPGA_IOSTANDARD=LVCMOS25
+
+Record=Constraint | TargetKind=Port | TargetId=DDR_ADDR[12..0]                  | FPGA_PINNUM=U16,V17,U17,V13,T13,T14,P6,P7,P8,U8,U7,U5,U1 | FPGA_IOSTANDARD=SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I
+Record=Constraint | TargetKind=Port | TargetId=DDR_DQ[15..0]                    | FPGA_PINNUM=V14,P10,R11,U14,V15,U11,U12,U13,V7,V6,U6,P9,V5,R8,V4,U4 | FPGA_IOSTANDARD=SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I,SSTL2I
+;-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

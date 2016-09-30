@@ -1,0 +1,10 @@
+Record=SubProject|ProjectPath=Fpga_u1\Spirit Level - TSK51\FPGA_51_Spirit_Level.PrjFpg
+Record=SubProject|ProjectPath=Fpga_u1\Spirit Level - TSK51\FPGA_51_Spirit_Level.PrjFpg
+Record=SubProject|ProjectPath=Fpga_u1\Spirit Level - TSK51\FPGA_51_Spirit_Level.PrjFpg
+Record=SheetSymbol|SourceDocument=SL1 Xilinx Spartan-IIE PQ208 Rev1.01.SchDoc|Designator=U_SL_Config|SchDesignator=U_SL_Config|FileName=SL_Config_2E.SchDoc
+Record=SheetSymbol|SourceDocument=SL1 Xilinx Spartan-IIE PQ208 Rev1.01.SchDoc|Designator=U_SL_FPGA_Auto_2E|SchDesignator=U_SL_FPGA_Auto_2E|FileName=SL_FPGA_Auto_2E.SchDoc
+Record=SheetSymbol|SourceDocument=SL1 Xilinx Spartan-IIE PQ208 Rev1.01.SchDoc|Designator=U_SL_LCD_SW_LED|SchDesignator=U_SL_LCD_SW_LED|FileName=SL_LCD_SW_LED_2E.SchDoc
+Record=SheetSymbol|SourceDocument=SL1 Xilinx Spartan-IIE PQ208 Rev1.01.SchDoc|Designator=U_SL_Power|SchDesignator=U_SL_Power|FileName=SL_Power.SchDoc
+Record=TopLevelDocument|FileName=SL1 Xilinx Spartan-IIE PQ208 Rev1.01.SchDoc
+Record=FPGA_COMPONENT|BaseComponentDesignator=U1|DocumentName=SL_FPGA_Auto_2E.SchDoc|LibraryReference=XC2S300E-6PQ208C|SubProjectPath=Fpga_u1\Spirit Level - TSK51\FPGA_51_Spirit_Level.PrjFpg|Configuration=Spartan2E-300_SL1|Description=Spartan-IIE 1.8V FPGA, 208-Pin PQFP, Standard Performance, Commercial Grade|SubPartUniqueId1=VBRNSNDD|SubPartDocPath1=SL_FPGA_Auto_2E.SchDoc|SubPartUniqueId2=VMTXBSMQ|SubPartDocPath2=SL_FPGA_Auto_2E.SchDoc|SubPartUniqueId3=XWRAKOSJ|SubPartDocPath3=SL_FPGA_Auto_2E.SchDoc
+Record=FPGA_COMPONENT|BaseComponentDesignator=U5|DocumentName=SL_Config_2E.SchDoc|LibraryReference=XCF02SVO20C|SubProjectPath= |Configuration= |Description=XCF00S Series, Platform Flash In-System Programmable Configuration 3.3V PROM, 20-Pin TSOP, 2-Megabit, Commercial Grade|SubPartUniqueId1=PJLGOJDI|SubPartDocPath1=SL_Config_2E.SchDoc

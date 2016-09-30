@@ -1,0 +1,80 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:37:01 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\fd4cb.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module FD4CB (
+  C,
+  CLR,
+  D,
+  Q
+);
+input C ;
+input CLR ;
+input [3:0] D ;
+output [3:0] Q ;
+wire C ;
+wire CLR ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:37
+  cyclone_lcell Q_3_ (
+	.regout(Q[3]),
+	.clk(C),
+	.datad(D[3]),
+	.aclr(CLR)
+);
+defparam Q_3_.operation_mode="normal";
+defparam Q_3_.output_mode="reg_only";
+defparam Q_3_.lut_mask="ff00";
+defparam Q_3_.synch_mode="off";
+defparam Q_3_.sum_lutc_input="datac";
+// @2:37
+  cyclone_lcell Q_2_ (
+	.regout(Q[2]),
+	.clk(C),
+	.datad(D[2]),
+	.aclr(CLR)
+);
+defparam Q_2_.operation_mode="normal";
+defparam Q_2_.output_mode="reg_only";
+defparam Q_2_.lut_mask="ff00";
+defparam Q_2_.synch_mode="off";
+defparam Q_2_.sum_lutc_input="datac";
+// @2:37
+  cyclone_lcell Q_1_ (
+	.regout(Q[1]),
+	.clk(C),
+	.datad(D[1]),
+	.aclr(CLR)
+);
+defparam Q_1_.operation_mode="normal";
+defparam Q_1_.output_mode="reg_only";
+defparam Q_1_.lut_mask="ff00";
+defparam Q_1_.synch_mode="off";
+defparam Q_1_.sum_lutc_input="datac";
+// @2:37
+  cyclone_lcell Q_0_ (
+	.regout(Q[0]),
+	.clk(C),
+	.datad(D[0]),
+	.aclr(CLR)
+);
+defparam Q_0_.operation_mode="normal";
+defparam Q_0_.output_mode="reg_only";
+defparam Q_0_.lut_mask="ff00";
+defparam Q_0_.synch_mode="off";
+defparam Q_0_.sum_lutc_input="datac";
+endmodule /* FD4CB */
+

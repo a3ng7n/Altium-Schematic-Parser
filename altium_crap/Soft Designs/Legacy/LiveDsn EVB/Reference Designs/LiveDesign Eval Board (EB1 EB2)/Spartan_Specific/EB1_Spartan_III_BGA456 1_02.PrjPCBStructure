@@ -1,0 +1,14 @@
+Record=SubProject|ProjectPath=Spartan_Specific\FPGA_SPARTAN_III.PrjFpg
+Record=SubProject|ProjectPath=Spartan_Specific\FPGA_SPARTAN_III.PrjFpg
+Record=SubProject|ProjectPath=Spartan_Specific\FPGA_SPARTAN_III.PrjFpg
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_FPGA|SchDesignator=U_FPGA|FileName=FPGA_SPARTAN_III.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_AUDIO_OUT|SchDesignator=U_NEB_AUDIO_OUT|FileName=NEB_AUDIO_OUT.SCHDOC
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_JTAG_INT|SchDesignator=U_NEB_JTAG_INT|FileName=NEB_ISE_INT.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_LED_KEY|SchDesignator=U_NEB_LED_KEY|FileName=NEB_LED_KEY.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_PCIO|SchDesignator=U_NEB_PCIO|FileName=NEB_PCIO.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_PSU|SchDesignator=U_NEB_PSU|FileName=NEB_PSU_SPARTAN.SCHDOC
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_SRAM|SchDesignator=U_NEB_SRAM|FileName=NEB_SRAM.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_USRIO|SchDesignator=U_NEB_USRIO|FileName=NEB_USRIO.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_SPARTAN.SchDoc|Designator=U_NEB_XTALOSC|SchDesignator=U_NEB_XTALOSC|FileName=NEB_XTALOSC.SchDoc
+Record=TopLevelDocument|FileName=NEB_TOP_SPARTAN.SchDoc
+Record=FPGA_COMPONENT|BaseComponentDesignator=FPGA1S|DocumentName=FPGA_SPARTAN_III.SchDoc|LibraryReference=XC3S400-5FG456C|SubProjectPath=Spartan_Specific\FPGA_SPARTAN_III.PrjFpg|Configuration=Configuration SPARTAN|Description=Spartan-3 1.2V FPGA, 264 User I/Os, 456-ball FBGA, High Performance, Commercial Grade|SubPartUniqueId1=RNCLSPAW|SubPartDocPath1=FPGA_SPARTAN_III.SchDoc|SubPartUniqueId2=RUOYNDWR|SubPartDocPath2=FPGA_SPARTAN_III.SchDoc|SubPartUniqueId3=VTXORILR|SubPartDocPath3=FPGA_SPARTAN_III.SchDoc

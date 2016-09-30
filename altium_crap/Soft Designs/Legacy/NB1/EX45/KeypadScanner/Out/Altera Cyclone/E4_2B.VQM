@@ -1,0 +1,49 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:30:16 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\e4_2b.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module E4_2B (
+  D,
+  A
+);
+input [3:0] D ;
+output [1:0] A ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:37
+  cyclone_lcell a_0_0_0_ (
+	.combout(A[0]),
+	.dataa(D[1]),
+	.datab(D[2]),
+	.datac(D[3])
+);
+defparam a_0_0_0_.operation_mode="normal";
+defparam a_0_0_0_.output_mode="comb_only";
+defparam a_0_0_0_.lut_mask="f2f2";
+defparam a_0_0_0_.synch_mode="off";
+defparam a_0_0_0_.sum_lutc_input="datac";
+// @2:37
+  cyclone_lcell un22_a_i_and3 (
+	.combout(A[1]),
+	.dataa(D[3]),
+	.datab(D[2])
+);
+defparam un22_a_i_and3.operation_mode="normal";
+defparam un22_a_i_and3.output_mode="comb_only";
+defparam un22_a_i_and3.lut_mask="eeee";
+defparam un22_a_i_and3.synch_mode="off";
+defparam un22_a_i_and3.sum_lutc_input="datac";
+endmodule /* E4_2B */
+

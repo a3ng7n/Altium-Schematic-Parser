@@ -1,0 +1,160 @@
+------------------------------------------------------------
+-- VHDL Testbench for TPaletteWindow
+-- 2004 1 30 14 35 22
+-- Created by "EditVHDL"
+-- "Copyright (c) 2002 Altium Limited"
+------------------------------------------------------------
+
+Library IEEE;
+Use     IEEE.std_logic_1164.all;
+Use     IEEE.std_logic_textio.all;
+Use     STD.textio.all;
+------------------------------------------------------------
+
+------------------------------------------------------------
+entity TestTPaletteWindow is
+end TestTPaletteWindow;
+------------------------------------------------------------
+
+------------------------------------------------------------
+architecture stimulus of TestTPaletteWindow is
+    constant PERIOD: time := 100 ns;
+    file RESULTS: TEXT open WRITE_MODE is "results.txt";
+    procedure WRITE_RESULTS(
+        BACKCOLOUR: std_logic_vector(7 downto 0);
+        CLK: std_logic;
+        HASFOCUS: std_logic;
+        HEIGHT: std_logic_vector(15 downto 0);
+        ISDISPLAYED: std_logic;
+        LEFT: std_logic_vector(15 downto 0);
+        MOUSEEVENT: std_logic_vector(7 downto 0);
+        NEWCOLOUR: std_logic_vector(7 downto 0);
+        SETCOLOUR: std_logic;
+        SETFOCUS: std_logic;
+        TOP: std_logic_vector(15 downto 0);
+        VIDEOOUT: std_logic_vector(7 downto 0):=(others => '0');
+        WIDTH: std_logic_vector(15 downto 0);
+        XIN: std_logic_vector(15 downto 0);
+        YIN: std_logic_vector(15 downto 0)
+    ) is
+        variable l_out : line;
+    begin
+        write(l_out, now, right, 15);
+        write(l_out, BACKCOLOUR, right, 9);
+        write(l_out, CLK, right, 2);
+        write(l_out, HASFOCUS, right, 2);
+        write(l_out, HEIGHT, right, 17);
+        write(l_out, ISDISPLAYED, right, 2);
+        write(l_out, LEFT, right, 17);
+        write(l_out, MOUSEEVENT, right, 9);
+        write(l_out, NEWCOLOUR, right, 9);
+        write(l_out, SETCOLOUR, right, 2);
+        write(l_out, SETFOCUS, right, 2);
+        write(l_out, TOP, right, 17);
+        write(l_out, VIDEOOUT, right, 9);
+        write(l_out, WIDTH, right, 17);
+        write(l_out, XIN, right, 17);
+        write(l_out, YIN, right, 17);
+        writeline(RESULTS, l_out);
+    end procedure;
+
+    component TPaletteWindow
+        port (
+            BACKCOLOUR: in std_logic_vector(7 downto 0);
+            CLK: in std_logic;
+            HASFOCUS: in std_logic;
+            HEIGHT: in std_logic_vector(15 downto 0);
+            ISDISPLAYED: out std_logic;
+            LEFT: in std_logic_vector(15 downto 0);
+            MOUSEEVENT: in std_logic_vector(7 downto 0);
+            NEWCOLOUR: out std_logic_vector(7 downto 0);
+            SETCOLOUR: out std_logic;
+            SETFOCUS: out std_logic;
+            TOP: in std_logic_vector(15 downto 0);
+            VIDEOOUT: out std_logic_vector(7 downto 0);
+            WIDTH: in std_logic_vector(15 downto 0);
+            XIN: in std_logic_vector(15 downto 0);
+            YIN: in std_logic_vector(15 downto 0)
+        );
+    end component;
+
+    signal BACKCOLOUR: std_logic_vector(7 downto 0);
+    signal CLK: std_logic;
+    signal HASFOCUS: std_logic;
+    signal HEIGHT: std_logic_vector(15 downto 0);
+    signal ISDISPLAYED: std_logic;
+    signal LEFT: std_logic_vector(15 downto 0);
+    signal MOUSEEVENT: std_logic_vector(7 downto 0);
+    signal NEWCOLOUR: std_logic_vector(7 downto 0);
+    signal SETCOLOUR: std_logic;
+    signal SETFOCUS: std_logic;
+    signal TOP: std_logic_vector(15 downto 0);
+    signal VIDEOOUT: std_logic_vector(7 downto 0);
+    signal WIDTH: std_logic_vector(15 downto 0);
+    signal XIN: std_logic_vector(15 downto 0);
+    signal YIN: std_logic_vector(15 downto 0);
+
+begin
+    DUT:TPaletteWindow port map (
+        BACKCOLOUR => BACKCOLOUR,
+        CLK => CLK,
+        HASFOCUS => HASFOCUS,
+        HEIGHT => HEIGHT,
+        ISDISPLAYED => ISDISPLAYED,
+        LEFT => LEFT,
+        MOUSEEVENT => MOUSEEVENT,
+        NEWCOLOUR => NEWCOLOUR,
+        SETCOLOUR => SETCOLOUR,
+        SETFOCUS => SETFOCUS,
+        TOP => TOP,
+        VIDEOOUT => VIDEOOUT,
+        WIDTH => WIDTH,
+        XIN => XIN,
+        YIN => YIN
+    );
+
+    CLOCK1: process
+    variable clktmp: std_ulogic := '0';
+    begin
+        wait for PERIOD/2;
+        clktmp := not clktmp;
+        CLK <= clktmp;
+    end process CLOCK1;
+
+    STIMULUS0:process
+    begin
+        -- insert stimulus here
+        HASFOCUS    <= '0';
+        BACKCOLOUR  <= "00111110";
+        MOUSEEVENT  <= "10101010";
+        LEFT        <= "0000000001111111";
+        TOP         <= "0000000001111111";
+        WIDTH       <= "0000000110000001";
+        HEIGHT      <= "0000000110000001";
+        XIN         <= "0000000000100000";
+        YIN         <= "0000000000100000";
+        wait;
+    end process;
+
+    WRITE_RESULTS(
+        BACKCOLOUR,
+        CLK,
+        HASFOCUS,
+        HEIGHT,
+        ISDISPLAYED,
+        LEFT,
+        MOUSEEVENT,
+        NEWCOLOUR,
+        SETCOLOUR,
+        SETFOCUS,
+        TOP,
+        VIDEOOUT,
+        WIDTH,
+        XIN,
+        YIN
+    );
+
+end architecture;
+------------------------------------------------------------
+
+------------------------------------------------------------

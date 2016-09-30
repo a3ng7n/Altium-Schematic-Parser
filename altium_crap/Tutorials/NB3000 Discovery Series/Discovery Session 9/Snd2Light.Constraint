@@ -1,0 +1,22 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Any
+;   Board   : Nanoboard 2
+;   Project : DSF_FFT_Audio.PrjFpg
+;
+;   Created 11-Dec-2006
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=50 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;-------------------------------------------------------------------------------
+
+

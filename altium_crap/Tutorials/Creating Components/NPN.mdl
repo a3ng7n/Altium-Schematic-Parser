@@ -1,0 +1,3 @@
+*Default NPN BJT
+*NPN Trans Pinout: C,B,E
+.MODEL NPN NPN()

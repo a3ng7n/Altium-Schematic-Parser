@@ -1,0 +1,16 @@
+*Programable Unijunction Transistor pkg: TO-226AA
+*Connections:
+*              Anode
+*              | Gate
+*              | | Cathode
+*              | | |
+.SUBCKT 2N6027 1 2 3
+Q1 2 4 3 NMOD
+Q2 4 2 1 PMOD
+.MODEL NMOD NPN(IS=5E-15 VAF=100 IKF=0.005 ISE=1.85E-12 NE=1.45 
++ RB=10 RE=0.5 RC=0.5 CJE=3.5E-11 VJE=0.75 CJC=1.1E-11 VJC=0.75 TR=4.76E-8 
++ TF=16N VJS=0.75 )
+.MODEL PMOD PNP(IS=2E-15 VAF=100 IKF=0.005 ISE=1.9E-12 RB=10 RE=0.5 
++ RC=0.5 CJE=3.5E-11 VJE=0.75 TF=1.6E-8 CJC=1.1E-11 VJC=0.75 TR=5.1E-8 
++ TF=16N VJS=0.75 )
+.ENDS 2N6702

@@ -1,0 +1,16 @@
+;...............................................................................
+;Constraints File
+;   Device  :
+;   Board   :
+;   Project :
+;
+;   Created 8/04/2004
+;...............................................................................
+
+;...............................................................................
+Record=FileHeader | Id=DXP Constraints v1.0
+;...............................................................................
+
+
+Record=Constraint | TargetKind=Part | TargetId=XC2S200E-6PQ208C
+Record=Constraint | TargetKind=Port | TargetId=REC | FPGA_IOSTANDARD=LVDS | FPGA_PINNUM=P33

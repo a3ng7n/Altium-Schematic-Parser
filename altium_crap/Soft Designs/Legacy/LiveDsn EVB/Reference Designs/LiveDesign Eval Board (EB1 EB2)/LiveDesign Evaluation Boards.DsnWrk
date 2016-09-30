@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=Cyclone_Specific\EB2_Cyclone_BGA324 1_03.PrjPCB
+[Project2]
+ProjectPath=Spartan_Specific\EB1_Spartan_III_BGA456 1_02.PrjPCB

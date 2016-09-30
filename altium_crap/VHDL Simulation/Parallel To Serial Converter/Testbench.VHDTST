@@ -1,0 +1,194 @@
+-- run to time 3000 ns
+
+library ieee ;
+use ieee.std_logic_1164.all ;
+use ieee.std_logic_textio.all ;
+
+library std ;
+use std.textio.all ;
+
+entity main_tb is
+end main_tb ;
+
+architecture test of main_tb is
+--*****************************************************************
+--        Write Results into file.
+--*****************************************************************
+    file RESULTS: text open WRITE_MODE is "results.txt";
+
+    procedure WRITE_RESULTS(
+        BC0   : std_logic;
+        BC1   : std_logic;
+        BC2   : std_logic;
+        BC3   : std_logic;
+        BC4   : std_logic;
+        BC5   : std_logic;
+        BC6   : std_logic;
+        BC7   : std_logic;
+        CLK   : std_logic;
+        D0    : std_logic;
+        D1    : std_logic;
+        D2    : std_logic;
+        D3    : std_logic;
+        D4    : std_logic;
+        D5    : std_logic;
+        D6    : std_logic;
+        D7    : std_logic;
+        RST   : std_logic;
+        SDATA : std_logic;
+        SYNC  : std_logic
+    ) is
+        variable l_out : line ;
+    begin
+        write(l_out, now, right, 15, ps);
+        -- write inputs
+        write(l_out, CLK, right, 2 ) ;
+        write(l_out, D0, right, 2 ) ;
+        write(l_out, D1, right, 2 ) ;
+        write(l_out, D2, right, 2 ) ;
+        write(l_out, D3, right, 2 ) ;
+        write(l_out, D4, right, 2 ) ;
+        write(l_out, D5, right, 2 ) ;
+        write(l_out, D6, right, 2 ) ;
+        write(l_out, D7, right, 2 ) ;
+        write(l_out, RST, right, 2 ) ;
+        -- write outputs
+        write(l_out, BC0, right, 2 ) ;
+        write(l_out, BC1, right, 2 ) ;
+        write(l_out, BC2, right, 2 ) ;
+        write(l_out, BC3, right, 2 ) ;
+        write(l_out, BC4, right, 2 ) ;
+        write(l_out, BC5, right, 2 ) ;
+        write(l_out, BC6, right, 2 ) ;
+        write(l_out, BC7, right, 2 ) ;
+        write(l_out, SDATA, right, 2 ) ;
+        write(l_out, SYNC, right, 2 ) ;
+
+        writeline(results, l_out);
+    end ;
+
+--*****************************************************************
+--        Design Under Test component declaration.
+--*****************************************************************
+
+component Parallel_To_Serial_Converter is
+    port (
+        BC0   : out std_logic;
+        BC1   : out std_logic;
+        BC2   : out std_logic;
+        BC3   : out std_logic;
+        BC4   : out std_logic;
+        BC5   : out std_logic;
+        BC6   : out std_logic;
+        BC7   : out std_logic;
+        CLK   : in  std_logic;
+        D0    : in  std_logic;
+        D1    : in  std_logic;
+        D2    : in  std_logic;
+        D3    : in  std_logic;
+        D4    : in  std_logic;
+        D5    : in  std_logic;
+        D6    : in  std_logic;
+        D7    : in  std_logic;
+        RST   : in  std_logic;
+        SDATA : out std_logic;
+        SYNC  : out std_logic
+    );
+end component ;
+
+signal BC0, BC1, BC2, BC3, BC4, BC5, BC6, BC7, CLK, D0, D1, D2, D3, D4, D5, D6, D7, RST, SDATA, SYNC : std_logic ;
+signal tDATA : std_logic_vector ( 7 downto 0 ) ;
+
+begin
+DUT : Parallel_To_Serial_Converter
+    port map (
+        BC0   => BC0,
+        BC1   => BC1,
+        BC2   => BC2,
+        BC3   => BC3,
+        BC4   => BC4,
+        BC5   => BC5,
+        BC6   => BC6,
+        BC7   => BC7,
+        CLK   => CLK,
+        D0    => D0,
+        D1    => D1,
+        D2    => D2,
+        D3    => D3,
+        D4    => D4,
+        D5    => D5,
+        D6    => D6,
+        D7    => D7,
+        RST   => RST,
+        SDATA => SDATA,
+        SYNC  => SYNC
+    );
+
+
+D0 <= tDATA(0);
+D1 <= tDATA(1);
+D2 <= tDATA(2);
+D3 <= tDATA(3);
+D4 <= tDATA(4);
+D5 <= tDATA(5);
+D6 <= tDATA(6);
+D7 <= tDATA(7);
+
+
+CLOCK : process
+begin
+    CLK <= '0' ;
+    wait for 10 ns ;
+    CLK <= '1' ;
+    wait for 10 ns ;
+end process ;
+
+DATA : process
+begin
+    tDATA <= "00000000" ;
+    wait for 600 ns ;
+    tDATA <= "11111111" ;
+
+    wait for 300 ns ;
+    tDATA <= "00001111" ;
+    wait for 300 ns ;
+    tDATA <= "11110000" ;
+    wait for 300 ns ;
+    tDATA <= "10101010" ;
+    wait for 300 ns ;
+    tDATA <= "01010101" ;
+    wait for 300 ns ;
+    tDATA <= X"00" ;
+    wait for 300 ns ;
+    tDATA <= X"02" ;
+    wait for 300 ns ;
+    tDATA <= X"A3";
+
+    wait for 300 ns ;
+    tDATA <= "01111110" ;
+
+    wait for 300 ns ;
+    tDATA <= "01100110" ;
+
+    wait for 300 ns ;
+    tDATA <= "11100111" ;
+
+        wait for 300 ns ;
+    tDATA <= "01010101" ;
+
+end process ;
+
+RESET : process
+begin
+    RST <= '1';
+    wait for 100 ns ;
+    RST <= '0' ;
+    wait for 100 ns ;
+    RST <= '1' ;
+    wait ;
+end process ;
+
+    WRITE_RESULTS ( CLK, D0, D1, D2, D3, D4, D5, D6, D7, RST, BC0, BC1, BC2, BC3, BC4, BC5, BC6, BC7, SDATA, SYNC ) ;
+
+end test ;
+

@@ -1,0 +1,7 @@
+.model pspiceRES RES
++(
++      R = 1.0
++    TC1 = 0.75
++    TC2 = 0.5
++    TCE = 0.9
++)

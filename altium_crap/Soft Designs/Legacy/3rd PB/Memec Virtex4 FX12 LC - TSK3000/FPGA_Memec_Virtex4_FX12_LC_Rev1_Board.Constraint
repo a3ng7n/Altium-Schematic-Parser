@@ -1,0 +1,254 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Xilinx Virtex-4 XC4VFX12-10FF668C
+;   Board   : Memec Virtex-4 FX12 LC Rev1 Board
+;   Project : Any
+;
+;   Created 29-Aug-2006
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=Memec Virtex-4 FX12 LC Rev1 Board
+Record=Constraint | TargetKind=Part | TargetId=XC4VFX12-10FF668C
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; DDR SDRAM Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=DDR_ADDR[12..0]      | FPGA_PINNUM=A23,C20,A20,B20,C19,A19,D18,A18,C17,D17,E18,B18,D20               | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_DQ[15..0]        | FPGA_PINNUM=E22,E23,H23,C24,F18,D23,F17,C23,G19,F19,G20,F20,H20,F23,H21,H22   | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_BA[1..0]         | FPGA_PINNUM=E20,A21                         | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_DM[1..0]         | FPGA_PINNUM=A24,E17                         | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_DQS[1..0]        | FPGA_PINNUM=G17,G18                         | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_CSN              | FPGA_PINNUM=A22                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_RASN             | FPGA_PINNUM=C21                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_CASN             | FPGA_PINNUM=B23                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_WEN              | FPGA_PINNUM=E21                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_CLK              | FPGA_PINNUM=D22                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_CLK              | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=DDR_CLKN             | FPGA_PINNUM=C22                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DDR_CLKE             | FPGA_PINNUM=B21                             | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Flash Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=FLASH_ADDR[20..0]    | FPGA_PINNUM=E6,E5,D8,C7,G10,F10,F9,G8,F7,E10,E9,F8,E7,D7,A7,B7,A6,B6,A5,A4,B4 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_D[15..0]       | FPGA_PINNUM=G9,H8,H6,G5,C4,C5,C6,C1,G7,H7,G6,D4,D5,D6,D2,C2                   | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_CEN            | FPGA_PINNUM=A3                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_OEN            | FPGA_PINNUM=B3                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_WEN            | FPGA_PINNUM=C10                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_RDY            | FPGA_PINNUM=C8                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_RESET          | FPGA_PINNUM=D10                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=FLASH_VPP            | FPGA_PINNUM=D9                              | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_100              | FPGA_PINNUM=B15                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=CLK_100              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_100              | FPGA_CLOCK_FREQUENCY=100 Mhz
+Record=Constraint | TargetKind=Port | TargetId=CLK_100              | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_SOCKET           | FPGA_PINNUM=AE10                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=CLK_SOCKET           | FPGA_CLOCK_PIN=TRUE
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft-Device Chain Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=AA26                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=AB25                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=AC25                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=AD25                            | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; 10/100/1000 Ethernet PHY Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PHY_RESETn           | FPGA_PINNUM=E25                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_RXC              | FPGA_PINNUM=B13                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_MDC              | FPGA_PINNUM=G25                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_COL              | FPGA_PINNUM=B24                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_CRS              | FPGA_PINNUM=D25                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_TXD[7..0]        | FPGA_PINNUM=E24,E26,F24,F26,G24,G26,H24,H26 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_TXEN             | FPGA_PINNUM=D26                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_TXC              | FPGA_PINNUM=A10                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_TXER             | FPGA_PINNUM=D24                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_RXD[7..0]        | FPGA_PINNUM=F12,F11,F14,E14,D14,D15,C16,D16 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_RXDV             | FPGA_PINNUM=F13                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_MDIO             | FPGA_PINNUM=H25                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_RXER             | FPGA_PINNUM=E13                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_GTXCLK           | FPGA_PINNUM=C26                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_CLK125           | FPGA_PINNUM=A16                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=PHY_CLK125           | FPGA_CLOCK_PIN=TRUE
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LCD Interface - (RW signal is connected to logic “0” on the board, enabling write only cycles)
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LCD_D[7..0]          | FPGA_PINNUM=D3,E4,E3,F4,F3,G3,G4,H3         | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LCD_EN               | FPGA_PINNUM=H4                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LCD_RS               | FPGA_PINNUM=H5                              | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; USB 2.0 to RS232 Port
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=USB_SIN              | FPGA_PINNUM=A8                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=USB_SOUT             | FPGA_PINNUM=D1                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=USB_RESETn           | FPGA_PINNUM=E2                              | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; RS232 Interface - Jumpers must be installed on JP22 and JP23 if RTS and CTS signal connections are needed.
+;
+; Jumpers Settings:          Modes | JP19 | JP21
+;                           -------+------+------
+;                            DCE   | 2-3  | 1-2
+;                            DTE   | 1-2  | 2-3
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=RS232_RXD            | FPGA_PINNUM=F1                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RS232_TXD            | FPGA_PINNUM=A9                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RS232_RTS            | FPGA_PINNUM=B9                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RS232_CTS            | FPGA_PINNUM=E1                              | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User DIP and PB Switches
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PUSH[3..0]           | FPGA_PINNUM=C15,B14,C13,C14                 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=DIP[7..0]            | FPGA_PINNUM=Y8,Y7,Y9,Y10,H1,H2,G1,G2        | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User LEDs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LED[3..0]            | FPGA_PINNUM=D11,C11,D12,D13                 | FPGA_IOSTANDARD=LVCMOS33,LVCMOS33,LVCMOS33,LVCMOS33
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; P160 Expansion Module
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LIOA9                | FPGA_PINNUM=AC10                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA11               | FPGA_PINNUM=AF10                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA13               | FPGA_PINNUM=AF11                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA15               | FPGA_PINNUM=AF12                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA17               | FPGA_PINNUM=AE12                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA19               | FPGA_PINNUM=AE13                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA21               | FPGA_PINNUM=AB10                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA23               | FPGA_PINNUM=AD10                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA25               | FPGA_PINNUM=AD11                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA27               | FPGA_PINNUM=AD16                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA29               | FPGA_PINNUM=AC17                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA31               | FPGA_PINNUM=W20                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA33               | FPGA_PINNUM=AD12                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA35               | FPGA_PINNUM=AD17                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA37               | FPGA_PINNUM=W19                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOA39               | FPGA_PINNUM=AB17                            | FPGA_IOSTANDARD=LVCMOS33
+
+Record=Constraint | TargetKind=Port | TargetId=LIOB8                | FPGA_PINNUM=AB18                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB9                | FPGA_PINNUM=AA19                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB10               | FPGA_PINNUM=AB20                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB11               | FPGA_PINNUM=AB21                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB12               | FPGA_PINNUM=AB22                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB13               | FPGA_PINNUM=AA20                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB14               | FPGA_PINNUM=Y21                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB15               | FPGA_PINNUM=Y22                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB16               | FPGA_PINNUM=AC18                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB17               | FPGA_PINNUM=AD19                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB18               | FPGA_PINNUM=AC19                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB19               | FPGA_PINNUM=AD20                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB20               | FPGA_PINNUM=AC20                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB21               | FPGA_PINNUM=AD21                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB22               | FPGA_PINNUM=AC21                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB23               | FPGA_PINNUM=AD22                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB24               | FPGA_PINNUM=AC22                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB25               | FPGA_PINNUM=AD23                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB26               | FPGA_PINNUM=AC23                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB27               | FPGA_PINNUM=AC24                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB28               | FPGA_PINNUM=AB23                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB29               | FPGA_PINNUM=AB24                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB30               | FPGA_PINNUM=AA23                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB31               | FPGA_PINNUM=AA24                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB32               | FPGA_PINNUM=Y23                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB33               | FPGA_PINNUM=Y24                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB34               | FPGA_PINNUM=W23                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB35               | FPGA_PINNUM=W24                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB36               | FPGA_PINNUM=W22                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB37               | FPGA_PINNUM=W21                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB38               | FPGA_PINNUM=V22                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB39               | FPGA_PINNUM=V21                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=LIOB40               | FPGA_PINNUM=V20                             | FPGA_IOSTANDARD=LVCMOS33
+
+Record=Constraint | TargetKind=Port | TargetId=RIOA1                | FPGA_PINNUM=AF9                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA2                | FPGA_PINNUM=AE9                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA3                | FPGA_PINNUM=AF8                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA4                | FPGA_PINNUM=AF7                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA5                | FPGA_PINNUM=AE7                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA6                | FPGA_PINNUM=AF6                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA7                | FPGA_PINNUM=AE6                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA8                | FPGA_PINNUM=AF5                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA9                | FPGA_PINNUM=AF4                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA10               | FPGA_PINNUM=AE4                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA11               | FPGA_PINNUM=AF3                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA12               | FPGA_PINNUM=AE3                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA13               | FPGA_PINNUM=AD2                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA14               | FPGA_PINNUM=AD1                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA15               | FPGA_PINNUM=AC2                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA16               | FPGA_PINNUM=AC1                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA17               | FPGA_PINNUM=AB2                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA18               | FPGA_PINNUM=AB1                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA19               | FPGA_PINNUM=AA1                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA20               | FPGA_PINNUM=Y2                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA21               | FPGA_PINNUM=Y1                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA22               | FPGA_PINNUM=W2                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA23               | FPGA_PINNUM=W1                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA24               | FPGA_PINNUM=AA10                            | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA25               | FPGA_PINNUM=AA9                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA26               | FPGA_PINNUM=AA8                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA27               | FPGA_PINNUM=AB9                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA28               | FPGA_PINNUM=AB7                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA29               | FPGA_PINNUM=AA7                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA30               | FPGA_PINNUM=AB6                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA31               | FPGA_PINNUM=AB5                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA32               | FPGA_PINNUM=Y6                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA33               | FPGA_PINNUM=Y5                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA34               | FPGA_PINNUM=W6                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA35               | FPGA_PINNUM=W5                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA36               | FPGA_PINNUM=W7                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA37               | FPGA_PINNUM=V5                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA38               | FPGA_PINNUM=V6                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA39               | FPGA_PINNUM=V7                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOA40               | FPGA_PINNUM=W4                              | FPGA_IOSTANDARD=LVCMOS33
+
+Record=Constraint | TargetKind=Port | TargetId=RIOB2                | FPGA_PINNUM=AC9                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB4                | FPGA_PINNUM=AD8                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB6                | FPGA_PINNUM=AC8                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB8                | FPGA_PINNUM=AD7                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB10               | FPGA_PINNUM=AC7                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB12               | FPGA_PINNUM=AD6                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB14               | FPGA_PINNUM=AC6                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB16               | FPGA_PINNUM=AD5                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB18               | FPGA_PINNUM=AC5                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB20               | FPGA_PINNUM=AD4                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB22               | FPGA_PINNUM=AD3                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB24               | FPGA_PINNUM=AC4                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB26               | FPGA_PINNUM=AC3                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB28               | FPGA_PINNUM=AB4                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB30               | FPGA_PINNUM=AB3                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB32               | FPGA_PINNUM=AA4                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB34               | FPGA_PINNUM=AA3                             | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB36               | FPGA_PINNUM=Y3                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB38               | FPGA_PINNUM=Y4                              | FPGA_IOSTANDARD=LVCMOS33
+Record=Constraint | TargetKind=Port | TargetId=RIOB40               | FPGA_PINNUM=W3                              | FPGA_IOSTANDARD=LVCMOS33
+;-------------------------------------------------------------------------------
+
+
+

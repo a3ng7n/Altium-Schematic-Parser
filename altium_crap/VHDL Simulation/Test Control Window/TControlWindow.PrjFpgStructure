@@ -1,0 +1,8 @@
+Record=SheetSymbol|SourceDocument=TControlWindow.schDOC|Designator=control1|SchDesignator=control1|FileName=TControl.schDoc
+Record=SheetSymbol|SourceDocument=TControlWindow.schDOC|Designator=controlWindow1|SchDesignator=controlWindow1|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TControlWindow.schDOC|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TWindow.schDoc|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TWindow.schDoc|Designator=xRange|SchDesignator=xRange|FileName=TRange.vhd
+Record=SheetSymbol|SourceDocument=TWindow.schDoc|Designator=yRange|SchDesignator=yRange|FileName=TRange.vhd
+Record=TopLevelDocument|FileName=TControlWindow.schDOC
+Record=Configuration|Name=Default - All Constraints|DeviceName= 

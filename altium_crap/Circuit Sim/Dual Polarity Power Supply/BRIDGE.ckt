@@ -1,0 +1,16 @@
+
+*==============================================
+*FW Bridge pinout: AC1 AC2 V+ V-
+*==============================================
+
+*BRIDGE
+*Default Bridge
+.SUBCKT BRIDGE 1 2 3 4
+D1 1 2 DMOD
+D2 1 4 DMOD
+D3 2 3 DMOD
+D4 4 3 DMOD
+.MODEL DMOD D ()
+.ENDS BRIDGE
+
+* Origin: Mcediode.lib

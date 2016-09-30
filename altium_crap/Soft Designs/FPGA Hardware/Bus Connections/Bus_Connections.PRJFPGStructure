@@ -1,0 +1,12 @@
+Record=TopLevelDocument|FileName=Bus_Connections.SCHDOC
+Record=Configuration|Name=Cyclone-12_NB1|DeviceName=EP1C12Q240C6
+Record=Configuration|Name=NB2DSK01_08_DB30_06|DeviceName=XC3S1500-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB31_06|DeviceName=EP2C35F672C8
+Record=Configuration|Name=NB2DSK01_08_DB32_07|DeviceName=LFECP33E-3FN672C
+Record=Configuration|Name=NB2DSK01_08_DB36_01|DeviceName=XC4VLX25-10FF668C
+Record=Configuration|Name=NB2DSK01_08_DB40_02|DeviceName=EP3C40F780C8N
+Record=Configuration|Name=NB2DSK01_08_DB41_02|DeviceName=XC3S1400AN-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB42_02|DeviceName=XC3SD1800A-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB43_02|DeviceName=LFE2-35E-5F672C
+Record=Configuration|Name=NB2DSK01_08_DB46_02|DeviceName=XC4VSX35-10FF668C
+Record=Configuration|Name=Spartan3-1000_NB1|DeviceName=XC3S1000-4FG456C

@@ -1,0 +1,20 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=NanoBoard Tester\NanoBoardTester.PRJFPG
+[Project2]
+ProjectPath=NanoBoard Tester\NBT_C51.PRJEMB
+[Project3]
+ProjectPath=Nanoboard Memory Tester\NanoBoardMemoryTester.PRJFPG
+[Project4]
+ProjectPath=Nanoboard Memory Tester\NMT_C51_MEMTEST.PRJEMB
+[Project5]
+ProjectPath=OnBoard Memory Tester\OnboardMemoryTester.PRJFPG
+[Project6]
+ProjectPath=OnBoard Memory Tester\Firmware\OnBoardMemoryTester.PrjEmb
+[Project7]
+ProjectPath=Virtex II Pro Rocket IO Tester\NBT_Virtex_II_Pro_Rocket_IO.PrjFpg
+[Project8]
+ProjectPath=NanoBoard Tester\Accessories\NanoBoardTesterAccessories.PrjPCB
+[Project9]
+ProjectPath=Virtex II Pro Rocket IO Tester\Firmware\Rocket_IO_Test.PrjEmb

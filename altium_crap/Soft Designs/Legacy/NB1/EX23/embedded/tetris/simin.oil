@@ -1,0 +1,90 @@
+/*****************************************************************************
+ * VERSION:      @(#)simin.oil	1.4 04/09/21
+ * DESCRIPTION:  
+ *	OIL part of stdin simulation component
+ ****************************************************************************/
+
+#ifdef SIMINRX
+
+/*****************************************************************************
+ * simulate input
+ ****************************************************************************/
+#usedef SIMIN_TASK	MESSAGE= mssiminrx; EVENT= esiminrx;
+
+	EVENT esiminrx;
+	EVENT esiminnk;
+
+	TASK tsiminrx
+	{
+		PRIORITY	= 1;
+		SCHEDULE	= FULL;
+		ACTIVATION	= 3;
+		AUTOSTART	= TRUE
+		{
+			APPMODE	= OSDEFAULTAPPMODE;
+		};
+		MESSAGE		= mrsiminrx;
+		EVENT		= esiminrx;
+		EVENT		= esiminnk;
+	};
+
+	MESSAGE mssiminrx
+	{
+		MESSAGEPROPERTY	= SEND_STATIC_INTERNAL
+		{
+			CDATATYPE	= "pvoid";
+		};
+	};
+
+	MESSAGE mrsiminrx
+	{
+		MESSAGEPROPERTY	= RECEIVE_QUEUED_INTERNAL
+		{
+			SENDINGMESSAGE	= mssiminrx;
+			QUEUESIZE	= 3;
+		};
+		NOTIFICATION	= SETEVENT
+		{
+			TASK	= tsiminrx;
+			EVENT	= esiminrx;
+		};
+	};
+
+	TASK tsiminnk
+	{
+		PRIORITY	= 1;
+		SCHEDULE	= FULL;
+		ACTIVATION	= 1;
+		AUTOSTART	= FALSE;
+#ifdef DEMO
+		#use	STDIOOUT_TASK
+#endif
+	};
+
+	ALARM asiminnk
+	{
+		COUNTER	= SYS_TIMER;
+		ACTION	= ACTIVATETASK
+		{
+			TASK	= tsiminnk;
+		};
+		AUTOSTART  = FALSE;
+	};
+
+#ifdef DEMO
+	ALARM asiminns
+	{
+		COUNTER		= SYS_TIMER;
+		ACTION		= ALARMCALLBACK
+		{
+			CALLBACK	= "cbsiminns";
+		};
+		AUTOSTART	= TRUE
+		{
+			CYCLETIME	= 100;
+			ALARMTIME	= 100;
+			APPMODE		= OSDEFAULTAPPMODE;
+		};
+	};
+#endif
+

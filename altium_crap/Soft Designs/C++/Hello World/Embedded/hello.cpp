@@ -1,0 +1,22 @@
+/*****************************************************************************\
+|*
+|*  IN PACKAGE:         C++ examples
+|*
+|*  COPYRIGHT:          Copyright (c) 2009, Altium
+|*
+|*  DESCRIPTION:        "Hello World" C++ program
+|*
+|*                      Standard output (stdout) and standard error (stderr)
+|*                      are connected to the graphics driver
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+  cout << "\x1B[2JHello world!" << endl;
+  return 0;
+}
+

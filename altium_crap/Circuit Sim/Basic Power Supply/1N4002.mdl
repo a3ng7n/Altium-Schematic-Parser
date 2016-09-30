@@ -1,0 +1,7 @@
+
+*1N4002 MCE 8-16-95
+*100V 1A Si GenPurpose Diode pkg:DIODE0.4 1,2
+.MODEL 1N4002 D(IS=2.55E-9 RS=0.042 N=1.75 TT=5.76E-6 CJO=1.85E-11 
++ VJ=0.75 M=0.333 BV=100 IBV=1E-5 )
+
+* Origin: Mcediode.lib

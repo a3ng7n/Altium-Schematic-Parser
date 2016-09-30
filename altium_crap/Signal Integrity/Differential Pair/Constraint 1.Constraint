@@ -1,0 +1,158 @@
+;...............................................................................
+;Constraints File
+;   Device  :
+;   Board   :
+;   Project :
+;
+;   Created 12/03/2004
+;...............................................................................
+
+;...............................................................................
+Record=FileHeader | Id=DXP Constraints v1.0
+;...............................................................................
+
+
+Record=Constraint | TargetKind=Part | TargetId=XC2S200E-6PQ208C
+Record=Constraint | TargetKind=Port | TargetId=DRV | FPGA_PINNUM=P123 | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Pin | TargetId=3 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=4 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=5 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=6 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=7 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=8 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=9 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=10 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=11 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=15 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=16 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=17 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=18 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=20 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=21 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=22 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=23 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=24 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=27 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=29 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=30 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=31 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=33 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=34 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=35 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=36 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=40 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=41 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=42 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=43 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=44 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=45 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=46 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=47 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=48 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=49 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=55 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=56 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=57 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=58 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=59 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=60 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=61 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=62 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=63 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=64 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=68 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=69 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=70 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=71 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=73 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=74 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=75 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=81 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=82 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=83 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=84 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=86 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=87 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=88 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=89 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=93 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=94 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=95 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=96 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=97 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=98 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=99 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=100 | SwapId=1
+Record=Constraint | TargetKind=Pin | TargetId=101 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=102 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=107 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=108 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=109 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=110 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=111 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=112 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=113 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=114 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=115 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=116 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=120 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=121 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=122 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=123 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=125 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=126 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=127 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=129 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=132 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=133 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=134 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=135 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=136 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=138 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=139 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=140 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=141 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=145 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=146 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=147 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=148 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=149 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=150 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=151 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=152 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=153 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=154 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=160 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=161 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=162 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=163 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=164 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=165 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=166 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=167 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=168 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=169 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=173 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=174 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=175 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=176 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=178 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=179 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=180 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=181 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=187 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=188 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=189 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=191 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=192 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=193 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=194 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=198 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=199 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=200 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=201 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=202 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=203 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=204 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=205 | SwapId=2
+Record=Constraint | TargetKind=Pin | TargetId=206 | SwapId=2

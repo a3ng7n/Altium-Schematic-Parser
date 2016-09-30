@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=FPGA_165B_StopWatch.PrjFpg
+[Project2]
+ProjectPath=StopWatch\StopWatch.PrjEmb

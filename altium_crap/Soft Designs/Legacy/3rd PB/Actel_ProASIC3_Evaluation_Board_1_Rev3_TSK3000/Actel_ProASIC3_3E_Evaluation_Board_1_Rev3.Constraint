@@ -1,0 +1,329 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Actel ProASIC3/3E AP3/AP3E
+;   Board   : Actel ProASIC3/2E Evaluation Board 1 Rev3
+;   Project : FPGA_Actel_ProASIC3_3E_Evaluation_Board_1_Rev3.PrjFpg
+;
+;   Created 3-Mar-2006
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=Actel ProASIC3/2E Evaluation Board 1 Rev3
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clock - Install a jumper on JP4 to connect the 40MHz clock
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_PINNUM=26
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_PIN=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=40 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+
+Record=Constraint | TargetKind=Net  | TargetId=CLK_INT              | FPGA_GLOBAL=TRUE
+Record=Constraint | TargetKind=Net  | TargetId=CLK_INT              | FPGA_CLOCK_FREQUENCY=10 Mhz
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Switches - Install a jumper on JP11, JP12, JP13 and JP14 to connect the switches
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=SW[3..0]            | FPGA_PINNUM=64,66,67,68
+Record=Constraint | TargetKind=Port | TargetId=SW0                 | FPGA_PINNUM=68
+Record=Constraint | TargetKind=Port | TargetId=SW1                 | FPGA_PINNUM=67
+Record=Constraint | TargetKind=Port | TargetId=SW2                 | FPGA_PINNUM=66
+Record=Constraint | TargetKind=Port | TargetId=SW3                 | FPGA_PINNUM=64
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LEDs - Install a jumper on JP1 to JP8 to connect the leds
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LEDS[7..0]          | FPGA_PINNUM=55,56,57,58,59,60,61,63
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft-Device Chain Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=132
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=143
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=144
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=145
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LCD
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LCD_E                | FPGA_PINNUM=190
+Record=Constraint | TargetKind=Port | TargetId=LCD_RW               | FPGA_PINNUM=192
+Record=Constraint | TargetKind=Port | TargetId=LCD_RS               | FPGA_PINNUM=191
+Record=Constraint | TargetKind=Port | TargetId=LCD_DB[7..4]         | FPGA_PINNUM=197,198,194,193
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LVDS I/O CAT-5E Primary RJ45 Connector - J40 - Pin names are valid only for A3PE600-PQ208
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX1_P            | FPGA_PINNUM=7
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX1_N            | FPGA_PINNUM=8
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX2_P            | FPGA_PINNUM=9
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX2_N            | FPGA_PINNUM=10
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX1_P            | FPGA_PINNUM=11
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX1_N            | FPGA_PINNUM=12
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX2_P            | FPGA_PINNUM=13
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX2_N            | FPGA_PINNUM=14
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LVDS I/O CAT-5E Secondary RJ45 Connector - J41 - Pin names are valid only for A3PE600-PQ208
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX3_P            | FPGA_PINNUM=30
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX3_N            | FPGA_PINNUM=31
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX4_P            | FPGA_PINNUM=37
+Record=Constraint | TargetKind=Port | TargetId=PRI_TX4_N            | FPGA_PINNUM=38
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX3_P            | FPGA_PINNUM=42
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX3_N            | FPGA_PINNUM=43
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX4_P            | FPGA_PINNUM=44
+Record=Constraint | TargetKind=Port | TargetId=PRI_RX4_N            | FPGA_PINNUM=45
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Header HDR1
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HDRA1                | FPGA_PINNUM=1
+Record=Constraint | TargetKind=Port | TargetId=HDRA2                | FPGA_PINNUM=2
+Record=Constraint | TargetKind=Port | TargetId=HDRA3                | FPGA_PINNUM=3
+Record=Constraint | TargetKind=Port | TargetId=HDRA4                | FPGA_PINNUM=4
+Record=Constraint | TargetKind=Port | TargetId=HDRA5                | FPGA_PINNUM=5
+Record=Constraint | TargetKind=Port | TargetId=HDRA6                | FPGA_PINNUM=6
+Record=Constraint | TargetKind=Port | TargetId=HDRA7                | FPGA_PINNUM=7
+Record=Constraint | TargetKind=Port | TargetId=HDRA8                | FPGA_PINNUM=8
+Record=Constraint | TargetKind=Port | TargetId=HDRA9                | FPGA_PINNUM=9
+Record=Constraint | TargetKind=Port | TargetId=HDRA10               | FPGA_PINNUM=10
+Record=Constraint | TargetKind=Port | TargetId=HDRA11               | FPGA_PINNUM=11
+Record=Constraint | TargetKind=Port | TargetId=HDRA12               | FPGA_PINNUM=12
+Record=Constraint | TargetKind=Port | TargetId=HDRA13               | FPGA_PINNUM=13
+Record=Constraint | TargetKind=Port | TargetId=HDRA14               | FPGA_PINNUM=14
+Record=Constraint | TargetKind=Port | TargetId=HDRA15               | FPGA_PINNUM=15
+Record=Constraint | TargetKind=Port | TargetId=HDRA16               | FPGA_PINNUM=16
+Record=Constraint | TargetKind=Port | TargetId=HDRA17               | FPGA_PINNUM=17
+Record=Constraint | TargetKind=Port | TargetId=HDRA18               | FPGA_PINNUM=18
+Record=Constraint | TargetKind=Port | TargetId=HDRA19               | FPGA_PINNUM=19
+Record=Constraint | TargetKind=Port | TargetId=HDRA20               | FPGA_PINNUM=20
+Record=Constraint | TargetKind=Port | TargetId=HDRA21               | FPGA_PINNUM=21
+Record=Constraint | TargetKind=Port | TargetId=HDRA22               | FPGA_PINNUM=22
+Record=Constraint | TargetKind=Port | TargetId=HDRA23               | FPGA_PINNUM=23
+Record=Constraint | TargetKind=Port | TargetId=HDRA24               | FPGA_PINNUM=24
+Record=Constraint | TargetKind=Port | TargetId=HDRA25               | FPGA_PINNUM=25
+Record=Constraint | TargetKind=Port | TargetId=HDRA26               | FPGA_PINNUM=26
+Record=Constraint | TargetKind=Port | TargetId=HDRA27               | FPGA_PINNUM=27
+Record=Constraint | TargetKind=Port | TargetId=HDRA28               | FPGA_PINNUM=28
+Record=Constraint | TargetKind=Port | TargetId=HDRA29               | FPGA_PINNUM=29
+Record=Constraint | TargetKind=Port | TargetId=HDRA30               | FPGA_PINNUM=30
+Record=Constraint | TargetKind=Port | TargetId=HDRA31               | FPGA_PINNUM=31
+Record=Constraint | TargetKind=Port | TargetId=HDRA32               | FPGA_PINNUM=32
+Record=Constraint | TargetKind=Port | TargetId=HDRA33               | FPGA_PINNUM=33
+Record=Constraint | TargetKind=Port | TargetId=HDRA34               | FPGA_PINNUM=34
+Record=Constraint | TargetKind=Port | TargetId=HDRA35               | FPGA_PINNUM=35
+Record=Constraint | TargetKind=Port | TargetId=HDRA36               | FPGA_PINNUM=36
+Record=Constraint | TargetKind=Port | TargetId=HDRA37               | FPGA_PINNUM=37
+Record=Constraint | TargetKind=Port | TargetId=HDRA38               | FPGA_PINNUM=38
+Record=Constraint | TargetKind=Port | TargetId=HDRA39               | FPGA_PINNUM=39
+Record=Constraint | TargetKind=Port | TargetId=HDRA40               | FPGA_PINNUM=40
+Record=Constraint | TargetKind=Port | TargetId=HDRA41               | FPGA_PINNUM=41
+Record=Constraint | TargetKind=Port | TargetId=HDRA42               | FPGA_PINNUM=42
+Record=Constraint | TargetKind=Port | TargetId=HDRA43               | FPGA_PINNUM=43
+Record=Constraint | TargetKind=Port | TargetId=HDRA44               | FPGA_PINNUM=44
+Record=Constraint | TargetKind=Port | TargetId=HDRA45               | FPGA_PINNUM=45
+Record=Constraint | TargetKind=Port | TargetId=HDRA46               | FPGA_PINNUM=46
+Record=Constraint | TargetKind=Port | TargetId=HDRA47               | FPGA_PINNUM=47
+Record=Constraint | TargetKind=Port | TargetId=HDRA48               | FPGA_PINNUM=48
+Record=Constraint | TargetKind=Port | TargetId=HDRA49               | FPGA_PINNUM=49
+Record=Constraint | TargetKind=Port | TargetId=HDRA50               | FPGA_PINNUM=50
+Record=Constraint | TargetKind=Port | TargetId=HDRA51               | FPGA_PINNUM=51
+Record=Constraint | TargetKind=Port | TargetId=HDRA52               | FPGA_PINNUM=52
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Header HDR2
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HDRB1                | FPGA_PINNUM=53
+Record=Constraint | TargetKind=Port | TargetId=HDRB2                | FPGA_PINNUM=54
+Record=Constraint | TargetKind=Port | TargetId=HDRB3                | FPGA_PINNUM=55
+Record=Constraint | TargetKind=Port | TargetId=HDRB4                | FPGA_PINNUM=56
+Record=Constraint | TargetKind=Port | TargetId=HDRB5                | FPGA_PINNUM=57
+Record=Constraint | TargetKind=Port | TargetId=HDRB6                | FPGA_PINNUM=58
+Record=Constraint | TargetKind=Port | TargetId=HDRB7                | FPGA_PINNUM=59
+Record=Constraint | TargetKind=Port | TargetId=HDRB8                | FPGA_PINNUM=60
+Record=Constraint | TargetKind=Port | TargetId=HDRB9                | FPGA_PINNUM=61
+Record=Constraint | TargetKind=Port | TargetId=HDRB10               | FPGA_PINNUM=62
+Record=Constraint | TargetKind=Port | TargetId=HDRB11               | FPGA_PINNUM=63
+Record=Constraint | TargetKind=Port | TargetId=HDRB12               | FPGA_PINNUM=64
+Record=Constraint | TargetKind=Port | TargetId=HDRB13               | FPGA_PINNUM=65
+Record=Constraint | TargetKind=Port | TargetId=HDRB14               | FPGA_PINNUM=66
+Record=Constraint | TargetKind=Port | TargetId=HDRB15               | FPGA_PINNUM=67
+Record=Constraint | TargetKind=Port | TargetId=HDRB16               | FPGA_PINNUM=68
+Record=Constraint | TargetKind=Port | TargetId=HDRB17               | FPGA_PINNUM=69
+Record=Constraint | TargetKind=Port | TargetId=HDRB18               | FPGA_PINNUM=70
+Record=Constraint | TargetKind=Port | TargetId=HDRB19               | FPGA_PINNUM=71
+Record=Constraint | TargetKind=Port | TargetId=HDRB20               | FPGA_PINNUM=72
+Record=Constraint | TargetKind=Port | TargetId=HDRB21               | FPGA_PINNUM=73
+Record=Constraint | TargetKind=Port | TargetId=HDRB22               | FPGA_PINNUM=74
+Record=Constraint | TargetKind=Port | TargetId=HDRB23               | FPGA_PINNUM=75
+Record=Constraint | TargetKind=Port | TargetId=HDRB24               | FPGA_PINNUM=76
+Record=Constraint | TargetKind=Port | TargetId=HDRB25               | FPGA_PINNUM=77
+Record=Constraint | TargetKind=Port | TargetId=HDRB26               | FPGA_PINNUM=78
+Record=Constraint | TargetKind=Port | TargetId=HDRB27               | FPGA_PINNUM=79
+Record=Constraint | TargetKind=Port | TargetId=HDRB28               | FPGA_PINNUM=80
+Record=Constraint | TargetKind=Port | TargetId=HDRB29               | FPGA_PINNUM=81
+Record=Constraint | TargetKind=Port | TargetId=HDRB30               | FPGA_PINNUM=82
+Record=Constraint | TargetKind=Port | TargetId=HDRB31               | FPGA_PINNUM=83
+Record=Constraint | TargetKind=Port | TargetId=HDRB32               | FPGA_PINNUM=84
+Record=Constraint | TargetKind=Port | TargetId=HDRB33               | FPGA_PINNUM=85
+Record=Constraint | TargetKind=Port | TargetId=HDRB34               | FPGA_PINNUM=86
+Record=Constraint | TargetKind=Port | TargetId=HDRB35               | FPGA_PINNUM=87
+Record=Constraint | TargetKind=Port | TargetId=HDRB36               | FPGA_PINNUM=88
+Record=Constraint | TargetKind=Port | TargetId=HDRB37               | FPGA_PINNUM=89
+Record=Constraint | TargetKind=Port | TargetId=HDRB38               | FPGA_PINNUM=90
+Record=Constraint | TargetKind=Port | TargetId=HDRB39               | FPGA_PINNUM=91
+Record=Constraint | TargetKind=Port | TargetId=HDRB40               | FPGA_PINNUM=92
+Record=Constraint | TargetKind=Port | TargetId=HDRB41               | FPGA_PINNUM=93
+Record=Constraint | TargetKind=Port | TargetId=HDRB42               | FPGA_PINNUM=94
+Record=Constraint | TargetKind=Port | TargetId=HDRB43               | FPGA_PINNUM=95
+Record=Constraint | TargetKind=Port | TargetId=HDRB44               | FPGA_PINNUM=96
+Record=Constraint | TargetKind=Port | TargetId=HDRB45               | FPGA_PINNUM=97
+Record=Constraint | TargetKind=Port | TargetId=HDRB46               | FPGA_PINNUM=98
+Record=Constraint | TargetKind=Port | TargetId=HDRB47               | FPGA_PINNUM=99
+Record=Constraint | TargetKind=Port | TargetId=HDRB48               | FPGA_PINNUM=100
+Record=Constraint | TargetKind=Port | TargetId=HDRB49               | FPGA_PINNUM=101
+Record=Constraint | TargetKind=Port | TargetId=HDRB50               | FPGA_PINNUM=102
+Record=Constraint | TargetKind=Port | TargetId=HDRB51               | FPGA_PINNUM=103
+Record=Constraint | TargetKind=Port | TargetId=HDRB52               | FPGA_PINNUM=104
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Header HDR3
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HDRC1                | FPGA_PINNUM=105
+Record=Constraint | TargetKind=Port | TargetId=HDRC2                | FPGA_PINNUM=106
+Record=Constraint | TargetKind=Port | TargetId=HDRC3                | FPGA_PINNUM=107
+Record=Constraint | TargetKind=Port | TargetId=HDRC4                | FPGA_PINNUM=108
+Record=Constraint | TargetKind=Port | TargetId=HDRC5                | FPGA_PINNUM=109
+Record=Constraint | TargetKind=Port | TargetId=HDRC6                | FPGA_PINNUM=110
+Record=Constraint | TargetKind=Port | TargetId=HDRC7                | FPGA_PINNUM=111
+Record=Constraint | TargetKind=Port | TargetId=HDRC8                | FPGA_PINNUM=112
+Record=Constraint | TargetKind=Port | TargetId=HDRC9                | FPGA_PINNUM=113
+Record=Constraint | TargetKind=Port | TargetId=HDRC10               | FPGA_PINNUM=114
+Record=Constraint | TargetKind=Port | TargetId=HDRC11               | FPGA_PINNUM=115
+Record=Constraint | TargetKind=Port | TargetId=HDRC12               | FPGA_PINNUM=116
+Record=Constraint | TargetKind=Port | TargetId=HDRC13               | FPGA_PINNUM=117
+Record=Constraint | TargetKind=Port | TargetId=HDRC14               | FPGA_PINNUM=118
+Record=Constraint | TargetKind=Port | TargetId=HDRC15               | FPGA_PINNUM=119
+Record=Constraint | TargetKind=Port | TargetId=HDRC16               | FPGA_PINNUM=120
+Record=Constraint | TargetKind=Port | TargetId=HDRC17               | FPGA_PINNUM=121
+Record=Constraint | TargetKind=Port | TargetId=HDRC18               | FPGA_PINNUM=122
+Record=Constraint | TargetKind=Port | TargetId=HDRC19               | FPGA_PINNUM=123
+Record=Constraint | TargetKind=Port | TargetId=HDRC20               | FPGA_PINNUM=124
+Record=Constraint | TargetKind=Port | TargetId=HDRC21               | FPGA_PINNUM=125
+Record=Constraint | TargetKind=Port | TargetId=HDRC22               | FPGA_PINNUM=126
+Record=Constraint | TargetKind=Port | TargetId=HDRC23               | FPGA_PINNUM=127
+Record=Constraint | TargetKind=Port | TargetId=HDRC24               | FPGA_PINNUM=128
+Record=Constraint | TargetKind=Port | TargetId=HDRC25               | FPGA_PINNUM=129
+Record=Constraint | TargetKind=Port | TargetId=HDRC26               | FPGA_PINNUM=130
+Record=Constraint | TargetKind=Port | TargetId=HDRC27               | FPGA_PINNUM=131
+Record=Constraint | TargetKind=Port | TargetId=HDRC28               | FPGA_PINNUM=132
+Record=Constraint | TargetKind=Port | TargetId=HDRC29               | FPGA_PINNUM=133
+Record=Constraint | TargetKind=Port | TargetId=HDRC30               | FPGA_PINNUM=134
+Record=Constraint | TargetKind=Port | TargetId=HDRC31               | FPGA_PINNUM=135
+Record=Constraint | TargetKind=Port | TargetId=HDRC32               | FPGA_PINNUM=136
+Record=Constraint | TargetKind=Port | TargetId=HDRC33               | FPGA_PINNUM=137
+Record=Constraint | TargetKind=Port | TargetId=HDRC34               | FPGA_PINNUM=138
+Record=Constraint | TargetKind=Port | TargetId=HDRC35               | FPGA_PINNUM=139
+Record=Constraint | TargetKind=Port | TargetId=HDRC36               | FPGA_PINNUM=140
+Record=Constraint | TargetKind=Port | TargetId=HDRC37               | FPGA_PINNUM=141
+Record=Constraint | TargetKind=Port | TargetId=HDRC38               | FPGA_PINNUM=142
+Record=Constraint | TargetKind=Port | TargetId=HDRC39               | FPGA_PINNUM=143
+Record=Constraint | TargetKind=Port | TargetId=HDRC40               | FPGA_PINNUM=144
+Record=Constraint | TargetKind=Port | TargetId=HDRC41               | FPGA_PINNUM=145
+Record=Constraint | TargetKind=Port | TargetId=HDRC42               | FPGA_PINNUM=146
+Record=Constraint | TargetKind=Port | TargetId=HDRC43               | FPGA_PINNUM=147
+Record=Constraint | TargetKind=Port | TargetId=HDRC44               | FPGA_PINNUM=148
+Record=Constraint | TargetKind=Port | TargetId=HDRC45               | FPGA_PINNUM=149
+Record=Constraint | TargetKind=Port | TargetId=HDRC46               | FPGA_PINNUM=150
+Record=Constraint | TargetKind=Port | TargetId=HDRC47               | FPGA_PINNUM=151
+Record=Constraint | TargetKind=Port | TargetId=HDRC48               | FPGA_PINNUM=152
+Record=Constraint | TargetKind=Port | TargetId=HDRC49               | FPGA_PINNUM=153
+Record=Constraint | TargetKind=Port | TargetId=HDRC50               | FPGA_PINNUM=154
+Record=Constraint | TargetKind=Port | TargetId=HDRC51               | FPGA_PINNUM=155
+Record=Constraint | TargetKind=Port | TargetId=HDRC52               | FPGA_PINNUM=156
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Header HDR4
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HDRD1                | FPGA_PINNUM=157
+Record=Constraint | TargetKind=Port | TargetId=HDRD2                | FPGA_PINNUM=158
+Record=Constraint | TargetKind=Port | TargetId=HDRD3                | FPGA_PINNUM=159
+Record=Constraint | TargetKind=Port | TargetId=HDRD4                | FPGA_PINNUM=160
+Record=Constraint | TargetKind=Port | TargetId=HDRD5                | FPGA_PINNUM=161
+Record=Constraint | TargetKind=Port | TargetId=HDRD6                | FPGA_PINNUM=162
+Record=Constraint | TargetKind=Port | TargetId=HDRD7                | FPGA_PINNUM=163
+Record=Constraint | TargetKind=Port | TargetId=HDRD8                | FPGA_PINNUM=164
+Record=Constraint | TargetKind=Port | TargetId=HDRD9                | FPGA_PINNUM=165
+Record=Constraint | TargetKind=Port | TargetId=HDRD10               | FPGA_PINNUM=166
+Record=Constraint | TargetKind=Port | TargetId=HDRD11               | FPGA_PINNUM=167
+Record=Constraint | TargetKind=Port | TargetId=HDRD12               | FPGA_PINNUM=168
+Record=Constraint | TargetKind=Port | TargetId=HDRD13               | FPGA_PINNUM=169
+Record=Constraint | TargetKind=Port | TargetId=HDRD14               | FPGA_PINNUM=170
+Record=Constraint | TargetKind=Port | TargetId=HDRD15               | FPGA_PINNUM=171
+Record=Constraint | TargetKind=Port | TargetId=HDRD16               | FPGA_PINNUM=172
+Record=Constraint | TargetKind=Port | TargetId=HDRD17               | FPGA_PINNUM=173
+Record=Constraint | TargetKind=Port | TargetId=HDRD18               | FPGA_PINNUM=174
+Record=Constraint | TargetKind=Port | TargetId=HDRD19               | FPGA_PINNUM=175
+Record=Constraint | TargetKind=Port | TargetId=HDRD20               | FPGA_PINNUM=176
+Record=Constraint | TargetKind=Port | TargetId=HDRD21               | FPGA_PINNUM=177
+Record=Constraint | TargetKind=Port | TargetId=HDRD22               | FPGA_PINNUM=178
+Record=Constraint | TargetKind=Port | TargetId=HDRD23               | FPGA_PINNUM=179
+Record=Constraint | TargetKind=Port | TargetId=HDRD24               | FPGA_PINNUM=180
+Record=Constraint | TargetKind=Port | TargetId=HDRD25               | FPGA_PINNUM=181
+Record=Constraint | TargetKind=Port | TargetId=HDRD26               | FPGA_PINNUM=182
+Record=Constraint | TargetKind=Port | TargetId=HDRD27               | FPGA_PINNUM=183
+Record=Constraint | TargetKind=Port | TargetId=HDRD28               | FPGA_PINNUM=184
+Record=Constraint | TargetKind=Port | TargetId=HDRD29               | FPGA_PINNUM=185
+Record=Constraint | TargetKind=Port | TargetId=HDRD30               | FPGA_PINNUM=186
+Record=Constraint | TargetKind=Port | TargetId=HDRD31               | FPGA_PINNUM=187
+Record=Constraint | TargetKind=Port | TargetId=HDRD32               | FPGA_PINNUM=188
+Record=Constraint | TargetKind=Port | TargetId=HDRD33               | FPGA_PINNUM=189
+Record=Constraint | TargetKind=Port | TargetId=HDRD34               | FPGA_PINNUM=190
+Record=Constraint | TargetKind=Port | TargetId=HDRD35               | FPGA_PINNUM=191
+Record=Constraint | TargetKind=Port | TargetId=HDRD36               | FPGA_PINNUM=192
+Record=Constraint | TargetKind=Port | TargetId=HDRD37               | FPGA_PINNUM=193
+Record=Constraint | TargetKind=Port | TargetId=HDRD38               | FPGA_PINNUM=194
+Record=Constraint | TargetKind=Port | TargetId=HDRD39               | FPGA_PINNUM=195
+Record=Constraint | TargetKind=Port | TargetId=HDRD40               | FPGA_PINNUM=196
+Record=Constraint | TargetKind=Port | TargetId=HDRD41               | FPGA_PINNUM=197
+Record=Constraint | TargetKind=Port | TargetId=HDRD42               | FPGA_PINNUM=198
+Record=Constraint | TargetKind=Port | TargetId=HDRD43               | FPGA_PINNUM=199
+Record=Constraint | TargetKind=Port | TargetId=HDRD44               | FPGA_PINNUM=200
+Record=Constraint | TargetKind=Port | TargetId=HDRD45               | FPGA_PINNUM=201
+Record=Constraint | TargetKind=Port | TargetId=HDRD46               | FPGA_PINNUM=202
+Record=Constraint | TargetKind=Port | TargetId=HDRD47               | FPGA_PINNUM=203
+Record=Constraint | TargetKind=Port | TargetId=HDRD48               | FPGA_PINNUM=204
+Record=Constraint | TargetKind=Port | TargetId=HDRD49               | FPGA_PINNUM=205
+Record=Constraint | TargetKind=Port | TargetId=HDRD50               | FPGA_PINNUM=206
+Record=Constraint | TargetKind=Port | TargetId=HDRD51               | FPGA_PINNUM=207
+Record=Constraint | TargetKind=Port | TargetId=HDRD52               | FPGA_PINNUM=208
+;-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+.MODEL Diode D
++(
++  AF=1.0
++  Bv=5.2
++  CJO=0.0
++  EG=1.11
++  FC=0.5
++  Ibvl=0.2
++  Ibv=5
++  Ikf=10
++  IS=1E-14
++  Isr=1.8n
++  KF=0.0
++  M=0.5
++  N=1.0
++  Nbv=3.1779
++  NBVL=1.0
++  Nr=1.5
++  Rs=.5875
++  TBV1=0.0
++  TBV2=0.0
++  TIKF=0.0
++  TRS1=0.0
++  TRS2=0.0
++  Vj=.75
++  XTI=3.0
++)

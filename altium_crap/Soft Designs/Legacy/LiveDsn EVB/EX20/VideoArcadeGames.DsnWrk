@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=HardwarePlatform\VideoArcade.PRJFPG
+[Project2]
+ProjectPath=Software\Games.PRJEMB

@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=TSK3000A_MOD_Player_Altera.PrjFpg
+[Project2]
+ProjectPath=Embedded\ModPlayer.PrjEmb
+[Project3]
+ProjectPath=TSK3000A_MOD_Player_Xilinx.PrjFpg

@@ -1,0 +1,35 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Xilinx CoolRunner-XPLA3 XCR3256XL-10TQ144C
+;   Board   : Memec CoolRunnerXPLA3 Demo board
+;   Project : Any
+;
+;   Created 11-December-2003
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Part | TargetId=XCR3256XL-7TQ144C
+Record=Constraint | TargetKind=Port | TargetId=Memec CoolRunnerXPLA3 Demo board
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK            | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Port | TargetId=CLK            | FPGA_PINNUM=P128
+Record=Constraint | TargetKind=Port | TargetId=LCD_C[6..0]    | FPGA_PINNUM=P82,P81,P75,P77,P78,P79,P80
+Record=Constraint | TargetKind=Port | TargetId=LCD_D[6..0]    | FPGA_PINNUM=P93,P92,P86,P87,P88,P90,P91
+Record=Constraint | TargetKind=Port | TargetId=LCD_COM        | FPGA_PINNUM=P83
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI | FPGA_PINNUM=P41
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK | FPGA_PINNUM=P42
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO | FPGA_PINNUM=P43
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS | FPGA_PINNUM=P44
+;-------------------------------------------------------------------------------
+
+

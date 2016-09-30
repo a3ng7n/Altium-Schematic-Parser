@@ -1,0 +1,103 @@
+(EDIF PWM8
+ (EDIFVersion 2 0 0)
+ (EDIFLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status(Written
+   (TimeStamp 2009 4 3 10 4 38)
+   (Program "Altium Synthesis" (version "1.0.0.0"))
+   (Comment "Copyright (c) 2002-2007 Altium Limited")))
+ (library Xilinx (EDIFLevel 0) (technology (numberdefinition))
+
+  (cell GND (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port G (direction OUTPUT)))))
+  (cell VCC (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port P (direction OUTPUT)))))
+  (cell CB8CEB (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port C (direction INPUT))
+     (port CE (direction INPUT))
+     (port CEO (direction OUTPUT))
+     (port CLR (direction INPUT))
+     (port (array (rename Q "Q(7:0)") 8) (direction OUTPUT))
+     (port TC (direction OUTPUT)))))
+  (cell COMPM8B (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port (array (rename A "A(7:0)") 8) (direction INPUT))
+     (port (array (rename B "B(7:0)") 8) (direction INPUT))
+     (port GT (direction OUTPUT))
+     (port LT (direction OUTPUT)))))
+  (cell PWM8 (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface
+     (port CLK (direction INPUT))
+     (port (array (rename DIN "DIN(7:0)") 8) (direction INPUT))
+     (port PWM (direction OUTPUT)))
+    (contents
+     (instance n0x (viewref view_1 (cellRef VCC)))
+     (instance n0y (viewref view_1 (cellRef GND)))
+     (instance U1 (viewref view_1 (cellRef CB8CEB))
+      (property HDL_SOURCE (string "PWM_Core.VHD : 66")))
+     (instance U3 (viewref view_1 (cellRef COMPM8B))
+      (property HDL_SOURCE (string "PWM_Core.VHD : 58")))
+     (net CLK (joined
+       (portRef CLK)
+       (portRef C  (instanceRef U1))))
+     (net DIN_7 (joined
+       (portRef (member DIN 0))
+       (portRef (member B 0)  (instanceRef U3))))
+     (net DIN_6 (joined
+       (portRef (member DIN 1))
+       (portRef (member B 1)  (instanceRef U3))))
+     (net DIN_5 (joined
+       (portRef (member DIN 2))
+       (portRef (member B 2)  (instanceRef U3))))
+     (net DIN_4 (joined
+       (portRef (member DIN 3))
+       (portRef (member B 3)  (instanceRef U3))))
+     (net DIN_3 (joined
+       (portRef (member DIN 4))
+       (portRef (member B 4)  (instanceRef U3))))
+     (net DIN_2 (joined
+       (portRef (member DIN 5))
+       (portRef (member B 5)  (instanceRef U3))))
+     (net DIN_1 (joined
+       (portRef (member DIN 6))
+       (portRef (member B 6)  (instanceRef U3))))
+     (net DIN_0 (joined
+       (portRef (member DIN 7))
+       (portRef (member B 7)  (instanceRef U3))))
+     (net PinSignal_U1_Q_7 (joined
+       (portRef (member Q 0)  (instanceRef U1))
+       (portRef (member A 0)  (instanceRef U3))))
+     (net PinSignal_U1_Q_6 (joined
+       (portRef (member Q 1)  (instanceRef U1))
+       (portRef (member A 1)  (instanceRef U3))))
+     (net PinSignal_U1_Q_5 (joined
+       (portRef (member Q 2)  (instanceRef U1))
+       (portRef (member A 2)  (instanceRef U3))))
+     (net PinSignal_U1_Q_4 (joined
+       (portRef (member Q 3)  (instanceRef U1))
+       (portRef (member A 3)  (instanceRef U3))))
+     (net PinSignal_U1_Q_3 (joined
+       (portRef (member Q 4)  (instanceRef U1))
+       (portRef (member A 4)  (instanceRef U3))))
+     (net PinSignal_U1_Q_2 (joined
+       (portRef (member Q 5)  (instanceRef U1))
+       (portRef (member A 5)  (instanceRef U3))))
+     (net PinSignal_U1_Q_1 (joined
+       (portRef (member Q 6)  (instanceRef U1))
+       (portRef (member A 6)  (instanceRef U3))))
+     (net PinSignal_U1_Q_0 (joined
+       (portRef (member Q 7)  (instanceRef U1))
+       (portRef (member A 7)  (instanceRef U3))))
+     (net n0x (joined
+       (portRef P  (instanceRef n0x))
+       (portRef CE  (instanceRef U1))))
+     (net n0y (joined
+       (portRef G  (instanceRef n0y))
+       (portRef CLR  (instanceRef U1))))
+     (net PWM_int (joined
+       (portRef GT  (instanceRef U3))
+       (portRef PWM)))))))
+ (design PWM8 (cellRef PWM8 (libraryRef Xilinx))))

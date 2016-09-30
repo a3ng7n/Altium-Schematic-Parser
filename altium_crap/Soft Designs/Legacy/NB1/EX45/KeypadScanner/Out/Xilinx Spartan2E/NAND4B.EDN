@@ -1,0 +1,66 @@
+(edif (rename nand4b "NAND4B")
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2003 11 20 20 19 29)
+      (author "Synplicity, Inc.")
+      (program "Synplify" (version "7.3.3, Build 024R"))
+     )
+   )
+  (library VIRTEX
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell LUT4 (cellType GENERIC)
+       (view PRIM (viewType NETLIST)
+         (interface
+           (port I0 (direction INPUT))
+           (port I1 (direction INPUT))
+           (port I2 (direction INPUT))
+           (port I3 (direction INPUT))
+           (port O (direction OUTPUT))
+         )
+       )
+    )
+  )
+  (library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell (rename nand4b "NAND4B") (cellType GENERIC)
+       (view behav (viewType NETLIST)
+         (interface
+           (port (array (rename i "I(3:0)") 4) (direction INPUT))
+           (port O (direction OUTPUT))
+         )
+         (contents
+          (instance N_3_i (viewRef PRIM (cellRef LUT4 (libraryRef VIRTEX)))
+           (property init (string "7FFF"))
+          )
+          (net (rename i_0 "I(0)") (joined
+           (portRef (member i 3))
+           (portRef I0 (instanceRef N_3_i))
+          ))
+          (net (rename i_1 "I(1)") (joined
+           (portRef (member i 2))
+           (portRef I1 (instanceRef N_3_i))
+          ))
+          (net (rename i_2 "I(2)") (joined
+           (portRef (member i 1))
+           (portRef I2 (instanceRef N_3_i))
+          ))
+          (net (rename i_3 "I(3)") (joined
+           (portRef (member i 0))
+           (portRef I3 (instanceRef N_3_i))
+          ))
+          (net (rename o "O") (joined
+           (portRef O (instanceRef N_3_i))
+           (portRef O)
+          ))
+         )
+       )
+    )
+  )
+  (design (rename nand4b "NAND4B") (cellRef nand4b (libraryRef work))
+	(property PART (string "xc2s300epq208-7") (owner "Xilinx")))
+)

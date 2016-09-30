@@ -1,0 +1,19 @@
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_addTrans0|SchDesignator=U_addTrans0|FileName=addTrans.Vhd
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_addTrans1|SchDesignator=U_addTrans1|FileName=addTrans.Vhd
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_I2C_IN|SchDesignator=U_I2C_IN|FileName=OMT_I2C_INT.SCHDOC
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_J3x8_1x19|SchDesignator=U_J3x8_1x19|FileName=J3x8_1x19.VHD
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_OMT_CPU51|SchDesignator=U_OMT_CPU51|FileName=OMT_CPU51.SCHDOC
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_OMT_SPEAKER_PWM|SchDesignator=U_OMT_SPEAKER_PWM|FileName=OMT_SPEAKER_PWM.SCHDOC
+Record=SheetSymbol|SourceDocument=OnboardMemoryTester.SchDoc|Designator=U_SFR_PORTS|SchDesignator=U_SFR_PORTS|FileName=OMT_SFR_PORTS.SCHDOC
+Record=SubProject|ProjectPath=Firmware\OnBoardMemoryTester.PrjEmb
+Record=TopLevelDocument|FileName=OnboardMemoryTester.SchDoc
+Record=NEXUS_CORE|ComponentDesignator=P1|BaseComponentDesignator=P1|DocumentName=OMT_Cpu51.SchDoc|LibraryReference=TSK51A_D|SubProjectPath=Firmware\OnBoardMemoryTester.PrjEmb|NEXUS_JTAG_INDEX=0|ComponentUniqueID=KNYJMKAB|Description=TSK51A OCD Microprocessor|ChildCore1=M1|ChildModel1=RAM256x8_TSK51D|Comment=TSK51A_D|Component Kind=Standard|Core Revision=1.00.00|Footprint= |Library Name=FPGA Processors.IntLib|Library Reference=TSK51A_D|NEXUS_CORE=Processor_OCDS|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=10/11/2003|Publisher=Altium Hobart Technology Centre|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE|ComponentDesignator=M1|BaseComponentDesignator=M1|DocumentName=OMT_Cpu51.SchDoc|LibraryReference=RAM8x4K|SubProjectPath= |NEXUS_JTAG_INDEX=0|ComponentUniqueID=VJQSKXQG|Description=Single Port Random Access Memory 4096 x 8|Comment=RAM8x4K|Component Kind=Standard|Footprint= |Library Name=FPGA Memories.IntLib|Library Reference=RAM8x4K|Memory_ClockEdge=Rising|Memory_Depth=4096|Memory_Type=RAM_SinglePortBlock|Memory_Width=8|Nexus_Core=Memory_Program|PCB3D= |Published=26/09/2003|Publisher=Altium Hobart Technology Center|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=M1|DocumentName=OMT_Cpu51.SchDoc|LibraryReference=RAM8x4K|SubProjectPath= |Configuration= |Description=Single Port Random Access Memory 4096 x 8|SubPartUniqueId1=VJQSKXQG|SubPartDocPath1=OMT_Cpu51.SchDoc|Comment=RAM8x4K|Component Kind=Standard|Footprint= |Library Name=FPGA Memories.IntLib|Library Reference=RAM8x4K|Memory_ClockEdge=Rising|Memory_Depth=4096|Memory_Type=RAM_SinglePortBlock|Memory_Width=8|Nexus_Core=Memory_Program|PCB3D= |Published=26/09/2003|Publisher=Altium Hobart Technology Center|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=P1|DocumentName=OMT_Cpu51.SchDoc|LibraryReference=TSK51A_D|SubProjectPath=Firmware\OnBoardMemoryTester.PrjEmb|Configuration= |Description=TSK51A OCD Microprocessor|SubPartUniqueId1=KNYJMKAB|SubPartDocPath1=OMT_Cpu51.SchDoc|ChildCore1=M1|ChildModel1=RAM256x8_TSK51D|Comment=TSK51A_D|Component Kind=Standard|Core Revision=1.00.00|Footprint= |Library Name=FPGA Processors.IntLib|Library Reference=TSK51A_D|NEXUS_CORE=Processor_OCDS|NEXUS_JTAG_DEVICE=True|NEXUS_JTAG_ORDER=0|PCB3D= |Published=10/11/2003|Publisher=Altium Hobart Technology Centre|Signal Integrity= |Simulation= 
+Record=Configuration|Name=Cyclone-20_NB1|DeviceName=EP1C20F400C8
+Record=Configuration|Name=Spartan2E-600_NB1|DeviceName=XC2S600E-6FG456C
+Record=Configuration|Name=Spartan3-1000_NB1|DeviceName=XC3S1000-4FG456C
+Record=Configuration|Name=Stratix-10_NB1|DeviceName=EP1S10F780C7
+Record=Configuration|Name=Virtex2-1000_NB1|DeviceName=XC2V1000-4FG456C
+Record=Configuration|Name=Virtex2Pro-7_NB1|DeviceName=XC2VP7-5FG456C

@@ -1,0 +1,73 @@
+[Design]
+Version=1.0
+HierarchyMode=0
+OutputPath=Out
+OpenOutputs=1
+ArchiveProject=0
+TimestampOutput=0
+SeparateFolders=0
+[Document1]
+DocumentPath=BOARD 1.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+[Document2]
+DocumentPath=BOARD 2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+[Document3]
+DocumentPath=BOARD 3.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+[Document4]
+DocumentPath=Routed BOARD 1.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+[Document5]
+DocumentPath=Routed BOARD 2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+[Document6]
+DocumentPath=Routed BOARD 3.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+[SearchPath1]
+Path=*.*
+IncludeSubFolders=1
+[OutputGroup1]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup2]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup3]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup4]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup5]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup6]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup7]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+[OutputGroup8]
+Name=New Output
+Description=
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1

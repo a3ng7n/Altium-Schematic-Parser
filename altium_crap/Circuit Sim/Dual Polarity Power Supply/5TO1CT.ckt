@@ -1,0 +1,28 @@
+*TRANSCT:Transformer Subcircuit Parameters
+*RATIO = Turns ratio (= Secondary/Primary)
+*RP    = Primary DC resistance
+*RS    = Secondary DC resistance
+*LEAK  = Leakage inductance
+*MAG   = Magnetizing inductance
+
+*5:1 Centre-Tapped Transformer
+*Connections:
+*               Pri+
+*               | Pri-
+*               | | Sec+
+*               | | | SecCT
+*               | | | | Sec-
+*               | | | | |
+.SUBCKT 5TO1CT  1 2 3 4 5 PARAMS: RATIO=0.2 RP=0.1 RS=0.1 LEAK=1u MAG=1u
+RPRI  1 7 {RP}
+LLEAK 7 10 {LEAK}
+LMAGNET 6 10 {MAG}
+VSEC1 9 4 DC 0V
+FSEC1 6 2 VSEC1 {(RATIO/2)}
+ESEC1 8 9 10 2 {(RATIO/2)}
+RSEC1  8 3 {(RS/2)}
+VSEC2 12 5 DC 0V
+FSEC2 6 2 VSEC2 {(RATIO/2)}
+ESEC2 11 12 10 2 {(RATIO/2)}
+RSEC2 11 4 {(RS/2)}
+.ENDS 5TO1CT

@@ -1,0 +1,16 @@
+.SUBCKT EPOLY 1 2 3 4
+  E1 3 4 POLY(1) (1, 2) 0.0 0.0 1
+.ENDS EPOLY
+
+
+
+
+
+
+
+
+
+
+
+
+

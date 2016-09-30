@@ -1,0 +1,137 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : XC95144XV-7TQ144C
+;   Board   : Memec XC9500XV Demo Board
+;   Project : Any
+;
+;   Created 11-Dec-2003
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=PCB  | TargetId=Memec XC9500XV Demo Board
+Record=Constraint | TargetKind=Part | TargetId=XC95144XV-7TQ144C
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK                  | FPGA_CLOCK=True
+Record=Constraint | TargetKind=Port | TargetId=CLK                  | FPGA_PINNUM=P30
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; LEDs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LED[6..0]            | FPGA_PINNUM=P85,P87,P81,P82,P83,P88,P86
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Buttons
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LED[6..0]            | FPGA_PINNUM=P85,P87,P81,P82,P83,P88,P86
+Record=Constraint | TargetKind=Port | TargetId=SW_USER              | FPGA_PINNUM=P76
+Record=Constraint | TargetKind=Port | TargetId=SW_Reset             | FPGA_PINNUM=P143
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft-Device Chain Connections
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=P56
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=P54
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=P57
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=P58
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; USER I/O HEADER J2
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HA[18..3]            | FPGA_PINNUM=P124,P121,P120,P119,P117,P116,P115,P113,P112,P111,P110,P107,P105,P104,P103,P102
+Record=Constraint | TargetKind=Port | TargetId=HA3                  | FPGA_PINNUM=P102
+Record=Constraint | TargetKind=Port | TargetId=HA4                  | FPGA_PINNUM=P103
+Record=Constraint | TargetKind=Port | TargetId=HA5                  | FPGA_PINNUM=P104
+Record=Constraint | TargetKind=Port | TargetId=HA6                  | FPGA_PINNUM=P105
+Record=Constraint | TargetKind=Port | TargetId=HA7                  | FPGA_PINNUM=P107
+Record=Constraint | TargetKind=Port | TargetId=HA8                  | FPGA_PINNUM=P110
+Record=Constraint | TargetKind=Port | TargetId=HA9                  | FPGA_PINNUM=P111
+Record=Constraint | TargetKind=Port | TargetId=HA10                 | FPGA_PINNUM=P112
+Record=Constraint | TargetKind=Port | TargetId=HA11                 | FPGA_PINNUM=P113
+Record=Constraint | TargetKind=Port | TargetId=HA12                 | FPGA_PINNUM=P115
+Record=Constraint | TargetKind=Port | TargetId=HA13                 | FPGA_PINNUM=P116
+Record=Constraint | TargetKind=Port | TargetId=HA14                 | FPGA_PINNUM=P117
+Record=Constraint | TargetKind=Port | TargetId=HA15                 | FPGA_PINNUM=P119
+Record=Constraint | TargetKind=Port | TargetId=HA16                 | FPGA_PINNUM=P120
+Record=Constraint | TargetKind=Port | TargetId=HA17                 | FPGA_PINNUM=P121
+Record=Constraint | TargetKind=Port | TargetId=HA18                 | FPGA_PINNUM=P124
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; USER I/O HEADER J3
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HB[18..3]            | FPGA_PINNUM=P142,P140,P139,P138,P137,P136,P135,P134,P133,P132,P131,P130,P129,P128,P126,P125
+Record=Constraint | TargetKind=Port | TargetId=HB3                  | FPGA_PINNUM=P125
+Record=Constraint | TargetKind=Port | TargetId=HB4                  | FPGA_PINNUM=P126
+Record=Constraint | TargetKind=Port | TargetId=HB5                  | FPGA_PINNUM=P128
+Record=Constraint | TargetKind=Port | TargetId=HB6                  | FPGA_PINNUM=P129
+Record=Constraint | TargetKind=Port | TargetId=HB7                  | FPGA_PINNUM=P130
+Record=Constraint | TargetKind=Port | TargetId=HB8                  | FPGA_PINNUM=P131
+Record=Constraint | TargetKind=Port | TargetId=HB9                  | FPGA_PINNUM=P132
+Record=Constraint | TargetKind=Port | TargetId=HB10                 | FPGA_PINNUM=P133
+Record=Constraint | TargetKind=Port | TargetId=HB11                 | FPGA_PINNUM=P134
+Record=Constraint | TargetKind=Port | TargetId=HB12                 | FPGA_PINNUM=P135
+Record=Constraint | TargetKind=Port | TargetId=HB13                 | FPGA_PINNUM=P136
+Record=Constraint | TargetKind=Port | TargetId=HB14                 | FPGA_PINNUM=P137
+Record=Constraint | TargetKind=Port | TargetId=HB15                 | FPGA_PINNUM=P138
+Record=Constraint | TargetKind=Port | TargetId=HB16                 | FPGA_PINNUM=P139
+Record=Constraint | TargetKind=Port | TargetId=HB17                 | FPGA_PINNUM=P140
+Record=Constraint | TargetKind=Port | TargetId=HB18                 | FPGA_PINNUM=P142
+;------------------------------------------------------------------------------- 
+
+;-------------------------------------------------------------------------------
+; USER I/O HEADER J5
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HC[18..3]            | FPGA_PINNUM=P52,P53,P54,P56,P57,P58,P59,P60,P61,P64,P66,P68,P69,P70,P71,P74
+Record=Constraint | TargetKind=Port | TargetId=HC3                  | FPGA_PINNUM=P74
+Record=Constraint | TargetKind=Port | TargetId=HC4                  | FPGA_PINNUM=P71
+Record=Constraint | TargetKind=Port | TargetId=HC5                  | FPGA_PINNUM=P70
+Record=Constraint | TargetKind=Port | TargetId=HC6                  | FPGA_PINNUM=P69
+Record=Constraint | TargetKind=Port | TargetId=HC7                  | FPGA_PINNUM=P68
+Record=Constraint | TargetKind=Port | TargetId=HC8                  | FPGA_PINNUM=P66
+Record=Constraint | TargetKind=Port | TargetId=HC9                  | FPGA_PINNUM=P64
+Record=Constraint | TargetKind=Port | TargetId=HC10                 | FPGA_PINNUM=P61
+Record=Constraint | TargetKind=Port | TargetId=HC11                 | FPGA_PINNUM=P60
+Record=Constraint | TargetKind=Port | TargetId=HC12                 | FPGA_PINNUM=P59
+Record=Constraint | TargetKind=Port | TargetId=HC13                 | FPGA_PINNUM=P58
+Record=Constraint | TargetKind=Port | TargetId=HC14                 | FPGA_PINNUM=P57
+Record=Constraint | TargetKind=Port | TargetId=HC15                 | FPGA_PINNUM=P56
+Record=Constraint | TargetKind=Port | TargetId=HC16                 | FPGA_PINNUM=P54
+Record=Constraint | TargetKind=Port | TargetId=HC17                 | FPGA_PINNUM=P53
+Record=Constraint | TargetKind=Port | TargetId=HC18                 | FPGA_PINNUM=P52
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; USER I/O HEADER J6
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HD[18..3]            | FPGA_PINNUM=P31,P32,P33,P34,P38,P39,P40,P41,P43,P44,P45,P46,P48,P49,P50,P51
+Record=Constraint | TargetKind=Port | TargetId=HD3                  | FPGA_PINNUM=P51
+Record=Constraint | TargetKind=Port | TargetId=HD4                  | FPGA_PINNUM=P50
+Record=Constraint | TargetKind=Port | TargetId=HD5                  | FPGA_PINNUM=P49
+Record=Constraint | TargetKind=Port | TargetId=HD6                  | FPGA_PINNUM=P48
+Record=Constraint | TargetKind=Port | TargetId=HD7                  | FPGA_PINNUM=P46
+Record=Constraint | TargetKind=Port | TargetId=HD8                  | FPGA_PINNUM=P45
+Record=Constraint | TargetKind=Port | TargetId=HD9                  | FPGA_PINNUM=P44
+Record=Constraint | TargetKind=Port | TargetId=HD10                 | FPGA_PINNUM=P43
+Record=Constraint | TargetKind=Port | TargetId=HD11                 | FPGA_PINNUM=P41
+Record=Constraint | TargetKind=Port | TargetId=HD12                 | FPGA_PINNUM=P40
+Record=Constraint | TargetKind=Port | TargetId=HD13                 | FPGA_PINNUM=P39
+Record=Constraint | TargetKind=Port | TargetId=HD14                 | FPGA_PINNUM=P38
+Record=Constraint | TargetKind=Port | TargetId=HD15                 | FPGA_PINNUM=P34
+Record=Constraint | TargetKind=Port | TargetId=HD16                 | FPGA_PINNUM=P33
+Record=Constraint | TargetKind=Port | TargetId=HD17                 | FPGA_PINNUM=P32
+Record=Constraint | TargetKind=Port | TargetId=HD18                 | FPGA_PINNUM=P31
+;-------------------------------------------------------------------------------
+

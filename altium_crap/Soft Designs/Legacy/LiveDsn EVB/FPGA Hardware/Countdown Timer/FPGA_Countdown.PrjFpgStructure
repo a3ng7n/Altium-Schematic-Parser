@@ -1,0 +1,11 @@
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S1|SchDesignator=S1|FileName=ModDownCounter.SchDoc
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S2|SchDesignator=S2|FileName=ModDownCounter.SchDoc
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S3|SchDesignator=S3|FileName=ModDownCounter.SchDoc
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S4|SchDesignator=S4|FileName=ModDownCounter.SchDoc
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S5|SchDesignator=S5|FileName=ModDownCounter.SchDoc
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S6|SchDesignator=S6|FileName=ModDownCounter.SchDoc
+Record=SheetSymbol|SourceDocument=FPGA_Countdown.SchDoc|Designator=S7|SchDesignator=S7|FileName=Splitter.SchDoc
+Record=TopLevelDocument|FileName=FPGA_Countdown.SchDoc
+Record=Configuration|Name=Cyclone12_EB2|DeviceName=EP1C12F324C6
+Record=Configuration|Name=Spartan3_400_EB1|DeviceName=XC3S400-4FG456C
+Record=Configuration|Name=Spartan3_1000_EB1|DeviceName=XC3S1000-4FG456C

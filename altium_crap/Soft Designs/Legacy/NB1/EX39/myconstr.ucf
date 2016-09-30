@@ -1,0 +1,23 @@
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/ov" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[0]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[1]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[2]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[3]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[4]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[5]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[6]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/quotient[7]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[0]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[1]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[2]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[3]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[4]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[5]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[6]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+INST "P1/U_R80515OCDS/TSK52A_D_R80515_1/U_ALU/small_divider_1/remainder[7]" TNM = "TS_SMALL_DIVIDER_Q"; #multicycle_path_to_divider
+
+NET "PinSignal_C1_CLKO" TNM_NET = "TNM_PinSignal_C1_CLKO";
+TIMESPEC "TS_PinSignal_C1_CLKO" = PERIOD "TNM_PinSignal_C1_CLKO" 50 MHz HIGH 50%;
+
+TIMESPEC "TS_MCP_GLOBAL" = FROM "FFS" TO "TS_SMALL_DIVIDER_Q" "TS_PinSignal_C1_CLKO" / 5;
+

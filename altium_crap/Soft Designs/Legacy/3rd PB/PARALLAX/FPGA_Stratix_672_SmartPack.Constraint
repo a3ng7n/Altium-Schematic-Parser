@@ -1,0 +1,100 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : ALTERA Stratix EP1S10F672C6 / EP1S10F672C6ES
+;   Board   : Parallax Stratix 672 SmartPack
+;   Project : Any
+;
+;   Created 14-Feb-2005
+;   Copyright Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+Record=Constraint | TargetKind=PCB  | TargetId=Parallax Stratix 672 SmartPack
+
+;-------------------------------------------------------------------------------
+; PCB Clock inputs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD            | FPGA_PINNUM=B12
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD2           | FPGA_PINNUM=AE12
+Record=Constraint | TargetKind=Port | TargetId=CLKA               | FPGA_PINNUM=B12
+Record=Constraint | TargetKind=Port | TargetId=CLKB               | FPGA_PINNUM=AE12
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD            | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD2           | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=CLKA               | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=CLKB               | FPGA_CLOCK_PIN=True
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User Clock Inputs
+;-------------------------------------------------------------------------------
+; IMPORTANT NOTE: These ports are connected electrically to other IO pins on the
+;                 Starix device. See the Stratix 672 SmartPack Rev B/C Schematic
+;                 document for further details.
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=NCLKA              | FPGA_PINNUM=N3
+Record=Constraint | TargetKind=Port | TargetId=NCLKB              | FPGA_PINNUM=M1
+Record=Constraint | TargetKind=Port | TargetId=ECLKA              | FPGA_PINNUM=M26
+Record=Constraint | TargetKind=Port | TargetId=ECLKB              | FPGA_PINNUM=M24
+Record=Constraint | TargetKind=Port | TargetId=SCLKA              | FPGA_PINNUM=R26
+Record=Constraint | TargetKind=Port | TargetId=SCLKB              | FPGA_PINNUM=P24
+Record=Constraint | TargetKind=Port | TargetId=WCLKA              | FPGA_PINNUM=R3
+Record=Constraint | TargetKind=Port | TargetId=WCLKB              | FPGA_PINNUM=R1
+Record=Constraint | TargetKind=Port | TargetId=NCLKA              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=NCLKB              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=ECLKA              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=ECLKB              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=SCLKA              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=SCLKB              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=WCLKA              | FPGA_CLOCK_PIN=True
+Record=Constraint | TargetKind=Port | TargetId=WCLKB              | FPGA_CLOCK_PIN=True
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User LEDs (NanoBoard Port Plug-In Compatible)
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LEDS[7..0]         | FPGA_PINNUM=AA7,AA8,AA9,AA10,AA17,AA18,AA19,AA20
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Scenix host MCU interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=PX0                | FPGA_PINNUM=F17
+Record=Constraint | TargetKind=Port | TargetId=PX1                | FPGA_PINNUM=F10
+Record=Constraint | TargetKind=Port | TargetId=PX2                | FPGA_PINNUM=G9
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User IO Header North
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=N[31..0]           | FPGA_PINNUM=N6,L4,D6,E6,B6,A6,C7,A7,B8,A8,B9,A9,C9,A10,B10,C10,C17,B17,A17,C18,B18,A19,B20,A20,C21,A21,B22,A22,C23,C24,A24,B24
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User IO Header South
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=S[31..0]           | FPGA_PINNUM=T23,R22,AC21,AC22,AF22,AE21,AF21,AD20,AE20,AF19,AC20,AF18,AE17,AE16,AB17,AD10,AE10,AF10,AC9,AF9,AD7,AF8,AE7,AF7,AE6,AF6,AD5,AE4,AD3,AF3,AE3,AE2
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User IO Header East
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=E[31..0]           | FPGA_PINNUM=L24,L23,F24,D23,C25,C26,D25,D24,E24,F26,F25,G26,G25,G24,K24,L25,T25,T24,Y24,Y25,Y26,AA25,AA26,AA24,AB24,AC25,AD26,AD25,AF24,AE24,AE22,AE23
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User IO Header West
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=W[31..0]           | FPGA_PINNUM=R4,T3,AC4,AC3,AD1,AD2,AC2,AB3,AA1,AA2,Y1,Y2,V5,U2,U1,T2,M4,L2,L3,H3,G2,G1,F2,F1,F3,E3,D2,C1,C3,A3,D5,A5
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; NEXUS JTAG Soft Chain (NanoBoard Port Plug-In Compatible)
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK     | FPGA_PINNUM=A24
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI     | FPGA_PINNUM=C23
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO     | FPGA_PINNUM=C24
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS     | FPGA_PINNUM=B24
+;-------------------------------------------------------------------------------

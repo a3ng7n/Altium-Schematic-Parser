@@ -1,0 +1,140 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:22:49 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\cdiv64.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+// file 4 "\c:\eda\synplicity\synplify_733\lib\vhd\unsigned.vhd "
+// file 5 "\c:\eda\synplicity\synplify_733\lib\vhd\arith.vhd "
+
+module CDIV64 (
+  CLKIN,
+  CLKDV
+);
+input CLKIN ;
+output CLKDV ;
+wire CLKIN ;
+wire CLKDV ;
+wire [5:0] i;
+wire [4:0] i_cout;
+wire VCC ;
+wire GND ;
+wire un1_i_0_and2_a ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:35
+  cyclone_lcell i_0_ (
+	.regout(i[0]),
+	.cout(i_cout[0]),
+	.clk(CLKIN),
+	.dataa(i[0])
+);
+defparam i_0_.operation_mode="arithmetic";
+defparam i_0_.output_mode="reg_only";
+defparam i_0_.lut_mask="55aa";
+defparam i_0_.synch_mode="off";
+defparam i_0_.sum_lutc_input="datac";
+// @2:35
+  cyclone_lcell i_1_ (
+	.regout(i[1]),
+	.cout(i_cout[1]),
+	.clk(CLKIN),
+	.dataa(i[1]),
+	.cin(i_cout[0])
+);
+defparam i_1_.cin_used="true";
+defparam i_1_.operation_mode="arithmetic";
+defparam i_1_.output_mode="reg_only";
+defparam i_1_.lut_mask="a5fa";
+defparam i_1_.synch_mode="off";
+defparam i_1_.sum_lutc_input="cin";
+// @2:35
+  cyclone_lcell i_2_ (
+	.regout(i[2]),
+	.cout(i_cout[2]),
+	.clk(CLKIN),
+	.dataa(i[2]),
+	.cin(i_cout[1])
+);
+defparam i_2_.cin_used="true";
+defparam i_2_.operation_mode="arithmetic";
+defparam i_2_.output_mode="reg_only";
+defparam i_2_.lut_mask="a5fa";
+defparam i_2_.synch_mode="off";
+defparam i_2_.sum_lutc_input="cin";
+// @2:35
+  cyclone_lcell i_3_ (
+	.regout(i[3]),
+	.cout(i_cout[3]),
+	.clk(CLKIN),
+	.dataa(i[3]),
+	.cin(i_cout[2])
+);
+defparam i_3_.cin_used="true";
+defparam i_3_.operation_mode="arithmetic";
+defparam i_3_.output_mode="reg_only";
+defparam i_3_.lut_mask="a5fa";
+defparam i_3_.synch_mode="off";
+defparam i_3_.sum_lutc_input="cin";
+// @2:35
+  cyclone_lcell i_4_ (
+	.regout(i[4]),
+	.cout(i_cout[4]),
+	.clk(CLKIN),
+	.dataa(i[4]),
+	.cin(i_cout[3])
+);
+defparam i_4_.cin_used="true";
+defparam i_4_.operation_mode="arithmetic";
+defparam i_4_.output_mode="reg_only";
+defparam i_4_.lut_mask="a5fa";
+defparam i_4_.synch_mode="off";
+defparam i_4_.sum_lutc_input="cin";
+// @2:35
+  cyclone_lcell i_5_ (
+	.regout(i[5]),
+	.clk(CLKIN),
+	.dataa(i[5]),
+	.cin(i_cout[4])
+);
+defparam i_5_.cin_used="true";
+defparam i_5_.operation_mode="normal";
+defparam i_5_.output_mode="reg_only";
+defparam i_5_.lut_mask="a5a5";
+defparam i_5_.synch_mode="off";
+defparam i_5_.sum_lutc_input="cin";
+// @2:35
+  cyclone_lcell CLKDV_0 (
+	.regout(CLKDV),
+	.clk(CLKIN),
+	.dataa(un1_i_0_and2_a),
+	.datab(i[3]),
+	.datac(i[2]),
+	.datad(i[5])
+);
+defparam CLKDV_0.operation_mode="normal";
+defparam CLKDV_0.output_mode="reg_only";
+defparam CLKDV_0.lut_mask="0002";
+defparam CLKDV_0.synch_mode="off";
+defparam CLKDV_0.sum_lutc_input="datac";
+// @2:32
+  cyclone_lcell un1_i_0_and2_a_Z (
+	.combout(un1_i_0_and2_a),
+	.dataa(i[0]),
+	.datab(i[1]),
+	.datac(i[4])
+);
+defparam un1_i_0_and2_a_Z.operation_mode="normal";
+defparam un1_i_0_and2_a_Z.output_mode="comb_only";
+defparam un1_i_0_and2_a_Z.lut_mask="0101";
+defparam un1_i_0_and2_a_Z.synch_mode="off";
+defparam un1_i_0_and2_a_Z.sum_lutc_input="datac";
+endmodule /* CDIV64 */
+

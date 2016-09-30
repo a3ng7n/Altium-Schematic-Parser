@@ -1,0 +1,93 @@
+------------------------------------------------------------
+-- VHDL Testbench for Pwm
+-- 2004 1 27 15 22 9
+-- Created by "EditVHDL"
+-- "Copyright (c) 2002 Altium Limited"
+------------------------------------------------------------
+
+-- Run to 100 us
+
+Library IEEE;
+Use     IEEE.std_logic_1164.all;
+Use     IEEE.std_logic_textio.all;
+Use     STD.textio.all;
+------------------------------------------------------------
+
+------------------------------------------------------------
+entity TestPwm is
+end TestPwm;
+------------------------------------------------------------
+
+------------------------------------------------------------
+architecture stimulus of TestPwm is
+    file RESULTS: TEXT open WRITE_MODE is "results.txt";
+    procedure WRITE_RESULTS(
+        CLOCK: std_logic;
+        PULSE: std_logic;
+        PULSEEND: std_logic;
+        PULSESTART: std_logic;
+        PULSEWIDTH: std_logic_vector(7 downto 0);
+        Q: std_logic_vector(7 downto 0)
+    ) is
+        variable l_out : line;
+    begin
+        write(l_out, now, right, 15);
+        write(l_out, CLOCK, right, 2);
+        write(l_out, PULSE, right, 2);
+        write(l_out, PULSEEND, right, 2);
+        write(l_out, PULSESTART, right, 2);
+        write(l_out, PULSEWIDTH, right, 9);
+        write(l_out, Q, right, 9);
+        writeline(RESULTS, l_out);
+    end procedure;
+
+    component Pwm
+        port (
+            CLOCK: in std_logic;
+            PULSE: out std_logic;
+            PULSEEND: out std_logic;
+            PULSESTART: out std_logic;
+            PULSEWIDTH: in std_logic_vector(7 downto 0);
+            Q: out std_logic_vector(7 downto 0)
+        );
+    end component;
+
+    signal CLOCK: std_logic := '0';
+    signal PULSE: std_logic;
+    signal PULSEEND: std_logic;
+    signal PULSESTART: std_logic;
+    signal PULSEWIDTH: std_logic_vector(7 downto 0);
+    signal Q: std_logic_vector(7 downto 0);
+
+begin
+    DUT:Pwm port map (
+        CLOCK => CLOCK,
+        PULSE => PULSE,
+        PULSEEND => PULSEEND,
+        PULSESTART => PULSESTART,
+        PULSEWIDTH => PULSEWIDTH,
+        Q => Q
+    );
+
+    clock <= not (clock) after 10 ns;
+
+    STIMULUS0:process
+    begin
+        PULSEWIDTH <= X"50"; wait for 40 us;
+        PULSEWIDTH <= X"0A"; wait for 10 us;
+        wait;
+    end process;
+
+    WRITE_RESULTS(
+        CLOCK,
+        PULSE,
+        PULSEEND,
+        PULSESTART,
+        PULSEWIDTH,
+        Q
+    );
+
+end architecture;
+------------------------------------------------------------
+
+------------------------------------------------------------

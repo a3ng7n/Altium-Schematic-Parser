@@ -1,0 +1,77 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:28:27 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\d2_4eb.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module D2_4EB (
+  E,
+  A,
+  D
+);
+input E ;
+input [1:0] A ;
+output [3:0] D ;
+wire E ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:40
+  cyclone_lcell D_0_and2_3_ (
+	.combout(D[3]),
+	.dataa(A[0]),
+	.datab(E),
+	.datac(A[1])
+);
+defparam D_0_and2_3_.operation_mode="normal";
+defparam D_0_and2_3_.output_mode="comb_only";
+defparam D_0_and2_3_.lut_mask="8080";
+defparam D_0_and2_3_.synch_mode="off";
+defparam D_0_and2_3_.sum_lutc_input="datac";
+// @2:40
+  cyclone_lcell D_0_and2_2_ (
+	.combout(D[2]),
+	.dataa(A[0]),
+	.datab(E),
+	.datac(A[1])
+);
+defparam D_0_and2_2_.operation_mode="normal";
+defparam D_0_and2_2_.output_mode="comb_only";
+defparam D_0_and2_2_.lut_mask="4040";
+defparam D_0_and2_2_.synch_mode="off";
+defparam D_0_and2_2_.sum_lutc_input="datac";
+// @2:40
+  cyclone_lcell D_0_and2_1_ (
+	.combout(D[1]),
+	.dataa(A[0]),
+	.datab(E),
+	.datac(A[1])
+);
+defparam D_0_and2_1_.operation_mode="normal";
+defparam D_0_and2_1_.output_mode="comb_only";
+defparam D_0_and2_1_.lut_mask="0808";
+defparam D_0_and2_1_.synch_mode="off";
+defparam D_0_and2_1_.sum_lutc_input="datac";
+// @2:40
+  cyclone_lcell D_0_and2_0_ (
+	.combout(D[0]),
+	.dataa(A[0]),
+	.datab(E),
+	.datac(A[1])
+);
+defparam D_0_and2_0_.operation_mode="normal";
+defparam D_0_and2_0_.output_mode="comb_only";
+defparam D_0_and2_0_.lut_mask="0404";
+defparam D_0_and2_0_.synch_mode="off";
+defparam D_0_and2_0_.sum_lutc_input="datac";
+endmodule /* D2_4EB */
+

@@ -1,0 +1,29 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Any
+;   Board   : Any
+;   Project : TSK3000_VGA.PrjFpg
+;
+;   Created 11-Nov-2004
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;Record=Constraint | TargetKind=Port | TargetId=SystemClock          | FPGA_GLOBAL=TRUE
+;Record=Constraint | TargetKind=Port | TargetId=PixelClock           | FPGA_GLOBAL=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=50 Mhz
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_REF              | FPGA_CLOCK_FREQUENCY=20 Mhz
+;Record=Constraint | TargetKind=Net  | TargetId=SystemClock          | FPGA_CLOCK_FREQUENCY=50 Mhz
+;Record=Constraint | TargetKind=Net  | TargetId=PixelClock           | FPGA_CLOCK_FREQUENCY=32 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;-------------------------------------------------------------------------------
+
+
+

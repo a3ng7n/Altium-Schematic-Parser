@@ -1,0 +1,53 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Actel Fusion Eval Board1 Rev1
+;   Board   : Actel Fusion Eval Board1 Rev1
+;   Project : FPGA_Actel_Fusion_Eval_Board1_Rev1.PrjFpg
+;
+;   Created 12-Jun-2006
+;   Altium Limited
+;-------------------------------------------------------------------------------  
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+              
+;-------------------------------------------------------------------------------  
+Record=Constraint | TargetKind=Part | TargetId=AFS600-1FG256
+;-------------------------------------------------------------------------------  
+
+;-------------------------------------------------------------------------------  
+Record=Constraint | TargetKind=Port | TargetId=AV0            | FPGA_PINNUM=M6   | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AV3            | FPGA_PINNUM=R7   | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AC3            | FPGA_PINNUM=N7   | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AG3            | FPGA_PINNUM=M8   | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AG6            | FPGA_PINNUM=N10  | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AG7            | FPGA_PINNUM=M11  | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AV8            | FPGA_PINNUM=P11  | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AG8            | FPGA_PINNUM=P12  | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=AT9            | FPGA_PINNUM=R12  | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=ARTN4          | FPGA_PINNUM=T12  | FPGA_INHIBIT_BUFFER=True
+Record=Constraint | TargetKind=Port | TargetId=K11_OUT        | FPGA_PINNUM=K11
+Record=Constraint | TargetKind=Port | TargetId=LED_D8         | FPGA_PINNUM=A14
+Record=Constraint | TargetKind=Port | TargetId=LED_D7         | FPGA_PINNUM=B14
+Record=Constraint | TargetKind=Port | TargetId=LED_D6         | FPGA_PINNUM=A13
+Record=Constraint | TargetKind=Port | TargetId=LED_D5         | FPGA_PINNUM=B13
+Record=Constraint | TargetKind=Port | TargetId=LED_D4         | FPGA_PINNUM=D11
+Record=Constraint | TargetKind=Port | TargetId=LED_D3         | FPGA_PINNUM=E11
+Record=Constraint | TargetKind=Port | TargetId=LED_D2         | FPGA_PINNUM=C13
+Record=Constraint | TargetKind=Port | TargetId=LED_D1         | FPGA_PINNUM=B12
+Record=Constraint | TargetKind=Port | TargetId=ASSC_CHLATD    | FPGA_PINNUM=C9
+Record=Constraint | TargetKind=Port | TargetId=ASSC_DONE      | FPGA_PINNUM=D9
+Record=Constraint | TargetKind=Port | TargetId=DATAVALID      | FPGA_PINNUM=L14
+Record=Constraint | TargetKind=Port | TargetId=SYS_RESET      | FPGA_PINNUM=L15
+Record=Constraint | TargetKind=Port | TargetId=ASSC_CHSAT     | FPGA_PINNUM=B8
+Record=Constraint | TargetKind=Port | TargetId=ASSC_WAIT      | FPGA_PINNUM=C8
+Record=Constraint | TargetKind=Port | TargetId=VAREF          | FPGA_PINNUM=T15
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK | FPGA_PINNUM=L1
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI | FPGA_PINNUM=L2
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO | FPGA_PINNUM=L3
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS | FPGA_PINNUM=L4
+;-------------------------------------------------------------------------------  
+
+
+

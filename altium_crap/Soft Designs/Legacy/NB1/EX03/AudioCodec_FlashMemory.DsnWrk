@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=FPGA_AudioCodec_Flash.PrjFpg
+[Project2]
+ProjectPath=SoundProcessor\SoundProcessor.PrjEmb

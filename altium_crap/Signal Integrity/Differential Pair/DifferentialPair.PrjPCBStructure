@@ -1,0 +1,9 @@
+Record=SubProject|ProjectPath=FPGA_Project1.PrjFpg
+Record=SubProject|ProjectPath=FPGA_Project2.PrjFpg
+Record=SubProject|ProjectPath=FPGA_Project2.PrjFpg
+Record=SubProject|ProjectPath=FPGA_Project2.PrjFpg
+Record=SubProject|ProjectPath=FPGA_Project1.PrjFpg
+Record=SubProject|ProjectPath=FPGA_Project1.PrjFpg
+Record=TopLevelDocument|FileName=DifferentialPair.SchDoc
+Record=FPGA_COMPONENT|BaseComponentDesignator=U1|DocumentName=DifferentialPair.SchDoc|LibraryReference=XC2S200E-6PQ208C|SubProjectPath=FPGA_Project1.PrjFpg|Configuration=Configuration 1|Description=Spartan-IIE 1.8V FPGA, 208-Pin PQFP, Standard Performance, Commercial Grade|SubPartUniqueId1=XNNHQUIN|SubPartDocPath1=DifferentialPair.SchDoc|SubPartUniqueId2=XHIPIWXL|SubPartDocPath2=DifferentialPair.SchDoc|SubPartUniqueId3=KYFMNLSX|SubPartDocPath3=DifferentialPair.SchDoc
+Record=FPGA_COMPONENT|BaseComponentDesignator=U2|DocumentName=DifferentialPair.SchDoc|LibraryReference=XC2S200E-6PQ208C|SubProjectPath=FPGA_Project2.PrjFpg|Configuration=Configuration 2|Description=Spartan-IIE 1.8V FPGA, 208-Pin PQFP, Standard Performance, Commercial Grade|SubPartUniqueId1=SBYNQTHX|SubPartDocPath1=DifferentialPair.SchDoc|SubPartUniqueId2=WEADPGID|SubPartDocPath2=DifferentialPair.SchDoc|SubPartUniqueId3=DETVBOCN|SubPartDocPath3=DifferentialPair.SchDoc

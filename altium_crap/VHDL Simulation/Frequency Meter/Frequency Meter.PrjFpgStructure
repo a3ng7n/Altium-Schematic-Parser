@@ -1,0 +1,8 @@
+Record=SheetSymbol|SourceDocument=Frequency Meter.SchDoc|Designator=CNTBCD|SchDesignator=CNTBCD|FileName=Four Decade BCD Counter.SchDoc
+Record=SheetSymbol|SourceDocument=Frequency Meter.SchDoc|Designator=INCONTROL|SchDesignator=INCONTROL|FileName=Control.SchDoc
+Record=SheetSymbol|SourceDocument=Four Decade BCD Counter.SchDoc|Designator=DECIMALC_0|SchDesignator=DECIMALC_0|FileName=Four Bit Decimal Counter.SchDoc
+Record=SheetSymbol|SourceDocument=Four Decade BCD Counter.SchDoc|Designator=DECIMALC_1|SchDesignator=DECIMALC_1|FileName=Four Bit Decimal Counter.SchDoc
+Record=SheetSymbol|SourceDocument=Four Decade BCD Counter.SchDoc|Designator=DECIMALC_2|SchDesignator=DECIMALC_2|FileName=Four Bit Decimal Counter.SchDoc
+Record=SheetSymbol|SourceDocument=Four Decade BCD Counter.SchDoc|Designator=DECIMALC_3|SchDesignator=DECIMALC_3|FileName=Four Bit Decimal Counter.SchDoc
+Record=TopLevelDocument|FileName=Frequency Meter.SchDoc
+Record=Configuration|Name=Default - All Constraints|DeviceName= 

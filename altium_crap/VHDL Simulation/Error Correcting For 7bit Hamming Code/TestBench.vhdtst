@@ -1,0 +1,81 @@
+-- run to time 70 ns
+
+Library IEEE ;
+Use IEEE.std_logic_1164.all ;
+Use IEEE.std_logic_textio.all ;
+
+Library work ;
+use work.all ;
+
+Library std ;
+Use std.textio.all ;
+
+entity main_tb is
+end ;
+
+architecture test of main_tb is
+--*****************************************************************
+--      Write Results into file.
+--*****************************************************************
+    file RESULTS: text open WRITE_MODE is "results.txt";
+
+    procedure WRITE_RESULTS(
+       DU           : std_logic_vector ( 7 downto 1 ) ;
+        DC          : std_logic_vector ( 7 downto 1 ) ;
+       NOERROR  : std_logic
+    ) is
+        variable l_out : line ;
+    begin
+        write(l_out, now, right, 15, ps);
+        -- write inputs
+       write(l_out, DU, right, 8 ) ;
+        -- write outputs
+       write(l_out, DC, right, 8 ) ;
+       write(l_out, NOERROR, right, 2 ) ;
+
+        writeline(results, l_out);
+    end ;
+
+--*****************************************************************
+--      Design Under Test component declaration.
+--*****************************************************************
+    component Error_Correcting_For_7bit_Hamming_Code is
+        port (
+            DC          : out std_logic_vector(7 downto 1);
+            DU          : in  std_logic_vector(7 downto 1);
+            NOERROR : out std_logic
+        );
+    end component ;
+    signal NOERROR : std_logic ;
+    signal DC, DU : std_logic_vector ( 7 downto 1 ) ;
+begin
+
+DUT : Error_Correcting_For_7bit_Hamming_Code
+    port map (
+        DU => DU,
+       DC => DC,
+       NOERROR => NOERROR
+    ) ;
+
+STIMULI : process
+begin
+    DU <= "0000000" ;
+    wait for 10 ns ;
+    DU <= "0101010" ;
+    wait for 10 ns ;
+    DU <= "1111111" ;
+    wait for 10 ns ;
+    DU <= "1001011" ;
+    wait for 10 ns ;
+    DU <= "0101111" ;
+    wait for 10 ns ;
+    DU <= "1111000" ;
+    wait for 10 ns ;
+    Du <= "1100010" ;
+    wait for 10 ns ;
+    wait ;
+end process ;
+
+    WRITE_RESULTS ( DU, DC, NOERROR ) ;
+
+end test ;

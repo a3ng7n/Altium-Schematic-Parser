@@ -1,0 +1,27 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Any
+;   Board   : Any
+;   Project : HighSpeedDiffSig.PrjFpg
+;
+;   Created 18-December-2003
+;   Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK_BRD              | FPGA_CLOCK_FREQUENCY=110 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;Record=Constraint | TargetKind=Port | TargetId=HA14                 | FPGA_IOSTANDARD=LVPECL
+;Record=Constraint | TargetKind=Port | TargetId=HB18                 | FPGA_IOSTANDARD=LVPECL
+;-------------------------------------------------------------------------------
+
+

@@ -1,0 +1,16 @@
+Record=SubProject|ProjectPath=FPGA Project1.PrjFpg
+Record=SubProject|ProjectPath=FPGA Project1.PrjFpg
+Record=SubProject|ProjectPath=FPGA Project1.PrjFpg
+Record=SubProject|ProjectPath=FPGA Project1.PrjFpg
+Record=SubProject|ProjectPath=FPGA Project1.PrjFpg
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_FPGA|SchDesignator=U_FPGA|FileName=FPGA_CYCLONE.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_AUDIO_OUT|SchDesignator=U_NEB_AUDIO_OUT|FileName=NEB_AUDIO_OUT.SCHDOC
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_JTAG_INT|SchDesignator=U_NEB_JTAG_INT|FileName=NEB_BYTEBLASTER_INT.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_LED_KEY|SchDesignator=U_NEB_LED_KEY|FileName=NEB_LED_KEY.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_PCIO|SchDesignator=U_NEB_PCIO|FileName=NEB_PCIO.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_PSU|SchDesignator=U_NEB_PSU|FileName=NEB_PSU_CYCLONE.SCHDOC
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_SRAM|SchDesignator=U_NEB_SRAM|FileName=NEB_SRAM.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_USRIO|SchDesignator=U_NEB_USRIO|FileName=NEB_USRIO.SchDoc
+Record=SheetSymbol|SourceDocument=NEB_TOP_CYCLONE.SchDoc|Designator=U_NEB_XTALOSC|SchDesignator=U_NEB_XTALOSC|FileName=NEB_XTALOSC.SchDoc
+Record=TopLevelDocument|FileName=NEB_TOP_CYCLONE.SchDoc
+Record=FPGA_COMPONENT|BaseComponentDesignator=FPGA1C|DocumentName=FPGA_CYCLONE.SchDoc|LibraryReference=EP1C12F324C6|SubProjectPath=FPGA Project1.PrjFpg|Configuration=Configuration 1|Description=Cyclone Family, 1.5V FPGA, 249 I/O Pins, 2 x PLLs, Commercial Grade, Speed Grade 6|SubPartUniqueId1=WQNLUVST|SubPartDocPath1=FPGA_CYCLONE.SchDoc|SubPartUniqueId2=AMNGEJGP|SubPartDocPath2=FPGA_CYCLONE.SchDoc|SubPartUniqueId3=NAXGQLRX|SubPartDocPath3=FPGA_CYCLONE.SchDoc|SubPartUniqueId4=GVSDVAVQ|SubPartDocPath4=FPGA_CYCLONE.SchDoc|SubPartUniqueId5=IOCVONMM|SubPartDocPath5=FPGA_CYCLONE.SchDoc

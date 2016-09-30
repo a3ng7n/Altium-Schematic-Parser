@@ -1,0 +1,76 @@
+(edif (rename inv4b "INV4B")
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2003 11 20 19 45 58)
+      (author "Synplicity, Inc.")
+      (program "Synplify" (version "7.3.3, Build 024R"))
+     )
+   )
+  (library UNILIB
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell INV (cellType GENERIC)
+       (view PRIM (viewType NETLIST)
+         (interface
+           (port I (direction INPUT))
+           (port O (direction OUTPUT))
+         )
+       )
+    )
+  )
+  (library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell (rename inv4b "INV4B") (cellType GENERIC)
+       (view behav (viewType NETLIST)
+         (interface
+           (port (array (rename i "I(3:0)") 4) (direction INPUT))
+           (port (array (rename o "O(3:0)") 4) (direction OUTPUT))
+         )
+         (contents
+          (instance (rename I_i_3 "I_i[3]") (viewRef PRIM (cellRef INV (libraryRef UNILIB)))          )
+          (instance (rename I_i_2 "I_i[2]") (viewRef PRIM (cellRef INV (libraryRef UNILIB)))          )
+          (instance (rename I_i_1 "I_i[1]") (viewRef PRIM (cellRef INV (libraryRef UNILIB)))          )
+          (instance (rename I_i_0 "I_i[0]") (viewRef PRIM (cellRef INV (libraryRef UNILIB)))          )
+          (net (rename i_0 "I(0)") (joined
+           (portRef (member i 3))
+           (portRef I (instanceRef I_i_0))
+          ))
+          (net (rename i_1 "I(1)") (joined
+           (portRef (member i 2))
+           (portRef I (instanceRef I_i_1))
+          ))
+          (net (rename i_2 "I(2)") (joined
+           (portRef (member i 1))
+           (portRef I (instanceRef I_i_2))
+          ))
+          (net (rename i_3 "I(3)") (joined
+           (portRef (member i 0))
+           (portRef I (instanceRef I_i_3))
+          ))
+          (net (rename o_0 "O(0)") (joined
+           (portRef O (instanceRef I_i_0))
+           (portRef (member o 3))
+          ))
+          (net (rename o_1 "O(1)") (joined
+           (portRef O (instanceRef I_i_1))
+           (portRef (member o 2))
+          ))
+          (net (rename o_2 "O(2)") (joined
+           (portRef O (instanceRef I_i_2))
+           (portRef (member o 1))
+          ))
+          (net (rename o_3 "O(3)") (joined
+           (portRef O (instanceRef I_i_3))
+           (portRef (member o 0))
+          ))
+         )
+       )
+    )
+  )
+  (design (rename inv4b "INV4B") (cellRef inv4b (libraryRef work))
+	(property PART (string "xc2s300epq208-7") (owner "Xilinx")))
+)

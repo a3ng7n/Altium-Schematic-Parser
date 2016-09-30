@@ -1,0 +1,12 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=Documentation\Documentation.PrjPCB
+[Project2]
+ProjectPath=SCH Issues\SCH Issues.PrjPcb
+[Project3]
+ProjectPath=SCH Issues Resolved\SCH Issues Resolved.PrjPcb
+[Project4]
+ProjectPath=PCB Issues\PCB Issues.PrjPcb
+[Project5]
+ProjectPath=PCB Issues Resolved\PCB Issues Resolved.PrjPcb

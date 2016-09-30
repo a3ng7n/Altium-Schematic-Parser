@@ -1,0 +1,113 @@
+------------------------------------------------------------
+-- VHDL Testbench for TKeyboard
+-- 2004 1 30 14 10 58
+-- Created by "EditVHDL"
+-- "Copyright (c) 2002 Altium Limited"
+------------------------------------------------------------
+
+Library IEEE;
+Use     IEEE.std_logic_1164.all;
+Use     IEEE.std_logic_textio.all;
+Use     STD.textio.all;
+use ieee.std_logic_unsigned.all;
+------------------------------------------------------------
+
+------------------------------------------------------------
+entity TestTKeyboard is
+end TestTKeyboard;
+------------------------------------------------------------
+
+------------------------------------------------------------
+architecture stimulus of TestTKeyboard is
+
+    component TKeyboard
+        port (
+            CLICK: out std_logic;
+            CLK: in std_logic;
+            COL: in std_logic_vector(3 downto 0);
+            DOWN: out std_logic;
+            KEY0: out std_logic;
+            KEY1: out std_logic;
+            KEY2: out std_logic;
+            KEY3: out std_logic;
+            KEY4: out std_logic;
+            KEY5: out std_logic;
+            KEY6: out std_logic;
+            KEY7: out std_logic;
+            KEY8: out std_logic;
+            KEY9: out std_logic;
+            KEYA: out std_logic;
+            KEYB: out std_logic;
+            KEYC: out std_logic;
+            KEYD: out std_logic;
+            KEYE: out std_logic;
+            KEYF: out std_logic;
+            LEFT: out std_logic;
+            RIGHT: out std_logic;
+            ROW: out std_logic_vector(3 downto 0);
+            UP: out std_logic
+        );
+    end component;
+
+    signal CLICK: std_logic ;
+    signal CLK: std_logic:='0';
+    signal COL: std_logic_vector(3 downto 0):=(others => '0');
+    signal DOWN: std_logic;
+    signal KEY0: std_logic;
+    signal KEY1: std_logic;
+    signal KEY2: std_logic;
+    signal KEY3: std_logic;
+    signal KEY4: std_logic;
+    signal KEY5: std_logic;
+    signal KEY6: std_logic;
+    signal KEY7: std_logic;
+    signal KEY8: std_logic;
+    signal KEY9: std_logic;
+    signal KEYA: std_logic;
+    signal KEYB: std_logic;
+    signal KEYC: std_logic;
+    signal KEYD: std_logic;
+    signal KEYE: std_logic;
+    signal KEYF: std_logic;
+    signal LEFT: std_logic;
+    signal RIGHT: std_logic;
+    signal ROW: std_logic_vector(3 downto 0);
+    signal UP: std_logic;
+
+    constant period: time :=10ns;
+
+begin
+    DUT:TKeyboard port map (
+        CLICK => CLICK,
+        CLK => CLK,
+        COL => COL,
+        DOWN => DOWN,
+        KEY0 => KEY0,
+        KEY1 => KEY1,
+        KEY2 => KEY2,
+        KEY3 => KEY3,
+        KEY4 => KEY4,
+        KEY5 => KEY5,
+        KEY6 => KEY6,
+        KEY7 => KEY7,
+        KEY8 => KEY8,
+        KEY9 => KEY9,
+        KEYA => KEYA,
+        KEYB => KEYB,
+        KEYC => KEYC,
+        KEYD => KEYD,
+        KEYE => KEYE,
+        KEYF => KEYF,
+        LEFT => LEFT,
+        RIGHT => RIGHT,
+        ROW => ROW,
+        UP => UP
+    );
+
+    CLK <= not CLK after period;
+    COL <= COL +1 after period *2;
+
+end architecture;
+------------------------------------------------------------
+
+------------------------------------------------------------

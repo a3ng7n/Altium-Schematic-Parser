@@ -1,0 +1,25 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Any PLCC MAX device on a with 44 pins
+;   Board   : DIGILAB PicoMAX
+;   Project : PicoMAX_Test.PrjFpg
+;
+;   Created 20-Dec-2003
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LED0    | FPGA_PINNUM=34
+Record=Constraint | TargetKind=Port | TargetId=LED1    | FPGA_PINNUM=33
+Record=Constraint | TargetKind=Port | TargetId=LED2    | FPGA_PINNUM=31
+Record=Constraint | TargetKind=Port | TargetId=LED3    | FPGA_PINNUM=29
+Record=Constraint | TargetKind=Port | TargetId=LED4    | FPGA_PINNUM=9
+Record=Constraint | TargetKind=Port | TargetId=LED5    | FPGA_PINNUM=8
+Record=Constraint | TargetKind=Port | TargetId=LED6    | FPGA_PINNUM=5
+Record=Constraint | TargetKind=Port | TargetId=LED7    | FPGA_PINNUM=4
+Record=Constraint | TargetKind=Port | TargetId=SWITCH0 | FPGA_PINNUM=37
+Record=Constraint | TargetKind=Port | TargetId=SWITCH1 | FPGA_PINNUM=39
+;-------------------------------------------------------------------------------

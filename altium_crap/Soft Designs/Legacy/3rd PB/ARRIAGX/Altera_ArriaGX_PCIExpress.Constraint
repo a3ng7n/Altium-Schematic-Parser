@@ -1,0 +1,151 @@
+;-------------------------------------------------------------------------------
+;Constraints File
+;   Device  : Altera ArriaGX EP1AGX60DF780C6N
+;   Board   : Altera ArriaGX PCI Express Development Board
+;   Project : Any
+;
+;   Created 04-Feb-2009
+; Altium Limited
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=FileHeader | Id=DXP Constraints v1.0
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Part | TargetId=EP1AGX60DF780C6N
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Clocks
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CLK1_P               | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK1_P               | FPGA_PINNUM=U28   | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=CLK1_P               | FPGA_CLOCK_FREQUENCY=100 Mhz                  ; 100MHz clock
+
+Record=Constraint | TargetKind=Port | TargetId=100M_REFCLK_P        | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=100M_REFCLK_P        | FPGA_PINNUM=AB4   | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=100M_REFCLK_P        | FPGA_CLOCK_FREQUENCY=100 Mhz                  ; 100MHz clock reference
+
+Record=Constraint | TargetKind=Port | TargetId=CLK2                 | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=CLK2                 | FPGA_PINNUM=AC15  | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=CLK2                 | FPGA_CLOCK_FREQUENCY=100 Mhz                  ; 100MHz clock
+
+Record=Constraint | TargetKind=Port | TargetId=HSMA_REFCLK2_P       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=HSMA_REFCLK2_P       | FPGA_PINNUM=G4    | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=HSMA_REFCLK2_P       | FPGA_CLOCK_FREQUENCY=62.5 Mhz                 ; 62.5MHz clock
+
+Record=Constraint | TargetKind=Port | TargetId=HSMA_REFCLK1_P       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=HSMA_REFCLK1_P       | FPGA_PINNUM=J1    | FPGA_IOSTANDARD=LVDS      ; 125 MHz clock
+Record=Constraint | TargetKind=Port | TargetId=HSMA_REFCLK1_P       | FPGA_CLOCK_FREQUENCY=125 Mhz
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; FPGA Configuration
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=CONFIGn              | FPGA_PINNUM=V16
+Record=Constraint | TargetKind=Port | TargetId=RUnLU                | FPGA_PINNUM=AC16
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User Push Buttons
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=USER_PB1             | FPGA_PINNUM=B19
+Record=Constraint | TargetKind=Port | TargetId=USER_PB0             | FPGA_PINNUM=A19
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Reset Button
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=USER_RESET           | FPGA_PINNUM=AE17
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User Dip Switches
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=USER_DIPSW[7..0]     | FPGA_PINNUM=C25,B25,C23,B23,C20,B20,A21,C21
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; User LEDs
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=LEDS[7..0]           | FPGA_PINNUM=C12,C14,B14,A13,B13,C13,A11,A12
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Soft JTAG Chain
+; CONNECT of soft JTAG Chain goes to GND
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK=TRUE
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_CLOCK_FREQUENCY=1 Mhz
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TCK       | FPGA_PINNUM=A24               ;HSMA_D3          --  Pin 6  of J1 on HSMC debug header breakout board
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDI       | FPGA_PINNUM=A23               ;HSMA_D2          --  Pin 5  of J1 on HSMC debug header breakout board
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TDO       | FPGA_PINNUM=A26               ;HSMA_D1          --  Pin 4  of J1 on HSMC debug header breakout board
+Record=Constraint | TargetKind=Port | TargetId=JTAG_NEXUS_TMS       | FPGA_PINNUM=A25               ;HSMA_D0          --  Pin 3  of J1 on HSMC debug header breakout board
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; DDR2 SDRAM
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=DDR2_A[14..0]        | FPGA_PINNUM=AH9,AF10,AH11,AG10,AF7,AF13,AH13,AG8,AH7,AH12,AH10,AF12,AF11,AF9,AE7            | FPGA_IOSTANDARD=SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_BA[1..0]        | FPGA_PINNUM=AF8,AH8                                                                         | FPGA_IOSTANDARD=SSTL18I,SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_DQ[15..0]       | FPGA_PINNUM=AF26,AH25,AG26,AH26,AF22,AH24,AF24,AH23,AG22,AH21,AH22,AF21,AF18,AH20,AF19,AH18 | FPGA_IOSTANDARD=SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I,SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_DQS[1..0]       | FPGA_PINNUM=AG23,AH19                                                                       | FPGA_IOSTANDARD=SSTL18I,SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_DM[1..0]        | FPGA_PINNUM=AF25,AF20                                                                       | FPGA_IOSTANDARD=SSTL18I,SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_WEn             | FPGA_PINNUM=AG11                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_RASn            | FPGA_PINNUM=AH16                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_CASn            | FPGA_PINNUM=AG16                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_CKp             | FPGA_PINNUM=AH15                                                                            | FPGA_IOSTANDARD=DSSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_SYNC_CLKOUT     | FPGA_PINNUM=AG14                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_SYNC_CLKIN      | FPGA_PINNUM=AH17                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_CKE             | FPGA_PINNUM=AE14                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_CSn             | FPGA_PINNUM=AG13                                                                            | FPGA_IOSTANDARD=SSTL18I
+Record=Constraint | TargetKind=Port | TargetId=DDR2_ODT             | FPGA_PINNUM=AE11                                                                            | FPGA_IOSTANDARD=SSTL18I
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; HSMC Interface
+;-------------------------------------------------------------------------------
+Record=Constraint | TargetKind=Port | TargetId=HSMA_TX_P[3..0]      | FPGA_PINNUM=N4,L4,C4,E4                                                                     | FPGA_IOSTANDARD=PCML15,PCML15,PCML15,PCML15
+Record=Constraint | TargetKind=Port | TargetId=HSMA_TX_N[3..0]      | FPGA_PINNUM=N5,L5,C5,E5                                                                     | FPGA_IOSTANDARD=PCML15,PCML15,PCML15,PCML15
+Record=Constraint | TargetKind=Port | TargetId=HSMA_RX_P[3..0]      | FPGA_PINNUM=N1,L1,E1,G1                                                                     | FPGA_IOSTANDARD=PCML15,PCML15,PCML15,PCML15
+Record=Constraint | TargetKind=Port | TargetId=HSMA_RX_N[3..0]      | FPGA_PINNUM=N2,L2,E2,G2                                                                     | FPGA_IOSTANDARD=PCML15,PCML15,PCML15,PCML15
+Record=Constraint | TargetKind=Port | TargetId=HSMA_D[3..0]         | FPGA_PINNUM=A24,A23,A26,A25                                                                 | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_TX_D_P[16..0]   | FPGA_PINNUM=F24,E26,G24,H23,K24,G26,H26,J25,K26,M25,P25,Y25,AA26,AA23,AB22,AB24,AC25        | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_TX_D_N[16..0]   | FPGA_PINNUM=F23,E25,G23,H22,K23,G25,H25,J24,K25,M24,P24,Y24,AA25,AA22,AB21,AB23,AC24        | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_RX_D_P[16..0]   | FPGA_PINNUM=C28,D28,E28,F27,G28,H28,L28,N28,R28,V28,Y28,Y27,AB28,AC28,AC27,AE28,AF28        | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_RX_D_N[16..0]   | FPGA_PINNUM=C27,D27,F28,F26,G27,J28,M28,P28,T28,W28,AA28,Y26,AB27,AD28,AC26,AE27,AF27       | FPGA_IOSTANDARD=LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25,LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_CLKOUT0         | FPGA_PINNUM=A15                                                                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_CLKOUT_P1       | FPGA_PINNUM=AC23                                                                            | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=HSMA_CLKOUT_P2       | FPGA_PINNUM=AE26                                                                            | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=HSMA_CLKIN0          | FPGA_PINNUM=T25                                                                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_CLKIN_P1        | FPGA_PINNUM=U26                                                                             | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=HSMA_CLKIN_P2        | FPGA_PINNUM=R26                                                                             | FPGA_IOSTANDARD=LVDS
+Record=Constraint | TargetKind=Port | TargetId=HSMA_SDA             | FPGA_PINNUM=A20                                                                             | FPGA_IOSTANDARD=LVCMOS25
+Record=Constraint | TargetKind=Port | TargetId=HSMA_SCL             | FPGA_PINNUM=A18                                                                             | FPGA_IOSTANDARD=LVCMOS25
+;-------------------------------------------------------------------------------
+
+;Notes for hard JTAG chain
+;Hard_TDI : Pin 7 of J6
+;Hard_TDO : Pin 3 of J6
+;Hard_TCK : Pin 1 of J6
+;Hard_TMS : Pin 5 of J6
+;GND      : Pin 2 of J6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

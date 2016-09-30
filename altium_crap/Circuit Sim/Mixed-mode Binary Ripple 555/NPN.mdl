@@ -1,0 +1,9 @@
+*==============================================
+*NPN Trans Pinout: C,B,E
+*==============================================
+
+*NPN
+*Default NPN BJT pkg:TO-92B 1,2,3
+.MODEL NPN NPN()
+
+* Origin: Mcebjt.lib

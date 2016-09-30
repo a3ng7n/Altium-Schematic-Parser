@@ -1,0 +1,16 @@
+.SUBCKT EVALUE 1 2 3 4
+  E1 3 4 VALUE {2*sin(V(1, 2))}
+.ENDS EVALUE
+
+
+
+
+
+
+
+
+
+
+
+
+

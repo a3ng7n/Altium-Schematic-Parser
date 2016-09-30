@@ -1,0 +1,38 @@
+Record=SheetSymbol|SourceDocument=FPGA_Video_Windows.SchDoc|Designator=colour1|SchDesignator=colour1|FileName=TColour2to3.schDoc
+Record=SheetSymbol|SourceDocument=FPGA_Video_Windows.SchDoc|Designator=display1|SchDesignator=display1|FileName=TDisplay.SchDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=barLedWindow|SchDesignator=barLedWindow|FileName=TBarLedWindow.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=circuit1|SchDesignator=circuit1|FileName=EvaluationCircuit.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=controlWindow1|SchDesignator=controlWindow1|FileName=TControlWindow.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=desktop1|SchDesignator=desktop1|FileName=TDesktop.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=layerManager1|SchDesignator=layerManager1|FileName=TLayerManager.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=logicWindow1|SchDesignator=logicWindow1|FileName=TLogicWindow.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=mouse1|SchDesignator=mouse1|FileName=TMouse.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=mouseCursor1|SchDesignator=mouseCursor1|FileName=TMouseCursor.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=noiseWindow5|SchDesignator=noiseWindow5|FileName=TNoiseWindow.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=paletteWindow|SchDesignator=paletteWindow|FileName=TPaletteWindow.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=systemTimers1|SchDesignator=systemTimers1|FileName=TSystemTimers.schDoc
+Record=SheetSymbol|SourceDocument=TDisplay.SchDoc|Designator=traceWindow1|SchDesignator=traceWindow1|FileName=TTraceWindow.schDoc
+Record=SheetSymbol|SourceDocument=TBarLedWindow.schDOC|Designator=BarLed_window4|SchDesignator=BarLed_window4|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TControlWindow.schDOC|Designator=control1|SchDesignator=control1|FileName=TControl.schDoc
+Record=SheetSymbol|SourceDocument=TControlWindow.schDOC|Designator=controlWindow1|SchDesignator=controlWindow1|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TControlWindow.schDOC|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TLogicWindow.schDOC|Designator=fillWindow1|SchDesignator=fillWindow1|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TMouseCursor.schDoc|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TNoiseWindow.schDOC|Designator=fillWindow1|SchDesignator=fillWindow1|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TNoiseWindow.schDOC|Designator=U_TFillNoise|SchDesignator=U_TFillNoise|FileName=TFillNoise.schDoc
+Record=SheetSymbol|SourceDocument=TPaletteWindow.schDOC|Designator=BarLed_window4|SchDesignator=BarLed_window4|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TPaletteWindow.schDOC|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TTraceWindow.schDOC|Designator=traceWindow1|SchDesignator=traceWindow1|FileName=TWindow.schDoc
+Record=SheetSymbol|SourceDocument=TTraceWindow.schDOC|Designator=U_DIV2_8B|SchDesignator=U_DIV2_8B|FileName=DIV2_8B.SCHDOC
+Record=SheetSymbol|SourceDocument=TWindow.schDoc|Designator=mouseEvent1|SchDesignator=mouseEvent1|FileName=TMouseEvent.schDoc
+Record=SheetSymbol|SourceDocument=TWindow.schDoc|Designator=xRange|SchDesignator=xRange|FileName=TRange.vhd
+Record=SheetSymbol|SourceDocument=TWindow.schDoc|Designator=yRange|SchDesignator=yRange|FileName=TRange.vhd
+Record=TopLevelDocument|FileName=FPGA_Video_Windows.SchDoc
+Record=NEXUS_CORE|ComponentDesignator=LW_mem1|BaseComponentDesignator=LW_mem1|DocumentName=TLogicWindow.schDOC|LibraryReference=RAMD_16x256|SubProjectPath= |NEXUS_JTAG_INDEX=0|ComponentUniqueID=POCFOQBY|Description=Dual Port Random Access Memory|Comment=RAMD_16x256|Component Kind=Standard|Footprint= |Library Name=FPGA Memories.IntLib|Library Reference=RAMD_16x256|Memory_ClockEdge=Rising|Memory_DepthA=256|Memory_DepthB=256|Memory_Type=RAM_DualPortBlock|Memory_WidthA=16|Memory_WidthB=16|Nexus_Core=Memory_Program|PCB3D= |Published=13/01/2004|Publisher=Altium Hobart Technology Center|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE|ComponentDesignator=TW_mem1|BaseComponentDesignator=TW_mem1|DocumentName=TTraceWindow.schDOC|LibraryReference=RAMD_8x256|SubProjectPath= |NEXUS_JTAG_INDEX=1|ComponentUniqueID=QBGNYYUG|Description=Dual Port Random Access Memory|Comment=RAMD_8x256|Component Kind=Standard|Footprint= |Library Name=FPGA Memories.IntLib|Library Reference=RAMD_8x256|Memory_ClockEdge=Rising|Memory_DepthA=256|Memory_DepthB=256|Memory_Type=RAM_DualPortBlock|Memory_WidthA=8|Memory_WidthB=8|Nexus_Core=Memory_Program|PCB3D= |Published=13/01/2004|Publisher=Altium Hobart Technology Center|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=LW_mem1|DocumentName=TLogicWindow.schDOC|LibraryReference=RAMD_16x256|SubProjectPath= |Configuration= |Description=Dual Port Random Access Memory|SubPartUniqueId1=POCFOQBY|SubPartDocPath1=TLogicWindow.schDOC|Comment=RAMD_16x256|Component Kind=Standard|Footprint= |Library Name=FPGA Memories.IntLib|Library Reference=RAMD_16x256|Memory_ClockEdge=Rising|Memory_DepthA=256|Memory_DepthB=256|Memory_Type=RAM_DualPortBlock|Memory_WidthA=16|Memory_WidthB=16|Nexus_Core=Memory_Program|PCB3D= |Published=13/01/2004|Publisher=Altium Hobart Technology Center|Signal Integrity= |Simulation= 
+Record=NEXUS_CORE_COMPONENT|BaseComponentDesignator=TW_mem1|DocumentName=TTraceWindow.schDOC|LibraryReference=RAMD_8x256|SubProjectPath= |Configuration= |Description=Dual Port Random Access Memory|SubPartUniqueId1=QBGNYYUG|SubPartDocPath1=TTraceWindow.schDOC|Comment=RAMD_8x256|Component Kind=Standard|Footprint= |Library Name=FPGA Memories.IntLib|Library Reference=RAMD_8x256|Memory_ClockEdge=Rising|Memory_DepthA=256|Memory_DepthB=256|Memory_Type=RAM_DualPortBlock|Memory_WidthA=8|Memory_WidthB=8|Nexus_Core=Memory_Program|PCB3D= |Published=13/01/2004|Publisher=Altium Hobart Technology Center|Signal Integrity= |Simulation= 
+Record=Configuration|Name=Cyclone12_EB2|DeviceName=EP1C12F324C6
+Record=Configuration|Name=Spartan3_400_EB1|DeviceName=XC3S400-4FG456C
+Record=Configuration|Name=Spartan3_1000_EB1|DeviceName=XC3S1000-4FG456C

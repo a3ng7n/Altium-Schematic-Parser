@@ -1,0 +1,1 @@
+.MODEL CustomCap CAP(C=0.5 TC1=0.4 VC1=0.4)

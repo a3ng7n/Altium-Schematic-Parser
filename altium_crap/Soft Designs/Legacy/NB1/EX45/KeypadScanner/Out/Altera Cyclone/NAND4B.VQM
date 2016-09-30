@@ -1,0 +1,40 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 22:40:14 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\nand4b.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+
+module NAND4B (
+  I,
+  O
+);
+input [3:0] I ;
+output O ;
+wire O ;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:34
+  cyclone_lcell un11_o (
+	.combout(O),
+	.dataa(I[1]),
+	.datab(I[2]),
+	.datac(I[3]),
+	.datad(I[0])
+);
+defparam un11_o.operation_mode="normal";
+defparam un11_o.output_mode="comb_only";
+defparam un11_o.lut_mask="7fff";
+defparam un11_o.synch_mode="off";
+defparam un11_o.sum_lutc_input="datac";
+endmodule /* NAND4B */
+

@@ -1,0 +1,66 @@
+//
+// Written by Synplify
+// Synplify 7.3, Build 207R.
+// Tue Dec 09 21:22:28 2003
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\c:\eda\synplicity\synplify_733\lib\vhd\std.vhd "
+// file 2 "\c:\software projects\cores\source code\generic\source\abstract\cdiv4.vhd "
+// file 3 "\c:\eda\synplicity\synplify_733\lib\vhd\std1164.vhd "
+// file 4 "\c:\eda\synplicity\synplify_733\lib\vhd\unsigned.vhd "
+// file 5 "\c:\eda\synplicity\synplify_733\lib\vhd\arith.vhd "
+
+module CDIV4 (
+  CLKIN,
+  CLKDV
+);
+input CLKIN ;
+output CLKDV ;
+wire CLKIN ;
+wire CLKDV ;
+wire [1:0] i;
+wire VCC ;
+wire GND ;
+//@1:1
+  assign VCC = 1'b1;
+//@1:1
+  assign GND = 1'b0;
+// @2:35
+  cyclone_lcell i_1_ (
+	.regout(i[1]),
+	.clk(CLKIN),
+	.dataa(i[1]),
+	.datab(i[0])
+);
+defparam i_1_.operation_mode="normal";
+defparam i_1_.output_mode="reg_only";
+defparam i_1_.lut_mask="9999";
+defparam i_1_.synch_mode="off";
+defparam i_1_.sum_lutc_input="datac";
+// @2:35
+  cyclone_lcell i_0_ (
+	.regout(i[0]),
+	.clk(CLKIN),
+	.dataa(i[0])
+);
+defparam i_0_.operation_mode="normal";
+defparam i_0_.output_mode="reg_only";
+defparam i_0_.lut_mask="5555";
+defparam i_0_.synch_mode="off";
+defparam i_0_.sum_lutc_input="datac";
+// @2:35
+  cyclone_lcell CLKDV_0 (
+	.regout(CLKDV),
+	.clk(CLKIN),
+	.dataa(i[1]),
+	.datab(i[0])
+);
+defparam CLKDV_0.operation_mode="normal";
+defparam CLKDV_0.output_mode="reg_only";
+defparam CLKDV_0.lut_mask="1111";
+defparam CLKDV_0.synch_mode="off";
+defparam CLKDV_0.sum_lutc_input="datac";
+endmodule /* CDIV4 */
+

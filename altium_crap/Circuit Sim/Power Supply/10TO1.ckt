@@ -1,0 +1,23 @@
+*Transformer Subcircuit Parameters
+*RATIO = Turns ratio= Secondary/Primary
+*RP    = Primary DC resistance
+*RS    = Secondary DC resistance
+*LEAK  = Leakage inductance
+*MAG   = Magnetizing inductance
+
+*10:1 Transformer
+*Connections:
+*             Pri+
+*             | Pri-
+*             | | Sec+
+*             | | | Sec-
+*             | | | |
+.SUBCKT 10TO1 1 2 3 4 PARAMS: RATIO=0.1 RP=0.1 RS=0.1 LEAK=1u MAG=1u
+VISRC 9 4 DC 0V
+FCTRL 6 2 VISRC {RATIO}
+EVCVS 8 9 5 2 {RATIO}
+RPRI  1 7 {RP}
+RSEC  8 3 {RS}
+LLEAK 7 5 {LEAK}
+LMAGNET 6 5 {MAG}
+.ENDS 10TO1

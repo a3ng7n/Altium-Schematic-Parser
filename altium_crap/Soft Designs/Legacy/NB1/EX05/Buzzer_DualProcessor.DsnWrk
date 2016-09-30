@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=FPGA_51_C_165B_ASM_Buzzer.PrjFpg
+[Project2]
+ProjectPath=Buzzer\Buzzer.PRJEMB
+[Project3]
+ProjectPath=Keypad\Keypad.PrjEmb

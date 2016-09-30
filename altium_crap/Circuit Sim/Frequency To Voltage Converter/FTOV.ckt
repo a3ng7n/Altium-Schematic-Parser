@@ -1,0 +1,21 @@
+*Frequency To Voltage Converter
+*VIL    = Low level input threshold
+*VIH    = High level input threshold
+*CYCLES = Cycles per volt output
+
+*Generic frequency to voltage converter
+*Connections:
+*            NC+
+*            | NC-
+*            | | N+
+*            | | | N-
+*            | | | |
+.SUBCKT FTOV 1 2 3 4 PARAMS: VIL=1 VIH=2 CYCLES=1k
+A2 [1 2] [10 20] adc_mod
+A2 [10 20] [40] fcvs_mod
+A3 [40] [5] dav_mod
+B1 3 4 V=(v(5)/{CYCLES})
+.model adc_mod xadc
+.model dav_mod xdav
+.model fcvs_mod xsimcode(file="{MODEL_PATH}fcvs.scb" func=fcvs VIL={VIL} VIH={VIH})
+.ENDS FTOV

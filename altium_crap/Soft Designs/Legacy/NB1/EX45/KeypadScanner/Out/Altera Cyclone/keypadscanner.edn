@@ -1,0 +1,246 @@
+(EDIF KeypadScanner
+ (EDIFVersion 2 0 0)
+ (EDIFLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status(Written
+   (TimeStamp 2004 10 22 18 0 24)
+   (Program "DXP" (version "3.7.0.86"))
+   (Comment "Copyright (c) 2002-2003 Altium Limited")))
+ (library Altera_altsyn (EDIFLevel 0) (technology (numberdefinition))
+  (cell D2_4EB (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port (array (rename A "A(1:0)") 2) (direction INPUT))
+     (port (array (rename D "D(3:0)") 4) (direction OUTPUT))
+     (port E (direction INPUT)))))
+  (cell CB2CEB (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port C (direction INPUT))
+     (port CE (direction INPUT))
+     (port CEO (direction OUTPUT))
+     (port CLR (direction INPUT))
+     (port (array (rename Q "Q(1:0)") 2) (direction OUTPUT))
+     (port TC (direction OUTPUT)))))
+  (cell INV4B (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port (array (rename I "I(3:0)") 4) (direction INPUT))
+     (port (array (rename O "O(3:0)") 4) (direction OUTPUT)))))
+  (cell FDC (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port C (direction INPUT))
+     (port CLR (direction INPUT))
+     (port D (direction INPUT))
+     (port Q (direction OUTPUT)))))
+  (cell CDIV64 (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port CLKDV (direction OUTPUT))
+     (port CLKIN (direction INPUT)))))
+  (cell FD4CB (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port C (direction INPUT))
+     (port CLR (direction INPUT))
+     (port (array (rename D "D(3:0)") 4) (direction INPUT))
+     (port (array (rename Q "Q(3:0)") 4) (direction OUTPUT)))))
+  (cell NAND4B (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port (array (rename I "I(3:0)") 4) (direction INPUT))
+     (port O (direction OUTPUT)))))
+  (cell AND4S (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port I0 (direction INPUT))
+     (port I1 (direction INPUT))
+     (port I2 (direction INPUT))
+     (port I3 (direction INPUT))
+     (port O (direction OUTPUT)))))
+  (cell INV (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port I (direction INPUT))
+     (port O (direction OUTPUT)))))
+  (cell CDIV4 (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port CLKDV (direction OUTPUT))
+     (port CLKIN (direction INPUT)))))
+  (cell FD (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port C (direction INPUT))
+     (port D (direction INPUT))
+     (port Q (direction OUTPUT)))))
+  (cell E4_2B (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface 
+     (port (array (rename A "A(1:0)") 2) (direction OUTPUT))
+     (port (array (rename D "D(3:0)") 4) (direction INPUT)))))
+  (cell KeypadScanner (celltype GENERIC) (view view_1 (viewType NETLIST)
+    (interface
+     (port CLK_1MHZ (direction INPUT))
+     (port (array (rename COL "COL(3:0)") 4) (direction INPUT))
+     (port RST (direction INPUT))
+     (port (array (rename KEY "KEY(3:0)") 4) (direction OUTPUT))
+     (port (array (rename ROW "ROW(3:0)") 4) (direction OUTPUT))
+     (port VALIDKEY (direction OUTPUT)))
+    (contents
+     (instance U23 (viewref view_1 (cellRef D2_4EB))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 193")))
+     (instance U10 (viewref view_1 (cellRef FDC))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 296")))
+     (instance U19 (viewref view_1 (cellRef INV4B))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 224")))
+     (instance U18 (viewref view_1 (cellRef INV4B))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 231")))
+     (instance U22 (viewref view_1 (cellRef CB2CEB))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 201")))
+     (instance U11 (viewref view_1 (cellRef FD4CB))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 287")))
+     (instance U25 (viewref view_1 (cellRef CDIV64))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 179")))
+     (instance U24 (viewref view_1 (cellRef CDIV64))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 186")))
+     (instance U13 (viewref view_1 (cellRef NAND4B))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 270")))
+     (instance U12 (viewref view_1 (cellRef AND4S))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 277")))
+     (instance U21 (viewref view_1 (cellRef INV))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 210")))
+     (instance U17 (viewref view_1 (cellRef FD))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 238")))
+     (instance U16 (viewref view_1 (cellRef FD))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 246")))
+     (instance U15 (viewref view_1 (cellRef FD))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 254")))
+     (instance U14 (viewref view_1 (cellRef FD))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 262")))
+     (instance U26 (viewref view_1 (cellRef CDIV4))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 172")))
+     (instance U20 (viewref view_1 (cellRef E4_2B))
+      (property HDL_SOURCE (string "KeyPadScanner.VHD : 217")))
+     (net CLK_1MHZ (joined
+       (portRef CLK_1MHZ)
+       (portRef CLKIN  (instanceRef U24))))
+     (net COL_3 (joined
+       (portRef (member COL 0))
+       (portRef (member I 0)  (instanceRef U18))
+       (portRef (member I 0)  (instanceRef U13))))
+     (net COL_2 (joined
+       (portRef (member COL 1))
+       (portRef (member I 1)  (instanceRef U18))
+       (portRef (member I 1)  (instanceRef U13))))
+     (net COL_1 (joined
+       (portRef (member COL 2))
+       (portRef (member I 2)  (instanceRef U18))
+       (portRef (member I 2)  (instanceRef U13))))
+     (net COL_0 (joined
+       (portRef (member COL 3))
+       (portRef (member I 3)  (instanceRef U18))
+       (portRef (member I 3)  (instanceRef U13))))
+     (net RST (joined
+       (portRef RST)
+       (portRef CLR  (instanceRef U10))
+       (portRef CLR  (instanceRef U11))))
+     (net PinSignal_U25_CLKDV (joined
+       (portRef CLKDV  (instanceRef U25))
+       (portRef CLKIN  (instanceRef U26))
+       (portRef C  (instanceRef U16))
+       (portRef C  (instanceRef U15))
+       (portRef C  (instanceRef U14))))
+     (net PinSignal_U24_CLKDV (joined
+       (portRef CLKDV  (instanceRef U24))
+       (portRef CLKIN  (instanceRef U25))))
+     (net PinSignal_U22_Q_1 (joined
+       (portRef (member Q 0)  (instanceRef U22))
+       (portRef (member A 0)  (instanceRef U23))
+       (portRef (member D 0)  (instanceRef U11))))
+     (net PinSignal_U22_Q_0 (joined
+       (portRef (member Q 1)  (instanceRef U22))
+       (portRef (member A 1)  (instanceRef U23))
+       (portRef (member D 1)  (instanceRef U11))))
+     (net VCC (joined
+       (portRef E  (instanceRef U23))
+       (portRef CE  (instanceRef U22))
+       (portRef D  (instanceRef U10))))
+     (net PinSignal_U17_Q (joined
+       (portRef Q  (instanceRef U17))
+       (portRef C  (instanceRef U22))
+       (portRef I  (instanceRef U21))))
+     (net GND (joined
+       (portRef CLR  (instanceRef U22))))
+     (net PinSignal_U18_O_3 (joined
+       (portRef (member O 0)  (instanceRef U18))
+       (portRef (member D 0)  (instanceRef U20))))
+     (net PinSignal_U18_O_2 (joined
+       (portRef (member O 1)  (instanceRef U18))
+       (portRef (member D 1)  (instanceRef U20))))
+     (net PinSignal_U18_O_1 (joined
+       (portRef (member O 2)  (instanceRef U18))
+       (portRef (member D 2)  (instanceRef U20))))
+     (net PinSignal_U18_O_0 (joined
+       (portRef (member O 3)  (instanceRef U18))
+       (portRef (member D 3)  (instanceRef U20))))
+     (net PinSignal_U23_D_3 (joined
+       (portRef (member D 0)  (instanceRef U23))
+       (portRef (member I 0)  (instanceRef U19))))
+     (net PinSignal_U23_D_2 (joined
+       (portRef (member D 1)  (instanceRef U23))
+       (portRef (member I 1)  (instanceRef U19))))
+     (net PinSignal_U23_D_1 (joined
+       (portRef (member D 2)  (instanceRef U23))
+       (portRef (member I 2)  (instanceRef U19))))
+     (net PinSignal_U23_D_0 (joined
+       (portRef (member D 3)  (instanceRef U23))
+       (portRef (member I 3)  (instanceRef U19))))
+     (net PinSignal_U26_CLKDV (joined
+       (portRef CLKDV  (instanceRef U26))
+       (portRef C  (instanceRef U17))))
+     (net PinSignal_U21_O (joined
+       (portRef O  (instanceRef U21))
+       (portRef D  (instanceRef U17))))
+     (net PinSignal_U15_Q (joined
+       (portRef Q  (instanceRef U15))
+       (portRef I2  (instanceRef U12))
+       (portRef D  (instanceRef U16))))
+     (net PinSignal_U14_Q (joined
+       (portRef Q  (instanceRef U14))
+       (portRef I1  (instanceRef U12))
+       (portRef D  (instanceRef U15))))
+     (net PinSignal_U13_O (joined
+       (portRef O  (instanceRef U13))
+       (portRef I0  (instanceRef U12))
+       (portRef D  (instanceRef U14))))
+     (net PinSignal_U16_Q (joined
+       (portRef Q  (instanceRef U16))
+       (portRef I3  (instanceRef U12))))
+     (net PinSignal_U12_O (joined
+       (portRef O  (instanceRef U12))
+       (portRef C  (instanceRef U10))
+       (portRef C  (instanceRef U11))))
+     (net PinSignal_U20_A_1 (joined
+       (portRef (member A 0)  (instanceRef U20))
+       (portRef (member D 2)  (instanceRef U11))))
+     (net PinSignal_U20_A_0 (joined
+       (portRef (member A 1)  (instanceRef U20))
+       (portRef (member D 3)  (instanceRef U11))))
+     (net KEY_3 (joined
+       (portRef (member Q 0)  (instanceRef U11))
+       (portRef (member KEY 0))))
+     (net KEY_2 (joined
+       (portRef (member Q 1)  (instanceRef U11))
+       (portRef (member KEY 1))))
+     (net KEY_1 (joined
+       (portRef (member Q 2)  (instanceRef U11))
+       (portRef (member KEY 2))))
+     (net KEY_0 (joined
+       (portRef (member Q 3)  (instanceRef U11))
+       (portRef (member KEY 3))))
+     (net ROW_3 (joined
+       (portRef (member O 0)  (instanceRef U19))
+       (portRef (member ROW 0))))
+     (net ROW_2 (joined
+       (portRef (member O 1)  (instanceRef U19))
+       (portRef (member ROW 1))))
+     (net ROW_1 (joined
+       (portRef (member O 2)  (instanceRef U19))
+       (portRef (member ROW 2))))
+     (net ROW_0 (joined
+       (portRef (member O 3)  (instanceRef U19))
+       (portRef (member ROW 3))))
+     (net VALIDKEY (joined
+       (portRef Q  (instanceRef U10))
+       (portRef VALIDKEY)))))))
+ (design KeypadScanner (cellRef KeypadScanner (libraryRef Altera_altsyn))))

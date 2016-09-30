@@ -1,0 +1,4 @@
+*Add Voltages
+.SUBCKT ADDV 1 2 3
+BX 3 0 V=V(1)+V(2)
+.ENDS ADDV

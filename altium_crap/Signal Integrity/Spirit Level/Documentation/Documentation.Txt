@@ -1,0 +1,50 @@
+The overall goal of this example is to provide a real life example of signal
+integrity uses all along the life of a design - from schematic through to PCB
+design.
+
+In the design process, the following critical signals will be monitored:
+
+* Clock signal - CCLK
+* Differential pair signals - DRV_N, DRV_P, REC_N and REC_P
+* JTag lines - JTAG_NEXUS_TCK, JTAG_NEXUS_TDI, JTAG_NEXUS_TDO and JTAG_NEXUS_TMS
+* Accelerometer output signals - XOUT and YOUT
+* The FPGA configuration DONE signal will also be monitored
+
+Use the Favorites associated with each projects in order to easily find the places of interest.
+
+The first project, "Sch Issues",
+contains a project that only contains schematic diagrams. This project shows how
+to set-up and run a signal integrity analysis. At this stage of the design cycle
+there will be a few signal integrity issues that will have to be resolved.
+
+The second project, "Schematic Issues Resolved",
+is the next step in the design process which resolves the signal inegrity issues
+found in the first project.
+
+The third project, "PCB Issues" introduces a
+PCB document into the design and routes a few critical signals ready for the
+next stage of the signal integrity analaysis. Due to bad routing this project
+will contain signals that will fail the signal integrity analysis.
+
+The fourth and final project, "PCB Issues Resolved"
+is the next step in the design process which resolves the signal inegrity issues
+found in the third project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

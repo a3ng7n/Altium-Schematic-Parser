@@ -1,0 +1,4 @@
+Record=SheetSymbol|SourceDocument=BCD8.schdoc|Designator=H1|SchDesignator=H1|FileName=BCD.VHD
+Record=SheetSymbol|SourceDocument=BCD8.schdoc|Designator=H2|SchDesignator=H2|FileName=BCD.VHD
+Record=TopLevelDocument|FileName=BCD8.schdoc
+Record=Configuration|Name=Default - All Constraints|DeviceName= 

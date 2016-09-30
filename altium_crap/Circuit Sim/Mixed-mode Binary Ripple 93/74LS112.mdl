@@ -1,0 +1,5 @@
+
+*LS Dual JK FLIP FLOP - type:digital pkg:DIP16 [DVCC=16;DGND=8;](A:4 3 1 2 15 6 5)(B:10 11 13 12 14 7 9)
+.MODEL 74LS112 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls112 {mntymx})
+
+* Origin: 74112.mod

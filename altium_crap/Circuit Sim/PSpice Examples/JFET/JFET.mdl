@@ -1,0 +1,12 @@
+.MODEL NJFET NJF
++(
++  ALPHA=1
++  BETATCE=1
++  ISR=1E-9
++  M=0.75
++  N=1
++  NR=2
++  VK=0.1
++  VTOTC=0.1
++  XTI=3
++)

@@ -1,0 +1,14 @@
+Record=SheetSymbol|SourceDocument=CHC_Video.SchDoc|Designator=U_DBLBUF|SchDesignator=U_DBLBUF|FileName=dblbuf.c|SymbolType=Normal|RawFileName=dblbuf.c|DesignItemId= |SourceLibraryName= |ObjectKind=Code Symbol
+Record=SheetSymbol|SourceDocument=CHC_Video.SchDoc|Designator=U_PROCESS2|SchDesignator=U_PROCESS2|FileName=process.c|SymbolType=Normal|RawFileName=process.c|DesignItemId= |SourceLibraryName= |ObjectKind=Code Symbol
+Record=SheetSymbol|SourceDocument=CHC_Video.SchDoc|Designator=U_TFT_CONTROL|SchDesignator=U_TFT_CONTROL|FileName=tft.c|SymbolType=Normal|RawFileName=tft.c|DesignItemId= |SourceLibraryName= |ObjectKind=Code Symbol
+Record=SheetSymbol|SourceDocument=CHC_Video.SchDoc|Designator=U_VIDEO_CONTROL|SchDesignator=U_VIDEO_CONTROL|FileName=video.c|SymbolType=Normal|RawFileName=video.c|DesignItemId= |SourceLibraryName= |ObjectKind=Code Symbol
+Record=TopLevelDocument|FileName=CHC_Video.SchDoc
+Record=Configuration|Name=NB2DSK01_08_DB30_06|DeviceName=XC3S1500-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB31_06|DeviceName=EP2C35F672C8
+Record=Configuration|Name=NB2DSK01_08_DB32_07|DeviceName=LFECP33E-3FN672C
+Record=Configuration|Name=NB2DSK01_08_DB36_01|DeviceName=XC4VLX25-10FF668C
+Record=Configuration|Name=NB2DSK01_08_DB40_02|DeviceName=EP3C40F780C8N
+Record=Configuration|Name=NB2DSK01_08_DB41_01|DeviceName=XC3S1400AN-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB42_01|DeviceName=XC3SD3400A-4FG676C
+Record=Configuration|Name=NB2DSK01_08_DB43_02|DeviceName=LFE2-35E-5F672C
+Record=Configuration|Name=NB2DSK01_08_DB46_02|DeviceName=XC4VSX35-10FF668C

@@ -1,0 +1,2 @@
+* switch model for Rev_Rec test circuit
+.MODEL SW SW(VT=2.5 VH=1 RON=1m ROFF=10Meg)

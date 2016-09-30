@@ -1,0 +1,1189 @@
+[Design]
+Version=1.0
+HierarchyMode=0
+ChannelRoomNamingStyle=0
+OutputPath=
+ChannelDesignatorFormatString=$Component_$RoomName
+ChannelRoomLevelSeperator=_
+OpenOutputs=1
+ArchiveProject=0
+TimestampOutput=0
+SeparateFolders=0
+PinSwapBy_Netlabel=1
+PinSwapBy_Pin=1
+AllowPortNetNames=1
+AllowSheetEntryNetNames=1
+AppendSheetNumberToLocalNets=0
+DefaultConfiguration=
+UserID=0xFFFFFFFF
+DefaultPcbProtel=1
+DefaultPcbPcad=0
+ReorderDocumentsOnCompile=1
+NameNetsHierarchically=0
+PowerPortNamesTakePriority=1
+
+[Document1]
+DocumentPath=Full-Bridge Converter.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+
+[Document2]
+DocumentPath=Full-Bridge Converter.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+
+[Document3]
+DocumentPath=SIMetrix Devices.IntLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+
+[Document4]
+DocumentPath=SIMPLIS Devices.IntLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Full-Bridge Converter\Full-Bridge Converter.net
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Full-Bridge Converter\Full-Bridge Converter.sdf
+
+[Parameter1]
+Name=ProjectAddress1
+Value=L3, 12A Rodborough Road
+
+[Parameter2]
+Name=ProjectAddress2
+Value=Frenchs Forest
+
+[Parameter3]
+Name=ProjectAddress3
+Value=NSW 2086
+
+[Parameter4]
+Name=ProjectAddress4
+Value=Australia
+
+[Parameter5]
+Name=ProjectOrganization
+Value=Altium Limited
+
+[Parameter6]
+Name=ProjectRevision
+Value=1
+
+[Parameter7]
+Name=ProjectTitle
+Value=Full Bridge Converter
+
+[Parameter8]
+Name=ProjectTotalSheets
+Value=2
+
+[OutputGroup1]
+Name=Netlist Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=Verilog
+OutputName1=Verilog File
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+OutputType2=ProtelNetlist
+OutputName2=Protel
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+OutputType3=Pcad
+OutputName3=Pcad for PCB
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=1
+OutputDefault3=0
+OutputType4=VHDL
+OutputName4=VHDL File
+OutputDocumentPath4=
+OutputVariantName4=
+OutputEnabled4=1
+OutputDefault4=0
+OutputType5=MultiWire
+OutputName5=MultiWire
+OutputDocumentPath5=
+OutputVariantName5=
+OutputEnabled5=1
+OutputDefault5=0
+OutputType6=EDIF
+OutputName6=EDIF for PCB
+OutputDocumentPath6=
+OutputVariantName6=
+OutputEnabled6=1
+OutputDefault6=0
+OutputType7=XSpiceNetlist
+OutputName7=XSpice Netlist
+OutputDocumentPath7=
+OutputVariantName7=
+OutputEnabled7=1
+OutputDefault7=0
+OutputType8=SIMetrixNetlist
+OutputName8=SIMetrix
+OutputDocumentPath8=
+OutputVariantName8=
+OutputEnabled8=1
+OutputDefault8=0
+OutputType9=SIMPLISNetlist
+OutputName9=SIMPLIS
+OutputDocumentPath9=
+OutputVariantName9=
+OutputEnabled9=1
+OutputDefault9=0
+
+[OutputGroup2]
+Name=Simulator Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=SIMPLIS_Sim
+OutputName1=SIMPLIS
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+OutputType2=SIMetrix_Sim
+OutputName2=SIMetrix
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+OutputType3=AdvSimNetlist
+OutputName3=Mixed Sim
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=1
+OutputDefault3=0
+Configuration3_Name1=OutputConfigurationParameter1
+Configuration3_Item1=Record=AdvSimNetlistView|SheetsToNetlist=1|NetlistType=1|Variable0=CS|Variable1=V1#branch|Variable2=VBUSS|Variable3=VOUT|AnalysesDataSavedIndex=1|SimView_KeepLastSetup=True|DC_Analysis=False|DC_PrimarySource= |DC_PrimaryStart=0|DC_PrimaryStop=0|DC_PrimaryStep=0|DC_EnableSecondary=False|DC_SecondarySource= |DC_SecondaryStart=0|DC_SecondaryStop=0|DC_SecondaryStep=0|AC_Analysis=True|AC_SweepType=DEC|AC_StartFrequency=10|AC_StopFrequency=1E5|AC_TestPoints=25|AC_FreqDomain=Z|TRAN_Analysis=True|TRAN_AlwaysSetDefaults=False|TRAN_DefaultCycles=5|TRAN_DefaultPointsPerCycle=50|TRAN_StartTime=0|TRAN_StopTime=0.002|TRAN_StepTime=2.5E-7|TRAN_MaxStepTime=1E-5|TRAN_FourierFundFreq=1000|TRAN_FourierNumHarmonics=10|TRAN_FourierAnalysis=False|TRAN_UseInitialConditions=False|TF_Analysis=False|TF_Source= |TF_Reference=0|PZ_Analysis=False|PZ_Node1= |PZ_Node2=0|PZ_Node3= |PZ_Node4=0|PZ_TfType=VOL|PZ_AnalType=PZ|Noise_Analysis=False|Noise_Source= |Noise_Output= |Noise_Reference=0|Noise_Start=0|Noise_Stop=0|Noise_TestPoints=0|Noise_PointsPerSummary=0|Noise_SweepType=LIN|Op_Analysis=False|POP_Analysis=True|POP_TriggerCondition=0_TO_1|POP_MaxPeriod=2E-5|POP_ShowProgress=True|POP_MaxIterations=20|POP_Convergence=1E-14|POP_UseTransientSnapshot=False|POP_OutputCycles=5|POP_CyclesBeforeLaunch=5|ParamSweep_Analysis=False|ParamSweep_Parameter1= |ParamSweep_Start1=0|ParamSweep_Stop1=0|ParamSweep_Step1=0|ParamSweep_SweepType1=False|ParamSweep_SecondaryEnabled=False|ParamSweep_Parameter2= |ParamSweep_Start2=0|ParamSweep_Stop2=0|ParamSweep_Step2=0|ParamSweep_SweepType2=False|TempSweep_Analysis=False|TempSweep_Start=0|TempSweep_Stop=0|TempSweep_Step=0|MonteCarlo_Analysis=False|MonteCarlo_Seed=-1|MonteCarlo_DistributionType=UNIFORM|MonteCarlo_NumberOfRuns=5|MonteCarlo_ResistorTolerance=10%|MonteCarlo_InductorTolerance=10%|MonteCarlo_TransistorTolerance=10%|MonteCarlo_CapacitorTolerance=10%|MonteCarlo_DCSourceTolerance=10%|MonteCarlo_DigitalTpTolerance=10%|OPTION_Method=Gear 2|OPTION_DVCC=5.000|OPTION_DVDD=15.00|OPTION_SpiceRefNode=GND
+
+[OutputGroup3]
+Name=Documentation Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=Composite
+OutputName1=Composite Drawing
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType2=Logic Analyser Print
+OutputName2=Logic Analyser Prints
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType3=PCB Print
+OutputName3=PCB Prints
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=1
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType4=Schematic Print
+OutputName4=Schematic Prints
+OutputDocumentPath4=
+OutputVariantName4=
+OutputEnabled4=1
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType5=OpenBus Print
+OutputName5=OpenBus Prints
+OutputDocumentPath5=
+OutputVariantName5=
+OutputEnabled5=1
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType6=SimView Print
+OutputName6=SimView Prints
+OutputDocumentPath6=
+OutputVariantName6=
+OutputEnabled6=1
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType7=Wave Print
+OutputName7=Wave Prints
+OutputDocumentPath7=
+OutputVariantName7=
+OutputEnabled7=1
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType8=PCB 3D Print
+OutputName8=PCB 3D Prints
+OutputDocumentPath8=
+OutputVariantName8=
+OutputEnabled8=1
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType9=Wave Print
+OutputName9=Wave Prints
+OutputDocumentPath9=
+OutputVariantName9=
+OutputEnabled9=1
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+
+[OutputGroup4]
+Name=Assembly Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=Assembly
+OutputName1=Assembly Drawings
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType2=Pick Place
+OutputName2=Generates pick and place files
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+
+[OutputGroup5]
+Name=Fabrication Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=CompositeDrill
+OutputName1=Composite Drill Drawing
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType2=Drill
+OutputName2=Drill Drawing/Guides
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType3=Final
+OutputName3=Final Artwork Prints
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=1
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType4=Gerber
+OutputName4=Gerber Files
+OutputDocumentPath4=
+OutputVariantName4=
+OutputEnabled4=1
+OutputDefault4=0
+OutputType5=Mask
+OutputName5=Solder/Paste Mask Prints
+OutputDocumentPath5=
+OutputVariantName5=
+OutputEnabled5=1
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType6=NC Drill
+OutputName6=NC Drill Files
+OutputDocumentPath6=
+OutputVariantName6=
+OutputEnabled6=1
+OutputDefault6=0
+OutputType7=ODB
+OutputName7=ODB++ Files
+OutputDocumentPath7=
+OutputVariantName7=
+OutputEnabled7=1
+OutputDefault7=0
+OutputType8=Plane
+OutputName8=Power-Plane Prints
+OutputDocumentPath8=
+OutputVariantName8=
+OutputEnabled8=1
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType9=Test Points
+OutputName9=Test Point Report
+OutputDocumentPath9=
+OutputVariantName9=
+OutputEnabled9=1
+OutputDefault9=0
+
+[OutputGroup6]
+Name=Report Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=BOM_PartType
+OutputName1=Bill of Materials
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+OutputType2=ComponentCrossReference
+OutputName2=Component Cross Reference Report
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+OutputType3=ReportHierarchy
+OutputName3=Report Project Hierarchy
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=1
+OutputDefault3=0
+OutputType4=SimpleBOM
+OutputName4=Simple BOM
+OutputDocumentPath4=
+OutputVariantName4=
+OutputEnabled4=1
+OutputDefault4=0
+OutputType5=SinglePinNetReporter
+OutputName5=Report Single Pin Nets
+OutputDocumentPath5=
+OutputVariantName5=
+OutputEnabled5=1
+OutputDefault5=0
+
+[OutputGroup7]
+Name=Other Outputs
+Description=
+TargetPrinter=\\alpha\HP LaserJet 4050 Series PCL
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintWhat=1
+OutputType1=Text Print
+OutputName1=Text Print
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=1
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType2=Text Print
+OutputName2=Text Print
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=1
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType3=Text Print
+OutputName3=Text Print
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=1
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType4=Text Print
+OutputName4=Text Print
+OutputDocumentPath4=
+OutputVariantName4=
+OutputEnabled4=1
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType5=Text Print
+OutputName5=Text Print
+OutputDocumentPath5=
+OutputVariantName5=
+OutputEnabled5=1
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType6=Text Print
+OutputName6=Text Print
+OutputDocumentPath6=
+OutputVariantName6=
+OutputEnabled6=1
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType7=Text Print
+OutputName7=Text Print
+OutputDocumentPath7=
+OutputVariantName7=
+OutputEnabled7=1
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType8=Text Print
+OutputName8=Text Print
+OutputDocumentPath8=
+OutputVariantName8=
+OutputEnabled8=1
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType9=Text Print
+OutputName9=Text Print
+OutputDocumentPath9=
+OutputVariantName9=
+OutputEnabled9=1
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType10=Text Print
+OutputName10=Text Print
+OutputDocumentPath10=
+OutputVariantName10=
+OutputEnabled10=1
+OutputDefault10=0
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType11=Text Print
+OutputName11=Text Print
+OutputDocumentPath11=
+OutputVariantName11=
+OutputEnabled11=1
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType12=Text Print
+OutputName12=Text Print
+OutputDocumentPath12=
+OutputVariantName12=
+OutputEnabled12=1
+OutputDefault12=0
+PageOptions12=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType13=Text Print
+OutputName13=Text Print
+OutputDocumentPath13=
+OutputVariantName13=
+OutputEnabled13=1
+OutputDefault13=0
+PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType14=Text Print
+OutputName14=Text Print
+OutputDocumentPath14=
+OutputVariantName14=
+OutputEnabled14=1
+OutputDefault14=0
+PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType15=Text Print
+OutputName15=Text Print
+OutputDocumentPath15=
+OutputVariantName15=
+OutputEnabled15=1
+OutputDefault15=0
+PageOptions15=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType16=Text Print
+OutputName16=Text Print
+OutputDocumentPath16=
+OutputVariantName16=
+OutputEnabled16=1
+OutputDefault16=0
+PageOptions16=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType17=Text Print
+OutputName17=Text Print
+OutputDocumentPath17=
+OutputVariantName17=
+OutputEnabled17=1
+OutputDefault17=0
+PageOptions17=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType18=Text Print
+OutputName18=Text Print
+OutputDocumentPath18=
+OutputVariantName18=
+OutputEnabled18=1
+OutputDefault18=0
+PageOptions18=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType19=Text Print
+OutputName19=Text Print
+OutputDocumentPath19=
+OutputVariantName19=
+OutputEnabled19=1
+OutputDefault19=0
+PageOptions19=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType20=Text Print
+OutputName20=Text Print
+OutputDocumentPath20=
+OutputVariantName20=
+OutputEnabled20=1
+OutputDefault20=0
+PageOptions20=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType21=Text Print
+OutputName21=Text Print
+OutputDocumentPath21=
+OutputVariantName21=
+OutputEnabled21=1
+OutputDefault21=0
+PageOptions21=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType22=Text Print
+OutputName22=Text Print
+OutputDocumentPath22=
+OutputVariantName22=
+OutputEnabled22=1
+OutputDefault22=0
+PageOptions22=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType23=Text Print
+OutputName23=Text Print
+OutputDocumentPath23=
+OutputVariantName23=
+OutputEnabled23=1
+OutputDefault23=0
+PageOptions23=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType24=Text Print
+OutputName24=Text Print
+OutputDocumentPath24=
+OutputVariantName24=
+OutputEnabled24=1
+OutputDefault24=0
+PageOptions24=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType25=Text Print
+OutputName25=Text Print
+OutputDocumentPath25=
+OutputVariantName25=
+OutputEnabled25=1
+OutputDefault25=0
+PageOptions25=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType26=Text Print
+OutputName26=Text Print
+OutputDocumentPath26=
+OutputVariantName26=
+OutputEnabled26=1
+OutputDefault26=0
+PageOptions26=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+OutputType27=Text Print
+OutputName27=Text Print
+OutputDocumentPath27=
+OutputVariantName27=
+OutputEnabled27=1
+OutputDefault27=0
+PageOptions27=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=A4|PrintScaleMode=1
+
+[Modification Levels]
+Type1=1
+Type2=1
+Type3=1
+Type4=1
+Type5=1
+Type6=1
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=1
+Type12=1
+Type13=1
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=1
+Type26=1
+Type27=1
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=1
+Type33=1
+Type34=1
+Type35=1
+Type36=1
+Type37=1
+Type38=1
+Type39=1
+Type40=1
+Type41=1
+Type42=1
+Type43=1
+Type44=1
+Type45=1
+Type46=1
+Type47=1
+Type48=1
+Type49=1
+Type50=1
+Type51=1
+Type52=1
+Type53=1
+Type54=1
+Type55=1
+Type56=1
+Type57=1
+Type58=1
+Type59=1
+Type60=1
+Type61=1
+Type62=1
+Type63=1
+Type64=1
+Type65=1
+
+[Difference Levels]
+Type1=1
+Type2=1
+Type3=1
+Type4=1
+Type5=1
+Type6=1
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=1
+Type12=0
+Type13=1
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=1
+Type26=1
+Type27=1
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=1
+Type33=1
+Type34=1
+
+[Electrical Rules Check]
+Type1=1
+Type2=1
+Type3=2
+Type4=1
+Type5=2
+Type6=2
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=2
+Type12=2
+Type13=2
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=2
+Type26=2
+Type27=2
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=2
+Type33=2
+Type34=2
+Type35=1
+Type36=2
+Type37=1
+Type38=2
+Type39=2
+Type40=2
+Type41=0
+Type42=2
+Type43=1
+Type44=1
+Type45=2
+Type46=1
+Type47=2
+Type48=2
+Type49=1
+Type50=2
+Type51=1
+Type52=1
+Type53=1
+Type54=1
+Type55=1
+Type56=2
+Type57=1
+Type58=1
+Type59=0
+Type60=1
+Type61=2
+Type62=2
+Type63=1
+Type64=0
+Type65=2
+Type66=3
+Type67=2
+Type68=2
+Type69=1
+Type70=2
+Type71=2
+Type72=2
+Type73=2
+Type74=1
+Type75=2
+Type76=1
+Type77=1
+Type78=1
+Type79=1
+Type80=2
+Type81=2
+Type82=2
+Type83=1
+Type84=1
+Type85=1
+Type86=1
+Type87=3
+Type88=3
+Type89=2
+Type90=2
+
+[ERC Connection Matrix]
+L1=NNNNNNNNNNNWNNNWW
+L2=NNWNNNNWWWNWNWNWN
+L3=NWEENEEEENEWNEEWN
+L4=NNENNNWEENNWNENWN
+L5=NNNNNNNNNNNNNNNNN
+L6=NNENNNNEENNWNENWN
+L7=NNEWNNWEENNWNENWN
+L8=NWEENEENEEENNEENN
+L9=NWEENEEEENEWNEEWW
+L10=NWNNNNNENNEWNNEWN
+L11=NNENNNNEEENWNENWN
+L12=WWWWNWWNWWWNWWWNN
+L13=NNNNNNNNNNNWNNNWW
+L14=NWEENEEEENEWNEEWW
+L15=NNENNNNEEENWNENWW
+L16=WWWWNWWNWWWNWWWNW
+L17=WNNNNNNNWNNNWWWWN
+
+[Annotate]
+SortOrder=3
+MatchParameter1=Comment
+MatchStrictly1=1
+MatchParameter2=Library Reference
+MatchStrictly2=1
+PhysicalNamingFormat=$Component_$RoomName
+GlobalIndexSortOrder=3
+
+[PrjClassGen]
+CompClassManualEnabled=0
+CompClassManualRoomEnabled=0
+NetClassAutoBusEnabled=1
+NetClassAutoCompEnabled=0
+NetClassManualEnabled=0
+
+[LibraryUpdateOptions]
+SelectedOnly=0
+PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=Miscellaneous Devices.IntLib
+ComponentDesignItemID0=Cap
+ComponentSymbolReference0=Cap
+ComponentUpdate0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=Miscellaneous Devices.IntLib
+ComponentDesignItemID1=Res1
+ComponentSymbolReference1=Res1
+ComponentUpdate1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=SIMetrix Devices.IntLib
+ComponentDesignItemID2=Cap Elec (L1-3)
+ComponentSymbolReference2=Cap Elec (L1-3)
+ComponentUpdate2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=SIMetrix Devices.IntLib
+ComponentDesignItemID3=D1N4148
+ComponentSymbolReference3=D1N4148
+ComponentUpdate3=1
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=SIMetrix Devices.IntLib
+ComponentDesignItemID4=Inductor (Lossy)
+ComponentSymbolReference4=Inductor (Lossy)
+ComponentUpdate4=1
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=SIMetrix Devices.IntLib
+ComponentDesignItemID5=IRF840
+ComponentSymbolReference5=IRF840
+ComponentUpdate5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=SIMetrix Devices.IntLib
+ComponentDesignItemID6=MUR830
+ComponentSymbolReference6=MUR830
+ComponentUpdate6=0
+ComponentLibIdentifierKind7=Library Name And Type
+ComponentLibraryIdentifier7=SIMetrix Devices.IntLib
+ComponentDesignItemID7=Q2N3906
+ComponentSymbolReference7=Q2N3906
+ComponentUpdate7=0
+ComponentLibIdentifierKind8=Library Name And Type
+ComponentLibraryIdentifier8=SIMetrix Devices.IntLib
+ComponentDesignItemID8=Trans Simpl
+ComponentSymbolReference8=Trans Simpl
+ComponentUpdate8=0
+ComponentLibIdentifierKind9=Library Name And Type
+ComponentLibraryIdentifier9=SIMetrix Devices.IntLib
+ComponentDesignItemID9=Trans3 Simpl
+ComponentSymbolReference9=Trans3 Simpl
+ComponentUpdate9=0
+ComponentLibIdentifierKind10=Library Name And Type
+ComponentLibraryIdentifier10=SIMetrix Devices.IntLib
+ComponentDesignItemID10=Trans5 Simpl
+ComponentSymbolReference10=Trans5 Simpl
+ComponentUpdate10=0
+ComponentLibIdentifierKind11=Library Name And Type
+ComponentLibraryIdentifier11=SIMetrix Devices.IntLib
+ComponentDesignItemID11=UC1825
+ComponentSymbolReference11=UC1825
+ComponentUpdate11=0
+ComponentLibIdentifierKind12=Library Name And Type
+ComponentLibraryIdentifier12=SIMPLIS Devices.IntLib
+ComponentDesignItemID12=SIMPLIS CLK_TFF
+ComponentSymbolReference12=SIMPLIS CLK_TFF
+ComponentUpdate12=0
+ComponentLibIdentifierKind13=Library Name And Type
+ComponentLibraryIdentifier13=SIMPLIS Devices.IntLib
+ComponentDesignItemID13=SIMPLIS PERIODIC_OP
+ComponentSymbolReference13=SIMPLIS PERIODIC_OP
+ComponentUpdate13=0
+ComponentLibIdentifierKind14=Library Name And Type
+ComponentLibraryIdentifier14=Simulation Sources.IntLib
+ComponentDesignItemID14=IPWL
+ComponentSymbolReference14=IPWL
+ComponentUpdate14=0
+ComponentLibIdentifierKind15=Library Name And Type
+ComponentLibraryIdentifier15=Simulation Sources.IntLib
+ComponentDesignItemID15=VPWL
+ComponentSymbolReference15=VPWL
+ComponentUpdate15=0
+ComponentLibIdentifierKind16=Library Name And Type
+ComponentLibraryIdentifier16=Simulation Sources.IntLib
+ComponentDesignItemID16=VSRC
+ComponentSymbolReference16=VSRC
+ComponentUpdate16=0
+ComponentLibIdentifierKind17=Library Name And Type
+ComponentLibraryIdentifier17=Simulation Sources.IntLib
+ComponentDesignItemID17=VSRC2
+ComponentSymbolReference17=VSRC2
+ComponentUpdate17=0
+FullReplace=0
+DoGraphics=0
+DoParameters=0
+DoModels=1
+AddParameters=0
+RemoveParameters=1
+AddModels=1
+RemoveModels=0
+UpdateCurrentModels=1
+ParameterName0=AC Magnitude
+ParameterUpdate0=1
+ParameterName1=AC Phase
+ParameterUpdate1=1
+ParameterName2=ArchiveName
+ParameterUpdate2=1
+ParameterName3=CC
+ParameterUpdate3=1
+ParameterName4=ClockTrigger
+ParameterUpdate4=1
+ParameterName5=Code_IEC
+ParameterUpdate5=1
+ParameterName6=Code_JEDEC
+ParameterUpdate6=1
+ParameterName7=Code_JEITA
+ParameterUpdate7=1
+ParameterName8=Comment
+ParameterUpdate8=1
+ParameterName9=Component Kind
+ParameterUpdate9=1
+ParameterName10=ComponentLink1Description
+ParameterUpdate10=1
+ParameterName11=ComponentLink1URL
+ParameterUpdate11=1
+ParameterName12=ComponentLink2Description
+ParameterUpdate12=1
+ParameterName13=ComponentLink2URL
+ParameterUpdate13=1
+ParameterName14=DatasheetDocument
+ParameterUpdate14=1
+ParameterName15=DatasheetVersion
+ParameterUpdate15=1
+ParameterName16=Description
+ParameterUpdate16=1
+ParameterName17=Enable
+ParameterUpdate17=1
+ParameterName18=FunctionalClass
+ParameterUpdate18=1
+ParameterName19=HelpURL
+ParameterUpdate19=1
+ParameterName20=IC
+ParameterUpdate20=1
+ParameterName21=Initial Voltage
+ParameterUpdate21=1
+ParameterName22=L1
+ParameterUpdate22=1
+ParameterName23=LastRevisionNo
+ParameterUpdate23=1
+ParameterName24=LatestRevisionDate
+ParameterUpdate24=1
+ParameterName25=LatestRevisionNote
+ParameterUpdate25=1
+ParameterName26=LEVEL
+ParameterUpdate26=1
+ParameterName27=Library Reference
+ParameterUpdate27=1
+ParameterName28=Note
+ParameterUpdate28=1
+ParameterName29=PackageDescription
+ParameterUpdate29=1
+ParameterName30=PackageDocument
+ParameterUpdate30=1
+ParameterName31=PackageReference
+ParameterUpdate31=1
+ParameterName32=PackageVersion
+ParameterUpdate32=1
+ParameterName33=PortSize
+ParameterUpdate33=1
+ParameterName34=PortStyle
+ParameterUpdate34=1
+ParameterName35=Published
+ParameterUpdate35=1
+ParameterName36=Publisher
+ParameterUpdate36=1
+ParameterName37=Ratio
+ParameterUpdate37=1
+ParameterName38=Ratio1
+ParameterUpdate38=1
+ParameterName39=Ratio2
+ParameterUpdate39=1
+ParameterName40=Ratio3
+ParameterUpdate40=1
+ParameterName41=Ratio4
+ParameterUpdate41=1
+ParameterName42=Reset
+ParameterUpdate42=1
+ParameterName43=RSeries
+ParameterUpdate43=1
+ParameterName44=RSH_CC
+ParameterUpdate44=1
+ParameterName45=RShunt
+ParameterUpdate45=1
+ParameterName46=Sim Note
+ParameterUpdate46=1
+ParameterName47=SubClass
+ParameterUpdate47=1
+ParameterName48=Time-Value Pairs
+ParameterUpdate48=1
+ParameterName49=USEIC
+ParameterUpdate49=1
+ParameterName50=Value
+ParameterUpdate50=0
+ParameterName51=VHDLIB_SIM
+ParameterUpdate51=1
+ParameterName52=VREF
+ParameterUpdate52=1
+ParameterName53=XilinxEquivalent
+ParameterUpdate53=1
+ModelTypeGroup0=PCBLIB
+ModelTypeUpdate0=1
+ModelType0=PCBLIB
+ModelName0=0402-A
+ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=2012_Chip
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=2029
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=3261
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=4564_Chip
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=AXIAL-0.3
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=CAPR5-4X5
+ModelUpdate6=1
+ModelType7=PCBLIB
+ModelName7=DO-35
+ModelUpdate7=1
+ModelType8=PCBLIB
+ModelName8=HDR1X2H
+ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=L0603
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=RAD-0.3
+ModelUpdate10=1
+ModelType11=PCBLIB
+ModelName11=SMC
+ModelUpdate11=1
+ModelType12=PCBLIB
+ModelName12=TO-220AB
+ModelUpdate12=1
+ModelType13=PCBLIB
+ModelName13=TO-92A
+ModelUpdate13=1
+ModelType14=PCBLIB
+ModelName14=TRF_10
+ModelUpdate14=1
+ModelType15=PCBLIB
+ModelName15=TRF_4
+ModelUpdate15=1
+ModelType16=PCBLIB
+ModelName16=TRF_6
+ModelUpdate16=1
+ModelType17=PCBLIB
+ModelName17=VP32-3.2
+ModelUpdate17=1
+ModelType18=PCBLIB
+ModelName18=VP45-3.2
+ModelUpdate18=1
+ModelTypeGroup1=SI
+ModelTypeUpdate1=1
+ModelType19=SI
+ModelName19=1N4148
+ModelUpdate19=1
+ModelType20=SI
+ModelName20=2N3906
+ModelUpdate20=1
+ModelType21=SI
+ModelName21=Cap
+ModelUpdate21=1
+ModelType22=SI
+ModelName22=Inductor
+ModelUpdate22=1
+ModelType23=SI
+ModelName23=Res
+ModelUpdate23=1
+ModelTypeGroup2=SIM
+ModelTypeUpdate2=1
+ModelType24=SIM
+ModelName24=CAP
+ModelUpdate24=1
+ModelType25=SIM
+ModelName25=IPWL
+ModelUpdate25=1
+ModelType26=SIM
+ModelName26=IRF840
+ModelUpdate26=1
+ModelType27=SIM
+ModelName27=LOSSYL
+ModelUpdate27=1
+ModelType28=SIM
+ModelName28=RESISTOR
+ModelUpdate28=1
+ModelType29=SIM
+ModelName29=SIMetrix_D1N4148
+ModelUpdate29=1
+ModelType30=SIM
+ModelName30=SIMetrix_IRF840
+ModelUpdate30=1
+ModelType31=SIM
+ModelName31=SIMetrix_LOSSYL
+ModelUpdate31=1
+ModelType32=SIM
+ModelName32=SIMetrix_MUR830
+ModelUpdate32=1
+ModelType33=SIM
+ModelName33=SIMetrix_Q2N3906
+ModelUpdate33=1
+ModelType34=SIM
+ModelName34=SIMPL3WTRANS
+ModelUpdate34=1
+ModelType35=SIM
+ModelName35=SIMPL5WTRANS
+ModelUpdate35=1
+ModelType36=SIM
+ModelName36=SIMPLIS_ELEC_CAP_L13
+ModelUpdate36=1
+ModelType37=SIM
+ModelName37=SIMPLIS_PERIODIC_OP
+ModelUpdate37=1
+ModelType38=SIM
+ModelName38=SIMPLIS_TFF
+ModelUpdate38=1
+ModelType39=SIM
+ModelName39=SIMPLIS_UC1825
+ModelUpdate39=1
+ModelType40=SIM
+ModelName40=SIMPLTRANS
+ModelUpdate40=1
+ModelType41=SIM
+ModelName41=VPWL
+ModelUpdate41=1
+ModelType42=SIM
+ModelName42=VSRC
+ModelUpdate42=1
+ModelTypeGroup3=SIMPLIS
+ModelTypeUpdate3=1
+ModelType43=SIMPLIS
+ModelName43=CAP
+ModelUpdate43=1
+ModelType44=SIMPLIS
+ModelName44=IPWL
+ModelUpdate44=1
+ModelType45=SIMPLIS
+ModelName45=Model Name
+ModelUpdate45=1
+
+[DatabaseUpdateOptions]
+SelectedOnly=0
+PartTypes=0
+
+[Comparison Options]
+ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions4=Kind=Differential Pair|MinPercent=50|MinMatch=1|ShowMatch=0|Confirm=0|UseName=0|InclAllRules=0
+
+[SmartPDF]
+PageOptions=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-4|MediaType=1|DitherType=10|PaperKind=Letter|PrintScaleMode=1
+

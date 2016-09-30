@@ -1,0 +1,1776 @@
+|***************************************************************************
+|             * y96a.ibs * IBIS 3.2 Model for 256Mb SDRAM
+|***************************************************************************
+|
+[IBIS Ver]      3.2
+[Comment char]  |_char
+[File name]     y96a.ibs
+[Date]          04/08/2003
+[File Rev]      2.8 
+[Source]        From silicon level SPICE model at Micron Technology, Inc.
+                    Micron Technology, Inc.
+                    8000 S. Federal Way
+                    P.O. Box 6, M/S: 711
+                    Boise, ID 83707-0006
+|
+[Notes]         Rev 1.1 changes:
+                    - updated C_comp values 09/12/2000
+                Rev 2.0 changes 10/26/2000
+                    - dq model I-V curves matched to silicon measurements
+                Rev 2.1 changes 01/22/2001
+                    - clamp curves adjusted to better match measurements
+                    - added input2 model for A12 & WE inputs
+                Rev 2.2 changes 06/13/2001
+                    - i/o and input models matched to new measurements
+                    - preliminary FBGA packages added
+                Rev 2.3 changes 07/06/2001
+                    - FBGA package parasitics updated with latest sim data
+                Rev 2.4 changes 10/15/2001
+                    - FBGA pins renumbered with alpha-numeric system
+                    - pin 12 on TSOPs model name changed from gnd to GND
+                Rev 2.5 changes 11/16/2001
+                    - dq model updated to match drive strength reduction
+                    - added capacitance for ESD devices
+                Rev 2.6 changes 01/21/2002
+                    - dq model updated due to drive strength increase
+                Rev 2.7 changes: 02/18/2002
+                    - FBGA package pinout error fixed
+                Rev 2.8 changes: 04/08/2003
+                    - Updated all models to match input capacitance
+|               
+[Disclaimer]    THESE DESIGNS ARE PROVIDED "AS IS" WITH NO WARRANTY 
+                WHATSOEVER AND MICRON SPECIFICALLY DISCLAIMS ANY 
+                IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+                A PARTICULAR PURPOSE, OR AGAINST INFRINGEMENT.
+ 
+                Copyright 2001, Micron Technology, Inc.
+ 
+|***************************************************************************
+|                       COMPONENT: MT48LC16M16A2TG
+|***************************************************************************
+|
+[Component]     MT48LC16M16A2TG
+[Manufacturer]  Micron Technology, Inc.
+[Package]       | TSOP Package
+|variable              typ          min         max
+R_pkg                  265.11m      210m        326m
+L_pkg                  5.82nH       4.67nH      7.87nH
+C_pkg                  1.048pF      .773pF      1.620pF              
+|
+|
+[Pin] signal_name     model_name    R_pin     L_pin    C_pin
+   1      VDD         POWER         251m      6.97nH   1.00pF
+   2      DQ0         dq            291m      6.72nH   1.11pF
+   3      VDDQ        POWER         282m      6.35nH   1.28pF
+   4      DQ1         dq            247m      6.11nH   1.43pF
+   5      DQ2         dq            286m      6.03nH   1.12pF
+   6      VSSQ        GND           279m      5.85nH   1.05pF
+   7      DQ3         dq            268m      5.56nH   1.00pF
+   8      DQ4         dq            251m      5.22nH   0.93pF
+   9      VDDQ        POWER         245m      5.11nH   0.87pF
+   10     DQ5         dq            232m      4.87nH   0.87pF
+   11     DQ6         dq            233m      4.83nH   0.82pF
+   12     VSSQ        GND           229m      4.75nH   0.80pF
+   13     DQ7         dq            227m      4.72nH   0.80pF
+   14     VDD         POWER         211m      4.67nH   1.09pF
+   15     DQML        input         229m      4.79nH   0.84pF
+   16     WE#         input2        239m      4.94nH   0.86pF
+   17     CAS#        input         244m      5.05nH   0.89pF
+   18     RAS#        input         257m      5.28nH   0.94pF
+   19     CS#         input         268m      5.53nH   0.99pF
+   20     BA0         input         293m      5.85nH   1.01pF
+   21     BA1         input         302m      6.10nH   1.10pF
+   22     A10         input         305m      6.34nH   1.19pF
+   23     A0          input         325m      6.66nH   1.17pF
+   24     A1          input         261m      6.63nH   1.62pF
+   25     A2          input         309m      7.20nH   1.38pF
+   26     A3          input         312m      7.47nH   1.25pF
+   27     VDD         POWER         272m      7.87nH   1.00pF
+   28     VSS         GND           270m      7.87nH   0.97pF
+   29     A4          input         311m      7.45nH   1.28pF
+   30     A5          input         309m      7.18nH   1.38pF
+   31     A6          input         262m      6.64nH   1.54pF
+   32     A7          input         326m      6.63nH   1.21pF
+   33     A8          input         306m      6.36nH   1.17pF
+   34     A9          input         302m      6.09nH   1.08pF
+   35     A11         input         291m      5.86nH   1.02pF
+   36     A12         input2        266m      5.52nH   0.96pF
+   37     CKE         input         255m      5.29nH   0.91pF
+   38     CLK         clk_input     246m      5.14nH   0.88pF
+   39     DQMH        input         236m      4.98nH   0.84pF
+   40     NC          NC            NA        NA       NA
+   41     VSS         GND           210m      4.70nH   1.09pF
+   42     DQ8         dq            224m      4.79nH   0.77pF
+   43     VDDQ        POWER         228m      4.79nH   0.79pF
+   44     DQ9         dq            232m      4.83nH   0.81pF
+   45     DQ10        dq            235m      4.90nH   0.86pF
+   46     VSSQ        GND           246m      5.12nH   0.89pF
+   47     DQ11        dq            258m      5.31nH   0.95pF
+   48     DQ12        dq            277m      5.58nH   0.99pF
+   49     VDDQ        POWER         281m      4.79nH   1.06pF
+   50     DQ13        dq            292m      6.10nH   1.12pF
+   51     DQ14        dq            246m      6.07nH   1.41pF
+   52     VSSQ        GND           282m      6.32nH   1.27pF
+   53     DQ15        dq            293m      6.73nH   1.09pF
+   54     VSS         GND           253m      6.98nH   1.00pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC32M8A2TG
+|***************************************************************************
+|
+[Component]     MT48LC32M8A2TG
+[Manufacturer]  Micron Technology, Inc.
+[Package]       | TSOP Package
+|variable              typ          min         max
+R_pkg                  265.11m      210m        326m
+L_pkg                  5.82nH       4.67nH      7.87nH
+C_pkg                  1.048pF      .773pF      1.620pF
+|
+[Pin] signal_name     model_name    R_pin     L_pin    C_pin
+   1      VDD         POWER         251m      6.97nH   1.00pF
+   2      DQ0         dq            291m      6.72nH   1.11pF
+   3      VDDQ        POWER         282m      6.35nH   1.28pF
+   4      NC          NC            NA        NA       NA
+   5      DQ1         dq            286m      6.03nH   1.12pF
+   6      VSSQ        GND           279m      5.85nH   1.05pF
+   7      NC          NC            NA        NA       NA
+   8      DQ2         dq            251m      5.22nH   0.93pF
+   9      VDDQ        POWER         245m      5.11nH   0.87pF
+   10     NC          NC            NA        NA       NA
+   11     DQ3         dq            233m      4.83nH   0.82pF
+   12     VSSQ        GND           229m      4.75nH   0.80pF
+   13     NC          NC            NA        NA       NA
+   14     VDD         POWER         211m      4.67nH   1.09pF
+   15     NC          NC            NA        NA       NA
+   16     WE#         input2        239m      4.94nH   0.86pF
+   17     CAS#        input         244m      5.05nH   0.89pF
+   18     RAS#        input         257m      5.28nH   0.94pF
+   19     CS#         input         268m      5.53nH   0.99pF
+   20     BA0         input         293m      5.85nH   1.01pF
+   21     BA1         input         302m      6.10nH   1.10pF
+   22     A10         input         305m      6.34nH   1.19pF
+   23     A0          input         325m      6.66nH   1.17pF
+   24     A1          input         261m      6.63nH   1.62pF
+   25     A2          input         309m      7.20nH   1.38pF
+   26     A3          input         312m      7.47nH   1.25pF
+   27     VDD         POWER         272m      7.87nH   1.00pF
+   28     VSS         GND           270m      7.87nH   0.97pF
+   29     A4          input         311m      7.45nH   1.28pF
+   30     A5          input         309m      7.18nH   1.38pF
+   31     A6          input         262m      6.64nH   1.54pF
+   32     A7          input         326m      6.63nH   1.21pF
+   33     A8          input         306m      6.36nH   1.17pF
+   34     A9          input         302m      6.09nH   1.08pF
+   35     A11         input         291m      5.86nH   1.02pF
+   36     A12         input2        266m      5.52nH   0.96pF
+   37     CKE         input         255m      5.29nH   0.91pF
+   38     CLK         clk_input     246m      5.14nH   0.88pF
+   39     DQM         input         236m      4.98nH   0.84pF
+   40     NC          NC            NA        NA       NA
+   41     VSS         GND           210m      4.70nH   1.09pF
+   42     NC          NC            NA        NA       NA
+   43     VDDQ        POWER         228m      4.79nH   0.79pF
+   44     DQ4         dq            232m      4.83nH   0.81pF
+   45     NC          NC            NA        NA       NA
+   46     VSSQ        GND           246m      5.12nH   0.89pF
+   47     DQ5         dq            258m      5.31nH   0.95pF
+   48     NC          NC            NA        NA       NA
+   49     VDDQ        POWER         281m      4.79nH   1.06pF
+   50     DQ6         dq            292m      6.10nH   1.12pF
+   51     NC          NC            NA        NA       NA
+   52     VSSQ        GND           282m      6.32nH   1.27pF
+   53     DQ7         dq            293m      6.73nH   1.09pF
+   54     VSS         GND           253m      6.98nH   1.00pF
+|
+|***************************************************************************
+|                       COMPONENT: MT48LC64M4A2TG
+|***************************************************************************
+|
+[Component]     MT48LC64M4A2TG
+[Manufacturer]  Micron Technology, Inc.
+[Package]       | TSOP Package
+|variable              typ          min         max
+R_pkg                  265.11m      210m        326m
+L_pkg                  5.82nH       4.67nH      7.87nH
+C_pkg                  1.048pF      .773pF      1.620pF
+|
+|
+[Pin] signal_name     model_name    R_pin     L_pin    C_pin
+   1      VDD         POWER         251m      6.97nH   1.00pF
+   2      NC          NC            NA        NA       NA
+   3      VDDQ        POWER         282m      6.35nH   1.28pF
+   4      NC          NC            NA        NA       NA
+   5      DQ0         dq            286m      6.03nH   1.12pF
+   6      VSSQ        GND           279m      5.85nH   1.05pF
+   7      NC          NC            NA        NA       NA
+   8      NC          NC            NA        NA       NA
+   9      VDDQ        POWER         245m      5.11nH   0.87pF
+   10     NC          NC            NA        NA       NA
+   11     DQ1         dq            233m      4.83nH   0.82pF
+   12     VSSQ        GND           229m      4.75nH   0.80pF
+   13     NC          NC            NA        NA       NA
+   14     VDD         POWER         211m      4.67nH   1.09pF
+   15     NC          NC            NA        NA       NA
+   16     WE#         input2        239m      4.94nH   0.86pF
+   17     CAS#        input         244m      5.05nH   0.89pF
+   18     RAS#        input         257m      5.28nH   0.94pF
+   19     CS#         input         268m      5.53nH   0.99pF
+   20     BA0         input         293m      5.85nH   1.01pF
+   21     BA1         input         302m      6.10nH   1.10pF
+   22     A10         input         305m      6.34nH   1.19pF
+   23     A0          input         325m      6.66nH   1.17pF
+   24     A1          input         261m      6.63nH   1.62pF
+   25     A2          input         309m      7.20nH   1.38pF
+   26     A3          input         312m      7.47nH   1.25pF
+   27     VDD         POWER         272m      7.87nH   1.00pF
+   28     VSS         GND           270m      7.87nH   0.97pF
+   29     A4          input         311m      7.45nH   1.28pF
+   30     A5          input         309m      7.18nH   1.38pF
+   31     A6          input         262m      6.64nH   1.54pF
+   32     A7          input         326m      6.63nH   1.21pF
+   33     A8          input         306m      6.36nH   1.17pF
+   34     A9          input         302m      6.09nH   1.08pF
+   35     A11         input         291m      5.86nH   1.02pF
+   36     A12         input2        266m      5.52nH   0.96pF
+   37     CKE         input         255m      5.29nH   0.91pF
+   38     CLK         clk_input     246m      5.14nH   0.88pF
+   39     DQM         input         236m      4.98nH   0.84pF
+   40     NC          NC            NA        NA       NA
+   41     VSS         GND           210m      4.70nH   1.09pF
+   42     NC          NC            NA        NA       NA
+   43     VDDQ        POWER         228m      4.79nH   0.79pF
+   44     DQ2         dq            232m      4.83nH   0.81pF
+   45     NC          NC            NA        NA       NA
+   46     VSSQ        GND           246m      5.12nH   0.89pF
+   47     NC          NC            NA        NA       NA
+   48     NC          NC            NA        NA       NA
+   49     VDDQ        POWER         281m      4.79nH   1.06pF
+   50     DQ3         dq            292m      6.10nH   1.12pF
+   51     NC          NC            NA        NA       NA
+   52     VSSQ        GND           282m      6.32nH   1.27pF
+   53     NC          NC            NA        NA       NA 
+   54     VSS         GND           253m      6.98nH   1.00pF
+|
+|***************************************************************************
+|           COMPONENT: MT48LC32M8A2FB SDRAM
+|***************************************************************************
+|
+[Component]     MT48LC32M8A2FB
+[Manufacturer]  Micron Technology, Inc.
+[Package]       | FBGA Package
+|               typ             min             max
+R_pkg           75m             40m             93m   
+L_pkg           2.51nH          1.4nH           3.59nH          
+C_pkg           0.35pF          0.24pF          0.42pF          
+|
+|***************************************************************************
+|
+[Pin]  signal_name   model_name    R_pin     L_pin      C_pin 
+|                       
+A1     DQ7           dq            83m       2.95nH     0.32pF
+A2     VSS           GND           41m       1.45nH     0.33pF
+A7     VDD           POWER         41m       1.43nH     0.33pF
+A8     DQ0           dq            81m       2.86nH     0.32pF
+B1     NC            NC            NA        NA         NA
+B2     VSSQ          GND           66m       2.00nH     0.33pF
+B7     VDDQ          POWER         65m       1.93nH     0.32pF
+B8     NC            NC            NA        NA         NA
+C1     VDDQ          POWER         82m       2.94nH     0.33pF
+C2     DQ6           dq            68m       2.09nH     0.32pF
+C7     DQ1           dq            68m       2.06nH     0.32pF
+C8     VSSQ          GND           83m       2.93nH     0.33pF
+D1     DQ5           dq            81m       2.87nH     0.32pF
+D2     NC            NC            NA        NA         NA
+D7     NC            NC            NA        NA         NA
+D8     DQ2           dq            80m       2.83nH     0.32pF
+E1     NC            NC            NA        NA         NA
+E2     VSSQ          GND           66m       1.95nH     0.31pF
+E7     VDDQ          POWER         65m       1.91nH     0.32pF
+E8     NC            NC            NA        NA         NA 
+F1     VDDQ          POWER         78m       2.76nH     0.31pF
+F2     DQ4           dq            64m       1.91nH     0.31pF
+F7     DQ3           dq            63m       1.85nH     0.31pF
+F8     VSSQ          GND           77m       2.71nH     0.31pF
+G1     NC            NC            NA        NA         NA
+G2     NC            NC            NA        NA         NA
+G7     NC            NC            NA        NA         NA
+G8     NC            NC            NA        NA         NA
+H1     NC            NC            NA        NA         NA
+H2     VSS           GND           65m       1.86nH     0.30pF
+H7     VDD           POWER         67m       1.97nH     0.35pF
+H8     NC            NC            NA        NA         NA
+J1     NC            NC            NA        NA         NA
+J2     DQM           input         67m       1.98nH     0.29pF
+J7     WE#           input2        68m       1.98nH     0.24pF
+J8     CAS#          input         83m       2.86nH     0.28pF
+K1     NC            NC            NA        NA         NA
+K2     CLK           clk_input     71m       2.20nH     0.31pF
+K7     RAS#          input         70m       2.10nH     0.35pF
+K8     NC            NC            NA        NA         NA
+L1     A12           input2        93m       3.23nH     0.42pF
+L2     CKE           input         76m       2.50nH     0.38pF
+L7     NC            NC            NA        NA         NA
+L8     CS#           input         84m       3.02nH     0.33pF
+M1     A11           input         91m       3.23nH     0.41pF
+M2     A9            input         76m       2.37nH     0.40pF
+M7     BA1           input         76m       2.47nH     0.40pF
+M8     BA0           input         90m       3.33nH     0.36pF
+N1     A8            input         90m       3.32nH     0.40pF
+N2     A7            input         76m       2.46nH     0.40pF
+N7     A0            input         78m       2.54nH     0.41pF
+N8     A10           input         93m       3.43nH     0.41pF
+P1     A6            input         90m       3.37nH     0.39pF
+P2     A5            input         76m       2.52nH     0.39pF
+P7     A2            input         78m       2.63nH     0.40pF
+P8     A1            input         93m       3.52nH     0.41pF
+Q1     A4            input         91m       3.49nH     0.37pF
+Q2     VSS           GND           43m       1.49nH     0.35pF
+Q7     VDD           POWER         40m       1.40nH     0.35pF
+Q8     A3            input         93m       3.59nH     0.38pF
+|
+|***************************************************************************
+|         COMPONENT: MT48LC64M4A2FB SDRAM
+|***************************************************************************
+|
+[Component]     MT48LC64M4A2FB
+[Manufacturer]  Micron Technology, Inc.
+[Package]       | FBGA Package
+|               typ             min             max
+R_pkg           74m             40m             93m   
+L_pkg           2.50nH          1.40nH          3.59nH          
+C_pkg           0.35pF          0.24pF          0.42pF          
+|
+|***************************************************************************
+|
+[Pin]  signal_name   model_name    R_pin     L_pin      C_pin 
+|                       
+A1     NC            NC            NA        NA         NA
+A2     VSS           GND           41m       1.45nH     0.33pF
+A7     VDD           POWER         41m       1.43nH     0.33pF
+A8     NC            NC            NA        NA         NA
+B1     NC            NC            NA        NA         NA
+B2     VSSQ          GND           66m       2.00nH     0.33pF
+B7     VDDQ          POWER         65m       1.93nH     0.32pF
+B8     NC            NC            NA        NA         NA
+C1     VDDQ          POWER         82m       2.94nH     0.33pF
+C2     DQ3           dq            68m       2.09nH     0.32pF
+C7     DQ0           dq            68m       2.06nH     0.32pF
+C8     VSSQ          GND           83m       2.93nH     0.33pF
+D1     NC            NC            NA        NA         NA
+D2     NC            NC            NA        NA         NA
+D7     NC            NC            NA        NA         NA
+D8     NC            NC            NA        NA         NA
+E1     NC            NC            NA        NA         NA
+E2     VSSQ          GND           66m       1.95nH     0.31pF
+E7     VDDQ          POWER         65m       1.91nH     0.32pF
+E8     NC            NC            NA        NA         NA
+F1     VDDQ          POWER         78m       2.76nH     0.31pF
+F2     DQ2           dq            64m       1.91nH     0.31pF
+F7     DQ1           dq            63m       1.85nH     0.31pF
+F8     VSSQ          GND           77m       2.71nH     0.31pF
+G1     NC            NC            NA        NA         NA
+G2     NC            NC            NA        NA         NA
+G7     NC            NC            NA        NA         NA
+G8     NC            NC            NA        NA         NA
+H1     NC            NC            NA        NA         NA
+H2     VSS           GND           65m       1.86nH     0.30pF
+H7     VDD           POWER         67m       1.97nH     0.35pF
+H8     NC            NC            NA        NA         NA
+J1     NC            NC            NA        NA         NA
+J2     DQM           input         67m       1.98nH     0.29pF
+J7     WE#           input2        68m       1.98nH     0.24pF
+J8     CAS#          input         83m       2.86nH     0.28pF
+K1     NC            NC            NA        NA         NA
+K2     CLK           clk_input     71m       2.20nH     0.31pF
+K7     RAS#          input         70m       2.10nH     0.35pF
+K8     NC            NC            NA        NA         NA
+L1     A12           input2        93m       3.23nH     0.42pF
+L2     CKE           input         76m       2.50nH     0.38pF
+L7     NC            NC            NA        NA         NA
+L8     CS#           input         84m       3.02nH     0.33pF
+M1     A11           input         91m       3.23nH     0.41pF
+M2     A9            input         76m       2.37nH     0.40pF
+M7     BA1           input         76m       2.47nH     0.40pF
+M8     BA0           input         90m       3.33nH     0.36pF
+N1     A8            input         90m       3.32nH     0.40pF
+N2     A7            input         76m       2.46nH     0.40pF
+N7     A0            input         78m       2.54nH     0.41pF
+N8     A10           input         93m       3.43nH     0.41pF
+P1     A6            input         90m       3.37nH     0.39pF
+P2     A5            input         76m       2.52nH     0.39pF
+P7     A2            input         78m       2.63nH     0.40pF
+P8     A1            input         93m       3.52nH     0.41pF
+Q1     A4            input         91m       3.49nH     0.37pF
+Q2     VSS           GND           43m       1.49nH     0.35pF
+Q7     VDD           POWER         40m       1.40nH     0.35pF
+Q8     A3            input         93m       3.59nH     0.38p
+|
+|***************************************************************************
+|                              dq MODEL
+|***************************************************************************
+|
+[Model]        dq
+Model_type     I/O
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+Vmeas = 1.500V
+Cref = 50.000pF
+|
+|                            typ                 min                 max
+|
+C_comp                      3.900pF             3.230pF             4.570pF
+[Voltage Range]             3.300V              3.000V              3.600V
+[Temperature Range]        25.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[Pulldown]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0   -197.81035185E-3   -187.01809645E-3   -203.60964537E-3
+     -2.59999990E+0                 NA   -173.23288321E-3                 NA
+     -2.54999995E+0   -183.72142315E-3                 NA                 NA
+     -2.53999996E+0                 NA                 NA   -188.89063597E-3
+     -2.02999997E+0                 NA   -158.26937556E-3                 NA
+     -2.00999999E+0   -169.68992352E-3                 NA                 NA
+     -1.92999995E+0                 NA                 NA   -172.45012522E-3
+     -1.75000000E+0   -161.07031703E-3                 NA                 NA
+     -1.67999995E+0                 NA   -146.46084607E-3                 NA
+     -1.53999996E+0                 NA   -140.75222611E-3                 NA
+     -1.50999999E+0   -151.71736479E-3                 NA                 NA
+     -1.44000006E+0                 NA                 NA   -153.69182825E-3
+     -1.34000003E+0                 NA   -131.74551725E-3                 NA
+     -1.30999994E+0   -142.48321950E-3                 NA                 NA
+     -1.23000002E+0                 NA                 NA   -143.44236255E-3
+     -1.14999998E+0                 NA   -121.68623507E-3                 NA
+     -1.11000001E+0   -131.52033091E-3                 NA                 NA
+     -1.03999996E+0                 NA                 NA   -132.53088295E-3
+   -959.99997854E-3   -121.74821645E-3                 NA                 NA
+   -939.99999762E-3                 NA   -108.21561515E-3                 NA
+   -889.99998569E-3                 NA                 NA   -122.30645120E-3
+   -860.00001431E-3   -114.08227682E-3                 NA                 NA
+   -839.99997377E-3                 NA   -100.38295388E-3                 NA
+   -790.00002146E-3                 NA                 NA   -114.13056403E-3
+   -740.00000954E-3                 NA    -91.00582451E-3                 NA
+   -730.00001907E-3                 NA                 NA   -108.38328302E-3
+   -709.99997854E-3    -99.47986156E-3                 NA                 NA
+   -639.99998569E-3                 NA                 NA    -97.90476412E-3
+   -550.00001192E-3    -78.52068543E-3    -68.84887069E-3                 NA
+   -479.99998927E-3                 NA                 NA    -74.57232475E-3
+      0.00000000E+0    -24.35193164E-6    -15.21204831E-6    -20.51892807E-6
+    159.99999642E-3                 NA     19.56453174E-3                 NA
+    189.99999762E-3     26.62535757E-3                 NA                 NA
+    219.99999881E-3                 NA                 NA     33.55583921E-3
+    360.00001431E-3                 NA     41.92754626E-3                 NA
+    389.99998569E-3     52.47456580E-3                 NA                 NA
+    419.99998689E-3                 NA                 NA     61.87857687E-3
+    550.00001192E-3                 NA     60.86063385E-3                 NA
+    589.99997377E-3     75.85825026E-3                 NA                 NA
+    620.00000477E-3                 NA                 NA     87.87325770E-3
+    709.99997854E-3                 NA     74.95602965E-3                 NA
+    750.00000000E-3     92.62979031E-3                 NA                 NA
+    819.99999285E-3                 NA                 NA    111.29575968E-3
+    860.00001431E-3                 NA     86.54960245E-3                 NA
+    939.99999762E-3    110.15116423E-3                 NA                 NA
+      1.01999998E+0                 NA                 NA    131.87623024E-3
+      1.04999995E+0                 NA     98.85531664E-3                 NA
+      1.09000003E+0    121.99294567E-3                 NA                 NA
+      1.21000004E+0                 NA    107.09923506E-3    148.52561057E-3
+      1.28999996E+0    134.87422466E-3                 NA                 NA
+      1.36000001E+0                 NA    113.09077591E-3                 NA
+      1.37000000E+0                 NA                 NA    160.17696261E-3
+      1.45000005E+0    142.72029698E-3                 NA                 NA
+      1.50999999E+0                 NA    117.61861295E-3                 NA
+      1.54999995E+0                 NA                 NA    170.54156959E-3
+      1.61000001E+0    148.62906933E-3                 NA                 NA
+      1.67999995E+0                 NA    121.50147557E-3                 NA
+      1.70000005E+0                 NA                 NA    177.00852454E-3
+      1.75999999E+0    152.77242661E-3                 NA                 NA
+      1.85000002E+0                 NA                 NA    181.92724884E-3
+      2.15000010E+0                 NA    128.46538424E-3                 NA
+      2.16000009E+0    160.25879979E-3                 NA                 NA
+      2.26999998E+0                 NA                 NA    190.85173309E-3
+      2.59999990E+0                 NA    132.66621530E-3                 NA
+      2.71000004E+0    166.37159884E-3                 NA                 NA
+      2.77999997E+0                 NA                 NA    197.25412130E-3
+      3.76999998E+0                 NA    140.36123455E-3                 NA
+      3.79999995E+0    174.86201227E-3                 NA                 NA
+      3.81999993E+0                 NA                 NA    206.34461939E-3
+      4.17000008E+0                 NA    144.83010769E-3                 NA
+      4.19999981E+0    180.31960726E-3                 NA                 NA
+      4.21999979E+0                 NA                 NA    212.42348850E-3
+      4.40999985E+0    184.99711156E-3                 NA                 NA
+      4.42000008E+0                 NA    149.46690202E-3                 NA
+      4.44000006E+0                 NA                 NA    218.01903844E-3
+      4.61999989E+0    191.46057963E-3    154.66721356E-3                 NA
+      4.63999987E+0                 NA                 NA    225.11252761E-3
+      4.78999996E+0    198.26415181E-3                 NA                 NA
+      4.82000017E+0                 NA    161.48220003E-3                 NA
+      4.86000013E+0                 NA                 NA    235.51522195E-3
+      4.98999977E+0    208.27627182E-3                 NA                 NA
+      5.01999998E+0                 NA    170.12467980E-3    245.03575265E-3
+      5.17999983E+0    219.91890669E-3                 NA                 NA
+      5.21000004E+0                 NA                 NA    258.51556659E-3
+      5.21999979E+0                 NA    180.74515462E-3                 NA
+      5.36999989E+0                 NA                 NA    271.70968056E-3
+      5.38000011E+0    234.53395069E-3                 NA                 NA
+      5.42000008E+0                 NA    193.43052804E-3                 NA
+      5.57000017E+0                 NA                 NA    290.58119655E-3
+      5.57999992E+0    251.53601170E-3                 NA                 NA
+      5.59999990E+0                 NA    206.63768053E-3                 NA
+      5.76999998E+0                 NA                 NA    311.99589372E-3
+      5.78000021E+0    270.88576555E-3    221.51342034E-3                 NA
+      5.96999979E+0                 NA    239.05959725E-3    335.82779765E-3
+      5.98000002E+0    292.50168800E-3                 NA                 NA
+      6.17000008E+0                 NA    259.44703817E-3    361.93504930E-3
+      6.17999983E+0    316.28215313E-3                 NA                 NA
+      6.36999989E+0                 NA    281.74737096E-3    390.17423987E-3
+      6.38000011E+0    342.12031960E-3                 NA                 NA
+      6.59999990E+0    372.73013592E-3    309.65012312E-3    425.10998249E-3
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0   -752.50625610E-3   -640.74409008E-3   -874.11516905E-3
+     -3.28999996E+0   -748.87257814E-3   -637.64679432E-3   -869.92013454E-3
+     -3.27999997E+0   -745.75114250E-3   -635.00726223E-3   -866.25486612E-3
+     -3.25000000E+0                 NA   -626.18058920E-3                 NA
+     -3.15000010E+0                 NA                 NA   -815.96070528E-3
+     -3.09999990E+0   -685.11927128E-3                 NA                 NA
+     -3.08999991E+0                 NA   -578.33039761E-3                 NA
+     -3.00000000E+0                 NA                 NA   -758.61525536E-3
+     -2.95000005E+0   -635.01942158E-3                 NA                 NA
+     -2.90000010E+0                 NA   -522.18157053E-3                 NA
+     -2.84999990E+0                 NA                 NA   -701.98714733E-3
+     -2.78999996E+0   -582.01539516E-3                 NA                 NA
+     -2.75000000E+0                 NA   -478.36098075E-3                 NA
+     -2.70000005E+0                 NA                 NA   -646.01129293E-3
+     -2.59999990E+0   -519.67728138E-3   -435.01111865E-3                 NA
+     -2.54999995E+0                 NA                 NA   -590.65502882E-3
+     -2.45000005E+0                 NA   -392.20359921E-3                 NA
+     -2.44000006E+0   -467.73040295E-3                 NA                 NA
+     -2.39000010E+0                 NA                 NA   -532.27764368E-3
+     -2.29999995E+0                 NA   -349.97233748E-3                 NA
+     -2.28999996E+0   -419.51468587E-3                 NA                 NA
+     -2.23000002E+0                 NA                 NA   -474.60463643E-3
+     -2.17000008E+0                 NA   -313.90234828E-3                 NA
+     -2.15000010E+0   -374.99663234E-3                 NA                 NA
+     -2.06999993E+0                 NA                 NA   -417.65716672E-3
+     -2.02999997E+0                 NA   -275.66409111E-3                 NA
+     -2.00000000E+0   -327.88768411E-3                 NA                 NA
+     -1.91999996E+0                 NA                 NA   -364.97032642E-3
+     -1.88000000E+0   -290.68246484E-3   -235.51523685E-3                 NA
+     -1.77999997E+0                 NA                 NA   -316.47613645E-3
+     -1.75999999E+0                 NA   -204.07533646E-3                 NA
+     -1.75000000E+0   -250.99250674E-3                 NA                 NA
+     -1.64999998E+0                 NA   -175.86974800E-3                 NA
+     -1.63000000E+0                 NA                 NA   -265.34670591E-3
+     -1.61000001E+0   -209.04402435E-3                 NA                 NA
+     -1.53999996E+0                 NA   -148.36800098E-3                 NA
+     -1.50000000E+0   -176.82482302E-3                 NA                 NA
+     -1.49000001E+0                 NA                 NA   -218.56892109E-3
+     -1.44000006E+0                 NA   -124.07466769E-3                 NA
+     -1.40999997E+0   -151.04773641E-3                 NA                 NA
+     -1.38000000E+0                 NA                 NA   -182.63328075E-3
+     -1.34000003E+0                 NA   -100.62664002E-3                 NA
+     -1.30999994E+0   -123.24397266E-3                 NA                 NA
+     -1.28999996E+0                 NA    -89.30011094E-3                 NA
+     -1.27999997E+0                 NA                 NA   -150.85406601E-3
+     -1.25999999E+0   -109.78826880E-3                 NA                 NA
+     -1.24000001E+0                 NA    -78.31793278E-3                 NA
+     -1.23000002E+0                 NA                 NA   -135.45018435E-3
+     -1.21000004E+0    -96.77130729E-3                 NA                 NA
+     -1.19000006E+0                 NA    -67.78069586E-3   -123.51621687E-3
+     -1.14999998E+0    -82.13790506E-3    -59.81010199E-3                 NA
+     -1.13000000E+0                 NA                 NA   -106.71495646E-3
+     -1.10000002E+0    -71.07880712E-3                 NA                 NA
+     -1.09000003E+0                 NA    -48.83204028E-3                 NA
+     -1.08000004E+0                 NA                 NA    -94.06224638E-3
+     -1.05999994E+0    -62.97016889E-3                 NA                 NA
+     -1.03999996E+0                 NA    -40.77769816E-3                 NA
+     -1.02999997E+0                 NA                 NA    -82.14305341E-3
+     -1.00999999E+0    -53.41339856E-3                 NA                 NA
+   -990.00000954E-3                 NA    -33.47029909E-3                 NA
+   -980.00001907E-3                 NA                 NA    -70.57517767E-3
+   -959.99997854E-3    -44.26241666E-3                 NA                 NA
+   -939.99999762E-3                 NA    -26.67460218E-3                 NA
+   -930.00000715E-3                 NA                 NA    -59.35335904E-3
+   -910.00002623E-3    -35.54409742E-3                 NA                 NA
+   -899.99997616E-3                 NA    -21.60471864E-3                 NA
+   -889.99998569E-3                 NA                 NA    -50.67634583E-3
+   -860.00001431E-3    -27.35632285E-3                 NA                 NA
+   -839.99997377E-3                 NA    -14.66235146E-3                 NA
+   -829.99998331E-3                 NA                 NA    -38.25736418E-3
+   -810.00000238E-3    -19.84861679E-3                 NA                 NA
+   -790.00002146E-3                 NA     -9.70067736E-3                 NA
+   -779.99997139E-3                 NA                 NA    -28.64519320E-3
+   -759.99999046E-3    -13.23453337E-3                 NA                 NA
+   -740.00000954E-3                 NA     -5.67643670E-3                 NA
+   -730.00001907E-3                 NA                 NA    -19.94331181E-3
+   -709.99997854E-3     -7.78973708E-3                 NA                 NA
+   -689.99999762E-3                 NA     -2.74802046E-3                 NA
+   -680.00000715E-3                 NA                 NA    -12.48082891E-3
+   -660.00002623E-3     -3.78260133E-3                 NA                 NA
+   -639.99998569E-3                 NA   -934.37713804E-6                 NA
+   -629.99999523E-3                 NA                 NA     -6.65101595E-3
+   -610.00001431E-3     -1.30009791E-3                 NA                 NA
+   -600.00002384E-3     -1.01390295E-3                 NA                 NA
+   -589.99997377E-3                 NA    -28.98810817E-6                 NA
+   -579.99998331E-3                 NA      0.00000000E+0     -2.72302586E-3
+   -560.00000238E-3    -98.10319898E-6                 NA                 NA
+   -540.00002146E-3      0.00000000E+0                 NA                 NA
+   -529.99997139E-3                 NA                 NA   -610.10062927E-6
+   -509.99999046E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[Pullup]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0     23.56009930E-3     37.02359647E-3     10.03827155E-3
+     -2.95000005E+0                 NA     34.63784233E-3                 NA
+     -2.89000010E+0                 NA                 NA      8.03558528E-3
+     -2.79999995E+0     20.46117932E-3                 NA                 NA
+     -2.17000008E+0                 NA                 NA      5.87347895E-3
+     -2.14000010E+0                 NA                 NA      6.18245825E-3
+     -2.11999989E+0                 NA                 NA      5.70439920E-3
+     -2.03999996E+0                 NA     30.42073920E-3                 NA
+     -2.01999998E+0                 NA     30.79039790E-3                 NA
+     -2.00000000E+0                 NA     30.23567982E-3                 NA
+     -1.24000001E+0                 NA     26.47696435E-3                 NA
+     -1.00999999E+0     13.30359839E-3                 NA                 NA
+   -550.00001192E-3                 NA     21.24801092E-3                 NA
+   -400.00000596E-3                 NA     18.65161769E-3                 NA
+   -360.00001431E-3      9.89998877E-3                 NA                 NA
+   -289.99999166E-3                 NA     15.27292654E-3                 NA
+   -259.99999046E-3      8.89101159E-3                 NA                 NA
+   -159.99999642E-3      6.72506262E-3                 NA                 NA
+   -140.00000060E-3                 NA      8.45054165E-3      1.58261007E-3
+    -79.99999821E-3                 NA                 NA      1.24076661E-3
+    -59.99999866E-3      2.95528723E-3                 NA                 NA
+      0.00000000E+0    -38.93792746E-6    -28.56162610E-6    -66.07762771E-6
+    100.00000149E-3     -6.03820477E-3                 NA                 NA
+    109.99999940E-3                 NA                 NA     -3.94139439E-3
+    209.99999344E-3                 NA                 NA     -9.51923989E-3
+    239.99999464E-3    -16.00029320E-3                 NA                 NA
+    250.00000000E-3                 NA    -18.42433400E-3                 NA
+    319.99999285E-3                 NA                 NA    -17.16923527E-3
+    460.00000834E-3                 NA                 NA    -28.49273942E-3
+    500.00000000E-3    -37.66977787E-3                 NA                 NA
+    509.99999046E-3                 NA    -39.94139284E-3                 NA
+    610.00001431E-3                 NA                 NA    -42.03611612E-3
+    649.99997616E-3    -51.40759796E-3                 NA                 NA
+    769.99998093E-3                 NA                 NA    -57.63399601E-3
+    810.00000238E-3                 NA    -66.69747084E-3                 NA
+    839.99997377E-3    -69.75861639E-3                 NA                 NA
+    959.99997854E-3                 NA                 NA    -77.31816173E-3
+      1.15999997E+0                 NA    -99.72292930E-3    -99.03451800E-3
+      1.24000001E+0   -110.86171865E-3                 NA                 NA
+      1.54999995E+0                 NA   -138.16899061E-3                 NA
+      1.58000004E+0                 NA                 NA   -146.47008479E-3
+      1.59000003E+0                 NA                 NA   -148.10530841E-3
+      1.63999999E+0   -154.24643457E-3                 NA                 NA
+      1.64999998E+0   -154.69247103E-3                 NA                 NA
+      1.66999996E+0   -157.60000050E-3                 NA                 NA
+      1.88999999E+0                 NA                 NA   -183.37365985E-3
+      2.03999996E+0                 NA   -187.81030178E-3                 NA
+      2.25999999E+0   -224.14565086E-3                 NA                 NA
+      2.26999998E+0                 NA                 NA   -229.19723392E-3
+      2.81999993E+0                 NA   -270.55999637E-3                 NA
+      2.95000005E+0   -304.22011018E-3                 NA                 NA
+      3.02999997E+0                 NA                 NA   -322.61124253E-3
+      3.56999993E+0                 NA   -351.60470009E-3                 NA
+      3.68000007E+0                 NA   -361.85440421E-3                 NA
+      3.73000002E+0                 NA   -365.51776528E-3                 NA
+      3.81999993E+0                 NA   -370.55560946E-3                 NA
+      3.84999990E+0   -410.37672758E-3                 NA                 NA
+      3.90000010E+0   -415.54361582E-3                 NA                 NA
+      3.92000008E+0                 NA   -374.47744608E-3                 NA
+      3.95000005E+0   -419.84251142E-3                 NA                 NA
+      4.01000023E+0   -423.67246747E-3                 NA                 NA
+      4.01999998E+0                 NA   -377.32508779E-3                 NA
+      4.05999994E+0   -425.92734098E-3                 NA                 NA
+      4.07000017E+0                 NA   -378.31649184E-3   -452.51107216E-3
+      4.11999989E+0                 NA                 NA   -458.26140046E-3
+      4.15000010E+0   -428.54040861E-3                 NA                 NA
+      4.17000008E+0                 NA   -378.91203165E-3   -463.08782697E-3
+      4.21999979E+0                 NA                 NA   -466.57279134E-3
+      4.25000000E+0   -430.09239435E-3                 NA                 NA
+      4.26999998E+0                 NA                 NA   -468.73766184E-3
+      4.32000017E+0                 NA                 NA   -469.91997957E-3
+      4.34999990E+0   -430.77313900E-3                 NA                 NA
+      4.36999989E+0                 NA   -378.77839804E-3                 NA
+      4.40000010E+0   -430.69937825E-3                 NA   -470.50309181E-3
+      4.44999981E+0   -429.78599668E-3                 NA                 NA
+      4.48999977E+0                 NA                 NA   -469.92352605E-3
+      4.50000000E+0                 NA                 NA   -470.94574571E-3
+      4.51000023E+0                 NA                 NA   -469.79248524E-3
+      4.51999998E+0                 NA   -377.84576416E-3                 NA
+      4.63999987E+0                 NA                 NA   -468.07697415E-3
+      4.65000010E+0   -423.62016439E-3                 NA                 NA
+      4.65999985E+0   -425.58237910E-3                 NA                 NA
+      4.67000008E+0   -423.21854830E-3                 NA                 NA
+      4.71999979E+0                 NA   -375.41383505E-3                 NA
+      4.73999977E+0                 NA                 NA   -465.39407969E-3
+      4.88999987E+0   -416.67789221E-3                 NA                 NA
+      4.92000008E+0                 NA   -371.88446522E-3   -453.84204388E-3
+      5.05999994E+0   -410.75900197E-3                 NA                 NA
+      5.23000002E+0                 NA   -364.66911435E-3                 NA
+      5.26999998E+0                 NA                 NA   -435.45585871E-3
+      5.28000021E+0   -402.27517486E-3                 NA                 NA
+      5.53000021E+0   -391.71212912E-3                 NA                 NA
+      5.55999994E+0                 NA                 NA   -419.33065653E-3
+      5.57000017E+0                 NA   -354.56073284E-3                 NA
+      5.57999992E+0                 NA   -354.31987047E-3                 NA
+      5.59000015E+0                 NA   -355.37543893E-3                 NA
+      5.61000013E+0                 NA   -353.55353355E-3                 NA
+      5.98000002E+0   -371.03760242E-3                 NA                 NA
+      6.07000017E+0                 NA   -337.42558956E-3                 NA
+      6.59999990E+0   -340.44104815E-3   -315.94729424E-3   -358.73538256E-3
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0     70.35485655E-3     59.13259089E-3     79.67042178E-3
+     -3.28999996E+0     69.14010644E-3     57.95240402E-3     78.42928916E-3
+     -3.27999997E+0                 NA     57.66606703E-3                 NA
+     -3.20000005E+0     66.32752717E-3                 NA     75.36607981E-3
+     -3.09999990E+0                 NA     52.76104808E-3                 NA
+     -2.99000001E+0     59.83814970E-3                 NA                 NA
+     -2.90000010E+0                 NA     47.35339805E-3                 NA
+     -2.89000010E+0                 NA                 NA     64.94401395E-3
+     -2.79999995E+0     53.99960279E-3                 NA                 NA
+     -2.78999996E+0                 NA     44.39592734E-3                 NA
+     -2.69000006E+0                 NA                 NA     58.26311558E-3
+     -2.59999990E+0                 NA     39.32065517E-3                 NA
+     -2.49000001E+0     44.53992844E-3                 NA     51.61081627E-3
+     -2.40000010E+0                 NA     34.03430432E-3                 NA
+     -2.32999992E+0     39.69963640E-3                 NA                 NA
+     -2.29999995E+0                 NA     31.41788021E-3     45.32226920E-3
+     -2.19000006E+0     35.49257666E-3     28.56509387E-3                 NA
+     -2.14000010E+0                 NA                 NA     40.05680606E-3
+     -2.06999993E+0                 NA     25.48770234E-3                 NA
+     -2.05999994E+0     31.61824867E-3                 NA                 NA
+     -2.00000000E+0                 NA                 NA     35.47874093E-3
+     -1.94000006E+0     28.07501331E-3                 NA                 NA
+     -1.92999995E+0                 NA     21.95598185E-3                 NA
+     -1.88000000E+0                 NA                 NA     31.58040345E-3
+     -1.79999995E+0     23.99483882E-3     18.74207146E-3                 NA
+     -1.77999997E+0                 NA                 NA     28.35859172E-3
+     -1.69000006E+0                 NA                 NA     25.48360452E-3
+     -1.66999996E+0                 NA     15.60928114E-3                 NA
+     -1.65999997E+0     19.98589933E-3                 NA                 NA
+     -1.60000002E+0                 NA     13.96681182E-3                 NA
+     -1.58000004E+0                 NA                 NA     22.00810984E-3
+     -1.55999994E+0     17.18203537E-3                 NA                 NA
+     -1.53999996E+0                 NA     12.58293260E-3                 NA
+     -1.50999999E+0     15.80328122E-3                 NA                 NA
+     -1.48000002E+0                 NA                 NA     18.89668219E-3
+     -1.44000006E+0                 NA     10.34475304E-3                 NA
+     -1.40999997E+0     13.10017798E-3                 NA                 NA
+     -1.38999999E+0                 NA      9.26258881E-3     16.14703611E-3
+     -1.36000001E+0     11.78111136E-3                 NA                 NA
+     -1.34000003E+0                 NA      8.20499100E-3     14.64617159E-3
+     -1.30999994E+0     10.48901863E-3                 NA                 NA
+     -1.28999996E+0                 NA      7.18076434E-3                 NA
+     -1.27999997E+0                 NA                 NA     12.86990289E-3
+     -1.25999999E+0      9.22514498E-3                 NA                 NA
+     -1.24000001E+0                 NA      6.18776213E-3                 NA
+     -1.23000002E+0                 NA                 NA     11.42199431E-3
+     -1.21000004E+0      7.99680222E-3                 NA                 NA
+     -1.19000006E+0                 NA      5.23628062E-3                 NA
+     -1.17999995E+0                 NA                 NA     10.00038534E-3
+     -1.14999998E+0      6.57652738E-3      4.50474303E-3                 NA
+     -1.13999999E+0                 NA                 NA      8.89247935E-3
+     -1.11000001E+0      5.66366082E-3                 NA                 NA
+     -1.09000003E+0                 NA      3.46627668E-3                 NA
+     -1.08000004E+0                 NA                 NA      7.27503095E-3
+     -1.05999994E+0      4.57351282E-3                 NA                 NA
+     -1.03999996E+0                 NA      2.66122795E-3                 NA
+     -1.02999997E+0                 NA                 NA      5.98575408E-3
+     -1.00999999E+0      3.54820886E-3                 NA                 NA
+   -990.00000954E-3                 NA      1.92522851E-3      4.99566877E-3
+   -959.99997854E-3      2.59781629E-3                 NA                 NA
+   -939.99999762E-3                 NA      1.26493559E-3                 NA
+   -930.00000715E-3                 NA                 NA      3.60026583E-3
+   -910.00002623E-3      1.74249418E-3                 NA                 NA
+   -899.99997616E-3      1.59041898E-3                 NA                 NA
+   -889.99998569E-3                 NA    703.40587990E-6      2.74222135E-3
+   -879.99999523E-3                 NA                 NA      2.53654830E-3
+   -860.00001431E-3      1.00323476E-3                 NA                 NA
+   -850.00002384E-3                 NA    337.01266511E-6                 NA
+   -839.99997377E-3                 NA    253.57730919E-6                 NA
+   -829.99998331E-3                 NA      0.00000000E+0      1.59527129E-3
+   -810.00000238E-3    412.37735422E-6                 NA                 NA
+   -790.00002146E-3      0.00000000E+0                 NA                 NA
+   -779.99997139E-3                 NA                 NA    806.65730638E-6
+   -759.99999046E-3                 NA                 NA                 NA
+   -750.00000000E-3                 NA                 NA                 NA
+   -740.00000954E-3                 NA                 NA    324.82144888E-6
+   -730.00001907E-3                 NA      0.00000000E+0    220.67353711E-6
+   -709.99997854E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|
+[Ramp]
+R_load = 50.00Ohm
+|                   typ                 min                 max
+|
+dV/dt_r        1.585V/250.475ps    1.443V/318.759ps    1.707V/200.900ps
+dV/dt_f        1.727V/134.406ps    1.536V/164.441ps    1.910V/116.318ps
+|
+|***************************************************************************
+|
+[Falling Waveform]
+V_fixture = 3.300V
+V_fixture_min = 3.000V
+V_fixture_max = 3.600V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0      3.30595636E+0      3.00508237E+0      3.61126351E+0
+   119.99944094E-12                 NA                 NA      3.61439943E+0
+   170.00001407E-12      3.30881524E+0                 NA                 NA
+   209.99901817E-12                 NA                 NA      3.60610604E+0
+   219.99896349E-12                 NA                 NA      3.59618378E+0
+   229.99892269E-12                 NA                 NA      3.57140064E+0
+   239.99888188E-12                 NA                 NA      3.52568030E+0
+   249.99882720E-12                 NA                 NA      3.45822358E+0
+   259.99877251E-12                 NA                 NA      3.37614012E+0
+   269.99874558E-12                 NA                 NA      3.27578187E+0
+   270.00129910E-12                 NA      3.00734663E+0                 NA
+   279.99869090E-12                 NA                 NA      3.15895605E+0
+   280.00002317E-12      3.30284810E+0                 NA                 NA
+   289.99863622E-12                 NA                 NA      3.02973986E+0
+   299.99858153E-12                 NA                 NA      2.88662505E+0
+   300.00002482E-12      3.28938413E+0                 NA                 NA
+   309.99855460E-12                 NA                 NA      2.73327708E+0
+   310.00002565E-12      3.26865029E+0                 NA                 NA
+   319.99849992E-12                 NA                 NA      2.57213640E+0
+   320.00002648E-12      3.23524308E+0                 NA                 NA
+   329.99844524E-12                 NA                 NA      2.40299821E+0
+   330.00002730E-12      3.18817067E+0                 NA                 NA
+   340.00002813E-12      3.13281417E+0                 NA                 NA
+   350.00002896E-12      3.06195378E+0                 NA                 NA
+   360.00002979E-12      2.97933674E+0                 NA                 NA
+   369.99825426E-12                 NA                 NA      1.69815171E+0
+   370.00003061E-12      2.88648915E+0                 NA                 NA
+   380.00003144E-12      2.78365970E+0                 NA                 NA
+   389.99817265E-12                 NA                 NA      1.36258137E+0
+   390.00003227E-12      2.67152047E+0                 NA                 NA
+   399.99811796E-12                 NA                 NA      1.20912480E+0
+   409.99809103E-12                 NA                 NA      1.06689847E+0
+   410.00003392E-12      2.42477655E+0                 NA                 NA
+   419.99803635E-12                 NA                 NA    944.44310665E-3
+   420.00203315E-12                 NA      3.00228739E+0                 NA
+   429.99798167E-12                 NA                 NA    841.26251936E-3
+   430.00003558E-12      2.15823913E+0                 NA                 NA
+   439.99792698E-12                 NA                 NA    761.04855537E-3
+   440.00214583E-12                 NA      2.99362564E+0                 NA
+   449.99790005E-12                 NA                 NA    696.66993618E-3
+   450.00217441E-12                 NA      2.98191905E+0                 NA
+   459.99784537E-12                 NA                 NA    643.10342073E-3
+   469.99781844E-12                 NA                 NA    602.14865208E-3
+   470.00003889E-12      1.60454726E+0                 NA                 NA
+   470.00225933E-12                 NA      2.93697047E+0                 NA
+   479.99776376E-12                 NA                 NA    571.77549601E-3
+   480.00231567E-12                 NA      2.90385413E+0                 NA
+   490.00004054E-12      1.34008157E+0                 NA                 NA
+   490.00237201E-12                 NA      2.86004090E+0                 NA
+   499.99765439E-12                 NA                 NA    528.01269293E-3
+   500.00004137E-12      1.21619177E+0                 NA                 NA
+   500.00242835E-12                 NA      2.80745029E+0                 NA
+   510.00004220E-12      1.10059822E+0                 NA                 NA
+   510.00248469E-12                 NA      2.74771762E+0                 NA
+   519.99754502E-12                 NA                 NA    500.24420023E-3
+   520.00004302E-12    994.16655302E-3                 NA                 NA
+   520.00254103E-12                 NA      2.68153310E+0                 NA
+   530.00004385E-12    902.97329426E-3                 NA                 NA
+   530.00259737E-12                 NA      2.60998869E+0                 NA
+   539.99749117E-12                 NA                 NA    482.31109977E-3
+   540.00004468E-12    818.91924143E-3                 NA                 NA
+   540.00259819E-12                 NA      2.53121638E+0                 NA
+   550.00004551E-12    752.19267607E-3                 NA                 NA
+   560.00271087E-12                 NA      2.35841131E+0                 NA
+   570.00004716E-12    651.54236555E-3                 NA                 NA
+   579.99727243E-12                 NA                 NA    461.65147424E-3
+   580.00004799E-12    615.48930407E-3                 NA                 NA
+   580.00282355E-12                 NA      2.17130494E+0                 NA
+   590.00004882E-12    587.80962229E-3                 NA                 NA
+   600.00004964E-12    563.07250261E-3                 NA                 NA
+   620.00005130E-12    527.65017748E-3                 NA                 NA
+   639.99699984E-12                 NA                 NA    446.19470835E-3
+   640.00310607E-12                 NA      1.56863987E+0                 NA
+   650.00005378E-12    494.77899075E-3                 NA                 NA
+   660.00321874E-12                 NA      1.37249124E+0                 NA
+   670.00005544E-12    480.71235418E-3                 NA                 NA
+   670.00327508E-12                 NA      1.27879047E+0                 NA
+   690.00333225E-12                 NA      1.10364342E+0                 NA
+   700.00338859E-12                 NA      1.02305114E+0                 NA
+   710.00005875E-12    462.81179786E-3                 NA                 NA
+   710.00344493E-12                 NA    949.40745831E-3                 NA
+   730.00355760E-12                 NA    824.56493378E-3                 NA
+   739.99650851E-12                 NA                 NA    435.28488278E-3
+   750.00361477E-12                 NA    727.73653269E-3                 NA
+   760.00367111E-12                 NA    690.26827812E-3                 NA
+   780.00006454E-12    446.79337740E-3                 NA                 NA
+   780.00378378E-12                 NA    632.80206919E-3                 NA
+   790.00384012E-12                 NA    610.28331518E-3                 NA
+   800.00389646E-12                 NA    590.25758505E-3                 NA
+   820.00395363E-12                 NA    559.85385180E-3                 NA
+   840.00406630E-12                 NA    537.52875328E-3                 NA
+   860.00417898E-12                 NA    520.85703611E-3                 NA
+   870.00007198E-12    436.54865026E-3                 NA                 NA
+   920.00446150E-12                 NA    490.30941725E-3                 NA
+   980.00474402E-12                 NA    474.31907058E-3                 NA
+   999.99530878E-12                 NA                 NA    429.41614985E-3
+      1.08000520E-9                 NA    460.27365327E-3                 NA
+      1.13000009E-9    428.86891961E-3                 NA                 NA
+      1.34000655E-9                 NA    447.88488746E-3                 NA
+      2.00000971E-9    427.23202705E-3    444.82633471E-3    428.24348807E-3
+|
+[Rising Waveform]
+V_fixture = 3.300V
+V_fixture_min = 3.000V
+V_fixture_max = 3.600V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0    427.23202705E-3    444.82633471E-3    428.24348807E-3
+   220.00001820E-12    427.04394460E-3                 NA                 NA
+   289.99863622E-12                 NA                 NA    435.17062068E-3
+   309.99855460E-12                 NA                 NA    445.57169080E-3
+   319.99849992E-12                 NA                 NA    457.92081952E-3
+   329.99844524E-12                 NA                 NA    482.28883743E-3
+   339.99841831E-12                 NA                 NA    521.70127630E-3
+   349.99836362E-12                 NA                 NA    581.15112782E-3
+   359.99830894E-12                 NA                 NA    669.66241598E-3
+   360.00002979E-12    433.50145221E-3                 NA                 NA
+   369.99825426E-12                 NA                 NA    790.43334723E-3
+   379.99822733E-12                 NA                 NA    938.38715553E-3
+   380.00003144E-12    441.87742472E-3                 NA                 NA
+   400.00003310E-12    462.58261800E-3                 NA                 NA
+   409.99809103E-12                 NA                 NA      1.45071769E+0
+   410.00003392E-12    481.31728172E-3                 NA                 NA
+   419.99803635E-12                 NA                 NA      1.61130297E+0
+   420.00003475E-12    509.94563103E-3                 NA                 NA
+   429.99798167E-12                 NA                 NA      1.75985575E+0
+   430.00003558E-12    553.03257704E-3                 NA                 NA
+   439.99792698E-12                 NA                 NA      1.89309931E+0
+   440.00003641E-12    613.26330900E-3                 NA                 NA
+   449.99790005E-12                 NA                 NA      2.01443315E+0
+   450.00003723E-12    696.72191143E-3                 NA                 NA
+   459.99784537E-12                 NA                 NA      2.12743855E+0
+   460.00003806E-12    801.70434713E-3                 NA                 NA
+   469.99781844E-12                 NA                 NA      2.22935677E+0
+   470.00003889E-12    922.70225286E-3                 NA                 NA
+   470.00225933E-12                 NA    448.56294990E-3                 NA
+   489.99770907E-12                 NA                 NA      2.40598035E+0
+   499.99765439E-12                 NA                 NA      2.48468494E+0
+   500.00004137E-12      1.31051588E+0                 NA                 NA
+   500.00242835E-12                 NA    458.25344324E-3                 NA
+   510.00004220E-12      1.43209636E+0                 NA                 NA
+   519.99754502E-12                 NA                 NA      2.62791085E+0
+   520.00004302E-12      1.54745400E+0                 NA                 NA
+   520.00254103E-12                 NA    474.34109449E-3                 NA
+   539.99749117E-12                 NA                 NA      2.75568151E+0
+   540.00004468E-12      1.75662839E+0                 NA                 NA
+   540.00259819E-12                 NA    502.02476978E-3                 NA
+   550.00004551E-12      1.84999323E+0                 NA                 NA
+   550.00265453E-12                 NA    523.14049006E-3                 NA
+   559.99738180E-12                 NA                 NA      2.87199044E+0
+   560.00271087E-12                 NA    551.97674036E-3                 NA
+   570.00004716E-12      2.01785064E+0                 NA                 NA
+   570.00276721E-12                 NA    589.42973614E-3                 NA
+   580.00004799E-12      2.09276819E+0                 NA                 NA
+   580.00282355E-12                 NA    634.85354185E-3                 NA
+   589.99721775E-12                 NA                 NA      3.02850747E+0
+   590.00004882E-12      2.16142821E+0                 NA                 NA
+   590.00287989E-12                 NA    697.51954079E-3                 NA
+   600.00293622E-12                 NA    767.97604561E-3                 NA
+   610.00005047E-12      2.28982425E+0                 NA                 NA
+   610.00293705E-12                 NA    847.85699844E-3                 NA
+   619.99710921E-12                 NA                 NA      3.16566491E+0
+   620.00299339E-12                 NA    935.68891287E-3                 NA
+   640.00005295E-12      2.45483446E+0                 NA                 NA
+   649.99694516E-12                 NA                 NA      3.28018117E+0
+   660.00321874E-12                 NA      1.30261374E+0                 NA
+   670.00005544E-12      2.59945726E+0                 NA                 NA
+   679.99683662E-12                 NA                 NA      3.37430429E+0
+   680.00327591E-12                 NA      1.47044826E+0                 NA
+   700.00338859E-12                 NA      1.62341499E+0                 NA
+   709.99667257E-12                 NA                 NA      3.44618845E+0
+   710.00005875E-12      2.76779628E+0                 NA                 NA
+   710.00344493E-12                 NA      1.69402456E+0                 NA
+   730.00355760E-12                 NA      1.82438672E+0                 NA
+   739.99650851E-12                 NA                 NA      3.49980068E+0
+   740.00006123E-12      2.87967563E+0                 NA                 NA
+   750.00361477E-12                 NA      1.94229853E+0                 NA
+   770.00006371E-12      2.98147631E+0                 NA                 NA
+   770.00372745E-12                 NA      2.04687905E+0                 NA
+   779.99634529E-12                 NA                 NA      3.54590821E+0
+   790.00006536E-12      3.04231048E+0                 NA                 NA
+   790.00384012E-12                 NA      2.14162326E+0                 NA
+   810.00006702E-12      3.09704685E+0                 NA                 NA
+   819.99618207E-12                 NA                 NA      3.57291293E+0
+   820.00395363E-12                 NA      2.26782966E+0                 NA
+   840.00006950E-12      3.16445374E+0                 NA                 NA
+   850.00412264E-12                 NA      2.37718916E+0                 NA
+   869.99590865E-12                 NA                 NA      3.59108663E+0
+   870.00007198E-12      3.21553707E+0                 NA                 NA
+   880.00429166E-12                 NA      2.47417641E+0                 NA
+   910.00007529E-12      3.25824618E+0                 NA                 NA
+   920.00446150E-12                 NA      2.58781791E+0                 NA
+   939.99563688E-12                 NA                 NA      3.60247207E+0
+   950.00007860E-12      3.28197455E+0                 NA                 NA
+   960.00463135E-12                 NA      2.68898320E+0                 NA
+   990.00008191E-12      3.29441786E+0                 NA                 NA
+      1.01000486E-9                 NA      2.80153584E+0                 NA
+      1.04000508E-9                 NA      2.85991240E+0                 NA
+      1.05000009E-9      3.30231762E+0                 NA                 NA
+      1.08000520E-9                 NA      2.91968036E+0                 NA
+      1.12000542E-9                 NA      2.95887351E+0                 NA
+      1.12999465E-9                 NA                 NA      3.60889840E+0
+      1.16000565E-9                 NA      2.98223734E+0                 NA
+      1.20000587E-9                 NA      2.99509001E+0                 NA
+      1.25000610E-9                 NA      3.00256872E+0                 NA
+      1.36000655E-9                 NA      3.00625610E+0                 NA
+      2.00000971E-9      3.30595636E+0      3.00508237E+0      3.61126351E+0
+|
+[Rising Waveform]
+V_fixture = 0.000V
+V_fixture_min = 0.000V
+V_fixture_max = 0.000V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0     -2.65767099E-3     -3.03276232E-3     -2.47797184E-3
+   210.00001738E-12     -3.00634699E-3                 NA                 NA
+   289.99863622E-12                 NA                 NA    791.15049448E-6
+   299.99858153E-12                 NA                 NA     10.23843233E-3
+   300.00002482E-12      1.20587880E-3                 NA                 NA
+   309.99855460E-12                 NA                 NA     27.42381580E-3
+   319.99849992E-12                 NA                 NA     51.45675316E-3
+   329.99844524E-12                 NA                 NA     83.38912576E-3
+   349.99836362E-12                 NA                 NA    166.35675728E-3
+   359.99830894E-12                 NA                 NA    218.46337616E-3
+   369.99825426E-12                 NA                 NA    280.80621362E-3
+   379.99822733E-12                 NA                 NA    360.86362600E-3
+   380.00003144E-12     -5.89202996E-3                 NA                 NA
+   389.99817265E-12                 NA                 NA    465.46626091E-3
+   399.99811796E-12                 NA                 NA    592.98646450E-3
+   400.00003310E-12     11.63153071E-3                 NA                 NA
+   420.00003475E-12     51.31516233E-3                 NA                 NA
+   420.00203315E-12                 NA    -43.99232057E-6                 NA
+   429.99798167E-12                 NA                 NA      1.00280571E+0
+   430.00003558E-12     78.92064005E-3                 NA                 NA
+   439.99792698E-12                 NA                 NA      1.12766123E+0
+   440.00003641E-12    111.61520332E-3                 NA                 NA
+   450.00003723E-12    151.00605786E-3                 NA                 NA
+   459.99784537E-12                 NA                 NA      1.35263002E+0
+   460.00003806E-12    199.42785800E-3                 NA                 NA
+   469.99781844E-12                 NA                 NA      1.45177209E+0
+   470.00003889E-12    263.19894195E-3                 NA                 NA
+   479.99776376E-12                 NA                 NA      1.54063499E+0
+   480.00003972E-12    341.88419580E-3                 NA                 NA
+   489.99770907E-12                 NA                 NA      1.62280643E+0
+   490.00004054E-12    435.04169583E-3                 NA                 NA
+   499.99765439E-12                 NA                 NA      1.69819701E+0
+   519.99754502E-12                 NA                 NA      1.83441508E+0
+   520.00254103E-12                 NA    -11.99026033E-3                 NA
+   530.00259737E-12                 NA    -10.47444995E-3                 NA
+   539.99749117E-12                 NA                 NA      1.95651889E+0
+   540.00004468E-12    934.16416645E-3                 NA                 NA
+   550.00004551E-12      1.02660429E+0                 NA                 NA
+   550.00265453E-12                 NA      1.84668717E-3                 NA
+   560.00271087E-12                 NA     12.95372192E-3                 NA
+   570.00004716E-12      1.19635820E+0                 NA                 NA
+   579.99727243E-12                 NA                 NA      2.17763686E+0
+   580.00004799E-12      1.27281678E+0                 NA                 NA
+   580.00282355E-12                 NA     43.87692362E-3                 NA
+   600.00004964E-12      1.40936792E+0                 NA                 NA
+   600.00293622E-12                 NA     91.59165621E-3                 NA
+   609.99716389E-12                 NA                 NA      2.32649612E+0
+   610.00293705E-12                 NA    121.71528488E-3                 NA
+   620.00005130E-12      1.52911663E+0                 NA                 NA
+   620.00299339E-12                 NA    158.39761496E-3                 NA
+   630.00304973E-12                 NA    205.21353185E-3                 NA
+   639.99699984E-12                 NA                 NA      2.45728421E+0
+   640.00005295E-12      1.63471484E+0                 NA                 NA
+   640.00310607E-12                 NA    260.59624553E-3                 NA
+   659.99689047E-12                 NA                 NA      2.53097415E+0
+   660.00321874E-12                 NA    385.80185175E-3                 NA
+   670.00005544E-12      1.77815008E+0                 NA                 NA
+   689.99678193E-12                 NA                 NA      2.61992717E+0
+   710.00005875E-12      1.95195460E+0                 NA                 NA
+   710.00344493E-12                 NA    730.72820902E-3                 NA
+   719.99661788E-12                 NA                 NA      2.68712711E+0
+   730.00355760E-12                 NA    864.87907171E-3                 NA
+   739.99650851E-12                 NA                 NA      2.72051239E+0
+   750.00006206E-12      2.11267710E+0                 NA                 NA
+   760.00367111E-12                 NA      1.05055058E+0                 NA
+   779.99634529E-12                 NA                 NA      2.76720095E+0
+   780.00378378E-12                 NA      1.15968132E+0                 NA
+   790.00006536E-12      2.25517702E+0                 NA                 NA
+   800.00389646E-12                 NA      1.25906432E+0                 NA
+   819.99618207E-12                 NA                 NA      2.79531312E+0
+   820.00006785E-12      2.34437013E+0                 NA                 NA
+   820.00395363E-12                 NA      1.34854710E+0                 NA
+   840.00406630E-12                 NA      1.43007278E+0                 NA
+   850.00007033E-12      2.41872072E+0                 NA                 NA
+   870.00007198E-12      2.45862103E+0                 NA                 NA
+   879.99585396E-12                 NA                 NA      2.81801391E+0
+   880.00429166E-12                 NA      1.57554007E+0                 NA
+   890.00007364E-12      2.49172163E+0                 NA                 NA
+   910.00007529E-12      2.51873636E+0                 NA                 NA
+   920.00446150E-12                 NA      1.70638835E+0                 NA
+   950.00007860E-12      2.55802870E+0                 NA                 NA
+   959.99552752E-12                 NA                 NA      2.83134222E+0
+   980.00474402E-12                 NA      1.88635540E+0                 NA
+      1.01000008E-9      2.59244037E+0                 NA                 NA
+      1.02000497E-9                 NA      1.99496841E+0                 NA
+      1.05000508E-9                 NA      2.06783628E+0                 NA
+      1.07000009E-9      2.61097121E+0                 NA                 NA
+      1.08000520E-9                 NA      2.13252139E+0                 NA
+      1.12000542E-9                 NA      2.20267129E+0                 NA
+      1.15000010E-9      2.62408590E+0                 NA                 NA
+      1.15000554E-9                 NA      2.24310470E+0                 NA
+      1.19999433E-9                 NA                 NA      2.84042668E+0
+      1.20000587E-9                 NA      2.29226923E+0                 NA
+      1.25000610E-9                 NA      2.32397485E+0                 NA
+      1.32000644E-9                 NA      2.35185862E+0                 NA
+      1.39000012E-9      2.63657451E+0                 NA                 NA
+      1.40000678E-9                 NA      2.37059379E+0                 NA
+      1.50000723E-9                 NA      2.38408589E+0                 NA
+      1.62000791E-9                 NA      2.39288855E+0                 NA
+      2.00000971E-9      2.63968134E+0      2.40184689E+0      2.84199882E+0
+|
+[Falling Waveform]
+V_fixture = 0.000V
+V_fixture_min = 0.000V
+V_fixture_max = 0.000V
+R_fixture = 50.00Ohm
+|
+|        Time              V(typ)             V(min)             V(max)
+|
+      0.00000000E+0      2.63968134E+0      2.40184689E+0      2.84199882E+0
+    59.99972047E-12                 NA                 NA      2.84825444E+0
+    90.00000745E-12      2.64289451E+0                 NA                 NA
+   139.99934545E-12                 NA                 NA      2.87061310E+0
+   150.00073406E-12                 NA      2.40323949E+0                 NA
+   169.99920915E-12                 NA                 NA      2.86806703E+0
+   189.99911366E-12                 NA                 NA      2.84602547E+0
+   199.99905898E-12                 NA                 NA      2.82647705E+0
+   200.00001655E-12      2.66143250E+0                 NA                 NA
+   209.99901817E-12                 NA                 NA      2.79707360E+0
+   219.99896349E-12                 NA                 NA      2.75200129E+0
+   229.99892269E-12                 NA                 NA      2.68825078E+0
+   239.99888188E-12                 NA                 NA      2.60042095E+0
+   240.00001986E-12      2.66121578E+0                 NA                 NA
+   249.99882720E-12                 NA                 NA      2.48851299E+0
+   259.99877251E-12                 NA                 NA      2.36074853E+0
+   260.00002151E-12      2.65022206E+0                 NA                 NA
+   269.99874558E-12                 NA                 NA      2.21368265E+0
+   279.99869090E-12                 NA                 NA      2.05014014E+0
+   280.00002317E-12      2.62585330E+0                 NA                 NA
+   289.99863622E-12                 NA                 NA      1.87471771E+0
+   290.00002399E-12      2.60468793E+0                 NA                 NA
+   299.99858153E-12                 NA                 NA      1.68619704E+0
+   300.00002482E-12      2.57332993E+0                 NA                 NA
+   309.99855460E-12                 NA                 NA      1.48834383E+0
+   310.00002565E-12      2.52614570E+0                 NA                 NA
+   319.99849992E-12                 NA                 NA      1.28385854E+0
+   320.00002648E-12      2.46145606E+0                 NA                 NA
+   330.00002730E-12      2.37953711E+0                 NA                 NA
+   330.00160937E-12                 NA      2.41982198E+0                 NA
+   339.99841831E-12                 NA                 NA    866.43195152E-3
+   340.00002813E-12      2.28749299E+0                 NA                 NA
+   349.99836362E-12                 NA                 NA    668.98339987E-3
+   350.00002896E-12      2.17765379E+0                 NA                 NA
+   359.99830894E-12                 NA                 NA    498.19564819E-3
+   360.00002979E-12      2.05537581E+0                 NA                 NA
+   369.99825426E-12                 NA                 NA    361.53864861E-3
+   370.00003061E-12      1.92288685E+0                 NA                 NA
+   370.00180697E-12                 NA      2.41779637E+0                 NA
+   379.99822733E-12                 NA                 NA    258.26853514E-3
+   380.00003144E-12      1.78078163E+0                 NA                 NA
+   389.99817265E-12                 NA                 NA    183.32915008E-3
+   390.00003227E-12      1.62982774E+0                 NA                 NA
+   399.99811796E-12                 NA                 NA    132.16468692E-3
+   400.00003310E-12      1.47146177E+0                 NA                 NA
+   400.00194823E-12                 NA      2.40520215E+0                 NA
+   409.99809103E-12                 NA                 NA     94.58364546E-3
+   410.00003392E-12      1.30709553E+0                 NA                 NA
+   419.99803635E-12                 NA                 NA     70.06295770E-3
+   420.00203315E-12                 NA      2.38797402E+0                 NA
+   429.99798167E-12                 NA                 NA     52.56761611E-3
+   439.99792698E-12                 NA                 NA     40.93141854E-3
+   440.00003641E-12    802.84154415E-3                 NA                 NA
+   440.00214583E-12                 NA      2.35624266E+0                 NA
+   450.00003723E-12    642.92174578E-3                 NA                 NA
+   450.00217441E-12                 NA      2.32956171E+0                 NA
+   459.99784537E-12                 NA                 NA     25.81355162E-3
+   460.00003806E-12    500.59497356E-3                 NA                 NA
+   460.00223075E-12                 NA      2.29154992E+0                 NA
+   470.00003889E-12    382.41183758E-3                 NA                 NA
+   470.00225933E-12                 NA      2.24675488E+0                 NA
+   480.00003972E-12    284.02015567E-3                 NA                 NA
+   480.00231567E-12                 NA      2.19162059E+0                 NA
+   489.99770907E-12                 NA                 NA     15.25195967E-3
+   490.00004054E-12    209.54224467E-3                 NA                 NA
+   490.00237201E-12                 NA      2.12409973E+0                 NA
+   500.00004137E-12    153.33564579E-3                 NA                 NA
+   500.00242835E-12                 NA      2.04649830E+0                 NA
+   510.00004220E-12    113.09045553E-3                 NA                 NA
+   510.00248469E-12                 NA      1.96048939E+0                 NA
+   520.00004302E-12     83.49953592E-3                 NA                 NA
+   520.00254103E-12                 NA      1.86704516E+0                 NA
+   530.00259737E-12                 NA      1.76759517E+0                 NA
+   539.99749117E-12                 NA                 NA      7.94082601E-3
+   540.00004468E-12     47.21727967E-3                 NA                 NA
+   540.00259819E-12                 NA      1.66039240E+0                 NA
+   560.00271087E-12                 NA      1.43012512E+0                 NA
+   570.00004716E-12     23.50036800E-3                 NA                 NA
+   580.00282355E-12                 NA      1.18542540E+0                 NA
+   590.00004882E-12     16.64316468E-3                 NA                 NA
+   620.00299339E-12                 NA    683.16078186E-3                 NA
+   630.00005213E-12      9.58112627E-3                 NA                 NA
+   630.00304973E-12                 NA    569.75936890E-3                 NA
+   640.00310607E-12                 NA    468.67981553E-3                 NA
+   650.00316241E-12                 NA    378.72579694E-3                 NA
+   659.99689047E-12                 NA                 NA      1.66189810E-3
+   660.00321874E-12                 NA    300.75603724E-3                 NA
+   670.00327508E-12                 NA    236.35570705E-3                 NA
+   680.00327591E-12                 NA    182.40803480E-3                 NA
+   690.00333225E-12                 NA    139.95504379E-3                 NA
+   700.00338859E-12                 NA    105.73080182E-3                 NA
+   710.00005875E-12      4.19428665E-3                 NA                 NA
+   710.00344493E-12                 NA     80.91785014E-3                 NA
+   730.00355760E-12                 NA     48.12981188E-3                 NA
+   750.00361477E-12                 NA     29.46017496E-3                 NA
+   780.00378378E-12                 NA     16.68466069E-3                 NA
+   900.00434882E-12                 NA      4.59497748E-3                 NA
+      1.00000008E-9     -1.59184600E-3                 NA                 NA
+      1.24000599E-9                 NA     -1.72710314E-3                 NA
+      2.00000971E-9     -2.65767099E-3     -3.03276232E-3     -2.47797184E-3
+|
+|***************************************************************************
+|                              input MODEL
+|***************************************************************************
+|
+[Model]        input
+Model_type     Input
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      1.920pF             1.660pF             2.180pF
+[Voltage Range]             3.300V              3.000V              3.600V
+[Temperature Range]        25.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0   -456.99092746E-3   -451.82588696E-3   -475.96770525E-3
+     -3.28999996E+0   -453.52572203E-3   -448.45876098E-3   -472.32949734E-3
+     -3.27999997E+0   -451.26771927E-3   -446.28027081E-3                 NA
+     -3.19000006E+0   -431.09560013E-3   -426.82307959E-3   -447.60650396E-3
+     -3.09999990E+0   -410.99005938E-3                 NA                 NA
+     -3.08999991E+0                 NA   -405.23934364E-3   -423.12508821E-3
+     -3.00000000E+0                 NA                 NA   -401.27891302E-3
+     -2.99000001E+0   -386.49567962E-3                 NA                 NA
+     -2.90000010E+0                 NA   -364.31530118E-3   -377.20319629E-3
+     -2.89000010E+0   -364.29920793E-3                 NA                 NA
+     -2.79999995E+0   -344.37754750E-3                 NA   -353.32706571E-3
+     -2.78999996E+0                 NA   -340.67583084E-3                 NA
+     -2.70000005E+0                 NA   -321.36687636E-3   -329.64223623E-3
+     -2.69000006E+0   -320.09735703E-3                 NA                 NA
+     -2.65000010E+0                 NA                 NA   -317.87508726E-3
+     -2.58999991E+0   -298.08959365E-3   -297.81019688E-3   -303.80108953E-3
+     -2.50000000E+0                 NA                 NA   -282.81822801E-3
+     -2.49000001E+0   -276.14432573E-3   -276.44130588E-3                 NA
+     -2.40000010E+0                 NA                 NA   -259.66778398E-3
+     -2.39000010E+0   -254.26375866E-3                 NA                 NA
+     -2.34999990E+0                 NA   -246.61308527E-3   -248.16018343E-3
+     -2.29999995E+0   -234.62988436E-3                 NA                 NA
+     -2.28999996E+0                 NA                 NA   -234.39781368E-3
+     -2.25000000E+0                 NA   -225.37606955E-3                 NA
+     -2.24000001E+0   -221.57673538E-3                 NA                 NA
+     -2.19000006E+0                 NA                 NA   -211.60238981E-3
+     -2.15000010E+0                 NA   -204.21023667E-3                 NA
+     -2.14000010E+0   -199.88049567E-3                 NA                 NA
+     -2.09999990E+0                 NA                 NA   -191.23336673E-3
+     -2.04999995E+0                 NA   -183.12948942E-3                 NA
+     -2.03999996E+0   -178.27564478E-3                 NA   -177.73692310E-3
+     -2.00000000E+0                 NA   -172.62540758E-3                 NA
+     -1.99000001E+0   -167.51046479E-3                 NA                 NA
+     -1.95000005E+0                 NA   -162.15242445E-3   -157.61497617E-3
+     -1.94000006E+0   -156.77952766E-3                 NA                 NA
+     -1.88999999E+0                 NA   -149.62582290E-3   -144.29061115E-3
+     -1.85000002E+0   -137.54743338E-3                 NA   -135.45569777E-3
+     -1.84000003E+0                 NA   -139.22911882E-3                 NA
+     -1.79999995E+0                 NA   -130.94124198E-3   -124.46412444E-3
+     -1.78999996E+0   -124.79986250E-3                 NA                 NA
+     -1.75000000E+0   -116.34273082E-3                 NA   -113.54427040E-3
+     -1.74000001E+0                 NA   -118.56913567E-3                 NA
+     -1.70000005E+0   -105.82286119E-3                 NA                 NA
+     -1.69000006E+0                 NA   -108.32181573E-3   -100.54487735E-3
+     -1.64999998E+0    -95.37412226E-3                 NA                 NA
+     -1.63999999E+0                 NA    -98.14231843E-3    -89.82023597E-3
+     -1.60000002E+0    -85.01116186E-3                 NA                 NA
+     -1.59000003E+0                 NA    -88.04609627E-3    -79.21592146E-3
+     -1.54999995E+0    -74.75751638E-3                 NA                 NA
+     -1.53999996E+0                 NA    -78.04952562E-3    -68.76997650E-3
+     -1.50000000E+0    -64.64669853E-3                 NA    -60.56101993E-3
+     -1.49000001E+0                 NA    -68.18170846E-3    -58.53861570E-3
+     -1.45000005E+0    -54.72977459E-3    -60.40011719E-3    -50.56832731E-3
+     -1.44000006E+0    -52.77929828E-3    -58.47625434E-3    -48.62277210E-3
+     -1.39999998E+0    -45.09312287E-3    -50.86696148E-3    -41.02863371E-3
+     -1.38999999E+0    -43.21616516E-3    -48.99393767E-3    -39.21269998E-3
+     -1.35000002E+0    -35.88667884E-3    -41.61906242E-3    -32.27939457E-3
+     -1.34000003E+0    -34.13011134E-3    -39.81934860E-3    -30.70534393E-3
+     -1.29999995E+0    -27.40705013E-3    -32.79651329E-3    -25.04624240E-3
+     -1.28999996E+0    -25.86488239E-3    -31.10908531E-3    -23.89563806E-3
+     -1.25000000E+0    -20.25060728E-3    -24.63250980E-3    -20.34990489E-3
+     -1.24000001E+0    -19.08079535E-3    -23.12770300E-3    -19.67372186E-3
+     -1.20000005E+0    -15.33656474E-3    -17.56582595E-3    -17.80999079E-3
+     -1.19000006E+0    -14.62776493E-3    -16.35822281E-3    -17.40590855E-3
+     -1.14999998E+0    -12.70159427E-3    -12.25927379E-3    -16.03697613E-3
+     -1.13999999E+0    -12.30996754E-3    -11.45095099E-3                 NA
+     -1.10000002E+0    -11.10313088E-3     -9.08331852E-3    -14.43283074E-3
+     -1.09000003E+0                 NA     -8.62768386E-3                 NA
+     -1.04999995E+0     -9.77138989E-3     -7.35022966E-3                 NA
+     -1.03999996E+0                 NA     -7.07735075E-3    -12.57781591E-3
+   -990.00000954E-3     -8.25870410E-3     -5.95899345E-3                 NA
+   -949.99998808E-3                 NA                 NA     -9.89689864E-3
+   -939.99999762E-3                 NA     -4.96930163E-3                 NA
+   -899.99997616E-3     -6.09622803E-3     -4.22167405E-3                 NA
+   -889.99998569E-3                 NA                 NA     -8.18184763E-3
+   -850.00002384E-3                 NA     -3.33589525E-3                 NA
+   -839.99997377E-3     -4.73773992E-3                 NA                 NA
+   -800.00001192E-3                 NA     -2.50928686E-3     -5.74246934E-3
+   -790.00002146E-3     -3.66952200E-3                 NA                 NA
+   -750.00000000E-3                 NA     -1.75595609E-3     -4.47482290E-3
+   -740.00000954E-3     -2.67767720E-3                 NA                 NA
+   -699.99998808E-3                 NA                 NA     -3.28810117E-3
+   -689.99999762E-3     -1.78215816E-3   -977.00511105E-6                 NA
+   -639.99998569E-3     -1.01758994E-3   -464.26628251E-6     -2.01155758E-3
+   -600.00002384E-3   -525.96244495E-6                 NA                 NA
+   -589.99997377E-3   -423.93431067E-6   -101.98658129E-6     -1.11582526E-3
+   -540.00002146E-3    -38.22334838E-6      0.00000000E+0   -436.45699043E-6
+   -500.00000000E-3      0.00000000E+0                 NA                 NA
+   -490.00000954E-3                 NA                 NA    -18.38853677E-6
+   -449.99998808E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0     60.78197435E-3     51.02928355E-3     70.92934102E-3
+     -3.28999996E+0     59.47154760E-3     49.75530505E-3     69.54961270E-3
+     -3.27999997E+0     59.19003859E-3     49.50818792E-3     69.20054555E-3
+     -3.25000000E+0     58.39241296E-3     48.81789163E-3                 NA
+     -3.24000001E+0                 NA                 NA     67.86706299E-3
+     -3.20000005E+0     57.03487247E-3     47.63718694E-3     66.52457267E-3
+     -3.19000006E+0                 NA                 NA     66.19406492E-3
+     -3.14000010E+0     55.43638393E-3     46.24872655E-3                 NA
+     -3.09999990E+0     54.35633659E-3                 NA                 NA
+     -3.08999991E+0                 NA     45.07440701E-3     62.93863803E-3
+     -3.04999995E+0                 NA     44.15384680E-3                 NA
+     -3.03999996E+0     52.76471376E-3                 NA                 NA
+     -3.00000000E+0                 NA     42.98535362E-3                 NA
+     -2.99000001E+0     51.42560229E-3                 NA     59.75886062E-3
+     -2.95000005E+0     50.37114769E-3                 NA                 NA
+     -2.94000006E+0                 NA     41.60353169E-3                 NA
+     -2.90000010E+0                 NA     40.67208618E-3                 NA
+     -2.89000010E+0     48.77392948E-3                 NA     56.64299801E-3
+     -2.84999990E+0     47.72280157E-3                 NA                 NA
+     -2.83999991E+0                 NA     39.29452598E-3                 NA
+     -2.79999995E+0     46.39677331E-3                 NA                 NA
+     -2.78999996E+0                 NA     38.13799471E-3     53.58111113E-3
+     -2.69000006E+0     43.50246117E-3     35.84494814E-3     50.56483299E-3
+     -2.59999990E+0                 NA     33.79080072E-3     47.88349196E-3
+     -2.58999991E+0     40.88205844E-3                 NA                 NA
+     -2.50000000E+0     38.53273019E-3                 NA     44.93582621E-3
+     -2.49000001E+0                 NA     31.29380569E-3                 NA
+     -2.39000010E+0     35.67354754E-3     29.03877757E-3     41.72673821E-3
+     -2.29999995E+0                 NA     27.02315524E-3                 NA
+     -2.28999996E+0     33.08730200E-3                 NA     38.83616626E-3
+     -2.20000005E+0     30.77160753E-3     24.80119467E-3                 NA
+     -2.19000006E+0                 NA                 NA     35.96874699E-3
+     -2.09999990E+0                 NA     22.60067873E-3                 NA
+     -2.08999991E+0     27.95886621E-3                 NA     33.12330693E-3
+     -2.00000000E+0                 NA     20.42518184E-3                 NA
+     -1.99000001E+0     25.42153187E-3                 NA     30.29958718E-3
+     -1.94000006E+0                 NA     19.13541742E-3                 NA
+     -1.89999998E+0     23.15693721E-3                 NA                 NA
+     -1.88999999E+0                 NA     18.06627586E-3     27.49845199E-3
+     -1.79999995E+0                 NA     16.16774872E-3                 NA
+     -1.78999996E+0     20.41846700E-3                 NA     24.72194657E-3
+     -1.74000001E+0                 NA     14.92176857E-3                 NA
+     -1.70000005E+0     18.20697077E-3                 NA                 NA
+     -1.69000006E+0                 NA     13.89351115E-3     21.97338082E-3
+     -1.63999999E+0     16.75155386E-3     12.88056839E-3                 NA
+     -1.60000002E+0                 NA     12.07791734E-3                 NA
+     -1.59000003E+0     15.54813143E-3                 NA     19.25794035E-3
+     -1.54999995E+0                 NA     11.09095756E-3                 NA
+     -1.53999996E+0     14.36019782E-3                 NA                 NA
+     -1.50000000E+0                 NA                 NA     16.84838533E-3
+     -1.49000001E+0     13.18359841E-3      9.92635824E-3                 NA
+     -1.44000006E+0     12.02555280E-3      8.97837710E-3     15.26526548E-3
+     -1.38999999E+0     10.88300534E-3      8.04931950E-3     13.95899802E-3
+     -1.35000002E+0                 NA                 NA     12.92814128E-3
+     -1.34000003E+0      9.76334326E-3      7.14554917E-3                 NA
+     -1.28999996E+0      8.66476353E-3      6.26600487E-3     11.40098181E-3
+     -1.25000000E+0                 NA                 NA     10.40194929E-3
+     -1.24000001E+0      7.59519869E-3      5.41745871E-3                 NA
+     -1.20000005E+0                 NA                 NA      9.17283446E-3
+     -1.19000006E+0      6.55443734E-3      4.60006855E-3                 NA
+     -1.14999998E+0                 NA      3.97397298E-3      7.97476154E-3
+     -1.13999999E+0      5.55150770E-3                 NA                 NA
+     -1.10000002E+0                 NA      3.22703226E-3      6.80830423E-3
+     -1.09000003E+0      4.58843401E-3                 NA      6.58001285E-3
+     -1.04999995E+0      3.85436881E-3      2.52866233E-3      5.68432175E-3
+     -1.03999996E+0      3.67636071E-3      2.39535305E-3      5.46505349E-3
+     -1.00000000E+0      2.98636174E-3      1.88360829E-3      4.60659713E-3
+   -990.00000954E-3      2.82098749E-3      1.76244404E-3      4.39821510E-3
+   -949.99998808E-3      2.18799151E-3      1.30487513E-3      3.58961686E-3
+   -939.99999762E-3      2.03806045E-3      1.19830575E-3      3.39464098E-3
+   -899.99997616E-3      1.47160667E-3    803.31915524E-6      2.64343317E-3
+   -889.99998569E-3      1.34091126E-3    714.41644104E-6      2.46527046E-3
+   -850.00002384E-3    861.80231301E-6    398.18158257E-6      1.79117790E-3
+   -839.99997377E-3    755.25755528E-6    330.08726314E-6      1.63466437E-3
+   -800.00001192E-3    382.00814743E-6    101.56762437E-6      1.05664902E-3
+   -790.00002146E-3    304.37626992E-6     55.70149006E-6    928.32098017E-6
+   -750.00000000E-3     56.57058136E-6      0.00000000E+0    479.71168533E-6
+   -740.00000954E-3      8.95753055E-6                 NA    386.49077760E-6
+   -699.99998808E-3      0.00000000E+0                 NA     89.33275240E-6
+   -689.99999762E-3                 NA                 NA     33.36101872E-6
+   -649.99997616E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|                              clk_input MODEL
+|***************************************************************************
+|
+[Model]        clk_input
+Model_type     Input
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      2.120pF             1.620pF             2.620pF
+[Voltage Range]             3.300V              3.000V              3.600V
+[Temperature Range]        25.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0   -456.99092746E-3   -451.82588696E-3   -475.96770525E-3
+     -3.28999996E+0   -453.52572203E-3   -448.45876098E-3   -472.32949734E-3
+     -3.27999997E+0   -451.26771927E-3   -446.28027081E-3                 NA
+     -3.19000006E+0   -431.09560013E-3   -426.82307959E-3   -447.60650396E-3
+     -3.09999990E+0   -410.99005938E-3                 NA                 NA
+     -3.08999991E+0                 NA   -405.23934364E-3   -423.12508821E-3
+     -3.00000000E+0                 NA                 NA   -401.27891302E-3
+     -2.99000001E+0   -386.49567962E-3                 NA                 NA
+     -2.90000010E+0                 NA   -364.31530118E-3   -377.20319629E-3
+     -2.89000010E+0   -364.29920793E-3                 NA                 NA
+     -2.79999995E+0   -344.37754750E-3                 NA   -353.32706571E-3
+     -2.78999996E+0                 NA   -340.67583084E-3                 NA
+     -2.70000005E+0                 NA   -321.36687636E-3   -329.64223623E-3
+     -2.69000006E+0   -320.09735703E-3                 NA                 NA
+     -2.65000010E+0                 NA                 NA   -317.87508726E-3
+     -2.58999991E+0   -298.08959365E-3   -297.81019688E-3   -303.80108953E-3
+     -2.50000000E+0                 NA                 NA   -282.81822801E-3
+     -2.49000001E+0   -276.14432573E-3   -276.44130588E-3                 NA
+     -2.40000010E+0                 NA                 NA   -259.66778398E-3
+     -2.39000010E+0   -254.26375866E-3                 NA                 NA
+     -2.34999990E+0                 NA   -246.61308527E-3   -248.16018343E-3
+     -2.29999995E+0   -234.62988436E-3                 NA                 NA
+     -2.28999996E+0                 NA                 NA   -234.39781368E-3
+     -2.25000000E+0                 NA   -225.37606955E-3                 NA
+     -2.24000001E+0   -221.57673538E-3                 NA                 NA
+     -2.19000006E+0                 NA                 NA   -211.60238981E-3
+     -2.15000010E+0                 NA   -204.21023667E-3                 NA
+     -2.14000010E+0   -199.88049567E-3                 NA                 NA
+     -2.09999990E+0                 NA                 NA   -191.23336673E-3
+     -2.04999995E+0                 NA   -183.12948942E-3                 NA
+     -2.03999996E+0   -178.27564478E-3                 NA   -177.73692310E-3
+     -2.00000000E+0                 NA   -172.62540758E-3                 NA
+     -1.99000001E+0   -167.51046479E-3                 NA                 NA
+     -1.95000005E+0                 NA   -162.15242445E-3   -157.61497617E-3
+     -1.94000006E+0   -156.77952766E-3                 NA                 NA
+     -1.88999999E+0                 NA   -149.62582290E-3   -144.29061115E-3
+     -1.85000002E+0   -137.54743338E-3                 NA   -135.45569777E-3
+     -1.84000003E+0                 NA   -139.22911882E-3                 NA
+     -1.79999995E+0                 NA   -130.94124198E-3   -124.46412444E-3
+     -1.78999996E+0   -124.79986250E-3                 NA                 NA
+     -1.75000000E+0   -116.34273082E-3                 NA   -113.54427040E-3
+     -1.74000001E+0                 NA   -118.56913567E-3                 NA
+     -1.70000005E+0   -105.82286119E-3                 NA                 NA
+     -1.69000006E+0                 NA   -108.32181573E-3   -100.54487735E-3
+     -1.64999998E+0    -95.37412226E-3                 NA                 NA
+     -1.63999999E+0                 NA    -98.14231843E-3    -89.82023597E-3
+     -1.60000002E+0    -85.01116186E-3                 NA                 NA
+     -1.59000003E+0                 NA    -88.04609627E-3    -79.21592146E-3
+     -1.54999995E+0    -74.75751638E-3                 NA                 NA
+     -1.53999996E+0                 NA    -78.04952562E-3    -68.76997650E-3
+     -1.50000000E+0    -64.64669853E-3                 NA    -60.56101993E-3
+     -1.49000001E+0                 NA    -68.18170846E-3    -58.53861570E-3
+     -1.45000005E+0    -54.72977459E-3    -60.40011719E-3    -50.56832731E-3
+     -1.44000006E+0    -52.77929828E-3    -58.47625434E-3    -48.62277210E-3
+     -1.39999998E+0    -45.09312287E-3    -50.86696148E-3    -41.02863371E-3
+     -1.38999999E+0    -43.21616516E-3    -48.99393767E-3    -39.21269998E-3
+     -1.35000002E+0    -35.88667884E-3    -41.61906242E-3    -32.27939457E-3
+     -1.34000003E+0    -34.13011134E-3    -39.81934860E-3    -30.70534393E-3
+     -1.29999995E+0    -27.40705013E-3    -32.79651329E-3    -25.04624240E-3
+     -1.28999996E+0    -25.86488239E-3    -31.10908531E-3    -23.89563806E-3
+     -1.25000000E+0    -20.25060728E-3    -24.63250980E-3    -20.34990489E-3
+     -1.24000001E+0    -19.08079535E-3    -23.12770300E-3    -19.67372186E-3
+     -1.20000005E+0    -15.33656474E-3    -17.56582595E-3    -17.80999079E-3
+     -1.19000006E+0    -14.62776493E-3    -16.35822281E-3    -17.40590855E-3
+     -1.14999998E+0    -12.70159427E-3    -12.25927379E-3    -16.03697613E-3
+     -1.13999999E+0    -12.30996754E-3    -11.45095099E-3                 NA
+     -1.10000002E+0    -11.10313088E-3     -9.08331852E-3    -14.43283074E-3
+     -1.09000003E+0                 NA     -8.62768386E-3                 NA
+     -1.04999995E+0     -9.77138989E-3     -7.35022966E-3                 NA
+     -1.03999996E+0                 NA     -7.07735075E-3    -12.57781591E-3
+   -990.00000954E-3     -8.25870410E-3     -5.95899345E-3                 NA
+   -949.99998808E-3                 NA                 NA     -9.89689864E-3
+   -939.99999762E-3                 NA     -4.96930163E-3                 NA
+   -899.99997616E-3     -6.09622803E-3     -4.22167405E-3                 NA
+   -889.99998569E-3                 NA                 NA     -8.18184763E-3
+   -850.00002384E-3                 NA     -3.33589525E-3                 NA
+   -839.99997377E-3     -4.73773992E-3                 NA                 NA
+   -800.00001192E-3                 NA     -2.50928686E-3     -5.74246934E-3
+   -790.00002146E-3     -3.66952200E-3                 NA                 NA
+   -750.00000000E-3                 NA     -1.75595609E-3     -4.47482290E-3
+   -740.00000954E-3     -2.67767720E-3                 NA                 NA
+   -699.99998808E-3                 NA                 NA     -3.28810117E-3
+   -689.99999762E-3     -1.78215816E-3   -977.00511105E-6                 NA
+   -639.99998569E-3     -1.01758994E-3   -464.26628251E-6     -2.01155758E-3
+   -600.00002384E-3   -525.96244495E-6                 NA                 NA
+   -589.99997377E-3   -423.93431067E-6   -101.98658129E-6     -1.11582526E-3
+   -540.00002146E-3    -38.22334838E-6      0.00000000E+0   -436.45699043E-6
+   -500.00000000E-3      0.00000000E+0                 NA                 NA
+   -490.00000954E-3                 NA                 NA    -18.38853677E-6
+   -449.99998808E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[POWER Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0     60.78197435E-3     51.02928355E-3     70.92934102E-3
+     -3.28999996E+0     59.47154760E-3     49.75530505E-3     69.54961270E-3
+     -3.27999997E+0     59.19003859E-3     49.50818792E-3     69.20054555E-3
+     -3.25000000E+0     58.39241296E-3     48.81789163E-3                 NA
+     -3.24000001E+0                 NA                 NA     67.86706299E-3
+     -3.20000005E+0     57.03487247E-3     47.63718694E-3     66.52457267E-3
+     -3.19000006E+0                 NA                 NA     66.19406492E-3
+     -3.14000010E+0     55.43638393E-3     46.24872655E-3                 NA
+     -3.09999990E+0     54.35633659E-3                 NA                 NA
+     -3.08999991E+0                 NA     45.07440701E-3     62.93863803E-3
+     -3.04999995E+0                 NA     44.15384680E-3                 NA
+     -3.03999996E+0     52.76471376E-3                 NA                 NA
+     -3.00000000E+0                 NA     42.98535362E-3                 NA
+     -2.99000001E+0     51.42560229E-3                 NA     59.75886062E-3
+     -2.95000005E+0     50.37114769E-3                 NA                 NA
+     -2.94000006E+0                 NA     41.60353169E-3                 NA
+     -2.90000010E+0                 NA     40.67208618E-3                 NA
+     -2.89000010E+0     48.77392948E-3                 NA     56.64299801E-3
+     -2.84999990E+0     47.72280157E-3                 NA                 NA
+     -2.83999991E+0                 NA     39.29452598E-3                 NA
+     -2.79999995E+0     46.39677331E-3                 NA                 NA
+     -2.78999996E+0                 NA     38.13799471E-3     53.58111113E-3
+     -2.69000006E+0     43.50246117E-3     35.84494814E-3     50.56483299E-3
+     -2.59999990E+0                 NA     33.79080072E-3     47.88349196E-3
+     -2.58999991E+0     40.88205844E-3                 NA                 NA
+     -2.50000000E+0     38.53273019E-3                 NA     44.93582621E-3
+     -2.49000001E+0                 NA     31.29380569E-3                 NA
+     -2.39000010E+0     35.67354754E-3     29.03877757E-3     41.72673821E-3
+     -2.29999995E+0                 NA     27.02315524E-3                 NA
+     -2.28999996E+0     33.08730200E-3                 NA     38.83616626E-3
+     -2.20000005E+0     30.77160753E-3     24.80119467E-3                 NA
+     -2.19000006E+0                 NA                 NA     35.96874699E-3
+     -2.09999990E+0                 NA     22.60067873E-3                 NA
+     -2.08999991E+0     27.95886621E-3                 NA     33.12330693E-3
+     -2.00000000E+0                 NA     20.42518184E-3                 NA
+     -1.99000001E+0     25.42153187E-3                 NA     30.29958718E-3
+     -1.94000006E+0                 NA     19.13541742E-3                 NA
+     -1.89999998E+0     23.15693721E-3                 NA                 NA
+     -1.88999999E+0                 NA     18.06627586E-3     27.49845199E-3
+     -1.79999995E+0                 NA     16.16774872E-3                 NA
+     -1.78999996E+0     20.41846700E-3                 NA     24.72194657E-3
+     -1.74000001E+0                 NA     14.92176857E-3                 NA
+     -1.70000005E+0     18.20697077E-3                 NA                 NA
+     -1.69000006E+0                 NA     13.89351115E-3     21.97338082E-3
+     -1.63999999E+0     16.75155386E-3     12.88056839E-3                 NA
+     -1.60000002E+0                 NA     12.07791734E-3                 NA
+     -1.59000003E+0     15.54813143E-3                 NA     19.25794035E-3
+     -1.54999995E+0                 NA     11.09095756E-3                 NA
+     -1.53999996E+0     14.36019782E-3                 NA                 NA
+     -1.50000000E+0                 NA                 NA     16.84838533E-3
+     -1.49000001E+0     13.18359841E-3      9.92635824E-3                 NA
+     -1.44000006E+0     12.02555280E-3      8.97837710E-3     15.26526548E-3
+     -1.38999999E+0     10.88300534E-3      8.04931950E-3     13.95899802E-3
+     -1.35000002E+0                 NA                 NA     12.92814128E-3
+     -1.34000003E+0      9.76334326E-3      7.14554917E-3                 NA
+     -1.28999996E+0      8.66476353E-3      6.26600487E-3     11.40098181E-3
+     -1.25000000E+0                 NA                 NA     10.40194929E-3
+     -1.24000001E+0      7.59519869E-3      5.41745871E-3                 NA
+     -1.20000005E+0                 NA                 NA      9.17283446E-3
+     -1.19000006E+0      6.55443734E-3      4.60006855E-3                 NA
+     -1.14999998E+0                 NA      3.97397298E-3      7.97476154E-3
+     -1.13999999E+0      5.55150770E-3                 NA                 NA
+     -1.10000002E+0                 NA      3.22703226E-3      6.80830423E-3
+     -1.09000003E+0      4.58843401E-3                 NA      6.58001285E-3
+     -1.04999995E+0      3.85436881E-3      2.52866233E-3      5.68432175E-3
+     -1.03999996E+0      3.67636071E-3      2.39535305E-3      5.46505349E-3
+     -1.00000000E+0      2.98636174E-3      1.88360829E-3      4.60659713E-3
+   -990.00000954E-3      2.82098749E-3      1.76244404E-3      4.39821510E-3
+   -949.99998808E-3      2.18799151E-3      1.30487513E-3      3.58961686E-3
+   -939.99999762E-3      2.03806045E-3      1.19830575E-3      3.39464098E-3
+   -899.99997616E-3      1.47160667E-3    803.31915524E-6      2.64343317E-3
+   -889.99998569E-3      1.34091126E-3    714.41644104E-6      2.46527046E-3
+   -850.00002384E-3    861.80231301E-6    398.18158257E-6      1.79117790E-3
+   -839.99997377E-3    755.25755528E-6    330.08726314E-6      1.63466437E-3
+   -800.00001192E-3    382.00814743E-6    101.56762437E-6      1.05664902E-3
+   -790.00002146E-3    304.37626992E-6     55.70149006E-6    928.32098017E-6
+   -750.00000000E-3     56.57058136E-6      0.00000000E+0    479.71168533E-6
+   -740.00000954E-3      8.95753055E-6                 NA    386.49077760E-6
+   -699.99998808E-3      0.00000000E+0                 NA     89.33275240E-6
+   -689.99999762E-3                 NA                 NA     33.36101872E-6
+   -649.99997616E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+|***************************************************************************
+|                              input2 MODEL
+|***************************************************************************
+|
+[Model]        input2
+Model_type     Input
+| Used for WE and A12. Contains no Power Clamp structures.
+|
+Vinl = 800.000mV
+Vinh = 2.000V
+|
+|                            typ                 min                 max
+|
+C_comp                      1.920pF             1.660pF             2.180pF
+[Voltage Range]             3.300V              3.000V              3.600V
+[Temperature Range]        25.0                85.0                 0.0
+|
+|***************************************************************************
+|
+[GND Clamp]
+|
+|       Voltage            I(typ)             I(min)             I(max)
+|
+     -3.29999995E+0   -378.74570489E-3   -377.63854861E-3   -377.51078606E-3
+     -3.28999996E+0   -376.01724267E-3   -374.94182587E-3   -374.70236421E-3
+     -3.27999997E+0   -374.04161692E-3   -372.99492955E-3   -372.70218134E-3
+     -3.24000001E+0   -366.18435383E-3   -365.25672674E-3   -364.74710703E-3
+     -3.19000006E+0   -356.34481907E-3   -355.56870699E-3   -354.78311777E-3
+     -3.15000010E+0   -348.49461913E-3   -347.84075618E-3   -346.83397412E-3
+     -3.08999991E+0   -336.70070767E-3   -336.23173833E-3   -334.88923311E-3
+     -3.04999995E+0   -328.85640860E-3   -328.51144671E-3   -326.94518566E-3
+     -2.99000001E+0   -317.07379222E-3   -316.91676378E-3   -315.01027942E-3
+     -2.95000005E+0   -309.23590064E-3   -309.20496583E-3                 NA
+     -2.94000006E+0                 NA                 NA   -305.08559942E-3
+     -2.90000010E+0   -299.42542315E-3   -299.55381155E-3   -297.13332653E-3
+     -2.83999991E+0                 NA                 NA   -285.23173928E-3
+     -2.79999995E+0   -279.83605862E-3   -280.28705716E-3   -277.28781104E-3
+     -2.70000005E+0   -260.27107239E-3   -261.05093956E-3   -257.46449828E-3
+     -2.58999991E+0   -238.78282309E-3   -239.93235826E-3   -235.68974435E-3
+     -2.49000001E+0   -219.28448975E-3   -220.77740729E-3   -215.92876315E-3
+     -2.39000010E+0   -199.82813299E-3   -201.67183876E-3   -196.20807469E-3
+     -2.28999996E+0   -180.42297661E-3   -182.62518942E-3   -176.53752863E-3
+     -2.20000005E+0   -163.01225126E-3   -165.54358602E-3                 NA
+     -2.19000006E+0                 NA                 NA   -156.93058074E-3
+     -2.15000010E+0   -153.37224305E-3   -156.08817339E-3                 NA
+     -2.09999990E+0   -143.74251664E-3   -146.64614201E-3   -139.35421407E-3
+     -2.03999996E+0   -132.23388791E-3   -135.36280394E-3   -127.68986821E-3
+     -1.99000001E+0   -122.66577780E-3   -125.98499656E-3   -117.99298972E-3
+     -1.95000005E+0   -115.04632980E-3                 NA                 NA
+     -1.94000006E+0                 NA   -116.65233970E-3   -108.34694654E-3
+     -1.89999998E+0   -105.54713011E-3                 NA   -100.65224022E-3
+     -1.88999999E+0   -103.65401208E-3   -107.35227913E-3    -98.73550385E-3
+     -1.85000002E+0    -96.10617906E-3                 NA    -91.09634906E-3
+     -1.84000003E+0                 NA    -98.10939431E-3                 NA
+     -1.79999995E+0    -86.71489358E-3    -90.74933082E-3    -81.59835637E-3
+     -1.78999996E+0    -84.84616876E-3    -88.91721070E-3    -79.71008867E-3
+     -1.75000000E+0    -77.40554214E-3    -81.62029833E-3    -72.19780982E-3
+     -1.74000001E+0    -75.55387914E-3    -79.80394363E-3    -70.33044100E-3
+     -1.70000005E+0    -68.18117201E-3    -72.57002592E-3    -62.90377676E-3
+     -1.69000006E+0    -66.35154039E-3    -70.77355683E-3    -61.06467173E-3
+     -1.64999998E+0    -59.08722430E-3    -63.63569200E-3    -53.77847329E-3
+     -1.63999999E+0    -57.28743225E-3    -61.86526269E-3    -51.97987705E-3
+     -1.60000002E+0    -50.15342683E-3    -54.83964458E-3    -44.87726837E-3
+     -1.59000003E+0    -48.39567095E-3    -53.10416594E-3    -43.14026237E-3
+     -1.54999995E+0    -41.46763682E-3    -46.24597728E-3    -36.34682298E-3
+     -1.53999996E+0    -39.77306560E-3    -44.55944151E-3    -34.71228480E-3
+     -1.50000000E+0    -33.14452618E-3    -37.92533651E-3    -28.42945419E-3
+     -1.49000001E+0    -31.55191615E-3    -36.31006181E-3    -26.98188834E-3
+     -1.45000005E+0    -25.43957904E-3    -30.02193570E-3    -21.68419585E-3
+     -1.44000006E+0    -24.02510680E-3    -28.51582132E-3    -20.57889290E-3
+     -1.39999998E+0    -18.82165484E-3    -22.75501005E-3    -17.03417115E-3
+     -1.38999999E+0    -17.71816798E-3    -21.42246626E-3    -16.38103276E-3
+     -1.35000002E+0    -14.09373526E-3    -16.52292721E-3    -14.70063906E-3
+     -1.34000003E+0    -13.40963040E-3    -15.46023972E-3    -14.37298022E-3
+     -1.29999995E+0    -11.56121958E-3    -11.85827330E-3    -13.43209855E-3
+     -1.28999996E+0    -11.21183112E-3    -11.14429813E-3    -13.21410667E-3
+     -1.25000000E+0    -10.26512403E-3     -9.03446414E-3    -12.41104398E-3
+     -1.24000001E+0    -10.05427726E-3     -8.63193162E-3                 NA
+     -1.20000005E+0                 NA     -7.52150267E-3                 NA
+     -1.19000006E+0     -9.13521834E-3     -7.29343435E-3    -11.23296935E-3
+     -1.14999998E+0                 NA     -6.57931948E-3                 NA
+     -1.13999999E+0     -8.27136077E-3     -6.41464442E-3                 NA
+     -1.10000002E+0                 NA                 NA     -9.49632749E-3
+     -1.09000003E+0     -7.41834845E-3     -5.66550577E-3                 NA
+     -1.03999996E+0     -6.58503082E-3     -4.96315910E-3                 NA
+     -1.00000000E+0                 NA                 NA     -7.60447886E-3
+   -990.00000954E-3     -5.76156611E-3     -4.28200141E-3                 NA
+   -949.99998808E-3     -5.11990953E-3     -3.75465467E-3     -6.67921221E-3
+   -899.99997616E-3     -4.33139130E-3                 NA     -5.76809281E-3
+   -889.99998569E-3                 NA     -2.98912707E-3                 NA
+   -850.00002384E-3     -3.57201020E-3                 NA                 NA
+   -839.99997377E-3                 NA     -2.38354132E-3     -4.70459880E-3
+   -800.00001192E-3     -2.83934688E-3                 NA     -4.01402824E-3
+   -790.00002146E-3                 NA     -1.81072974E-3                 NA
+   -750.00000000E-3     -2.14952836E-3                 NA     -3.18266638E-3
+   -740.00000954E-3                 NA     -1.28395157E-3                 NA
+   -699.99998808E-3     -1.50774885E-3   -901.85308363E-6     -2.39152764E-3
+   -689.99999762E-3     -1.38801441E-3   -814.04612865E-6     -2.24025920E-3
+   -649.99997616E-3   -939.68969304E-6   -493.68897453E-6     -1.65976072E-3
+   -639.99998569E-3   -837.26330195E-6   -423.18456690E-6     -1.52283162E-3
+   -600.00002384E-3   -466.17665794E-6   -179.50663459E-6     -1.00789720E-3
+   -589.99997377E-3   -387.09049113E-6   -129.87088121E-6   -891.55498426E-6
+   -550.00001192E-3   -125.48775703E-6      0.00000000E+0   -475.75178905E-6
+   -540.00002146E-3    -74.40046465E-6                 NA   -388.26547097E-6
+   -500.00000000E-3      0.00000000E+0                 NA   -104.17796148E-6
+   -490.00000954E-3                 NA                 NA    -51.02904834E-6
+   -449.99998808E-3                 NA                 NA      0.00000000E+0
+      6.59999990E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
+|
+[END]

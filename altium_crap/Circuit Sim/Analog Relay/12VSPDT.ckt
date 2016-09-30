@@ -1,0 +1,21 @@
+*Generic relay pins: COM NC NO T1 T2
+*SPDT Relay Subcircuit Parameters
+*PULLIN     = Pull in voltage
+*DROPOFF    = Drop off voltage
+*CONTACT    = Contact resistance
+*RESISTANCE = Coil resistance
+*INDUCTANCE = Coil Inductance 
+
+*AC/DC relay
+.SUBCKT 12VSPDT 1 2 3 4 5 
++ PARAMS: PULLIN=9.6 DROPOFF=0.1 CONTACT=1m RESISTANCE=1000 INDUCTANCE=10m
+L1 4 6 {(INDUCTANCE/2)}
+L2 5 7 {(INDUCTANCE/2)}
+R1 6 7 {RESISTANCE}
+BNO 8 0 V={PULLIN}-abs(v(6,7))
+SW1 2 1 8 0 SWNC ON
+BNC 9 0 V=abs(v(6,7))
+SW2 3 1 9 0 SWNO OFF
+.MODEL SWNC SW(VT={DROPOFF} RON={CONTACT} )
+.MODEL SWNO SW(VT={(PULLIN*0.98)} RON={CONTACT} )
+.ENDS SPDTRELAY

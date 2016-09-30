@@ -1,0 +1,8 @@
+-h
+-l ieee "C:\PROGRAM FILES\ALTIUM2004\LIBRARY\VHDL_LIB\ieee.vhd" "C:\PROGRAM FILES\ALTIUM2004\LIBRARY\VHDL_LIB\synopsys.vhd"
+-l synopsys "C:\PROGRAM FILES\ALTIUM2004\LIBRARY\VHDL_LIB\attribut.vhd"
+-e KeyPadScanner(structure)
+-f xilinx
+-p spartan2e
+-g "c:\program files\altium2004\examples\core integration\lcd controller and keypad\keypadscanner\Out\Xilinx Spartan2E\keypadscanner_Synth.log"
+-o "c:\program files\altium2004\examples\core integration\lcd controller and keypad\keypadscanner\Out\Xilinx Spartan2E\keypadscanner.edn"

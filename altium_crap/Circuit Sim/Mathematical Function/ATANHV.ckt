@@ -1,0 +1,4 @@
+*Hyperbolic arc tangent of Voltage
+.SUBCKT ATANHV 1 2
+BX 2 0 V=ATANH(V(1))
+.ENDS ATANHV

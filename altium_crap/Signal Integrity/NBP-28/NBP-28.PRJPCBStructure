@@ -1,0 +1,9 @@
+Record=SheetSymbol|SourceDocument=TOP_SHEET.SCHDOC|Designator=U_FPGA|SchDesignator=U_FPGA|FileName=FPGA.SCHDOC
+Record=SheetSymbol|SourceDocument=TOP_SHEET.SCHDOC|Designator=U_PROCESSOR|SchDesignator=U_PROCESSOR|FileName=PROCESSOR.SCHDOC
+Record=SheetSymbol|SourceDocument=PROCESSOR.SCHDOC|Designator=U_PROCESSOR_MEMORIES|SchDesignator=U_PROCESSOR_MEMORIES|FileName=PROCESSOR_MEMORIES.SCHDOC
+Record=SubProject|ProjectPath=FPGA\IOStandardsTests.PrjFpg
+Record=SubProject|ProjectPath=FPGA\IOStandardsTests.PrjFpg
+Record=SubProject|ProjectPath=FPGA\IOStandardsTests.PrjFpg
+Record=SheetSymbol|SourceDocument=FPGA.SCHDOC|Designator=U_FPGA_RAM|SchDesignator=U_FPGA_RAM|FileName=FPGA_MEMORIES.SCHDOC
+Record=TopLevelDocument|FileName=TOP_SHEET.SCHDOC
+Record=FPGA_COMPONENT|BaseComponentDesignator=U1|DocumentName=FPGA.SCHDOC|LibraryReference=XC3S1000-4FG456C|SubProjectPath=FPGA\IOStandardsTests.PrjFpg|Configuration=IOStandardTest_1|Description=Spartan-3 1.2V FPGA, 333 User I/Os, 456-ball FBGA, Standard Performance, Commercial Grade|SubPartUniqueId1=EKEOBUWX|SubPartDocPath1=FPGA.SCHDOC|SubPartUniqueId2=LNQJUYKL|SubPartDocPath2=FPGA.SCHDOC|SubPartUniqueId3=QYSPPPQX|SubPartDocPath3=FPGA.SCHDOC

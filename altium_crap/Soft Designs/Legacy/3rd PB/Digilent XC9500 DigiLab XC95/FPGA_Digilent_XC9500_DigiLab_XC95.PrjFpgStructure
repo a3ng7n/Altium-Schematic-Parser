@@ -1,0 +1,3 @@
+Record=SheetSymbol|SourceDocument=FPGA_Digilent_XC9500_DigiLab_XC95.SchDoc|Designator=PWM0|SchDesignator=PWM0|FileName=PWM.SCHDOC
+Record=TopLevelDocument|FileName=FPGA_Digilent_XC9500_DigiLab_XC95.SchDoc
+Record=Configuration|Name=XC95108-15PC84C|DeviceName=XC95108-15PC84C

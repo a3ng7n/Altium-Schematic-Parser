@@ -1,0 +1,5 @@
+*same as: 2innand.mod, 2inputna.mod, 4011.mod, 4093.mod
+*CMOS 2-in NAND - type:digital pkg:DIP14 [DVDD=14;DGND=7;](A:1,2,3)(B:5,6,4)(C:8,9,10)(D:12,13,11)
+.MODEL 4011 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4011 {mntymx})
+
+* Origin: 2innand.mod

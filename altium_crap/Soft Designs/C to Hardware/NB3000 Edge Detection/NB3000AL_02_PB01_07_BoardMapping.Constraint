@@ -1,0 +1,4 @@
+Record=FileHeader | Id=DXP Constraints v1.0
+Record=Constraint | TargetKind=PCBInstance | TargetId=NB3000AL_02 | PCB=NB3000AL.02
+Record=Constraint | TargetKind=PCBInstance | TargetId=PB01_07 | PCB=PB01.07
+Record=Constraint | TargetKind=ConnectorMap | TargetId=PB01_07.HDR1 | ConnectTo=NB3000AL_02.EXT_A
