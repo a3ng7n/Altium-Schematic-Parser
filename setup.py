@@ -12,5 +12,6 @@ setup(
     author='Aaron Goldstein',
     author_email='aaronmgoldstein@gmail.com',
     description='Converts Altium .SchDoc files into json',
-    long_description=long_description
+    long_description=long_description,
+    long_description_content_type="text/markdown"
 )

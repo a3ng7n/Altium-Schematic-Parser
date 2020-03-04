@@ -48,3 +48,4 @@ Temporary Items
 /venv/
 /.ipynb_checkpoints/
 /.idea/
+*.json

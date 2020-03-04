@@ -58,11 +58,8 @@ def parse(input, output, json_format, **kwargs):
     
     schematic.pop("hierarchy", None)
     
-    if output:
-        json_file = open(output, 'w')
-        json.dump(schematic, json_file)
-    else:
-        print(schematic)
+    return schematic
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.')
@@ -74,4 +71,10 @@ if __name__ == "__main__":
                         help='Organize records into owner/child "hierarchy" or leave as a "flat" list.')
     
     args = parser.parse_args()
-    parse(**vars(args))
+    schematic = parse(**vars(args))
+    
+    if args.output:
+        json_file = open(args.output, 'w')
+        json.dump(schematic, json_file)
+    else:
+        print(schematic)
