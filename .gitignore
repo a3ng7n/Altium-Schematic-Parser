@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/venv/
+/.ipynb_checkpoints/
+/.idea/
+*.json
+/Altium_Schematic_Parser.egg-info/
