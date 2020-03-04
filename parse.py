@@ -4,7 +4,7 @@ import re
 import json
 import copy
 
-def parse(input, output, json_format, **kwargs):
+def parse(input, json_format, **kwargs):
     fullPath = input
     
     blah = olefile.OleFileIO(fullPath)

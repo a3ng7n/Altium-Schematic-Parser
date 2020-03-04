@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name='Altium-Schematic-Parser',
     version='0.0.0',
-    packages=[''],
+    packages=find_packages(),
     url='https://github.com/a3ng7n/Altium-Schematic-Parser',
     license='see LICENSE',
     author='Aaron Goldstein',
