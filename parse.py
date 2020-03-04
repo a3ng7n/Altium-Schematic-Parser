@@ -1,8 +1,7 @@
 import argparse
 import olefile
 import os
-
-
+import re
 
 # class ParametricFile:
 #     records = []
@@ -41,54 +40,54 @@ import os
 #
 #             children.add(current);
 #
-#     def readRecord(self, DocumentInputStream inputStream):
-#         line = readLine(inputStream)
+# def readRecord(inputStream):
+#     line = readLine(inputStream)
 #
-#         if (line == null): return null
+#     if (line == null): return null
 #
-#         result = []
+#     result = []
 #
-#         pairs = line.split("\\|")
-#         for (String pair: pairs) {
+#     pairs = line.split("|")
+#     for (String pair: pairs) {
 #         if (pair.trim().isEmpty())
 #             continue;
 #
-#         data = pair.split("=")
-#         if (data.length == 2) {
-#         result.put(data[0], data[1]);
+#     data = pair.split("=")
+#     if (data.length == 2) {
+#     result.put(data[0], data[1])
+    #
 #
 #
 #     return result
 #
 #
-#     def readLine(inputStream):
-#         int
-#         length = inputStream.readInt()
-#         if (length == -1):
-#             return null
-#
-#         byte[]
-#         buffer = new
-#         byte[length]
-#         inputStream.read(buffer, 0, length)
-#         if (buffer[0] == 0):
-#             return null
-#
-#         return new
-#         String(buffer).split("\u0000")[0]
-#         BLOCKSIZE = 4096
-#         result = []
-#         current = ''
-#         for block in iter(lambda: fp.read(BLOCKSIZE), ''):
-#             current += block
-#             while 1:
-#                 markerpos = current.find(marker)
-#                 if markerpos == -1:
-#                     break
-#                 result.append(current[:markerpos])
-#                 current = current[markerpos + len(marker):]
-#         result.append(current)
-#         return result
+    # def readLine(inputStream):
+    #     length = inputStream.readInt()
+    #     if (length == -1):
+    #         return None
+    #
+    #     buffer = new
+    #     byte[length]
+    #     inputStream.read(buffer, 0, length)
+    #     if (buffer[0] == 0):
+    #         return None
+    #
+    #     return new
+    #     String(buffer).split("\u0000")[0]
+    #
+    #     BLOCKSIZE = 4096
+    #     result = []
+    #     current = ''
+    #     for block in iter(lambda: fp.read(BLOCKSIZE), ''):
+    #         current += block
+    #         while 1:
+    #             markerpos = current.find(marker)
+    #             if markerpos == -1:
+    #                 break
+    #             result.append(current[:markerpos])
+    #             current = current[markerpos + len(marker):]
+    #     result.append(current)
+    #     return result
 
 
 def parse(input, output, **kwargs):
@@ -97,7 +96,24 @@ def parse(input, output, **kwargs):
     
     blah = olefile.OleFileIO(fullPath)
     stream = blah.openstream('FileHeader')
-    print(stream.read())
+
+    pattern = re.compile(b'.{3}\x00\x00\|')
+    lines = pattern.split(stream.read()[5:-1])
+    
+    records = []
+    for line in lines:
+        record = {}
+        pairs = line.split(b"|")
+        
+        for pair in pairs:
+            data = pair.split(b"=")
+            
+            if len(data) == 2:
+                record[data[0].decode()] = data[1].decode()
+        
+        records.append(record)
+    
+    print(records)
 
 
 if __name__ == "__main__":
