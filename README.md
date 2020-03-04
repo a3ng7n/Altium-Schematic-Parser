@@ -5,7 +5,7 @@ Converts Altium .SchDoc files into json
 * olefile
 ## Install
     git clone git@github.com:a3ng7n/Altium-Schematic-Parser.git
-    cd Altium-Schematic-Parser/
-    pip install -r requirements.txt
+    cd Altium-Schematic-Parser
+    pip install -e .
 ## Usage
     python parse.py -i "path/to/altiumschematic.schdoc" -o "path/to/jsonfile.json"
