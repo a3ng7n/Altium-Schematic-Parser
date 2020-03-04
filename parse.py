@@ -60,7 +60,6 @@ def parse(input, json_format, **kwargs):
     
     return schematic
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.')
     parser.add_argument('--input', '-i', dest='input',
