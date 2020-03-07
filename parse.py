@@ -60,20 +60,7 @@ def parse(input, format, **kwargs):
     
     return schematic
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.', formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('--input', '-i', dest='input',
-                        help='path/to/altiumschematic.schdoc file to parse')
-    parser.add_argument('--output', '-o', dest='output',
-                        help='path/to/jsonfile.json file to output json to, otherwise prints to terminal')
-    parser.add_argument('format', default='hierarchy', nargs='?',
-                        choices=['json-flat', 'json-hierarchy', 'parts-list', 'net-list'],
-                        help=textwrap.dedent('''\
-                        json-flat, json-hierarchy: Organize records into owner/child "hierarchy" or leave as a "flat" list
-                        parts-list: A listing of parts and their designators
-                        net-list: A listing of nets between parts pins, referred to by their designators'''))
-    
-    args = parser.parse_args()
+def main(args):
     schematic = parse(**vars(args))
     
     if args.output:
@@ -81,3 +68,19 @@ if __name__ == "__main__":
         json.dump(schematic, json_file, indent=4)
     else:
         print(schematic)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.', formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument('--input', '-i', dest='input',
+                        help='path/to/altiumschematic.schdoc file to parse')
+    parser.add_argument('--output', '-o', dest='output',
+                        help='path/to/jsonfile.json file to output json to, otherwise prints to terminal')
+    parser.add_argument('format', nargs='?', default='json-hierarchy',
+                        choices=['json-flat', 'json-hierarchy', 'parts-list', 'net-list'],
+                        help=textwrap.dedent('''\
+                        json-flat, json-hierarchy: Organize records into owner/child "hierarchy" or leave as a "flat" list
+                        parts-list: A listing of parts and their designators
+                        net-list: A listing of nets between parts pins, referred to by their designators'''))
+    
+    args = parser.parse_args()
+    main(args)
