@@ -74,6 +74,6 @@ if __name__ == "__main__":
     
     if args.output:
         json_file = open(args.output, 'w')
-        json.dump(schematic, json_file)
+        json.dump(schematic, json_file, indent=4)
     else:
         print(schematic)
