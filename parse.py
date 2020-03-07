@@ -1,10 +1,10 @@
-import argparse
+import argparse, textwrap
 import olefile
 import re
 import json
 import copy
 
-def parse(input, json_format, **kwargs):
+def parse(input, format, **kwargs):
     fullPath = input
     
     blah = olefile.OleFileIO(fullPath)
@@ -53,7 +53,7 @@ def parse(input, json_format, **kwargs):
             
             owner["children"].append(current)
     
-    if json_format == 'hierarchy':
+    if format == 'json-hierarchy':
         schematic["records"] = schematic["hierarchy"]
     
     schematic.pop("hierarchy", None)
@@ -61,13 +61,17 @@ def parse(input, json_format, **kwargs):
     return schematic
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.')
+    parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.', formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('--input', '-i', dest='input',
                         help='path/to/altiumschematic.schdoc file to parse')
     parser.add_argument('--output', '-o', dest='output',
                         help='path/to/jsonfile.json file to output json to, otherwise prints to terminal')
-    parser.add_argument('json_format', default='hierarchy', nargs='?', choices=['flat', 'hierarchy'],
-                        help='Organize records into owner/child "hierarchy" or leave as a "flat" list.')
+    parser.add_argument('format', default='hierarchy', nargs='?',
+                        choices=['json-flat', 'json-hierarchy', 'parts-list', 'net-list'],
+                        help=textwrap.dedent('''\
+                        json-flat, json-hierarchy: Organize records into owner/child "hierarchy" or leave as a "flat" list
+                        parts-list: A listing of parts and their designators
+                        net-list: A listing of nets between parts pins, referred to by their designators'''))
     
     args = parser.parse_args()
     schematic = parse(**vars(args))

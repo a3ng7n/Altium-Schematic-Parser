@@ -12,12 +12,14 @@ Converts Altium .SchDoc files into json
 # Notes
 ## schdoc file format
 Record ids:
-* 1:    a part
+* 1:    a part, type identified by either "LIBREFERENCE" or "DESIGNITEMID"
 * 2:    a pin on a part
 * 6:    a "drawing" I think... "Xn"/"Yn" are values of where a line should be drawn
+* 34:   a designator?
 * 41:   text associated with a part - lots of different types indicated by "NAME"
     * PinUniqueId:  I suspect a unique id for the associated pin
     * Fitted:       ...wat?
     * Comment:      self explanatory
+* 44:   a container of "models" aka record 45's - see below
 * 45:   appears to be a reference to which "model" a particular part can be represented by. Since this is just a
 possible model, the one actually selected for a given part will have the "ISCURRENT" flag set to "T"
