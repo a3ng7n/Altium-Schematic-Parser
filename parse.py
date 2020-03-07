@@ -60,12 +60,21 @@ def parse(input, format, **kwargs):
     
     return schematic
 
+def determine_parts_list(schematic):
+    print('determine parts list')
+
 def main(args):
     schematic = parse(**vars(args))
     
     if args.output:
-        json_file = open(args.output, 'w')
-        json.dump(schematic, json_file, indent=4)
+        if args.format in ('json-flat', 'json-hierarchy'):
+            json_file = open(args.output, 'w')
+            json.dump(schematic, json_file, indent=4)
+        elif args.format == 'parts-list':
+            print('blah')
+            determine_parts_list(schematic)
+        else:
+            print('no format')
     else:
         print(schematic)
 
