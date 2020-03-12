@@ -62,6 +62,9 @@ def parse(input, format, **kwargs):
 
 def determine_parts_list(schematic):
     print('determine parts list')
+    for record in schematic["records"]:
+        if record["RECORD"] is "1":
+            print("part: " + str(record))
 
 def main(args):
     schematic = parse(**vars(args))
