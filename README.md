@@ -8,7 +8,34 @@ Converts Altium .SchDoc files into json
     cd Altium-Schematic-Parser
     pip install -e .
 ## Usage
-    python parse.py -i "path/to/altiumschematic.schdoc" -o "path/to/jsonfile.json"
+Full description
+
+    usage: parse.py [-h] [-o OUTPUT]
+                    [-f {all-list,all-hierarchy,parts-list,net-list}]
+                    input
+
+Ex: to export all contents of altiumschematic.schdoc to jsonfile.json within path/to/:
+
+    python parse.py "path/to/altiumschematic.schdoc" -o "path/to/jsonfile.json"
+**NOTE**:
+the default output formatting behavior (-f/--format) if not supplied is to show all contents
+retaining all hierarchy information
+
+## Command line arguments
+    
+    positional arguments:
+      input                 path/to/altiumschematic.schdoc file to parse
+    
+    optional arguments:
+      -h, --help            show this help message and exit
+      -o OUTPUT, --output OUTPUT
+                            path/to/jsonfile.json file to output json to, otherwise prints to terminal
+      -f {all-list,all-hierarchy,parts-list,net-list}, --format {all-list,all-hierarchy,parts-list,net-list}
+                            all-list: All records in a flattened list
+                            all-hierarchy: All records in an owner/child "hierarchy"
+                            parts-list: A listing of parts and their designators
+                            net-list: A listing of nets between parts pins, referred to by their designators
+
 # Notes
 ## schdoc file format
 Record ids:
