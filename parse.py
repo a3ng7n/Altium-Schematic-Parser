@@ -34,6 +34,17 @@ def parse(input, format, **kwargs):
     schematic["header"] = [x for x in datums if 'HEADER' in x.keys()]
     schematic["records"] = [x for x in datums if 'RECORD' in x.keys()]
     
+    hierarchy_schematic = determine_hierarchy(schematic)
+    if format == 'all-hierarchy':
+        schematic = hierarchy_schematic
+    elif format == 'parts-list':
+        schematic = determine_parts_list(hierarchy_schematic)
+    elif format == 'net-list':
+        schematic = determine_net_list(hierarchy_schematic)
+    
+    return schematic
+
+def determine_hierarchy(schematic):
     # prep a scratchpad copy of records to build hierarchy from
     records_copy = copy.deepcopy(schematic["records"])
     schematic["hierarchy"] = []
@@ -53,44 +64,40 @@ def parse(input, format, **kwargs):
             
             owner["children"].append(current)
     
-    if format == 'json-hierarchy':
-        schematic["records"] = schematic["hierarchy"]
-    
+    schematic["records"] = schematic["hierarchy"]
     schematic.pop("hierarchy", None)
-    
     return schematic
 
 def determine_parts_list(schematic):
-    print('determine parts list')
-    for record in schematic["records"]:
-        if record["RECORD"] is "1":
-            print("part: " + str(record))
+    parts_list = {
+        "records": [ record for record in schematic["records"] if record["RECORD"] is "1" ]
+    }
+    return parts_list
+
+def determine_net_list(schematic):
+    print('NOT IMPLEMENTED')
+    return schematic
 
 def main(args):
     schematic = parse(**vars(args))
     
     if args.output:
-        if args.format in ('json-flat', 'json-hierarchy'):
-            json_file = open(args.output, 'w')
-            json.dump(schematic, json_file, indent=4)
-        elif args.format == 'parts-list':
-            print('blah')
-            determine_parts_list(schematic)
-        else:
-            print('no format')
+        json_file = open(args.output, 'w')
+        json.dump(schematic, json_file, indent=4)
     else:
         print(schematic)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Converts Altium .SchDoc files into json.', formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('--input', '-i', dest='input',
+    parser.add_argument('input',
                         help='path/to/altiumschematic.schdoc file to parse')
-    parser.add_argument('--output', '-o', dest='output',
+    parser.add_argument('-o', '--output', dest='output',
                         help='path/to/jsonfile.json file to output json to, otherwise prints to terminal')
-    parser.add_argument('format', nargs='?', default='json-hierarchy',
-                        choices=['json-flat', 'json-hierarchy', 'parts-list', 'net-list'],
+    parser.add_argument('-f', '--format', dest='format', default='all-hierarchy',
+                        choices=['all-list', 'all-hierarchy', 'parts-list', 'net-list'],
                         help=textwrap.dedent('''\
-                        json-flat, json-hierarchy: Organize records into owner/child "hierarchy" or leave as a "flat" list
+                        all-list: All records in a flattened list
+                        all-hierarchy: All records in an owner/child "hierarchy"
                         parts-list: A listing of parts and their designators
                         net-list: A listing of nets between parts pins, referred to by their designators'''))
     
