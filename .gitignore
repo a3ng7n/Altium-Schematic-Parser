@@ -52,5 +52,6 @@ Temporary Items
 /Altium_Schematic_Parser.egg-info/
 **/__Previews
 **/Status Report.Txt
+*.OutJob
 *.SchDoc.Zip
 *.OutJob.Zip
