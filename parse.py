@@ -122,30 +122,29 @@ def find_neighbors(wire, schematic):
     return neighbors
 
 def is_connected(wire_a, wire_b):
-    a_vertex_pairs = [(wire_a['coords'][i], wire_a['coords'][i + 1]) for i in
+    a_line_segments = [(wire_a['coords'][i], wire_a['coords'][i + 1]) for i in
                       range(len(wire_a['coords']) - 1)]
-    b_vertex_pairs = [(wire_b['coords'][i], wire_b['coords'][i + 1]) for i in
+    b_line_segments = [(wire_b['coords'][i], wire_b['coords'][i + 1]) for i in
                       range(len(wire_b['coords']) - 1)]
     
-    for a_vx_pair in a_vertex_pairs:
-        for b_vx_pair in b_vertex_pairs:
-            if (((a_vx_pair[0][0] <= b_vx_pair[0][0] <= a_vx_pair[1][0])
-                 and (a_vx_pair[0][1] <= b_vx_pair[0][1] <= a_vx_pair[1][1]))
-                or ((a_vx_pair[0][0] >= b_vx_pair[0][0] >= a_vx_pair[1][0])
-                    and (a_vx_pair[0][1] >= b_vx_pair[0][1] >= a_vx_pair[1][1]))
-                or ((a_vx_pair[0][0] <= b_vx_pair[1][0] <= a_vx_pair[1][0])
-                    and (a_vx_pair[0][1] <= b_vx_pair[1][1] <= a_vx_pair[1][1]))
-                or ((a_vx_pair[0][0] >= b_vx_pair[1][0] >= a_vx_pair[1][0])
-                    and (a_vx_pair[0][1] >= b_vx_pair[1][1] >= a_vx_pair[1][1])))\
-                or (((b_vx_pair[0][0] <= a_vx_pair[0][0] <= b_vx_pair[1][0])
-                 and (b_vx_pair[0][1] <= a_vx_pair[0][1] <= b_vx_pair[1][1]))
-                or ((b_vx_pair[0][0] >= a_vx_pair[0][0] >= b_vx_pair[1][0])
-                    and (b_vx_pair[0][1] >= a_vx_pair[0][1] >= b_vx_pair[1][1]))
-                or ((b_vx_pair[0][0] <= a_vx_pair[1][0] <= b_vx_pair[1][0])
-                    and (b_vx_pair[0][1] <= a_vx_pair[1][1] <= b_vx_pair[1][1]))
-                or ((b_vx_pair[0][0] >= a_vx_pair[1][0] >= b_vx_pair[1][0])
-                    and (b_vx_pair[0][1] >= a_vx_pair[1][1] >= b_vx_pair[1][1]))):
-                
+    # check if any vertices in wire_a lie on wire_b
+    for vertex in [vx for line in a_line_segments for vx in line]:
+        for b_line in b_line_segments:
+            b_xs = sorted(list(zip(*b_line))[0])
+            b_ys = sorted(list(zip(*b_line))[1])
+            
+            if ((min(b_xs) <= vertex[0] <= max(b_xs))
+                    and (min(b_ys) <= vertex[1] <= max(b_ys))):
+                return True
+    
+    # check if any vertices in wire_b lie on wire_a
+    for vertex in [vx for line in b_line_segments for vx in line]:
+        for a_line in a_line_segments:
+            a_xs = sorted(list(zip(*a_line))[0])
+            a_ys = sorted(list(zip(*a_line))[1])
+        
+            if ((min(a_xs) <= vertex[0] <= max(a_xs))
+                    and (min(a_ys) <= vertex[1] <= max(a_ys))):
                 return True
     
     return False
