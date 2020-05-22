@@ -76,6 +76,7 @@ def determine_parts_list(schematic):
 
 def determine_net_list(schematic):
     wires = [ record for record in schematic["records"] if record["RECORD"] == "27" ]
+    pins = [ record for record in schematic["records"] if record["RECORD"] == 2 ]
     
     p = re.compile('^(?P<prefix>X)(?P<index>\d+)$')
     for wire in wires:
@@ -88,24 +89,50 @@ def determine_net_list(schematic):
         if wire["index"] not in [id for net in nets for id in net]:
             nets.append(find_connected_wires(wire, [], schematic))
     
+    visited, found = find_record(schematic, key="RECORD", value="2")
+    
     schematic["nets"] = nets
     
     return schematic
 
+def find_record(schematic, key, value, record=None, visited=None, found=None):
+    print("finding records where: {0} = {1}".format(key, value))
+    
+    if visited == None:
+        visited = []
+    if found == None:
+        found = []
+    if record == None:
+        for record in schematic['records']:
+            visited, found = find_record(schematic, key, value, record=record, visited=visited, found=found)
+    else:
+        if record['index'] not in [r['index'] for r in visited]:
+            visited.append(record)
+            
+            if key in record.keys():
+                if record[key] == value:
+                    found.append(record)
+        
+        if "children" in record.keys():
+            for child_record in record["children"]:
+                visited, found = find_record(schematic, key, value, record=child_record, visited=visited, found=found)
+    
+    return visited, found
+    
 def find_connected_wires(wire, visited, schematic):
     neighbors = find_neighbors(wire, schematic)
     print('entering: {0}'.format(wire['index']))
     
-    if wire['index'] not in visited:
-        print('adding: {0} to {1}'.format(wire['index'], visited))
-        visited.append(wire['index'])
+    if wire['index'] not in [w['index'] for w in visited]:
+        print('adding: {0} to {1}'.format(wire['index'], [w['index'] for w in visited]))
+        visited.append(wire)
         
         for neighbor in neighbors:
             print('trying: {0} of {1}'.format(neighbor['index'], [x['index'] for x in neighbors]))
             visited = find_connected_wires(neighbor, visited, schematic)
-            print('visited = {0}'.format(visited))
+            print('visited = {0}'.format([w['index'] for w in visited]))
     else:
-        print('skipping: {0} already in list {1}'.format(wire['index'], visited))
+        print('skipping: {0} already in list {1}'.format(wire['index'], [w['index'] for w in visited]))
     
     print('returning: {0}'.format(wire['index']))
     return visited
