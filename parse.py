@@ -3,6 +3,8 @@ import olefile
 import re
 import json
 import copy
+import logging as lg
+lg.basicConfig(level=lg.INFO)
 
 def parse(input, format, **kwargs):
     fullPath = input
@@ -89,14 +91,22 @@ def determine_net_list(schematic):
         if wire["index"] not in [id for net in nets for id in net]:
             nets.append(find_connected_wires(wire, [], schematic))
     
-    visited, found = find_record(schematic, key="RECORD", value="2")
+    _, pins = find_record(schematic, key="RECORD", value="2")
+    
+    for net in nets:
+        for wire in net:
+            for vertex in wire['coords']:
+                for pin in pins:
+                    if ( vertex[0] == int(pin['LOCATION.X'])
+                        and vertex[1] == int(pin['LOCATION.Y']) ):
+                        lg.debug('found pin {0} on net {1}'.format(pin, net))
     
     schematic["nets"] = nets
     
     return schematic
 
 def find_record(schematic, key, value, record=None, visited=None, found=None):
-    print("finding records where: {0} = {1}".format(key, value))
+    lg.debug("finding records where: {0} = {1}".format(key, value))
     
     if visited == None:
         visited = []
@@ -121,20 +131,20 @@ def find_record(schematic, key, value, record=None, visited=None, found=None):
     
 def find_connected_wires(wire, visited, schematic):
     neighbors = find_neighbors(wire, schematic)
-    print('entering: {0}'.format(wire['index']))
+    lg.debug('entering: {0}'.format(wire['index']))
     
     if wire['index'] not in [w['index'] for w in visited]:
-        print('adding: {0} to {1}'.format(wire['index'], [w['index'] for w in visited]))
+        lg.debug('adding: {0} to {1}'.format(wire['index'], [w['index'] for w in visited]))
         visited.append(wire)
         
         for neighbor in neighbors:
-            print('trying: {0} of {1}'.format(neighbor['index'], [x['index'] for x in neighbors]))
+            lg.debug('trying: {0} of {1}'.format(neighbor['index'], [x['index'] for x in neighbors]))
             visited = find_connected_wires(neighbor, visited, schematic)
-            print('visited = {0}'.format([w['index'] for w in visited]))
+            lg.debug('visited = {0}'.format([w['index'] for w in visited]))
     else:
-        print('skipping: {0} already in list {1}'.format(wire['index'], [w['index'] for w in visited]))
+        lg.debug('skipping: {0} already in list {1}'.format(wire['index'], [w['index'] for w in visited]))
     
-    print('returning: {0}'.format(wire['index']))
+    lg.debug('returning: {0}'.format(wire['index']))
     return visited
 
 def find_neighbors(wire, schematic):
