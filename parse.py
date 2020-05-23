@@ -3,8 +3,9 @@ import olefile
 import re
 import json
 import copy
+import math
 import logging as lg
-lg.basicConfig(level=lg.INFO)
+lg.basicConfig(level=lg.DEBUG)
 
 def parse(input, format, **kwargs):
     fullPath = input
@@ -77,34 +78,39 @@ def determine_parts_list(schematic):
     return parts_list
 
 def determine_net_list(schematic):
-    wires = [ record for record in schematic["records"] if record["RECORD"] == "27" ]
-    pins = [ record for record in schematic["records"] if record["RECORD"] == 2 ]
+    _, wires = find_record(schematic, key="RECORD", value="27")
+    _, pins = find_record(schematic, key="RECORD", value="2")
+    _, labels = find_record(schematic, key="RECORD", value="25")
+    _, power_ports = find_record(schematic, key="RECORD", value="17")
+    devices = wires + pins + labels + power_ports
     
     p = re.compile('^(?P<prefix>X)(?P<index>\d+)$')
-    for wire in wires:
-        coord_name_matches = [x for x in [p.match(key) for key in wire.keys()] if x]
-        wire['coords'] = [ ( int(wire['X' + match.group('index')]) , int(wire['Y' + match.group('index')]) )
-                           for match in coord_name_matches ]
+    for device in devices:
+        # if a Pin, do some fancy geometry math
+        if device["RECORD"] == "2":
+            rotation = (int(device["PINCONGLOMERATE"]) & 0x03) * 90
+            device['coords'] = [[
+                int(int(device['LOCATION.X']) + math.cos(rotation / 180 * math.pi) * int(device['PINLENGTH'])),
+                int(int(device['LOCATION.Y']) + math.sin(rotation / 180 * math.pi) * int(device['PINLENGTH']))
+            ]]
+        # if a Wire, follow inconsistent location key names (X1 vs LOCATION.X, etc..)
+        elif device["RECORD"] == "27":
+            coord_name_matches = [x for x in [p.match(key) for key in device.keys()] if x]
+            device['coords'] = [ ( int(device['X' + match.group('index')]) , int(device['Y' + match.group('index')]) )
+                               for match in coord_name_matches ]
+        # everything else, just convert the location values to ints
+        else:
+            device['coords'] = [(int(device['LOCATION.X']), int(device['LOCATION.Y']))]
     
     nets = []
-    for wire in wires:
-        if wire["index"] not in [id for net in nets for id in net]:
-            nets.append(find_connected_wires(wire, [], schematic))
-    
-    _, pins = find_record(schematic, key="RECORD", value="2")
-    
-    for net in nets:
-        for wire in net:
-            for vertex in wire['coords']:
-                for pin in pins:
-                    if ( vertex[0] == int(pin['LOCATION.X'])
-                        and vertex[1] == int(pin['LOCATION.Y']) ):
-                        lg.debug('found pin {0} on net {1}'.format(pin, net))
+    for device in devices:
+        if device["index"] not in [d['index'] for net in nets for d in net]:
+            nets.append(find_connected_wires(device, devices, [], schematic))
     
     schematic["nets"] = nets
     
     return schematic
-
+    
 def find_record(schematic, key, value, record=None, visited=None, found=None):
     lg.debug("finding records where: {0} = {1}".format(key, value))
     
@@ -129,8 +135,8 @@ def find_record(schematic, key, value, record=None, visited=None, found=None):
     
     return visited, found
     
-def find_connected_wires(wire, visited, schematic):
-    neighbors = find_neighbors(wire, schematic)
+def find_connected_wires(wire, devices, visited, schematic):
+    neighbors = find_neighbors(wire, devices, schematic)
     lg.debug('entering: {0}'.format(wire['index']))
     
     if wire['index'] not in [w['index'] for w in visited]:
@@ -139,7 +145,7 @@ def find_connected_wires(wire, visited, schematic):
         
         for neighbor in neighbors:
             lg.debug('trying: {0} of {1}'.format(neighbor['index'], [x['index'] for x in neighbors]))
-            visited = find_connected_wires(neighbor, visited, schematic)
+            visited = find_connected_wires(neighbor, devices, visited, schematic)
             lg.debug('visited = {0}'.format([w['index'] for w in visited]))
     else:
         lg.debug('skipping: {0} already in list {1}'.format(wire['index'], [w['index'] for w in visited]))
@@ -147,8 +153,8 @@ def find_connected_wires(wire, visited, schematic):
     lg.debug('returning: {0}'.format(wire['index']))
     return visited
 
-def find_neighbors(wire, schematic):
-    all_wires = [record for record in schematic["records"] if record["RECORD"] == "27"]
+def find_neighbors(wire, devices, schematic):
+    all_wires = devices
     other_wires = [record for record in all_wires if record != wire]
     
     neighbors = []
@@ -159,10 +165,18 @@ def find_neighbors(wire, schematic):
     return neighbors
 
 def is_connected(wire_a, wire_b):
-    a_line_segments = [(wire_a['coords'][i], wire_a['coords'][i + 1]) for i in
+    
+    if wire_a["RECORD"] == "27":
+        a_line_segments = [(wire_a['coords'][i], wire_a['coords'][i + 1]) for i in
                       range(len(wire_a['coords']) - 1)]
-    b_line_segments = [(wire_b['coords'][i], wire_b['coords'][i + 1]) for i in
+    else:
+        a_line_segments = [(wire_a['coords'][0], wire_a['coords'][0])]
+    
+    if wire_b["RECORD"] == "27":
+        b_line_segments = [(wire_b['coords'][i], wire_b['coords'][i + 1]) for i in
                       range(len(wire_b['coords']) - 1)]
+    else:
+        b_line_segments = [(wire_b['coords'][0], wire_b['coords'][0])]
     
     # check if any vertices in wire_a lie on wire_b
     for vertex in [vx for line in a_line_segments for vx in line]:
@@ -183,6 +197,10 @@ def is_connected(wire_a, wire_b):
             if ((min(a_xs) <= vertex[0] <= max(a_xs))
                     and (min(a_ys) <= vertex[1] <= max(a_ys))):
                 return True
+            
+    # check if both items are Power Ports with the same TEXT value
+    if ( wire_a["RECORD"] == "17" ) and ( wire_b["RECORD"] == "17" ) and ( wire_a["TEXT"] == wire_b["TEXT"] ):
+        return True
     
     return False
 
