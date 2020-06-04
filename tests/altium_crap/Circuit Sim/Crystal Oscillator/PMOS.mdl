@@ -1,6 +1,0 @@
-
-*PMOS
-*Default P-Channel MOSFET
-.MODEL PMOS PMOS()
-
-* Origin: Mcemos.lib
