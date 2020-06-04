@@ -48,6 +48,13 @@ def parse(input, format, **kwargs):
     return schematic
 
 def determine_hierarchy(schematic):
+    """Convert a dict containing a flat list of records
+    into a dict of records in a hierarchy
+    
+    :param schematic: dict with 'header' and 'records' populated
+    :return: the input dict with 'records' assembled into parent/child hierarchy
+    """
+    
     # prep a scratchpad copy of records to build hierarchy from
     records_copy = copy.deepcopy(schematic["records"])
     schematic["hierarchy"] = []
@@ -104,8 +111,20 @@ def determine_net_list(schematic):
     
     nets = []
     for device in devices:
-        if device["index"] not in [d['index'] for net in nets for d in net]:
-            nets.append(find_connected_wires(device, devices, [], schematic))
+        if device["index"] not in [d['index'] for net in nets for d in net['devices']]:
+            net = {'name': None,
+                   'devices': find_connected_wires(device, devices, [], schematic)}
+            nets.append(net)
+    
+    for net in nets:
+        net['devices'].sort(key=lambda k: k['index'])
+        if not net['name']:
+            net['name'] = next(iter(d['TEXT'] for d in net['devices'] if ((d['RECORD'] == '17') or (d['RECORD'] == '25'))), None)
+        
+        if not net['name']:
+            naming_pin = next(iter(d for d in net['devices'] if d['RECORD'] == '2'), None)
+            parent = next(iter(find_record(schematic, key="index", value=int(naming_pin['OWNERINDEX']))[1]), None) if naming_pin else None
+            net['name'] = next(iter('Net' + r['TEXT'] for r in parent['children'] if (r['RECORD'] == '34')), None) if parent else None
     
     schematic["nets"] = nets
     
