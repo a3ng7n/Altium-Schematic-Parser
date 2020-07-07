@@ -29,7 +29,7 @@ def parse(input, format, **kwargs):
         for pair in pairs:
             data = pair.split(b"=")
             
-            datum[data[0].decode()] = data[1].decode()
+            datum[data[0].decode()] = data[1].decode('utf-8', 'ignore')
         
         datums.append(datum)
     
