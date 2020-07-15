@@ -4,8 +4,9 @@ import re
 import json
 import copy
 import math
-import logging as lg
-lg.basicConfig(level=lg.DEBUG)
+import logging
+logging.basicConfig()
+lg = logging.getLogger(__name__)
 
 def parse(input, format, **kwargs):
     fullPath = input
