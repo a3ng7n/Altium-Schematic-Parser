@@ -57,3 +57,4 @@ Temporary Items
 *.OutJob.Zip
 *.NET
 *.PcbDoc.htm
+**/__pychache__/*
