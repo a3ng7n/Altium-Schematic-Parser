@@ -1,7 +1,7 @@
 # Altium-Schematic-Parser
 Converts Altium .SchDoc files into json
 ## Prerequisites
-* python 3
+* python 3 (3.4 to 3.11; currently doesn't support 3.12+)
 * olefile
 ## Install
     git clone git@github.com:a3ng7n/Altium-Schematic-Parser.git
