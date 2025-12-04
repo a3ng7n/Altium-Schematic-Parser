@@ -31,7 +31,7 @@ def parse(input, format, **kwargs):
             data = pair.split(b"=")
             # only add to dict if we have both a key and a value
             if len(data) >= 2:
-                datum[data[0].decode()] = data[1].decode('utf-8', 'ignore')
+                datum[data[0].decode('utf-8', 'ignore')] = data[1].decode('utf-8', 'ignore')
 
         datums.append(datum)
 
@@ -93,7 +93,7 @@ def determine_net_list(schematic):
     _, power_ports = find_record(schematic, key="RECORD", value="17")
     devices = wires + pins + labels + power_ports
 
-    p = re.compile('^(?P<prefix>X)(?P<index>\\d+)$')
+    p = re.compile(r'^(?P<prefix>X)(?P<index>\d+)$')
     for device in devices:
         # if a Pin, do some fancy geometry math
         if device["RECORD"] == "2":
