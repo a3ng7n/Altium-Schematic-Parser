@@ -97,10 +97,13 @@ def determine_net_list(schematic):
     for device in devices:
         # if a Pin, do some fancy geometry math
         if device["RECORD"] == "2":
-            rotation = (int(device["PINCONGLOMERATE"]) & 0x03) * 90
+            rotation = (int(device.get("PINCONGLOMERATE", 0)) & 0x03) * 90
+            pin_length = int(device.get('PINLENGTH', 0))
+            loc_x = int(device.get('LOCATION.X', 0))
+            loc_y = int(device.get('LOCATION.Y', 0))
             device['coords'] = [[
-                int(int(device['LOCATION.X']) + math.cos(rotation / 180 * math.pi) * int(device['PINLENGTH'])),
-                int(int(device['LOCATION.Y']) + math.sin(rotation / 180 * math.pi) * int(device['PINLENGTH']))
+                int(loc_x + math.cos(rotation / 180 * math.pi) * pin_length),
+                int(loc_y + math.sin(rotation / 180 * math.pi) * pin_length)
             ]]
         # if a Wire, follow inconsistent location key names (X1 vs LOCATION.X, etc..)
         elif device["RECORD"] == "27":
@@ -109,7 +112,7 @@ def determine_net_list(schematic):
                                for match in coord_name_matches ]
         # everything else, just convert the location values to ints
         else:
-            device['coords'] = [(int(device['LOCATION.X']), int(device['LOCATION.Y']))]
+            device['coords'] = [(int(device.get('LOCATION.X', 0)), int(device.get('LOCATION.Y', 0)))]
 
     nets = []
     for device in devices:
@@ -121,12 +124,13 @@ def determine_net_list(schematic):
     for net in nets:
         net['devices'].sort(key=lambda k: k['index'])
         if not net['name']:
-            net['name'] = next(iter(d['TEXT'] for d in net['devices'] if ((d['RECORD'] == '17') or (d['RECORD'] == '25'))), None)
+            net['name'] = next(iter(d.get('TEXT') for d in net['devices'] if ((d['RECORD'] == '17') or (d['RECORD'] == '25')) and d.get('TEXT')), None)
 
         if not net['name']:
             naming_pin = next(iter(d for d in net['devices'] if d['RECORD'] == '2'), None)
-            parent = next(iter(find_record(schematic, key="index", value=int(naming_pin['OWNERINDEX']))[1]), None) if naming_pin else None
-            net['name'] = next(iter('Net' + r['TEXT'] for r in parent['children'] if (r['RECORD'] == '34')), None) if parent else None
+            owner_index = naming_pin.get('OWNERINDEX') if naming_pin else None
+            parent = next(iter(find_record(schematic, key="index", value=int(owner_index))[1]), None) if owner_index else None
+            net['name'] = next(iter('Net' + r.get('TEXT', '') for r in parent.get('children', []) if (r['RECORD'] == '34') and r.get('TEXT')), None) if parent else None
 
     schematic["nets"] = nets
 
