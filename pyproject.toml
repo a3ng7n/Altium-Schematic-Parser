@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "altium-schematic-parser"
+version = "0.1.0"
+authors = [{ name = "Aaron Goldstein", email = "aaron@sirrom.systems" }]
+description = "Convert Altium schdoc files into json"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["olefile>=0.46"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.scripts]
+parse = "altium_schematic_parser.cli:main"
+
+[dependency-groups]
+dev = ["ruff>=0.14.10"]
+
+[tool.ruff]
+line-length = 120
+
+[project.urls]
+GitHub = "https://github.com/a3ng7n/Altium-Schematic-Parser"

@@ -1,40 +1,42 @@
 # Altium-Schematic-Parser
 Converts Altium .SchDoc files into json
 ## Prerequisites
-* python 3 (3.4 to 3.11; currently doesn't support 3.12+)
+* python 3 (3.7 to 3.11; currently doesn't support 3.12+)
 * olefile
 ## Install
-    git clone git@github.com:a3ng7n/Altium-Schematic-Parser.git
-    cd Altium-Schematic-Parser
-    pip install -e .
+    pip install altium-schematic-parser
 ## Usage
 Full description
 
-    usage: parse.py [-h] [-o OUTPUT]
-                    [-f {all-list,all-hierarchy,parts-list,net-list}]
-                    input
+    usage: parse [-h] [-o OUTPUT] [-f {all-list,all-hierarchy,parts-list,net-list}] input
 
 Ex: to export all contents of altiumschematic.schdoc to jsonfile.json within path/to/:
 
-    python parse.py "path/to/altiumschematic.schdoc" -o "path/to/jsonfile.json"
+    parse "path/to/altiumschematic.schdoc" -o "path/to/jsonfile.json"
 **NOTE**:
 the default output formatting behavior (-f/--format) if not supplied is to show all contents
 retaining all hierarchy information
 
-## Command line arguments
-    
-    positional arguments:
-      input                 path/to/altiumschematic.schdoc file to parse
-    
-    optional arguments:
-      -h, --help            show this help message and exit
-      -o OUTPUT, --output OUTPUT
-                            path/to/jsonfile.json file to output json to, otherwise prints to terminal
-      -f {all-list,all-hierarchy,parts-list,net-list}, --format {all-list,all-hierarchy,parts-list,net-list}
-                            all-list: All records in a flattened list
-                            all-hierarchy: All records in an owner/child "hierarchy"
-                            parts-list: A listing of parts and their designators
-                            net-list: A listing of nets between parts pins, referred to by their designators
+## Details
+```
+$ parse -h
+usage: parse [-h] [-o OUTPUT] [-f {all-list,all-hierarchy,parts-list,net-list}] input
+
+Converts Altium .SchDoc files into json.
+
+positional arguments:
+  input                 path/to/altiumschematic.schdoc file to parse
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        path/to/jsonfile.json file to output json to, otherwise prints to terminal
+  -f {all-list,all-hierarchy,parts-list,net-list}, --format {all-list,all-hierarchy,parts-list,net-list}
+                        all-list: All records in a flattened list
+                        all-hierarchy: All records in an owner/child "hierarchy"
+                        parts-list: A listing of parts and their designators
+                        net-list: A listing of nets between parts pins, referred to by their designators
+```
 
 # Notes
 ## schdoc file format
